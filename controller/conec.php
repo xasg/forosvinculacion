@@ -1,6 +1,6 @@
 <?php
 $servername = "localhost";
-$dbname = "registro_dual";
-$username = "dual";
-$password = "WM2ODrcPMgxzG5nM";
+$dbname = "feseor5_ssc";
+$username = "feseor5_ssc";
+$password = "HeL130921";
 ?>

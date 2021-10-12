@@ -1,45 +1,39 @@
 <?php 
    include_once('databases_registro.php');
    session_start();   
-   if( $_POST )
+   if($_POST )
    { 
-   $comentario = isset( $_POST['comentario']) ? $_POST['comentario'] : '';
-   $apaterno = isset( $_POST['apaterno']) ? $_POST['apaterno'] : '';
-   $amaterno = isset( $_POST['amaterno']) ? $_POST['amaterno'] : '';
    $nombre = isset( $_POST['nombre']) ? $_POST['nombre'] : '';
+   $apellidos = isset( $_POST['apellidos']) ? $_POST['apellidos'] : '';
    $email = isset( $_POST['email']) ? $_POST['email'] : '';
-   $tel_ins = isset( $_POST['tel_ins']) ? $_POST['tel_ins'] : '';
-   $ext = isset( $_POST['ext']) ? $_POST['ext'] : '';
-   $tel_movil = isset( $_POST['tel_movil']) ? $_POST['tel_movil'] : '';
-   $region = isset( $_POST['region']) ? $_POST['region'] : '';
-   $entidad = isset( $_POST['entidad']) ? $_POST['entidad'] : '';
-   $organizacion = isset( $_POST['organizacion']) ? $_POST['organizacion'] : '';
-   $nom_org = isset( $_POST['nom_org']) ? $_POST['nom_org'] : '';
-   $nom_org2 = isset( $_POST['nom_org2']) ? $_POST['nom_org2'] : '';
-   $cargo = isset( $_POST['cargo']) ? $_POST['cargo'] : '';
-   $cargo2 = isset( $_POST['cargo2']) ? $_POST['cargo2'] : '';
-   $otro_cargo = isset( $_POST['otro_cargo']) ? $_POST['otro_cargo'] : '';
+   $movil = isset( $_POST['movil']) ? $_POST['movil'] : '';
+   $telefono = isset( $_POST['telefono']) ? $_POST['telefono'] : '';
+   $institucion = isset( $_POST['institucion']) ? $_POST['institucion'] : '';
+   $nombre_ins = isset( $_POST['nombre_ins']) ? $_POST['nombre_ins'] : '';
+   $asistente = isset( $_POST['asistente']) ? $_POST['asistente'] : '';
+   $informacion = isset( $_POST['informacion']) ? $_POST['informacion'] : '';
+   $reg_usuario =acces_registro($email);
    $reg_usuario =acces_registro($email);
    if($reg_usuario==0){ 
-   insert_registro($comentario, $apaterno, $amaterno, $nombre, $email, $tel_ins, $ext, $tel_movil, $region, $entidad, $organizacion, $nom_org, $nom_org2, $cargo, $cargo2, $otro_cargo);   
-    $id_usuario =acces_registro($email);
-    $id_user=$id_usuario['id_usuario'];
-    $_SESSION["id"]=$id_usuario['id_usuario'];  
+   insert_registro($nombre, $apellidos, $email, $movil, $telefono, $institucion, $nombre_ins, $asistente, $informacion);  
+   $id_usuario =acces_registro($email);   
+   $id_user=$id_usuario['id_usuario'];
+   $_SESSION["id"]=$id_user;
 ?>
-    <script>
-       window.location="datos.php";
-    </script>
+      
+<script type="text/javascript">        
+        window.location.href="index.php";
+</script>';
 
-<?php
-}else{
-//caso contario (else) es porque ese user ya esta registrado 
- ?>
-<script>
-   window.location="existe.php"
-</script>
-<?php
 
-      }
+      <?php
+      }else{
+            //caso contario (else) es porque ese user ya esta registrado 
+             ?>
+            <script>
+               window.location="existe.html"
+            </script>
+            <?php
+            }
    }
-
-   ?>
+            ?>

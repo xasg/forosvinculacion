@@ -1,519 +1,669 @@
-<?php   
-   include_once('databases_usuario.php');
+<?php 
+   include_once('databases_registro.php');
+   session_start(); 
    mysqli_set_charset( $mysqli, 'utf8');
-   $entidad=view_entidad();
-   $region=view_region();
-   $foro=view_foro();
-   ?>
-<!DOCTYPE html>
-<html lang="es">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="description" content="" />
-      <meta name="keywords" content="" />
-      <link rel="icon" href="assets/images/favicon.png" sizes="35x35" type="image/png">
-      <title>Registro</title>
-      <link rel="stylesheet" href="assets/css/all.min.css">
-      <link rel="stylesheet" href="assets/css/flaticon.css">
-      <link rel="stylesheet" href="assets/css/animate.min.css">
-      <link rel="stylesheet" href="assets/css/bootstrap.css">
-      <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
-      <link rel="stylesheet" href="assets/css/jquery.bootstrap-touchspin.min.css">
-      <link rel="stylesheet" href="assets/css/slick.css">
-      <link rel="stylesheet" href="assets/css/responsive.css">
-      <link rel="stylesheet" href="assets/css/color.css">
-      <link rel="stylesheet" href="assets/css/bootstrap-multiselect.css">
-      <link rel="stylesheet" href="assets/css/style.css">
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HZVPVQSG3M"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+   if($_POST )
+   { 
+   $nombre = isset( $_POST['nombre']) ? $_POST['nombre'] : '';
+   $apellidos = isset( $_POST['apellidos']) ? $_POST['apellidos'] : '';
+   $email = isset( $_POST['email']) ? $_POST['email'] : '';
+   $movil = isset( $_POST['movil']) ? $_POST['movil'] : '';
+   $telefono = isset( $_POST['telefono']) ? $_POST['telefono'] : '';
+   $institucion = isset( $_POST['institucion']) ? $_POST['institucion'] : '';
+   $nombre_ins = isset( $_POST['nombre_ins']) ? $_POST['nombre_ins'] : '';
+   $asistente = isset( $_POST['asistente']) ? $_POST['asistente'] : '';
+   $informacion = isset( $_POST['informacion']) ? $_POST['informacion'] : '';
+   $reg_usuario = acces_registro($email);
+   if($reg_usuario==0){ 
+   insert_registro($nombre, $apellidos, $email, $movil, $telefono, $institucion, $nombre_ins, $asistente, $informacion); 
+   $id_usuario =acces_registro($email);   
+   $id_user=$id_usuario['id_usuario'];
+   $_SESSION["id"]=$id_user;
+   
+   $user= null;
+   if($id_user>0){
+    $user= $id_user;
+   }
 
-  gtag('config', 'G-HZVPVQSG3M');
+  } else { ?>  
+   <script>
+$(document).ready(function(){
+    $(".alert").alert();
+});  
 </script>
-<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-    setTimeout(function() {
-        $(".content").fadeOut(2500);
-    },3000);
- 
-    setTimeout(function() {
-        $(".content2").fadeIn(1500);
-    },6000);
-});
-</script>
-   </head>
-   <body>
-      <main>
-         <header class="stick style1 w-100" style=" background-color: #860f01;">
-            <div class="container">
-               <div class="logo-menu-wrap w-100 d-flex flex-wrap justify-content-between align-items-start">
-                  <div class="logo">
-                     <h1 class="mb-0"><a href="index.html" title="Home"><img class="img-fluid" src="assets/images/img/logoforos.png" alt="Logo" srcset="assets/images/img/logoforos.png"></a></h1>
-                  </div>
-                  <!-- Logo -->
-                  <nav class="d-inline-flex align-items-center">
-                     <div class="header-left">
-                        <ul class="mb-0 list-unstyled d-inline-flex">
-                           <li class="menu-item-has-children"><a href="index.html" title="">Inicio</a></li>
-                           <li class="menu-item-has-children"><a href="index.html#foros" title="">Foros</a></li>
-                           <li><a href="index.html#calendario" title="">Calendario</a></li>
-                           <li><a href="registro.php" title="">Registro</a></li>
-                           <li><a href="#contacto" title="">Contacto</a></li>
-                        </ul>
-                     </div>
-                  </nav>
-               </div>
-               <!-- Logo Menu Wrap -->
-            </div>
-         </header>
-         <!-- Header -->
-         <div class="menu-wrap">
-            <span class="menu-close"><i class="fas fa-times"></i></span>
-            <ul class="mb-0 list-unstyled w-100">
-               <li class="menu-item-has-children"><a href="index#.html">Inicio</a></li>
-               <li class="menu-item-has-children"><a href="index.html#foros">Foros</a></li>
-               <li><a href="index.html" title="">Calendario</a></li>
-               <li><a href="registro.php" title="">Registro</a></li>
-               <li><a href="#contato" title="">Contacto</a></li>
-            </ul>
-         </div>
-         <!-- Menu Wrap -->
-         <section>
-            <div class="w-100 text-center black-layer position-relative">                   
-            </div><br><br><br>
-         </section>
+<?php  
+}
+}
+?>
 
-         <section>
-               <div class="container">
-                     <div class="row marg">
-                             <form action="update_registro.php" method="POST">                                
-                                 <!--Datos personales-->
-                                 <div class="row">
-                                    <div class="col-xl-12"><br><br>
-                                       <div class="alert alert-warning content">
-                                          <a href="#" class="alert-link">El correo que ingresaste no se encuentra registrado. Llena el siguiente formulario</a>
-                                       </div>
-                                       <h5 class="mb-0">Para descarga la constancia de participación por tu asistencia a los Foros de Vinculación para el fortalecimiento de la Educación Dual y el Emprendimiento Asociativo debes llenar el siguente registro.</h5>
-                                       <br><br>
-                                       <h4>Datos personales</h4>
-                                       <div class="alert alert-secondary" role="alert">
-                                        El nombre registrado será el que se utilizará para generar la constancia de participación
-                                       </div>
-                                    </div>
-                                     <div class="col-xl-4">
-                                       <div class="form-group"> 
-                                          <label for="nombre">Nombre(s):</label>
-                                          <input type="text" class="form-control" name="nombre" onChange="conMayusculas(this)" required="">
-                                       </div>
-                                    </div>
-                                    <div class="col-xl-4">
-                                       <div class="form-group"> 
-                                          <label for="nombre">Apellido paterno:</label>
-                                          <input type="text" class="form-control" name="apaterno" onChange="conMayusculas(this)" required="">
-                                       </div>
-                                    </div>
-                                    <div class="col-xl-4">
-                                       <div class="form-group"> 
-                                          <label for="nombre">Apellido materno:</label>
-                                          <input type="text" class="form-control" name="amaterno" onChange="conMayusculas(this)" required="">
-                                       </div>
-                                    </div>
-                                   
-                                 </div>                                 
-                                 <div class="row">
-                                    <div class="col-xl-4">
-                                       <div class="form-group"> 
-                                          <label>Correo electrónico:</label>
-                                          <input type="email" class="form-control" name="email" onChange="conMayusculas(this)" required="">
-                                       </div>
-                                    </div>
-                                    <div class="col-xl-3">
-                                       <div class="form-group"> 
-                                          <label for="nombre">Teléfono institucional</label>
-                                          <input type="text" class="form-control" name="tel_ins">
-                                       </div>
-                                    </div>
-                                    <div class="col-xl-1">
-                                       <div class="form-group"> 
-                                          <label for="nombre">Ext.</label>
-                                          <input type="text" class="form-control" name="ext">
-                                       </div>
-                                    </div>
-                                    <div class="col-xl-4">
-                                       <div class="form-group"> 
-                                          <label for="nombre">Móvil</label>
-                                          <input type="text" class="form-control" name="tel_movil" required="">
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <!-- /Datos personales-->
-
-                                 <!-- Datos Institucionales-->
-                                 <div class="row">
-                                    <div class="col-xl-12 pad">
-                                       <h4>Datos institucionales</h4>
-                                    </div>
-                                    <div class="col-xl-3">
-                                       <div class="form-group">
-                                          <label for="control1">Región</label> 
-                                          <select class="form-control" name="region" id="region" required="">
-                                             <option value="">Seleccionar región</option>
-                                             <?php while($row = $region->fetch_assoc()) { ?>
-                                             <option value="<?php echo $row['id_cat_region']; ?>"><?php echo $row['dt_nombre_region']; ?></option>
-                                             <?php } ?>
-                                          </select>
-                                       </div>
-                                    </div>
-                                    <div class="col-xl-3">
-                                       <div class="form-group">                
-                                          <label for="control">Entidad Federativa</label> 
-                                          <select class="form-control" id="entidad" name="entidad" required="">
-                                          </select>
-                                       </div>
-                                    </div>
-                                    <div class="col-xl-6">
-                                       <label>Organización de procedencia</label><br>
-                                       <div class="form-group">
-                                          <div class="form-check form-check-inline">
-                                             <input class="form-check-input" type="radio" name="organizacion" id="org_ies" value="ies" required="">
-                                             <label class="form-check-label">IES</label>
-                                          </div>
-                                          <div class="form-check form-check-inline">
-                                             <input class="form-check-input" type="radio" name="organizacion" id="org_otro" value="social" required="">
-                                             <label class="form-check-label">Social</label>
-                                          </div>
-                                          <div class="form-check form-check-inline">
-                                             <input class="form-check-input" type="radio" name="organizacion" id="org_otro" value="internacional" required="">
-                                             <label class="form-check-label">Internacional</label>
-                                          </div>
-                                          <div class="form-check form-check-inline">
-                                             <input class="form-check-input" type="radio" name="organizacion" id="org_otro" value="publico" required="">
-                                             <label class="form-check-label">Público</label>
-                                          </div>
-                                          <div class="form-check form-check-inline">
-                                             <input class="form-check-input" type="radio" name="organizacion" id="org_otro" value="privado" required="">
-                                             <label class="form-check-label">Privado</label>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 
-                                 <div class="row" id="org" style="display:none;">
-                                    <div class="col-md-8" >
-                                       <div class="form-group"> 
-                                          <label for="nombre">Organización a la que pertenece</label>
-                                          <input type="text" class="form-control" name="nom_org2" onChange="conMayusculas(this)">
-                                       </div>
-                                    </div>
-                                    <div class="col-xl-4">
-                                       <div class="form-group">
-                                          <label for="control1">Cargo que ocupa:</label> 
-                                          <select class="form-control" name="cargo2" onChange="mostrar(this.value);">
-                                             <option value="">Selecciona tu cargo</option>
-                                             <option value="Director General y/o Coordinador General">Director General y/o Coordinador General</option>
-                                             <option value="Director de Área">Director de Área</option>
-                                             <option value="Administrativo">Administrativo</option>
-                                             <option value="otro">Otro:</option>
-                                          </select>
-                                       </div>
-                                    </div>
-                                 </div>
-
-                                 <div class="row" id="sel_ies" style="display:none;">
-                                    <div class="col-md-8">
-                                       <div class="form-group">                
-                                          <label for="control">Seleccionar IES</label> 
-                                          <select class="form-control" name="nom_org" id="ies">
-                                          </select>
-                                       </div>
-                                    </div>
-                                    <div class="col-xl-4">
-                                       <div class="form-group">
-                                          <label for="control1">Cargo que ocupa:</label> 
-                                          <select class="form-control" name="cargo" onChange="mostrar(this.value);">
-                                             <option value="">Selecciona tu cargo</option>
-                                             <option value="Autoridad Educativa Estatal">Autoridad Educativa Estatal</option>
-                                             <option value="Estudiante">Estudiante</option>
-                                             <option value="Egresado">Egresado</option>
-                                             <option value="Docente">Docente</option>
-                                             <option value="Investigador">Investigador</option>
-                                             <option value="Jefe de Unidad">Jefe de Unidad</option>
-                                             <option value="Rector/Director de IES">Rector/Director de IES</option>
-                                             <option value="otro">Otro:</option>
-                                          </select>
-                                       </div>
-                                    </div>
-                                 </div>
-
-                                 <div class="row">
-                                    <div class="col-xl-4" id="otro" style="display:none;">
-                                       <div class="form-group"> 
-                                          <label>Otro cargo:</label>
-                                          <input type="text" class="form-control" name="otro_cargo" onChange="conMayusculas(this)">
-                                       </div>
-                                    </div>
-                                 </div>
-
-                                 <div class="row">
-                                    <div class="col-xl-12 pad">
-                                       <h4>Comentario</h4>
-                                       <div class="form-group">
-                                        <label for="exampleFormControlTextarea1">Escribe una aportación para la mesa de trabajo en la que participaste. Éstos comentarios serán utilizados como material de apoyo para la generación de Lineamientos Generales.</label>
-                                        <textarea class="form-control" name="comentario" id="exampleFormControlTextarea1" rows="3" required></textarea>
-                                       </div>
-                                    </div>
-                                 </div>
-
-
-
-                                  <div class="row">
-                                  <div class="col-xl-12">
-                                    <br>
-                                  </div>  
-                                  <div class="col-xl-4">
-                                  </div>  
-                                  <div class="col-xl-4">
-                                    <button type="submit" class="btn btn-block btn-primary btn-lg">Guardar</button><br><br>
-                                    <input type="hidden" name="id_usuario" value="valor1" />
-                                  </div>
-                                  </div>
-                              </form>
-                     </div>
-                  </div>
-         </section>
-
-
-
-            <footer style="background-color: #860f01;" id="contacto">
-                <div class="w-100 pt-121  opc1 position-relative">
-                    <div class="container position-relative">
-                        <div class="footer-wrap w-100 text-center">
-                            <div class="footer-inner d-inline-block">
-                                <div class="logo d-inline-block">
-                                    <h1 class="mb-0">
-                                        <a href="index.html" title=""><br>
-                                            <img class="img-fluid" src="assets/images/img/logoforos.png" alt="Logo">
-                                        </a>
-                                    </h1>
-                                </div>
-                                <p class="mb-0" style="color: #fff">Contacto:</p>
-                                <p class="mb-0" style="color: #fff">forosdevinculacion@fese.mx</p>
-                            </div>
-                            <div class="footer-bottom d-flex flex-wrap justify-content-between w-100">                              
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer><!-- Footer -->
-      </main>
-      <!-- Main Wrapper -->
-      <script src="assets/js/jquery.min.js"></script>
-      <script src="assets/js/popper.min.js"></script>
-      <script src="assets/js/bootstrap.min.js"></script>
-      <script src="assets/js/wow.min.js"></script>
-      <script src="assets/js/counterup.min.js"></script>
-      <script src="assets/js/jquery.downCount.js"></script>
-      <script src="assets/js/jquery.fancybox.min.js"></script>
-      <script src="assets/js/jquery.bootstrap-touchspin.min.js"></script>
-      <script src="assets/js/perfect-scrollbar.min.js"></script>
-      <script src="assets/js/slick.min.js"></script>
-      <script src="assets/js/isotope.min.js"></script>
-      <script src="assets/js/custom-scripts.js"></script>        
-      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-      <script src="assets/js/bootstrap-multiselect.js"></script>
-      <script>
-         document.getElementById('ies').addEventListener('change', function() { 
-    var style = this.value == "OTRA" ? 'block' : 'none'; 
-    document.getElementById('otra_ies').style.display = style; 
-}); 
-      </script>
-      <script type="text/javascript">
-         $(document).ready(function() {
-             $('#dia2').multiselect();
-         });
-      </script>
-      <script type="text/javascript">
-         $(document).ready(function(){
-           $("#region").change(function () {          
-             $("#region option:selected").each(function () {
-               id_cat_region = $(this).val();
-               $.post("includes/getDia.php", { id_cat_region: id_cat_region }, function(data){
-                 $("#dia").html(data);
-               });            
-             });
-           })
-         });      
-      </script>
-      <script language="javascript">
-         $(document).ready(function(){
-           $("#region").change(function () {          
-             $("#region option:selected").each(function () {
-               id_cat_region = $(this).val();
-               $.post("includes/getRegion.php", { id_cat_region: id_cat_region }, function(data){
-                 $("#entidad").html(data);
-               });            
-             });
-           })
-         });      
-      </script>
-      <script language="javascript">
-         $(document).ready(function(){
-           $("#entidad").change(function () {          
-             $("#entidad option:selected").each(function () {
-               id_cat_entidad = $(this).val();
-               $.post("includes/getIes.php", { id_cat_entidad: id_cat_entidad }, function(data){
-                 $("#ies").html(data);
-               });            
-             });
-           })
-         });      
-      </script>
-      <!--
-         ies
-         social
-         internacional
-         publico
-         privado
-         -->
-      <script language="javascript">
-         $(document).ready(function() {
-         $("input[type=radio]").click(function(event){
-             var valor = $(event.target).val();
-             if(valor =="ies"){
-                 $("#sel_ies").show();
-                 $("#org").hide();
-             } else if (valor == "social") {
-                 $("#sel_ies").hide();
-                 $("#org").show();
-             }  else if (valor == "internacional") {
-                 $("#sel_ies").hide();
-                 $("#org").show();
-             }  else if (valor == "publico") {
-                 $("#sel_ies").hide();
-                 $("#org").show();
-             } else if (valor == "privado") {
-                 $("#sel_ies").hide();
-                 $("#org").show();
-             } else { 
-                 // Otra cosa
-             }
-         });
-         })
-      </script>
-      <script language="JavaScript"> 
+<!DOCTYPE doctype html>
+<html>
+    <head>
+        <title>Servicio Social Comunitario</title>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="http://code.jquery.com/jquery.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                setTimeout(function() {
+                    $(".content").fadeOut(1500);
+                },3000);
+            });
+        </script>
+        <script language="JavaScript"> 
          function conMayusculas(field) 
          { 
              field.value = field.value.toUpperCase() 
          }   
       </script>
-      <script type="text/javascript">
-         function mostrar(id) {
+        
+    </head>
+    <body>
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+            <img alt="Responsive image" class="img-fluid" src="img/Logo_b.png">
+                <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+                    <span class="navbar-toggler-icon">   </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto" style="color:#fff">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="./">
+                                INICIO
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">
+                                CALENDARIO
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">
+                                MEMORIA
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">
+                                CONTACTO
+                            </a>
+                        </li>                        
+                    </ul>
+                </div>
+        </nav>
+
+    <?php if(!empty($user)): ?>
+        <div class="alert alert-success text-center content" role="alert">Registro con exito</div>
+    <?php else: ?>
+         
+    <?php endif;?>
+
+        
+
+        
+        <div class="container">
+            <div class="row">
+                <!--<div class="col-md-12 text-center marg">
+                        <h5>Inicio </h5>
+                    </div> -->
+                    <div class="col-md-12"><br><br><br>
+                            <form action="registro.php" method="POST">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <p> El presente registro es para solicitar información e inscribir a las IES en la convocatoria del curso Servicio Social Comunitario, Herramientas y oportunidades para el desarrollo.</p>
+                                    <p>Si está de acuerdo con nuestro <a  href="https://www.fese.mx/privacidad.html" target="_black" style="color:#205B4E">aviso de privacidad</a>, llene el formulario y nos pondremos en contacto para brindarle toda la información, así como las fechas importantes y adecuarlas de la mejor forma a los procesos de su institución.</p>
+                                    <hr>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label for="nombre">
+                                            Nombre(s):                                        </label>
+                                        <input class="form-control" name="nombre" onchange="conMayusculas(this)" required="" type="text">
+                                        </input>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label for="nombre">
+                                            Apellidos:
+                                        </label>
+                                        <input class="form-control" name="apellidos" onchange="conMayusculas(this)" required="" type="text">
+                                        </input>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label>
+                                            Correo electrónico:
+                                        </label>
+                                        <input class="form-control" name="email" onchange="conMayusculas(this)" required="" type="email">
+                                        </input>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3">
+                                    <div class="form-group">
+                                        <label for="nombre">
+                                            Móvil(10 digitos):                                        </label>
+                                        <input class="form-control" name="movil" pattern="[0-9]{10}" required="" title="Proporcione un numero correcto" type="text">
+                                        </input>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3">
+                                    <div class="form-group">
+                                        <label for="nombre">
+                                            Teléfono(10 digitos)
+                                        </label>
+                                        <input class="form-control" name="telefono" pattern="[0-9]{10}" type="text">
+                                        </input>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-xl-12">
+                                    <label>
+                                        Institución  de procedencia:
+                                    </label>
+                                    <div class="form-group">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="institucion" onchange="mostrar(this.value)" required="" type="radio" value="IES">
+                                                <label class="form-check-label">
+                                                    IES
+                                                </label>
+                                            </input>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="institucion" onchange="mostrar(this.value)" required="" type="radio" value="Gobierno">
+                                                <label class="form-check-label">
+                                                    Gobierno
+                                                </label>
+                                            </input>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="institucion" onchange="mostrar(this.value)" required="" type="radio" value="Empresa">
+                                                <label class="form-check-label">
+                                                    Empresa
+                                                </label>
+                                            </input>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="institucion" onchange="mostrar(this.value)" required="" type="radio" value="otro">
+                                                <label class="form-check-label">
+                                                    Otro
+                                                </label>
+                                            </input>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-xl-12" id="otro">
+                                    <div class="form-group">
+                                        <label>
+                                            Nombre de la Institución:
+                                        </label>
+                                        <input class="form-control" name="nombre_ins" onchange="conMayusculas(this)" type="text">
+                                        </input>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-xl-12">
+                                    <label>
+                                        Tipo de Asistente:
+                                    </label>
+                                    <div class="form-group">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="asistente" required="" type="radio" value="Autoridad">
+                                                <label class="form-check-label">Autoridad</label>
+                                            </input>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="asistente" required="" type="radio" value="Estudiante">
+                                                <label class="form-check-label">Estudiante</label>
+                                            </input>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="asistente" required="" type="radio" value="Otro">
+                                                <label class="form-check-label">Otro</label>
+                                            </input>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-12"><br>
+                                    <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" name="informacion" value="si" checked>
+                                          <label class="form-check-label" for="defaultCheck1">
+                                            Quiero recibir información de los siguientes eventos.
+                                          </label><br><br>
+                                    </div>
+                                </div>
+                    <div class="col-md-6 offset-3 text-center">
+                    <button class="btn btn-primary btn-lg btn-block" type="submit"><strong>Registrar</strong></button>
+                    </div>
+                </div>
+            </form>
+                    </div>
+
+
+
+
+
+                <div class="col-md-1">
+                </div>
+                    
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+              <div class="col-md-12 text-center marg">
+                <img alt="Responsive image" class="img-fluid" src="img/Logos_Institucionales.png">
+              </div>
+            </div>
+        </div>
+        <div class="container-fluid" style="background-color:#235b4e">
+            <div class="row">
+                <div class="col-md-12">                   
+                </div>
+            </div>
+        </div>
+
+
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form action="index.php" method="POST">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <p> El presente registro es para solicitar información e inscribir a las IES en la convocatoria del curso Servicio Social Comunitario, Herramientas y oportunidades para el desarrollo.</p>
+                                    <p>Si está de acuerdo con nuestro <a  href="https://www.fese.mx/privacidad.html" target="_black" style="color:#205B4E">aviso de privacidad</a>, llene el formulario y nos pondremos en contacto para brindarle toda la información, así como las fechas importantes y adecuarlas de la mejor forma a los procesos de su institución.</p>
+                                    <hr>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label for="nombre">
+                                            Nombre(s):                                        </label>
+                                        <input class="form-control" name="nombre" onchange="conMayusculas(this)" required="" type="text">
+                                        </input>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label for="nombre">
+                                            Apellidos:
+                                        </label>
+                                        <input class="form-control" name="apellidos" onchange="conMayusculas(this)" required="" type="text">
+                                        </input>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label>
+                                            Correo electrónico:
+                                        </label>
+                                        <input class="form-control" name="email" onchange="conMayusculas(this)" required="" type="email">
+                                        </input>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3">
+                                    <div class="form-group">
+                                        <label for="nombre">
+                                            Móvil(10 digitos):                                        </label>
+                                        <input class="form-control" name="movil" pattern="[0-9]{10}" required="" title="Proporcione un numero correcto" type="text">
+                                        </input>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3">
+                                    <div class="form-group">
+                                        <label for="nombre">
+                                            Teléfono(10 digitos)
+                                        </label>
+                                        <input class="form-control" name="telefono" pattern="[0-9]{10}" type="text">
+                                        </input>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-xl-12">
+                                    <label>
+                                        Institución  de procedencia:
+                                    </label>
+                                    <div class="form-group">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="institucion" onchange="mostrar(this.value)" required="" type="radio" value="IES">
+                                                <label class="form-check-label">
+                                                    IES
+                                                </label>
+                                            </input>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="institucion" onchange="mostrar(this.value)" required="" type="radio" value="Gobierno">
+                                                <label class="form-check-label">
+                                                    Gobierno
+                                                </label>
+                                            </input>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="institucion" onchange="mostrar(this.value)" required="" type="radio" value="Empresa">
+                                                <label class="form-check-label">
+                                                    Empresa
+                                                </label>
+                                            </input>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="institucion" onchange="mostrar(this.value)" required="" type="radio" value="otro">
+                                                <label class="form-check-label">
+                                                    Otro
+                                                </label>
+                                            </input>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-xl-12" id="otro">
+                                    <div class="form-group">
+                                        <label>
+                                            Nombre de la Institución:
+                                        </label>
+                                        <input class="form-control" name="nombre_ins" onchange="conMayusculas(this)" type="text">
+                                        </input>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-xl-12">
+                                    <label>
+                                        Tipo de Asistente:
+                                    </label>
+                                    <div class="form-group">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="asistente" required="" type="radio" value="Autoridad">
+                                                <label class="form-check-label">Autoridad</label>
+                                            </input>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="asistente" required="" type="radio" value="Estudiante">
+                                                <label class="form-check-label">Estudiante</label>
+                                            </input>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="asistente" required="" type="radio" value="Otro">
+                                                <label class="form-check-label">Otro</label>
+                                            </input>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-12"><br>
+                                    <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" name="informacion" value="si" checked>
+                                          <label class="form-check-label" for="defaultCheck1">
+                                            Quiero recibir formación de los siguientes eventos.
+                                          </label><br><br>
+                                    </div>
+                                </div>
+                    <div class="col-md-6 offset-3 text-center">
+                    <button class="btn btn-primary btn-lg btn-block" type="submit"><strong>Registrar</strong></button>
+                    </div>
+                </div>
+            </form>
+      </div> 
+    </div>
+  </div>
+</div>
+
+
+        <!--
+        <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="exampleModal" role="dialog" tabindex="-1">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                            <span aria-hidden="true">×</span>
+                        </button>
+
+                    </div>                   
+                    <div class="modal-body">
+                       <form action="index.php" method="POST">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <p> El presente registro es para solicitar información e inscribir a las IES en la convocatoria del curso Servicio Social Comunitario, Herramientas y oportunidades para el desarrollo.</p>
+                                    <p>Si está de acuerdo con nuestro <a  href="https://www.fese.mx/privacidad.html" target="_black" style="color:#205B4E">aviso de privacidad</a>, llene el formulario y nos pondremos en contacto para brindarle toda la información, así como las fechas importantes y adecuarlas de la mejor forma a los procesos de su institución.</p>
+                                    <hr>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label for="nombre">
+                                            Nombre(s):                                        </label>
+                                        <input class="form-control" name="nombre" onchange="conMayusculas(this)" required="" type="text">
+                                        </input>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label for="nombre">
+                                            Apellidos:
+                                        </label>
+                                        <input class="form-control" name="apellidos" onchange="conMayusculas(this)" required="" type="text">
+                                        </input>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label>
+                                            Correo electrónico:
+                                        </label>
+                                        <input class="form-control" name="email" onchange="conMayusculas(this)" required="" type="email">
+                                        </input>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3">
+                                    <div class="form-group">
+                                        <label for="nombre">
+                                            Móvil(10 digitos):                                        </label>
+                                        <input class="form-control" name="movil" pattern="[0-9]{10}" required="" title="Proporcione un numero correcto" type="text">
+                                        </input>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3">
+                                    <div class="form-group">
+                                        <label for="nombre">
+                                            Teléfono(10 digitos)
+                                        </label>
+                                        <input class="form-control" name="telefono" pattern="[0-9]{10}" type="text">
+                                        </input>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-xl-12">
+                                    <label>
+                                        Institución  de procedencia:
+                                    </label>
+                                    <div class="form-group">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="institucion" onchange="mostrar(this.value)" required="" type="radio" value="IES">
+                                                <label class="form-check-label">
+                                                    IES
+                                                </label>
+                                            </input>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="institucion" onchange="mostrar(this.value)" required="" type="radio" value="Gobierno">
+                                                <label class="form-check-label">
+                                                    Gobierno
+                                                </label>
+                                            </input>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="institucion" onchange="mostrar(this.value)" required="" type="radio" value="Empresa">
+                                                <label class="form-check-label">
+                                                    Empresa
+                                                </label>
+                                            </input>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="institucion" onchange="mostrar(this.value)" required="" type="radio" value="otro">
+                                                <label class="form-check-label">
+                                                    Otro
+                                                </label>
+                                            </input>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-xl-12" id="otro">
+                                    <div class="form-group">
+                                        <label>
+                                            Nombre de la Institución:
+                                        </label>
+                                        <input class="form-control" name="nombre_ins" onchange="conMayusculas(this)" type="text">
+                                        </input>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-xl-12">
+                                    <label>
+                                        Tipo de Asistente:
+                                    </label>
+                                    <div class="form-group">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="asistente" required="" type="radio" value="Autoridad">
+                                                <label class="form-check-label">Autoridad</label>
+                                            </input>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="asistente" required="" type="radio" value="Estudiante">
+                                                <label class="form-check-label">Estudiante</label>
+                                            </input>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" name="asistente" required="" type="radio" value="Otro">
+                                                <label class="form-check-label">Otro</label>
+                                            </input>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-12"><br>
+                                    <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" name="informacion" value="si" checked>
+                                          <label class="form-check-label" for="defaultCheck1">
+                                            Quiero recibir formación de los siguientes eventos.
+                                          </label><br><br>
+                                    </div>
+                                </div>
+                    <div class="col-md-6 offset-3 text-center">
+                    <button class="btn btn-primary btn-lg btn-block" type="submit"><strong>Registrar</strong></button>
+                    </div>
+                </div>
+            </form>
+        
+
+
+
+        </div>
+                </div>
+            </div>
+        </div>
+
+-->
+<script  type="text/javascript" src="js/bootstrap.min.js"></script>
+<script  type="text/javascript" src="js/popper.min.js">
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => { 
+
+        //===
+        // VARIABLES
+        //===
+        const DATE_TARGET = new Date('10/08/2021 10:00 AM');
+        // DOM for render
+        const SPAN_DAYS = document.querySelector('span#days');
+        const SPAN_HOURS = document.querySelector('span#hours');
+        const SPAN_MINUTES = document.querySelector('span#minutes');
+        const SPAN_SECONDS = document.querySelector('span#seconds');
+        // Milliseconds for the calculations
+        const MILLISECONDS_OF_A_SECOND = 1000;
+        const MILLISECONDS_OF_A_MINUTE = MILLISECONDS_OF_A_SECOND * 60;
+        const MILLISECONDS_OF_A_HOUR = MILLISECONDS_OF_A_MINUTE * 60;
+        const MILLISECONDS_OF_A_DAY = MILLISECONDS_OF_A_HOUR * 24;
+
+        //===
+        // FUNCTIONS
+        //===
+
+        /**
+        * Method that updates the countdown and the sample
+        */
+        function updateCountdown() {
+            // Calcs
+            const NOW = new Date()
+            const DURATION = DATE_TARGET - NOW;
+            const REMAINING_DAYS = Math.floor(DURATION / MILLISECONDS_OF_A_DAY);
+            const REMAINING_HOURS = Math.floor((DURATION % MILLISECONDS_OF_A_DAY) / MILLISECONDS_OF_A_HOUR);
+            const REMAINING_MINUTES = Math.floor((DURATION % MILLISECONDS_OF_A_HOUR) / MILLISECONDS_OF_A_MINUTE);
+            const REMAINING_SECONDS = Math.floor((DURATION % MILLISECONDS_OF_A_MINUTE) / MILLISECONDS_OF_A_SECOND);
+            // Thanks Pablo Monteserín (https://pablomonteserin.com/cuenta-regresiva/)
+
+            // Render
+            SPAN_DAYS.textContent = REMAINING_DAYS;
+            SPAN_HOURS.textContent = REMAINING_HOURS;
+            SPAN_MINUTES.textContent = REMAINING_MINUTES;
+            SPAN_SECONDS.textContent = REMAINING_SECONDS;
+        }
+
+        //===
+        // INIT
+        //===
+        updateCountdown();
+        // Refresh every second
+        setInterval(updateCountdown, MILLISECONDS_OF_A_SECOND);
+    });
+</script>
+<script type="text/javascript">
+    function mostrar(id) {
              if (id == "otro") {
                  $("#otro").show();
              }
          }
-      </script>
-      <script language="javascript">
-         $(document).ready(function() {
+</script>
+<script language="javascript">
+    $(document).ready(function() {
          $("input[type=radio]").click(function(event){
              var valor = $(event.target).val();
-             if(valor =="dia1"){
-                 $("#divid1").show();
-                 $("#divid2").hide();
-                 $("#divid3").hide();
-             } else if (valor == "dia2") {                 
-                 $("#divid2").show();
-                 $("#divid1").hide();
-                 $("#divid3").hide();
-             } else if (valor == "ambos") {                 
-                 $("#divid1").show();
-                 $("#divid2").show();
-                 $("#divid3").hide();
-             } else if (valor == "no") {                 
-                 $("#divid3").hide();
-                 $("#divid1").hide();
-                 $("#divid2").hide();
+             if(valor =="otro"){
+                 $("#otro").show();
+             } else if (valor == "IES") { 
+                 $("#otro").show();
+             } else if (valor == "Empresa") {   
+                 $("#otro").show();
+             } else if (valor == "Gobierno") {                 
+                 $("#otro").show();
              } else { 
                  // Otra cosa
-             }
+             } 
          });
          })
-      </script>
-      <script language="javascript">
-         $(document).ready(function() {
-         $("input[type=radio]").click(function(event){
-             var valor = $(event.target).val();
-             if(valor =="01"){
-                 $("#tipo_hora1").show();
-             } else if (valor == "02") {
-                 $("#tipo_hora1").show();
-             }  else if (valor == "03") {
-                  $("#tipo_hora1").show();
-             }  else if (valor == "04") {
-                  $("#tipo_hora1").show();
-             }  else { 
-                 // Otra cosa
-             }
-         });
-         })
-      </script>
-      <script language="javascript">
-         $(document).ready(function() {
-         $("input[type=radio]").click(function(event){
-             var valor = $(event.target).val();
-             if(valor =="05"){
-                 $("#tipo_hora2").show();
-             } else if (valor == "06") {
-                 $("#tipo_hora2").show();
-             }  else if (valor == "07") {
-                  $("#tipo_hora2").show();
-             }  else if (valor == "08") {
-                  $("#tipo_hora2").show();
-             }  else { 
-                 // Otra cosa
-             }
-         });
-         })
-      </script>
-      <script language="javascript">
-         $(document).ready(function() {
-         $("input[type=radio]").click(function(event){
-             var valor = $(event.target).val();
-             if(valor =="09"){
-                 $("#tipo_hora3").show();
-             } else if (valor == "10") {
-                 $("#tipo_hora3").show();
-             }  else if (valor == "11") {
-                  $("#tipo_hora3").show();
-             }  else if (valor == "12") {
-                  $("#tipo_hora3").show();
-             }  else { 
-                 // Otra cosa
-             }
-         });
-         })
-      </script>
-      <script language="javascript">
-         $(document).ready(function() {
-         $("input[type=radio]").click(function(event){
-             var valor = $(event.target).val();
-             if(valor =="13"){
-                 $("#dia2_hora").show();
-             } else if (valor == "14") {
-                 $("#dia2_hora").show();
-             }  else if (valor == "15") {
-                  $("#dia2_hora").show();
-             }    else { 
-                 // Otra cosa
-             }
-         });
-         })
-      </script>
+</script>
 
-   </body>
+<script>
+    $('#myAlert').on('closed.bs.alert', function () {
+  // do something…
+})
+</script>
+
+</body>
 </html>
