@@ -1,22 +1,23 @@
 <!DOCTYPE doctype html>
 <html>
     <head>
-        <title>Servicio Social Comunitario</title>
+        <title>Foros de vinculación 2021</title>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
         <link href="css/bootstrap.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">   
 
-<script type="text/javascript">
-      $('#myModal').on('shown.bs.modal', function () {
-  $('#myInput').trigger('focus')
-})
+<script>       
+   $(document).ready(function()
+   {
+      $("#Modal").modal("show");
+   });
 </script>
         
     </head>
     <body>
         <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-            <img alt="Responsive image" class="img-fluid" src="img/Logo_b.png">
+            <img alt="Responsive image" class="img-fluid" src="img/Logo_b1.png">
                 <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
                     <span class="navbar-toggler-icon">   </span>
                 </button>
@@ -65,7 +66,7 @@
 
                 <!--<iframe allow="autoplay; fullscreen" allowfullscreen="" class="centrado" frameborder="0" height="33%" src="https://player.vimeo.com/video/591731439?h=8e17e9f2d9&title=0&byline=0&portrait=0" width="37%"></iframe>-->
 
-                <img alt="Responsive image" class="centrado img-fluid" src="img/Foros.jpeg" height="33%" width="37%">
+                <img alt="Responsive image" class="centrado img-fluid" src="img/Foros.png" height="33%" width="37%">
 
                 </div>
             </div>
@@ -75,21 +76,49 @@
             <img alt="Responsive image" class="centrado img-fluid" src="img/Foros.png">
         </div>
 
-        <!--<div class="container-fluid" style="background-color:#235b4e">
-            <div class="container">
+       
+<!-- Modal -->
+<div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">        
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <div class="container-fluid">
             <div class="row">
-                    <div class="col-md-8">
-                    <br><br>     
-                    <p style="color: #fff"><strong>Solicitar información e inscribir a las IES en la convocatoria del curso Servicio Social Comunitario, Herramientas y oportunidades para el desarrollo</strong><br><br> </p>
-                   </div>
-                   <div class="col-md-4 text-center">
-                    <br><br>
-                    <a href="registro.php" target="_black"><button type="button" class="btn btn-block btn-outline-dark">REGISTRO</button></a>
-                    <br><br> 
-                   </div>
+                <div class="col-md-12">
+                    <img alt="Responsive image" class="img-fluid" src="img/logo_grande.png">
+                </div>                
+                <div class="col-md-6"><br>
+                                        <h5 style="color: #1e352f;">¿Tu Institución eduativa tiene experiencia en Educación Dual?</h5>
+                                        <br>
+                                            <h6 class="text1 text-justify" style="color:#998262">
+                                               <strong>¡No te quedes callado!</strong> Compártela con nosotros y podrá ser presentada en los II Foros de vinculación, que iniciarán el 18 de octubre. 
+                                            </h6><br>
+                                        <h5>Envía tu propuesta al correo:</h5>
+                                        <h5>forosdevinculacion@fese.mx</h5>                                        
+                                        <a href="docs/formato.pdf"><button type="button" class="btn btn-primary">Descarga el formato</button></a>                                    
+
+
+
+                </div>
+                <div class="col-md-6"><br><br><br>
+                    <img alt="Responsive image" class="img-fluid" src="img/img_des.png">
+                </div>
+                <br>                    
             </div>
-            </div>
-        </div>-->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>-->
+      </div>
+    </div>
+  </div>
+</div>
 
         
 
@@ -110,7 +139,7 @@
                 <div class="col-md-1">
                 </div>
                 <div class="col-md-5 marg">
-                                        <h3 style="color: #1e352f;">Objetivo:</h3>
+                                        <h3 style="color: #1e352f;">Proposito General:</h3>
                                         <br>
                                             <p class="text1 text-justify">
                                                Dialogar, analizar y construir sobre los temas de vinculación: educación dual, emprendimiento asociativo y servicio social, mediante un trabajo colectivo, y desde un enfoque territorial y de intercambio de saberes. 
@@ -155,59 +184,16 @@
             </div>
         </div>
 
-
-<script  type="text/javascript" src="js/bootstrap.min.js"></script>
-<script  type="text/javascript" src="js/popper.min.js">
-</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<!--script para javascript para que carga el modal -->
 <script>
-    document.addEventListener('DOMContentLoaded', () => { 
-
-        //===
-        // VARIABLES
-        //===
-        const DATE_TARGET = new Date('10/08/2021 10:00 AM');
-        // DOM for render
-        const SPAN_DAYS = document.querySelector('span#days');
-        const SPAN_HOURS = document.querySelector('span#hours');
-        const SPAN_MINUTES = document.querySelector('span#minutes');
-        const SPAN_SECONDS = document.querySelector('span#seconds');
-        // Milliseconds for the calculations
-        const MILLISECONDS_OF_A_SECOND = 1000;
-        const MILLISECONDS_OF_A_MINUTE = MILLISECONDS_OF_A_SECOND * 60;
-        const MILLISECONDS_OF_A_HOUR = MILLISECONDS_OF_A_MINUTE * 60;
-        const MILLISECONDS_OF_A_DAY = MILLISECONDS_OF_A_HOUR * 24;
-
-        //===
-        // FUNCTIONS
-        //===
-
-        /**
-        * Method that updates the countdown and the sample
-        */
-        function updateCountdown() {
-            // Calcs
-            const NOW = new Date()
-            const DURATION = DATE_TARGET - NOW;
-            const REMAINING_DAYS = Math.floor(DURATION / MILLISECONDS_OF_A_DAY);
-            const REMAINING_HOURS = Math.floor((DURATION % MILLISECONDS_OF_A_DAY) / MILLISECONDS_OF_A_HOUR);
-            const REMAINING_MINUTES = Math.floor((DURATION % MILLISECONDS_OF_A_HOUR) / MILLISECONDS_OF_A_MINUTE);
-            const REMAINING_SECONDS = Math.floor((DURATION % MILLISECONDS_OF_A_MINUTE) / MILLISECONDS_OF_A_SECOND);
-            // Thanks Pablo Monteserín (https://pablomonteserin.com/cuenta-regresiva/)
-
-            // Render
-            SPAN_DAYS.textContent = REMAINING_DAYS;
-            SPAN_HOURS.textContent = REMAINING_HOURS;
-            SPAN_MINUTES.textContent = REMAINING_MINUTES;
-            SPAN_SECONDS.textContent = REMAINING_SECONDS;
-        }
-
-        //===
-        // INIT
-        //===
-        updateCountdown();
-        // Refresh every second
-        setInterval(updateCountdown, MILLISECONDS_OF_A_SECOND);
-    });
+       
+   $(document).ready(function()
+   {
+      $("#Modal").modal("show");
+   });
 </script>
 </body>
 </html>
