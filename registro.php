@@ -26,7 +26,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto" style="color:#fff">
               <li class="nav-item active">
-                <a class="nav-link" href="#">INICIO</a>
+                <a class="nav-link" href="./">INICIO</a>
               </li>
               <li class="nav-item active">
                 <a class="nav-link" href="#">CALENDARIO</a>
@@ -184,7 +184,7 @@
                                              <option value="Egresado">Egresado</option>
                                              <option value="Docente">Docente</option>
                                              <option value="Investigador">Investigador</option>
-                                              <option value="Autoridad Educativa Estatal">Autoridad Educativa Estatal</option>
+                                              <option value="Autoridad Educativa Estatal">Administrativo</option>
                                              <option value="Jefe de Unidad">Jefe de Unidad</option>
                                              <option value="Rector/Director de IES">Rector/Director de IES</option>
                                              <option value="otro">Otro:</option>
@@ -272,7 +272,7 @@
                                                    <td>
                                                       <div class="form-check form-check-inline">
                                                          <input class="form-check-input" type="radio" name="dual_horario1"  value="01">
-                                                         <label class="form-check-label"><strong>Mesa de trabajo de Emprendimiento Asociativo</strong><br>Propósito:Dialogar, analizar y construir sobre los temas de vinculación:emprendimiento asociativo, mediante un trabajo colectivo, y desde un enfoque territorial y de intercambio de saberes.                             
+                                                         <label class="form-check-label"><strong>Mesa de trabajo de Emprendimiento Asociativo</strong><br>Propósito:Analizar el documento “Marco General para el Emprendimiento Asociativo para la Educación Superior” con aportaciones comentarios y observaciones de los participantes..                             
                                                          </label>
                                                       </div>
                                                       <br>                                                          
@@ -286,7 +286,7 @@
                                                    <td>
                                                       <div class="form-check form-check-inline">
                                                          <input class="form-check-input" type="radio" name="dual_horario2" value="02">
-                                                         <label class="form-check-label"><strong>Mesa de trabajo de Educación dual</strong><br> Propósito:Dialogar, analizar y construir sobre los temas de vinculación: educación dual, mediante un trabajo colectivo, y desde un enfoque territorial y de intercambio de saberes.</label>
+                                                         <label class="form-check-label"><strong>Mesa de trabajo de Educación dual</strong><br> Propósito:Analizar el documento “Marco General para la Educación Dual del Tipo Superior” con aportaciones comentarios y observaciones de los participantes.</label>
                                                       </div>
                                                    </td>                                                    
                                                 </tr>                                                

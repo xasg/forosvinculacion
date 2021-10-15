@@ -57,7 +57,7 @@
 //caso contario (else) es porque ese user ya esta registrado 
  ?>
 <script>
-   window.location="existe.php"
+   window.location="datos.php"
 </script>
 <?php
 

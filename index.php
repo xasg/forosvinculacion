@@ -44,7 +44,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                             <a href="#" target="_black"><button type="button" class="btn btn-outline-dark">REGISTRO</button></a>
+                             <a href="registro.php" target="_black"><button type="button" class="btn btn-outline-dark">REGISTRO</button></a>
                             <!--<a class="nav-link" data-toggle="modal" data-target="#myModal">
                                 REGISTRO
                             </a>-->
@@ -66,7 +66,7 @@
 
                 <!--<iframe allow="autoplay; fullscreen" allowfullscreen="" class="centrado" frameborder="0" height="33%" src="https://player.vimeo.com/video/591731439?h=8e17e9f2d9&title=0&byline=0&portrait=0" width="37%"></iframe>-->
 
-                <img alt="Responsive image" class="centrado img-fluid" src="img/Foros.png" height="33%" width="37%">
+                <img alt="Responsive image" class="centrado img-fluid" src="img/Foros.png" height="33%" width="45%">
 
                 </div>
             </div>
@@ -139,7 +139,7 @@
                 <div class="col-md-1">
                 </div>
                 <div class="col-md-5 marg">
-                                        <h3 style="color: #1e352f;">Proposito General:</h3>
+                                        <h3 style="color: #1e352f;">Propósito General:</h3>
                                         <br>
                                             <p class="text1 text-justify">
                                                Dialogar, analizar y construir sobre los temas de vinculación: educación dual, emprendimiento asociativo y servicio social, mediante un trabajo colectivo, y desde un enfoque territorial y de intercambio de saberes. 
@@ -152,6 +152,36 @@
                 <br>                    
             </div>
         </div>
+
+        <div class="container-fluid">
+            <div class="row marg">              
+                <div class="col-md-1">
+                </div>                
+                <div class="col-md-5 text-center">
+                    <img alt="Responsive image" class="img-fluid" src="img/regiones.png">
+                </div>
+                <div class="col-md-5 marg">
+                    <img alt="Responsive image" class="img-fluid" src="img/mapa.png">
+                </div>
+                <br>                    
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="row marg">              
+                <div class="col-md-1">
+                </div>                
+                <div class="col-md-12">
+                    <img alt="Responsive image" class="img-fluid" src="img/calendario.png">
+                </div>                
+                <br>                    
+            </div>
+        </div>
+
+
+
+
         <div class="container">
             <div class="row">
               <div class="col-md-12 text-center marg">
@@ -177,12 +207,25 @@
 
 
 
-        <div class="container-fluid" style="background-color:#235b4e">
-            <div class="row">
-                <div class="col-md-12">                   
+        <footer style="background-color: #205b4e;" id="contacto">
+                <div class="w-100 pt-121  opc1 position-relative">
+                    <div class="container position-relative">
+                        <div class="footer-wrap w-100 text-center">
+                            <div class="footer-inner d-inline-block">
+                                <div class="logo d-inline-block">
+                                        <a href="index.html" title="">
+                                            <img src="img/Logo_b.png" class="img-fluid" alt="Responsive image">
+                                        </a>
+                                </div>
+                                <p class="mb-0" style="color: #fff"><strong>Contacto:</strong></p>
+                                <p class="mb-0" style="color: #fff"><strong>forosdevinculacion@fese.mx</strong></p>
+                            </div>
+                            <div class="footer-bottom d-flex flex-wrap justify-content-between w-100">                              
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </footer><!-- Footer -->
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>   
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
