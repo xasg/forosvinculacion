@@ -37,7 +37,7 @@ function view_foro()
 function run_dia_uno($id, $region)
 {
   global $mysqli;
-  $sql = "SELECT asistencia.id_usuario, dt_mesa, id_cat_region, cat_mesas.dt_nombre, dt_horario_inicio, dt_horario_fin, dt_liga, asistencia.dt_participacion, dt_fecha FROM `asistencia` LEFT JOIN cat_mesas ON(asistencia.dt_mesa=cat_mesas.id_cat_mesa) LEFT JOIN usuario ON(usuario.id_usuario=asistencia.id_usuario) WHERE asistencia.`id_usuario`='{$id}' AND cat_mesas.id_cat_region='{$region}' AND asistencia.dt_participacion='dia1'";
+  $sql = "SELECT asistencia.id_usuario, dt_mesa, id_cat_region, cat_mesas.dt_nombre, dt_horario_inicio, dt_horario_fin, dt_liga, dt_liga_doc, asistencia.dt_participacion, dt_fecha FROM `asistencia` LEFT JOIN cat_mesas ON(asistencia.dt_mesa=cat_mesas.id_cat_mesa) LEFT JOIN usuario ON(usuario.id_usuario=asistencia.id_usuario) WHERE asistencia.`id_usuario`='{$id}' AND cat_mesas.id_cat_region='{$region}' AND asistencia.dt_participacion='dia1'";
   return $mysqli->query($sql);  
   return $result->fetch_assoc();
 }
@@ -46,7 +46,17 @@ function run_dia_uno($id, $region)
 function run_dia_dos($id, $region)
 {
   global $mysqli;
-  $sql = "SELECT asistencia.id_usuario, dt_mesa, id_cat_region, cat_mesas.dt_nombre, dt_horario_inicio, dt_horario_fin, dt_liga, asistencia.dt_participacion, dt_fecha FROM `asistencia` LEFT JOIN cat_mesas ON(asistencia.dt_mesa=cat_mesas.id_cat_mesa) LEFT JOIN usuario ON(usuario.id_usuario=asistencia.id_usuario) WHERE asistencia.`id_usuario`='{$id}' AND cat_mesas.id_cat_region='{$region}' AND asistencia.dt_participacion='dia2'";
+  $sql = "SELECT asistencia.id_usuario, dt_mesa, id_cat_region, cat_mesas.dt_nombre, dt_horario_inicio, dt_horario_fin, dt_liga, dt_liga_doc, asistencia.dt_participacion, dt_fecha FROM `asistencia` LEFT JOIN cat_mesas ON(asistencia.dt_mesa=cat_mesas.id_cat_mesa) LEFT JOIN usuario ON(usuario.id_usuario=asistencia.id_usuario) WHERE asistencia.`id_usuario`='{$id}' AND cat_mesas.id_cat_region='{$region}' AND asistencia.dt_participacion='dia2'";
+  return $mysqli->query($sql);  
+  return $result->fetch_assoc();
+}
+
+
+
+function run_occidente($id, $region)
+{
+  global $mysqli;
+  $sql = "SELECT asistencia.id_usuario, dt_mesa, id_cat_region, cat_mesas.dt_nombre, dt_horario_inicio, dt_horario_fin, dt_liga, dt_liga_doc, asistencia.dt_participacion, dt_fecha FROM `asistencia` LEFT JOIN cat_mesas ON(asistencia.dt_mesa=cat_mesas.id_cat_mesa) LEFT JOIN usuario ON(usuario.id_usuario=asistencia.id_usuario) WHERE asistencia.`id_usuario`='{$id}' AND cat_mesas.id_cat_region='{$region}'";
   return $mysqli->query($sql);  
   return $result->fetch_assoc();
 }
@@ -56,7 +66,7 @@ function run_dia_dos($id, $region)
 function run_dia_ambos($id, $region)
 {
   global $mysqli;
-  $sql = "SELECT asistencia.id_usuario, dt_mesa, id_cat_region, cat_mesas.dt_nombre, dt_horario_inicio, dt_horario_fin, dt_liga, asistencia.dt_participacion, dt_fecha FROM `asistencia` LEFT JOIN cat_mesas ON(asistencia.dt_mesa=cat_mesas.id_cat_mesa) LEFT JOIN usuario ON(usuario.id_usuario=asistencia.id_usuario) WHERE asistencia.`id_usuario`='{$id}' AND cat_mesas.id_cat_region='{$region}' AND asistencia.dt_participacion='ambos'";
+  $sql = "SELECT asistencia.id_usuario, dt_mesa, id_cat_region, cat_mesas.dt_nombre, dt_horario_inicio, dt_horario_fin, dt_liga, dt_liga_doc, asistencia.dt_participacion, dt_fecha FROM `asistencia` LEFT JOIN cat_mesas ON(asistencia.dt_mesa=cat_mesas.id_cat_mesa) LEFT JOIN usuario ON(usuario.id_usuario=asistencia.id_usuario) WHERE asistencia.`id_usuario`='{$id}' AND cat_mesas.id_cat_region='{$region}' AND asistencia.dt_participacion='ambos'";
   return $mysqli->query($sql);  
   return $result->fetch_assoc();
 }

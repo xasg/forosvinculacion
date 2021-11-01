@@ -64,7 +64,7 @@
          
                <div class="container">
                      <div class="row">
-                            <form action="update_registro.php" method="POST">                                  
+                            <form action="update_registro_prueba.php" method="POST">                                  
                                  <!--Datos personales-->
                                  <div class="row">
 
@@ -75,13 +75,13 @@
                                     <div class="col-xl-4">
                                        <div class="form-group"> 
                                           <label>Nombre(s):</label>
-                                          <input type="text" class="form-control" name="nombre" onChange="conMayusculas(this)" maxlength="50" pattern="[A-Za-z ]{1,50}" required="">
+                                          <input type="text" class="form-control" name="nombre" onChange="conMayusculas(this)" required="">
                                        </div>
                                     </div>
                                     <div class="col-xl-8">
                                        <div class="form-group"> 
                                           <label>Apellidos:</label>
-                                          <input type="text" class="form-control" name="apellidos" onChange="conMayusculas(this)" maxlength="50" pattern="[A-Za-z ]{1,50}" required="">
+                                          <input type="text" class="form-control" name="apellidos" onChange="conMayusculas(this)" required="">
                                        </div>
                                     </div>                                   
                                  </div>
@@ -97,7 +97,7 @@
                                     <div class="col-xl-3">
                                        <div class="form-group"> 
                                           <label>Teléfono institucional</label>
-                                          <input type="text" class="form-control" name="tel_ins" maxlength="10" pattern="[0-9]{10}">
+                                          <input type="text" class="form-control" name="tel_ins">
                                        </div>
                                     </div>
                                     <div class="col-xl-1">
@@ -109,7 +109,7 @@
                                     <div class="col-xl-4">
                                        <div class="form-group"> 
                                           <label>Móvil</label>
-                                          <input type="text" class="form-control" name="tel_movil" required="" maxlength="10" pattern="[0-9]{10}">
+                                          <input type="text" class="form-control" name="tel_movil" required="">
                                        </div>
                                     </div>
                                  </div> 
@@ -120,13 +120,11 @@
                                     <div class="col-md-3">
                                        <div class="form-group">
                                           <label for="control1">Región</label> 
-                                          <select class="form-control" name="region" id="region" onChange="mostrar(this.value);" required="">
+                                          <select class="form-control" name="region" id="region" required="">
                                              <option value="">Seleccionar región</option>
-                                             <!--<option value="01">SUR SURESTE</option>-->
-                                            <!-- <option value="02">CDMX Y ZONA METROPOLITANA</option>-->
-                                             <option value="03">BAJIO OCCIDENTE</option>
-                                             <option value="04">FRONTERA NORTE</option>
-                                             <option value="05">NOROESTE</option>
+                                             <?php while($row = $region->fetch_assoc()) { ?>
+                                             <option value="<?php echo $row['id_cat_region']; ?>"><?php echo $row['dt_nombre_region']; ?></option>
+                                             <?php } ?>
                                           </select>
                                        </div>
                                     </div>
@@ -164,7 +162,7 @@
                                     <div class="col-md-8" >
                                        <div class="form-group"> 
                                           <label>Organización a la que pertenece</label>
-                                          <input type="text" class="form-control" name="nom_org2" onChange="conMayusculas(this)" pattern="[A-Za-z ]{1,50}">
+                                          <input type="text" class="form-control" name="nom_org2" onChange="conMayusculas(this)">
                                        </div>
                                     </div>
                                  </div>
@@ -204,11 +202,6 @@
                                     </div>
                                  </div>
                                  <!-- /Datos Institucionales-->
-
-
-
-<div id="sec_uno" style="display:none;">
-
                                  <!-- Datos de participación-->
                                  <div class="row">
                                     <div class="col-xl-12 pad"><br>
@@ -228,27 +221,21 @@
                                              <label class="form-check-label">No participaré</label>
                                           </div>-->
                                           <div class="form-check form-check-inline">
-                                             <input class="form-check-input" type="radio" name="participacion" id="id1" value="dia1">
+                                             <input class="form-check-input" type="radio" name="participacion" id="id1" value="dia1" required="">
                                              <label class="form-check-label">Día 1. Emprendimiento Asociativo y Educación Dual</label>
                                           </div>
                                           <div class="form-check form-check-inline">
-                                             <input class="form-check-input" type="radio" name="participacion" id="id2" value="dia2">
+                                             <input class="form-check-input" type="radio" name="participacion" id="id2" value="dia2" required="">
                                              <label class="form-check-label">Día 2. Reorientación del servicio social</label>
                                           </div>
                                           <div class="form-check form-check-inline">
-                                             <input class="form-check-input" type="radio" name="participacion" id="id3" value="ambos">
+                                             <input class="form-check-input" type="radio" name="participacion" id="id3" value="ambos" required="">
                                              <label class="form-check-label">Ambos días</label>
                                           </div>
                                        </div>
                                     </div>
 
                                  </div>
-
-
-
-
-
-
 
                                  <div class="row" id="divid1" style="display:none;">
                                           <h4>Dia 1. Emprendimiento Asociativo y Educación Dual<br></h4>
@@ -308,7 +295,7 @@
 
                                     <div class="col-md-12">
                                        <div class="form-check">
-                                         <input class="form-check-input" type="checkbox" value="1">
+                                         <input class="form-check-input" type="checkbox" value="1" required >
                                          <label class="form-check-label" for="flexCheckDefault">
                                            He leido los requerimientos y cumplo con el perfil o tengo experiencia en Educación Dual y/o Emprendimiento asociativo
                                          </label>
@@ -318,7 +305,7 @@
 
 
                                  <div class="row" id="divid2" style="display:none;">
-                                          <div class="col-md-12"><br>
+                                          <div class="col-md-12">
                                              <h4>Día 2. Reorientación del servicio social</h4>
                                           </div>
 
@@ -327,9 +314,9 @@
                                              </thead>
                                              <tbody>
                                                 <tr>
-                                                   <th scope="row">
+                                                   <!--<th scope="row">
                                                       <p>10:00 – 12:00</p>
-                                                   </th>                                                   
+                                                   </th>-->
                                                    <td>
                                                       <div class="form-check form-check-inline">
                                                          <input class="form-check-input" type="radio" name="emp_horario1"  value="03">
@@ -353,33 +340,30 @@
                                                              <strong>Mesa  3:</strong> El servicio social más allá de un requisito previo a la titulación, aplicación desde el primer año de estudios para todo el estudiantado.
                                                              </label>
                                                       </div>
-                                                   </td>                                                   
-                                                </tr>  
-                                                
-                                                 <tr>
-                                                   <th scope="row">
-                                                      <p>12:30 – 14:30</p>
-                                                   </th>
+                                                   </td>
                                                    <td table-primary>
                                                       <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="emp_horario2" value="06" >
+                                                         <input class="form-check-input" type="radio" name="emp_horario1" value="06" >
                                                          <label class="form-check-label">
                                                              <strong>Mesa  4:</strong> El marco normativo del servicio social, análisis y propuestas de modificación
                                                              </label>
                                                       </div>
-                                                   </td>                                                    
-                                                 </tr> 
+                                                   </td>
+                                                   <!--<td style="background-color: #9abfb7; color:#fff;">
+                                                     <div id="dia2_hora" style="display:none;"> <br>
+                                                     <div class="form-check form-check-inline">
+                                                         <input class="form-check-input" type="radio" name="tipo_emp_horario1" value="Asistente general">
+                                                         <label class="form-check-label"><strong>Asistente general</strong></label>
+                                                      </div><br><br>
+                                                      <div class="form-check form-check-inline">
+                                                         <input class="form-check-input" type="radio" name="tipo_emp_horario1" value="expositor">
+                                                         <label class="form-check-label"><strong>Expositor</strong></label>
+                                                      </div>
+                                                      </div>
+                                                   </td>-->
+                                                </tr>          
                                              </tbody>
-                                          </table> 
-
-                                    <div class="col-md-12">
-                                       <div class="form-check">
-                                         <input class="form-check-input" type="checkbox" value="1">
-                                         <label class="form-check-label" for="flexCheckDefault">
-                                           He leido los requerimientos y cumplo con el perfil o he estado en vinculación con el servicio social.
-                                         </label>
-                                       </div>
-                                    </div>                                   
+                                          </table>                                    
                                    
                                  </div>
 
@@ -400,295 +384,6 @@
                                     <input type="hidden" name="id_usuario" value="valor1" />
                                   </div>
                                   </div>
-</div>
-
-
- <div id="sec_dos" style="display:none;">
-                                       <div class="row">
-                                             <div class="col-xl-12">
-                                             <h4 style="color:#b49a74"><br>Región BAJIO OCCIDENTE- 29 de octubre del 2021</h4>      </div> 
-                                             <div class="col-xl-12">
-                                             <div class="col-xl-12">
-                                                <p><strong>* Elija las mesas de trabajo que más le interesen</strong></p>
-                                             </div>
-                                             <h4><br>Emprendimiento Asociativo y Educación Dual<br></h4>    
-                                             </div> 
-
-                                           <table class="table table-striped table-bordered">
-                                             <thead>
-                                             </thead>
-                                             <tbody>
-                                                <tr>
-                                                   <th scope="row">
-                                                      <p>11:00 – 13:00</p>
-                                                   </th>
-                                                   <td>
-                                                      <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="dual_horario1"  value="01">
-                                                         <label class="form-check-label"><strong>Mesa de trabajo de Emprendimiento Asociativo</strong><br>Propósito:Analizar el documento “Marco General para el Emprendimiento Asociativo para la Educación Superior” con aportaciones comentarios y observaciones de los participantes..                             
-                                                         </label>
-                                                      </div>
-                                                      <br>                                                          
-                                                   </td> 
-                                                </tr> 
-
-                                                <tr>
-                                                   <th scope="row">
-                                                      <p>13:00 – 15:00</p>
-                                                   </th>
-                                                   <td>
-                                                      <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="dual_horario2" value="02">
-                                                         <label class="form-check-label"><strong>Mesa de trabajo de Educación dual</strong><br> Propósito:Analizar el documento “Marco General para la Educación Dual del Tipo Superior” con aportaciones comentarios y observaciones de los participantes.</label>
-                                                      </div>
-                                                   </td>                                                    
-                                                </tr>                                                
-                                             </tbody>
-                                          </table>
-                                 </div>
-
-                                    <div class="row">
-                                          <div class="col-md-12"><br>
-                                             <h4>Reorientación del servicio social</h4>
-                                          </div>
-
-                                           <table class="table table-striped table-bordered">
-                                             <thead>
-                                             </thead>
-                                             <tbody>
-                                                <tr>
-                                                   <th scope="row">
-                                                      <p>11:00 – 15:00</p>
-                                                   </th>                                                   
-                                                   <td>
-                                                      <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="emp_horario1"  value="03">&nbsp;&nbsp;
-                                                         <label class="form-check-label">
-<strong>Tema 1:</strong>Situación actual del servicio social. Diagnóstico y posibilidades de cambio
-      <br><strong>Tema 2:</strong> Principios fundamentos, definición, objetivos y características del servicio social con enfoque comunitario y participación social con perspectiva ética 
-      <br><strong>Tema  3:</strong> El servicio social más allá de un requisito previo a la titulación, aplicación desde el primer año de estudios para todo el estudiantado.
-      <br><strong>Tema  4:</strong> El marco normativo del servicio social, análisis y propuestas de modificación
-</label><br>
-                                                      </div>
-                                                   </td>                                              
-                                                </tr> 
-                                             </tbody>
-                                          </table> 
-                                 </div>
-
-                                  <div class="row">
-                                  <div class="col-xl-12">
-                                    <br>
-                                  </div>  
-                                  <div class="col-xl-4">
-                                  </div>  
-                                  <div class="col-xl-4">
-                                    <button type="submit" class="btn btn-block btn-primary btn-lg">Guardar</button><br><br>
-                                    <input type="hidden" name="id_usuario" value="valor1" />
-                                  </div>
-                                  </div>
-
-
-</div>
-
-
-
-
-<div id="sec_cdmx" style="display:none;">
-
-                                 <!-- Datos de participación-->
-                                 <div class="row">
-                                    <div class="col-xl-12 pad"><br>
-                                       <h4>Confirma tu participación en mesas de trabajo</h4>
-                                    </div>
-
-                                     <div class="col-md-12">                                       
-                                        <!--<div class="sec-title-btn">
-                                              <a class="thm-btn2 lft-icon" href="docs/programa.pdf"><i class="flaticon-download"></i>Descargar Programa<span></span></a>
-                                        </div>-->
-                                       <p><strong>Elija el día y las mesas de trabajo que más le interesen</strong></p>
-                                    </div>
-                                    <div class="col-md-12">
-                                       <div class="form-group">
-                                          <!--<div class="form-check form-check-inline">
-                                             <input class="form-check-input" type="radio" name="participacion" value="no" required="">
-                                             <label class="form-check-label">No participaré</label>
-                                          </div>-->
-                                          <div class="form-check form-check-inline">
-                                             <input class="form-check-input" type="radio" name="participacion" id="id1" value="dia_1">
-                                             <label class="form-check-label">Día 1. Emprendimiento Asociativo y Educación Dual</label>
-                                          </div>
-                                          <div class="form-check form-check-inline">
-                                             <input class="form-check-input" type="radio" name="participacion" id="id2" value="dia_2">
-                                             <label class="form-check-label">Día 2. Reorientación del servicio social</label>
-                                          </div>
-                                          <div class="form-check form-check-inline">
-                                             <input class="form-check-input" type="radio" name="participacion" id="id3" value="ambos_s">
-                                             <label class="form-check-label">Ambos días</label>
-                                          </div>
-                                       </div>
-                                    </div>
-
-                                 </div>
-
-
-
-
-
-
-
-                                 <div class="row" id="divid_1" style="display:none;">
-                                          <h4>Dia 1. Emprendimiento Asociativo y Educación Dual<br></h4>
-                                          <div class="col-md-12" style="background-color: #ffeeba;">
-                                            <div id="Estudiante" style="display: none;"><br>
-                                                 <p>* Para poder participar deben ser estudiantes o egresados de educación dual<br>* Estudiantes y egresados participantes en programas de emprendimiento asociativo</p>
-                                             </div>
-                                             <div id="Egresado" style="display: none;"><br>
-                                                 <p>* Para poder participar deben ser estudiantes o egresados de educación dual<br>* Estudiantes y egresados participantes en programas de emprendimiento asociativo</p>
-                                             </div>
-                                             <div id="Docente" style="display: none;"><br>
-                                                 <p>*Para poder participar debes ser una IES con experiencia en educación dual: titulares, responsables académicos, de vinculación y docentes<br>* IES con experiencia en emprendimiento: titulares, responsables académicos, de vinculación, docentes y operadores de programas de emprendimiento</p>
-                                             </div>
-
-                                             <div id="publico" style="display: none;"><br>
-                                             <p>*Para poder participar debes ser un representantes de autoridad educativa estatal, CONACyT, SEDECO, STPS.<br>* Autoridades educativas y representantes estatales de CONACYT, SEDECO, IMJUVE, INAES,  INPI, IMPI, INMUJERES, o a fin, e instancias de vinculación y participación social.
-                                             </p>  
-                                             </div>
-                                             <div id="productivo" style="display: none;"><br>
-                                             <p>* Para poder participar debes ser un representantes de unidades económicas y de organizaciones sociales y empresariales.
-                                             </div>
-                                             <div id="general" style="display: none;"><br>
-                                             <p>* padres de familia.</p>
-                                             </div>
-                                          </div>
-                                           <table class="table table-striped table-bordered">
-                                             <thead>
-                                             </thead>
-                                             <tbody>
-                                                <tr>
-                                                   <th scope="row">
-                                                      <p>10:00 – 12:00</p>
-                                                   </th>
-                                                   <td>
-                                                      <div class="form-check form-check-inline">
-                                                        <!-- <input class="form-check-input" type="radio" name="dual_horario1"  value="01">-->
-                                                         <label class="form-check-label" style="color:#CD5C5C;"><strong>Mesa 1 llena                          
-                                                         </label>
-                                                      </div>
-                                                      <br>                                                          
-                                                   </td> 
-                                                </tr> 
-
-                                                <tr>
-                                                   <th scope="row">
-                                                      <p>12:10 – 15:00</p>
-                                                   </th>
-                                                   <td>
-                                                      <div class="form-check form-check-inline">
-                                                         <!--<input class="form-check-input" type="radio" name="dual_horario2" value="02">-->
-                                                         <label class="form-check-label" style="color:#CD5C5C;"><strong>Mesa 2 llena</label>
-                                                      </div>
-                                                   </td>                                                    
-                                                </tr>                                                
-                                             </tbody>
-                                          </table>
-
-                                    <div class="col-md-12">
-                                       <div class="form-check">
-                                         <input class="form-check-input" type="checkbox" value="1">
-                                         <label class="form-check-label" for="flexCheckDefault">
-                                           He leido los requerimientos y cumplo con el perfil o tengo experiencia en Educación Dual y/o Emprendimiento asociativo
-                                         </label>
-                                       </div>
-                                    </div>  
-                                 </div>
-
-
-                                 <div class="row" id="divid_2" style="display:none;">
-                                          <div class="col-md-12"><br>
-                                             <h4>Día 2. Reorientación del servicio social</h4>
-                                          </div>
-
-                                           <table class="table table-striped table-bordered">
-                                             <thead>
-                                             </thead>
-                                             <tbody>
-                                                <tr>
-                                                   <th scope="row">
-                                                      <p>10:00 – 12:00</p>
-                                                   </th>                                                   
-                                                   <td>
-                                                      <div class="form-check form-check-inline">
-                                                        <!-- <input class="form-check-input" type="radio" name="emp_horario1"  value="03">    -->                                    
-                                                         <label class="form-check-label" style="color:#CD5C5C;"><strong>Mesa 1 llena                          
-                                                         </label>
-                                                      </div>
-                                                   </td>
-                                                   <td>
-                                                      <div class="form-check form-check-inline">
-                                                        <!-- <input class="form-check-input" type="radio" name="emp_horario1" value="04" >
-                                                         <label class="form-check-label">
-                                                           <strong>Mesa 2:</strong> Principios fundamentos, definición, objetivos y características del servicio social con enfoque comunitario y participación social con perspectiva ética 
-                                                         </label>--><label class="form-check-label" style="color:#CD5C5C;"><strong>Mesa 2 llena                          
-                                                         </label>
-                                                      </div>
-                                                   </td>
-                                                   <td table-primary>
-                                                      <div class="form-check form-check-inline">
-                                                        <!-- <input class="form-check-input" type="radio" name="emp_horario1" value="05" >
-                                                         <label class="form-check-label">
-                                                             <strong>Mesa  3:</strong> El servicio social más allá de un requisito previo a la titulación, aplicación desde el primer año de estudios para todo el estudiantado.
-                                                             </label>--><label class="form-check-label" style="color:#CD5C5C;"><strong>Mesa 3 llena                          
-                                                         </label>
-                                                      </div>
-                                                   </td>                                                   
-                                                </tr>  
-                                                
-                                                 <tr>
-                                                   <th scope="row">
-                                                      <p>12:30 – 14:30</p>
-                                                   </th>
-                                                   <td table-primary>
-                                                      <div class="form-check form-check-inline">
-                                                         <!--<input class="form-check-input" type="radio" name="emp_horario2" value="06" >-->
-                                                         <label class="form-check-label" style="color:#CD5C5C;"><strong>Mesa 4 llena</label>
-                                                      </div>
-                                                   </td>                                                    
-                                                 </tr> 
-                                             </tbody>
-                                          </table> 
-
-                                    <div class="col-md-12">
-                                       <div class="form-check">
-                                         <input class="form-check-input" type="checkbox" value="1">
-                                         <label class="form-check-label" for="flexCheckDefault">
-                                           He leido los requerimientos y cumplo con el perfil o he estado en vinculación con el servicio social.
-                                         </label>
-                                       </div>
-                                    </div>                                   
-                                   
-                                 </div>
-
-                                 <div class="row" id="divid_3" style="display:none;">
-                                          <div class="col-md-12">
-                                             <h4>Ambos<br></h4>
-                                          </div>
-                                 </div>
-
-                                  <div class="row">
-                                  <div class="col-xl-12">
-                                    <br>
-                                  </div>  
-                                  <div class="col-xl-4">
-                                  </div>  
-                                  <div class="col-xl-4">
-                                    <button type="submit" class="btn btn-block btn-primary btn-lg">Guardar</button><br><br>
-                                    <input type="hidden" name="id_usuario" value="valor1" />
-                                  </div>
-                                  </div>
-</div>
-
-
                               </form>
                      </div>
                   </div>
@@ -837,32 +532,6 @@
          $(document).ready(function() {
          $("input[type=radio]").click(function(event){
              var valor = $(event.target).val();
-             if(valor =="dia_1"){
-                 $("#divid_1").show();
-                 $("#divid_2").hide();
-                 $("#divid_3").hide();
-             } else if (valor == "dia_2") {                 
-                 $("#divid_2").show();
-                 $("#divid_1").hide();
-                 $("#divid_3").hide();
-             } else if (valor == "ambos_s") {                 
-                 $("#divid_1").show();
-                 $("#divid_2").show();
-                 $("#divid_3").hide();
-             } else if (valor == "no") {                 
-                 $("#divid_3").hide();
-                 $("#divid_1").hide();
-                 $("#divid_2").hide();
-             } else { 
-                 // Otra cosa
-             }
-         });
-         })
-      </script>
-      <script language="javascript">
-         $(document).ready(function() {
-         $("input[type=radio]").click(function(event){
-             var valor = $(event.target).val();
              if(valor =="dia1"){
                  $("#divid1").show();
                  $("#divid2").hide();
@@ -984,31 +653,6 @@ function mostrar(id) {
     }
 }
 </script>
- <script type="text/javascript">
-         function mostrar(id) {
-             if (id == "01") {
-                 $("#sec_uno").show();
-                 $("#sec_dos").hide();
-                 $("#sec_cdmx").hide();
-             } if (id == "02") {
-                 $("#sec_cdmx").show();
-                 $("#sec_uno").hide();
-                 $("#sec_dos").hide();
-
-             } if (id == "03") {
-                  $("#sec_dos").show();
-                 $("#sec_uno").hide();
-                 $("#sec_cdmx").hide();
-             }  if (id == "04") {
-                 $("#sec_uno").show();
-                 $("#sec_dos").hide();
-                 $("#sec_cdmx").hide();
-             } if (id == "05") {
-                $("#sec_uno").show();
-                 $("#sec_dos").hide();
-                 $("#sec_cdmx").hide();
-             }
-         }
-      </script>
+**/
    </body>
 </html>

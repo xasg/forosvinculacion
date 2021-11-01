@@ -145,25 +145,16 @@ GROUP BY `dt_region`';
 function run_dual()
 {
   global $mysqli;
-  $sql ='SELECT cat_mesas.dt_nombre, COUNT(*) AS num_dual FROM `asistencia` 
-LEFT JOIN usuario ON(usuario.id_usuario=asistencia.id_usuario) 
-LEFT JOIN cat_region ON(cat_region.id_cat_region=usuario.dt_region) 
-LEFT JOIN cat_mesas ON(cat_mesas.id_cat_mesa= asistencia.dt_dia) 
-WHERE usuario.dt_region="01" AND dt_tipo="dual" AND `dt_tipo_asistente`="Asistente general" GROUP BY cat_mesas.dt_nombre ORDER BY `id_mesa` asc';
+  $sql ='SELECT `dt_mesa`,mesas.dt_nombre_mesa, COUNT(*) total FROM `asistencia` LEFT JOIN usuario ON(asistencia.id_usuario=usuario.id_usuario) LEFT JOIN mesas ON(asistencia.dt_mesa=mesas.id_cat_mesa) WHERE usuario.dt_region="01" GROUP BY dt_mesa ORDER BY dt_mesa ASC';
   return $mysqli->query($sql);  
   return $result->fetch_assoc();
 }
 
 
-
 function run_dual_cdmx()
 {
   global $mysqli;
-  $sql ='SELECT cat_mesas.dt_nombre, COUNT(*) AS num_dual FROM `asistencia` 
-LEFT JOIN usuario ON(usuario.id_usuario=asistencia.id_usuario) 
-LEFT JOIN cat_region ON(cat_region.id_cat_region=usuario.dt_region) 
-LEFT JOIN cat_mesas ON(cat_mesas.id_cat_mesa= asistencia.dt_dia) 
-WHERE usuario.dt_region="02" AND dt_tipo="dual" AND `dt_tipo_asistente`="Asistente general" GROUP BY cat_mesas.dt_nombre ORDER BY `id_mesa` asc';
+  $sql ='SELECT `dt_mesa`,mesas.dt_nombre_mesa, COUNT(*) total FROM `asistencia` LEFT JOIN usuario ON(asistencia.id_usuario=usuario.id_usuario) LEFT JOIN mesas ON(asistencia.dt_mesa=mesas.id_cat_mesa) WHERE usuario.dt_region="02" GROUP BY dt_mesa ORDER BY dt_mesa ASC';
   return $mysqli->query($sql);  
   return $result->fetch_assoc();
 }
@@ -172,11 +163,7 @@ WHERE usuario.dt_region="02" AND dt_tipo="dual" AND `dt_tipo_asistente`="Asisten
 function run_dual_bajio()
 {
   global $mysqli;
-  $sql ='SELECT cat_mesas.dt_nombre, COUNT(*) AS num_dual FROM `asistencia` 
-LEFT JOIN usuario ON(usuario.id_usuario=asistencia.id_usuario) 
-LEFT JOIN cat_region ON(cat_region.id_cat_region=usuario.dt_region) 
-LEFT JOIN cat_mesas ON(cat_mesas.id_cat_mesa= asistencia.dt_dia) 
-WHERE usuario.dt_region="03" AND dt_tipo="dual" AND `dt_tipo_asistente`="Asistente general" GROUP BY cat_mesas.dt_nombre ORDER BY `id_mesa` asc';
+  $sql ='SELECT `dt_mesa`,mesas.dt_nombre_mesa, COUNT(*) total FROM `asistencia` LEFT JOIN usuario ON(asistencia.id_usuario=usuario.id_usuario) LEFT JOIN mesas ON(asistencia.dt_mesa=mesas.id_cat_mesa) WHERE usuario.dt_region="03" GROUP BY dt_mesa ORDER BY dt_mesa ASC';
   return $mysqli->query($sql);  
   return $result->fetch_assoc();
 }
@@ -185,11 +172,7 @@ WHERE usuario.dt_region="03" AND dt_tipo="dual" AND `dt_tipo_asistente`="Asisten
 function run_dual_frontera()
 {
   global $mysqli;
-  $sql ='SELECT cat_mesas.dt_nombre, COUNT(*) AS num_dual FROM `asistencia` 
-LEFT JOIN usuario ON(usuario.id_usuario=asistencia.id_usuario) 
-LEFT JOIN cat_region ON(cat_region.id_cat_region=usuario.dt_region) 
-LEFT JOIN cat_mesas ON(cat_mesas.id_cat_mesa= asistencia.dt_dia) 
-WHERE usuario.dt_region="04" AND dt_tipo="dual" AND `dt_tipo_asistente`="Asistente general" GROUP BY cat_mesas.dt_nombre ORDER BY `id_mesa` asc';
+  $sql ='SELECT `dt_mesa`,mesas.dt_nombre_mesa, COUNT(*) total FROM `asistencia` LEFT JOIN usuario ON(asistencia.id_usuario=usuario.id_usuario) LEFT JOIN mesas ON(asistencia.dt_mesa=mesas.id_cat_mesa) WHERE usuario.dt_region="04" GROUP BY dt_mesa ORDER BY dt_mesa ASC';
   return $mysqli->query($sql);  
   return $result->fetch_assoc();
 }
@@ -198,11 +181,7 @@ WHERE usuario.dt_region="04" AND dt_tipo="dual" AND `dt_tipo_asistente`="Asisten
 function run_dual_noroeste()
 {
   global $mysqli;
-  $sql ='SELECT cat_mesas.dt_nombre, COUNT(*) AS num_dual FROM `asistencia` 
-LEFT JOIN usuario ON(usuario.id_usuario=asistencia.id_usuario) 
-LEFT JOIN cat_region ON(cat_region.id_cat_region=usuario.dt_region) 
-LEFT JOIN cat_mesas ON(cat_mesas.id_cat_mesa= asistencia.dt_dia) 
-WHERE usuario.dt_region="05" AND dt_tipo="dual" AND `dt_tipo_asistente`="Asistente general" GROUP BY cat_mesas.dt_nombre ORDER BY `id_mesa` asc';
+  $sql ='SELECT `dt_mesa`,mesas.dt_nombre_mesa, COUNT(*) total FROM `asistencia` LEFT JOIN usuario ON(asistencia.id_usuario=usuario.id_usuario) LEFT JOIN mesas ON(asistencia.dt_mesa=mesas.id_cat_mesa) WHERE usuario.dt_region="05" GROUP BY dt_mesa ORDER BY dt_mesa ASC';
   return $mysqli->query($sql);  
   return $result->fetch_assoc();
 }

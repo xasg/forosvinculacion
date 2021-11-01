@@ -57,10 +57,10 @@ $mysqli->query($sql);
 }
 
 
-function crear_asistencia_emp2($id_user, $emp_horario2, $tipo_emp_horario2)
+function crear_asistencia_emp2($id_user, $emp_horario2, $participacion)
 {
 global $mysqli;
-$sql="INSERT INTO asistencia(id_asistencia, id_usuario, dt_mesa, dt_tipo_asistente) VALUES (null, '{$id_user}', '{$emp_horario2}', '{$tipo_emp_horario2}')";
+$sql="INSERT INTO asistencia(id_asistencia, id_usuario, dt_mesa, dt_participacion) VALUES (null, '{$id_user}', '{$emp_horario2}', '{$participacion}')";
 $mysqli->query($sql);
 }
 

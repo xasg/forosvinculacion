@@ -25,7 +25,6 @@
    $dual_horario3 = isset( $_POST['dual_horario3']) ? $_POST['dual_horario3'] : '';
    $tipo_horario3 = isset( $_POST['tipo_horario3']) ? $_POST['tipo_horario3'] : '';
    $emp_horario1 = isset( $_POST['emp_horario1']) ? $_POST['emp_horario1'] : '';
-   $emp_horario2 = isset( $_POST['emp_horario2']) ? $_POST['emp_horario2'] : '';
    $tipo_emp_horario1 = isset( $_POST['tipo_emp_horario1']) ? $_POST['tipo_emp_horario1'] : '';  
    $reg_usuario =acces_registro($email);
    if($reg_usuario==0){ 
@@ -46,14 +45,12 @@
     }
      if ($emp_horario1!=NULL) {
     crear_asistencia_emp1($id_user, $emp_horario1, $tipo_emp_horario1, $participacion);
-    } if ($emp_horario2!=NULL) {
-    crear_asistencia_emp2($id_user, $emp_horario2, $participacion);
                               }  
-
-
 ?>
+
+
     <script>
-       window.location="datos.php";
+       window.location="datos_dos.php";
     </script>
 
 <?php
@@ -61,7 +58,7 @@
 //caso contario (else) es porque ese user ya esta registrado 
  ?>
 <script>
-   window.location="datos.php"
+   window.location="datos_dos.php"
 </script>
 <?php
 

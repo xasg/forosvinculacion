@@ -8,7 +8,6 @@
    $registro_dia1=run_dia_uno($id, $region);
    $registro_dia2=run_dia_dos($id, $region);
    $registro_diaambos=run_dia_ambos($id, $region);
-   $registro_occidente=run_occidente($id, $region);
 
 
    $sql = "SELECT COUNT(*) AS total FROM `asistencia` LEFT JOIN cat_mesas ON(asistencia.dt_mesa=cat_mesas.id_cat_mesa) LEFT JOIN usuario ON(usuario.id_usuario=asistencia.id_usuario) WHERE asistencia.`id_usuario`='{$id}' AND cat_mesas.id_cat_region='{$region}' AND asistencia.dt_participacion='dia1'";
@@ -22,6 +21,71 @@
    $sql = "SELECT COUNT(*) AS total FROM `asistencia` LEFT JOIN cat_mesas ON(asistencia.dt_mesa=cat_mesas.id_cat_mesa) LEFT JOIN usuario ON(usuario.id_usuario=asistencia.id_usuario) WHERE asistencia.`id_usuario`='{$id}' AND cat_mesas.id_cat_region='{$region}' AND asistencia.dt_participacion='ambos'";
    $result = mysqli_query($mysqli, $sql);
    $Totalambos = mysqli_fetch_assoc($result);
+
+
+   //Import PHPMailer classes into the global namespace
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+//These must be at the top of your script, not inside a function
+require 'PHPMailer/PHPMailer.php';
+require 'PHPMailer/SMTP.php';
+require 'PHPMailer/Exception.php';
+
+//Create an instance; passing `true` enables exceptions
+$mail = new PHPMailer(true);
+
+try {
+    //Server settings
+    $mail->SMTPDebug = 0;                      //Enable verbose debug output
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = 'smtp.office365.com';                     //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = 'rmendez@fese.mx';                     //SMTP username
+    $mail->Password   = 'Fe$e1620';                               //SMTP password
+    $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
+    $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+    //Recipients
+    $mail->setFrom('rmendez@fese.mx', 'Roy');
+    $mail->addAddress('rodrigo.mendez26@gmail.com');     //Add a recipient
+    /**$mail->addAddress('ellen@example.com');               //Name is optional
+    $mail->addReplyTo('info@example.com', 'Information');
+    $mail->addCC('cc@example.com');
+    $mail->addBCC('bcc@example.com');
+
+    //Attachments
+    $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
+    $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+**/
+    //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->Subject = 'Registro a Foros de Vinculacion 2021';
+    $mail->Body    = '
+    <html>
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+             <title>Cub Autonomia Curricular</title>
+        </head>
+                <body>
+                  <p>Apreciable</p>
+
+                  <p>Le notificamos que sus datos fueron registrados de forma exitosa, en breve nos comunicaremos con usted para ofrecerle toda la información relativa al Club Mi primera empresa “Emprender jugando”®. </p>
+                  <p>Agradecemos de antemano el interés es este Club y buscar opciones en favor del fomento al emprendimiento de los niños de su escuela primaria.</p>
+                  <p>Reciba un cordial saludo.</p><br><br>
+                  <p>CONTACTO</p>
+                  <p>Tel: (+52) 55 4626 8266 ext. 8268 / 8261 </p>
+                  <p>Mail: mpe@fese.org.mx</p>
+                  <p>Ixcateopan 261, Sta. Cruz Atoyac Del. Benito Juárez, C.P. 03310 CD.MX.</p>  
+                </body>
+    </html>
+    ';
+    $mail->AltBody = 'Gracias por leer';
+
+    $mail->send();
+    echo 'Message enviado';
+} catch (Exception $e) {
+    echo 'Mensaje de error: ', $mail->ErrorInfo;
+}
 
 
    ?>
@@ -72,15 +136,12 @@
             <div class="w-100 pt-140 pb-120 position-relative">
                <div class="container">
                     <div class="row">
-                       <div class="col-md-12">  <br><br>
-                        <h5>Hola, </h5><br>
-                        <h6>Tu registro a las mesas a los Segundos Foros de Vinculación <strong> de la región <?php echo $participante['dt_nombre_region']; ?> se realizó con éxito.</strong></h6>
-                        <p>Si deseas participar en alguna otra región comunícate a rmendez@fese.mx </p>                         
+                      <div class="col-md-12">  <br><br>
+                        <h5>Hola, tu registro se realizó con éxito </h5><br>                        
                       </div>
                       <div class="col-md-12" style="background-color: #ffeeba;"> <br>                         
-                        <p><strong>Te pedimos que estés atento a tu correo que ingresaste, ya que te llegaran los accesos de zoom de de las mesas que seleccionaste. </strong></p>
+                        <p><strong>Para poder ingresar al evento debes realizar tu registro en cada una de las mesas en las que deseas participar</strong></p>
                       </div>
-
                     </div>
                     <?php if($Total1['total']>0) { ?>
                      <div class="row"><br>
@@ -107,9 +168,9 @@
                                               {
                                               ?>                                              
                                               <tr>
-                                            <td><?php echo $reg['dt_fecha']; ?></td>
-                                            <td><?php echo $reg['dt_horario_inicio']." - ".$reg['dt_horario_fin'];?></td>
-                                            <td><?php echo $reg['dt_nombre']; ?><a href="<?php echo $reg['dt_liga_doc']; ?>" target="black"><br>Documento que es propósito de discusión en la Mesa, da clic aquí para descargar </a></td>
+                                                <td><?php echo $reg['dt_fecha']; ?></td>
+                                                <td><?php echo $reg['dt_horario_inicio']." - ".$reg['dt_horario_fin'];?></td>
+                                                <td><?php echo $reg['dt_nombre']; ?></td>
                                                 <td><a href="<?php echo $reg['dt_liga']; ?>" target="black"><button class="btn btn-block btn-primary">Registrar</button></a>
                                                 </td>                                                
                                               </tr> 
@@ -125,7 +186,7 @@
                        <?php if($Total2['total']>0) { ?>
                       <div class="row">                        
                          <div class="col-xl-12">
-                                    <h5>Día 2. Reorientación del servicio social</h5>
+                                    <h5>Dia 2. Emprendimiento Asociativo y Educación Dual</h5>
                                     <table id="example" class="table table-striped table-bordered" style="width:100%">
                                       <thead>
                                           <tr>  
@@ -146,7 +207,7 @@
                                               <tr>
                                                 <td><?php echo $reg2['dt_fecha']; ?></td>
                                                 <td><?php echo $reg2['dt_horario_inicio']." - ".$reg2['dt_horario_fin'];?></td>
-                                                <td><?php echo $reg2['dt_nombre']; ?><a href="<?php echo $reg2['dt_liga_doc']; ?>" target="black"><br>Documento que es propósito de discusión en la Mesa, da clic aquí para descargar </a></td>
+                                                <td><?php echo $reg2['dt_nombre']; ?></td>
                                                 <td><a href="<?php echo $reg2['dt_liga']; ?>" target="black"><button class="btn btn-block btn-primary">Registrar</button></a>
                                                 </td>                                                
                                               </tr> 
@@ -183,7 +244,7 @@
                                               <tr>
                                                 <td><?php echo $regambos['dt_fecha']; ?></td>
                                                 <td><?php echo $regambos['dt_horario_inicio']." - ".$regambos['dt_horario_fin'];?></td>
-                                                <td><?php echo $regambos['dt_nombre']; ?><a href="<?php echo $regambos['dt_liga_doc']; ?>" target="black"><br>Documento que es propósito de discusión en la Mesa, da clic aquí para descargar </a></td>
+                                                <td><?php echo $regambos['dt_nombre']; ?></td>
                                                 <td><a href="<?php echo $regambos['dt_liga']; ?>" target="black"><button class="btn btn-block btn-primary">Registrar</button></a>
                                                 </td>                                                
                                               </tr> 
@@ -196,50 +257,6 @@
 
                       </div>
                     <?php } ?>
-
-                    <?php if($region==03) { ?>
-                      <div class="row">                        
-                         <div class="col-xl-12">
-                                    <table id="example" class="table table-striped table-bordered" style="width:100%">
-                                      <thead>
-                                          <tr>  
-                                                <th>FECHA</th>
-                                                <th>HORARIO</th>
-                                                <th>ACTIVIDAD</th>
-                                                <th>REGISTRO</th>
-                                          </tr>
-                                      </thead>
-                                      <tbody>                                             
-                                              
-                                              <?php
-                                               $counter = 1;
-
-                                              while($regambos = $registro_occidente->fetch_assoc())
-                                              {
-                                              ?>                                              
-                                              <tr>
-                                                <td><?php echo $regambos['dt_fecha']; ?></td>
-                                                <td><?php echo $regambos['dt_horario_inicio']." - ".$regambos['dt_horario_fin'];?></td>
-                                                <td><?php echo $regambos['dt_nombre']; ?>
-                                                <a href="<?php echo $regambos['dt_liga_doc']; ?>" target="black"><br>Documento que es propósito de discusión en la Mesa, da clic aquí para descargar </a>
-                                                </td>
-                                                <td><a href="<?php echo $regambos['dt_liga']; ?>" target="black"><button class="btn btn-block btn-primary">Registrar</button></a>
-                                                </td>                                                
-                                              </tr> 
-                                              <?php
-                                                }
-                                              ?>  
-                                            </tbody>    
-                                                     
-                                    </table>
-                                </div> 
-
-                      </div>
-                    <?php } ?>
-
-
-
-
                   </div>
                 </div>
               </section>
