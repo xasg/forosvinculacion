@@ -1,426 +1,204 @@
-<!DOCTYPE doctype html>
-<html>
-    <head>
-        <title>Foros de vinculación 2021</title>
-        <meta charset="utf-8">
-        <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-        <link href="css/bootstrap.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
-      <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/color.css">
-        
-    </head>
-    <body>
-        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-            <img alt="Responsive image" class="img-fluid" src="img/Logo_b1.png">
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+	<title>Foros de Vinculación &raquo; </title>
+   	<meta charset="UTF-8">
+   	<meta name="language" content="es-MX">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   	<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style-stands.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/scrollbooster.min.js"></script>
+	<script language="JavaScript"> 
+         function conMayusculas(field) 
+         { 
+             field.value = field.value.toUpperCase() 
+         }   
+      </script>
+<body class="page-template page-template-auditorio page-template-auditorio-php page page-id-304">
+	<div class="container-fluid mx-0 px-0" style="background-color: #235b4e;">
+    	<div class="container">
+            <nav class="navbar navbar-dark navbar-expand-lg">
+            <img alt="Responsive image" class="img-fluid" src="img/Logo_b.png">
                 <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
                     <span class="navbar-toggler-icon">   </span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mx-auto" style="color:#fff">
+                    <ul class="navbar-nav mx-auto" style="width:0px;">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="">
                                 INICIO
                             </a>
-                        </li><!--
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">
-                                CALENDARIO
-                            </a>
-                        </li>-->
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                MEMORIA
-                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                CONTACTO
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                             <a href="registro.php" target="_black"><button type="button" class="btn btn-outline-dark">REGISTRO</button></a>
-                            <!--<a class="nav-link" data-toggle="modal" data-target="#myModal">
-                                REGISTRO
-                            </a>-->
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="modal" data-target="#exampleModal" href="#">
-                                CHAT
-                            </a>
-                        </li>
-                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">AÑO</a>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="#">2021</a>
+                              <a class="dropdown-item" href="dual/">2020</a>
+                            </div>
+                          </li>
+
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">REGIÓN</a>
+                            <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="sur_sureste.html">SUR SURESTE</a>
+                                        <a class="dropdown-item" href="cdmx.html">CDMX Y ZONA METROPOLITANA</a>
+                                        <a class="dropdown-item" href="bajio.html">BAJIO OCCIDENTE</a>
+                                        <a class="dropdown-item" href="frontera.html">FRONTERA NORTE</a>
+                                        <a class="dropdown-item" href="noroeste.html">NOROESTE</a> 
+                            </div>
+                          </li>                                                
                     </ul>
                 </div>
-        </nav>
-        <div class="carousel slide d-none d-sm-none d-md-block" data-ride="carousel" id="carouselExampleSlidesOnly">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="img/auditorio.png">
-                        <iframe allow="autoplay; fullscreen" allowfullscreen="" class="centrado" frameborder="0" height="48%" src="https://vimeo.com/event/1428013/embed" width="43%"></iframe>-->
-
-                <!--<img alt="Responsive image" class="centrado img-fluid" src="img/Foros.png" height="33%" width="45%">-->
-
-                </div>
-            </div>
-        </div>
-
-          <div class="d-block d-sm-block d-md-none">
-            <iframe allow="autoplay; fullscreen" allowfullscreen="" frameborder="0" height="300" src="https://vimeo.com/event/1428013/embed" width="100%"></iframe>
-        </div>
-
-        <!--<div class="d-block d-sm-block d-md-none">
-            <img alt="Responsive image" class="centrado img-fluid" src="img/Foros.png">
-        </div>-->
-
-       
-<!-- Modal -->
-<div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">        
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <img alt="Responsive image" class="img-fluid" src="img/logo_grande.png">
-                </div>                
-                <div class="col-md-6"><br>
-                                        <h5 style="color: #1e352f;">¿Tu Institución eduativa tiene experiencia en Educación Dual?</h5>
-                                        <br>
-                                            <h6 class="text1 text-justify" style="color:#998262">
-                                               <strong>¡No te quedes callado!</strong> Compártela con nosotros y podrá ser presentada en los II Foros de vinculación, que iniciarán el 18 de octubre. 
-                                            </h6><br>
-                                        <h5>Envía tu propuesta al correo:</h5>
-                                        <h5>forosdevinculacion@fese.mx</h5>                                        
-                                        <a href="docs/formato.pdf"><button type="button" class="btn btn-primary">Descarga el formato</button></a>                                    
-
-
-
-                </div>
-                <div class="col-md-6"><br><br><br>
-                    <img alt="Responsive image" class="img-fluid" src="img/img_des.png">
-                </div>
-                <br>                    
-            </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>-->
-      </div>
+         </nav>
+		</div>
     </div>
-  </div>
-</div>
-
-        
+    
 
 
-        <div class="container-fluid">
-            <div class="row">
-              <!--  <div class="col-md-12 text-center marg">
-                        <h5>Inicia </h5>
-                    </div>
-                    <div class="col-md-12 text-center"><br><br>
-                            <h1>
-                                <span id="days"></span> días -
-                                <span id="hours"></span> horas<br>
-                                <span id="minutes"></span> minutos -
-                                <span id="seconds"></span> segundos<br>
-                            </h1>
-                    </div>-->
-                <div class="col-md-1">
-                </div>
-                <div class="col-md-5 marg">
-                                        <h3 style="color: #1e352f;">Propósito General:</h3>
-                                        <br>
-                                            <p class="text1 text-justify">
-                                               Dialogar, analizar y construir sobre los temas de vinculación: educación dual, emprendimiento asociativo y servicio social, mediante un trabajo colectivo, y desde un enfoque territorial y de intercambio de saberes. 
-
-                                            </p>
-                </div>
-                <div class="col-md-5">
-                    <img alt="Responsive image" class="img-fluid" src="img/Avartars.png">
-                </div>
-                <br>                    
-            </div>
+<div class="container-fluid px-0">
+<div class="title-secciones col-md-12" style="padding-right:0px; padding-left:0px; padding-bottom: 0px; background-color: #235b4e;">
+<a data-toggle="modal" data-target="#exampleModal1">
+<button type="button" class="btn btn-primary btn-lg btn-block"><h5 style="color: #fff;"><strong>DESCARGA AQUÍ TU CONSTANCIA DE PARTICIPACIÓN</strong></h5></button>
+</a>
         </div>
+    	<div class="row mx-0 px-0"><!--justify-content-center-->
+				<!-- Auditorio -->
+            <div class="row w-100 mx-0 d-flex justify-content-center">
+                <div class="auditorio-box ">
+                    <!--Videos-->
+                     <div class="video-box row px-0 mx-0 d-flex justify-content-center" style="padding-top: 0%">
+                        <div class="col-12 col-sm-9 col-md-4 col-lg-6 col-xl-6 px-0 video-self align-self-center h-100">
+                       
 
-        <div class="container-fluid">
-            <div class="row marg">              
-                <div class="col-md-1">
-                </div>                
-                <div class="col-md-5 text-center">
-                    <img alt="Responsive image" class="img-fluid" src="img/regiones.png">
-                </div>
-                <div class="col-md-5 marg">
-                    <img alt="Responsive image" class="img-fluid" src="img/mapa.png">
-                </div>
-                <br>                    
-            </div>
-        </div>
-
-
-        <div class="container">
-            <div class="row marg">              
-                <div class="col-md-1">
-                </div>                
-                <div class="col-md-12">
-                    <img alt="Responsive image" class="img-fluid" src="img/calendario.png">
-                </div>                
-                <br>                    
-            </div>
-        </div>      
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <iframe src="https://vimeo.com/event/1428013/chat/" width="100%" frameborder="0"></iframe>
-      </div><br><br><br>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-<section>
-                <div class="w-100 pt-110 pb-120 gray-layer opc9 position-relative">
-                    <div class="fixed-bg patern-bg" style="background-image: url(assets/images/patter-bg1.jpg);"></div>
-                    <div class="container">
-                    <div class="sec-title mb-50 title-wth-btn d-flex flex-wrap justify-content-between align-items-center w-100">
-                         <!--<div class="col-md-4 col-sm-4 col-lg-4">
-                            <div class="sec-title-btn">
-                                <a class="thm-btn lft-icon fill-btn" href="docs/programa.pdf" target="_black"><i class="flaticon-download"></i>Descargar Programa<span style="top: 65.0312px; left: 254.5px;"></span></a>
-                            </div>
-                        </div>-->
-                        </div><!-- Sec Title -->
-                        <div class="event-wrap w-100">
-                            <div class="row">
-                                <div class="col-md-12 col-sm-12 col-lg-4">
-                                    <ul class="nav nav-tabs">
-                                        <li class="nav-item active"><a class="nav-link active" data-toggle="tab" href="#event-tab1" title="">Dia 1<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></a></li>
-                                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#event-tab2" title="">Dia 2<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></a></li>
-                                    </ul>
+                        <div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails" data-ride="carousel"                                                data-interval = "false" >
+                           	                 
+                                
+                                 <!--7-->
+                                <div class="carousel-item active">
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        <iframe src="https://player.vimeo.com/video/635379248?h=466a0dfaa4" width="500" height="300" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                                    </div>  
                                 </div>
-                                <div class="col-md-12 col-sm-12 col-lg-8">
-                                    <div class="tab-content">
-                                        <div class="tab-pane fade show active" id="event-tab1">
-                                            <div class="event-style1 w-100">
-                                                <div class="event-meta text-right">
-                                                   <!-- <span class="d-block">Workshop</span>-->
-                                                    <i class="thm-clr">10:00 - 10:30 horas</i>
-                                                </div>
-                                                <div class="event-info">
-                                                    <h3 class="mb-0"><a href="#" title="">Inauguración del Foro:</a></h3>
-                                                     <p class="mb-0">Mensajes de bienvenida por parte de los representantes federales y estatales.</p>
-                                                </div>
-                                            </div>
-                                          <!--  <div class="event-style1 w-100">
-                                                <div class="event-meta text-right">
-                                                    <i class="thm-clr">10:00 – 10:20 horas</i>
-                                                </div>
-                                                <div class="event-info">
-                                                    <p class="mb-0">Presentación del propósito y temas de los “Lineamientos de Educación Dual”, así como dinámica para el análisis y discusión en mesas de trabajo. </p>
-                                                    
-                                                </div>
-                                            </div>-->
-                                            <div class="event-style1 w-100">
-                                                <div class="event-meta text-right">
-                                                    <i class="thm-clr">10:30 – 12:30 horas</i>
-                                                </div>
-                                                <div class="event-info">
-                                                    <h3 class="mb-0"><a href="#" title="">Mesa de trabajo de Emprendimiento Asociativo</a></h3>            
-                                                </div>
-                                            </div>
-
-                                            <div class="event-style1 w-100">
-                                                <div class="event-meta text-right">
-                                                    <i class="thm-clr">13:00 – 15:00 horas</i>
-                                                </div>
-                                                <div class="event-info">
-                                                    <h3 class="mb-0"><a href="#" title="">Mesa de trabajo de Educación Dual</a></h3>                                                 
-                                                </div>
-                                            </div>
-                                           <!-- <div class="event-style1 w-100">
-                                                <div class="event-meta text-right">
-                                                    <i class="thm-clr">11:55 – 13:25 horas</i>
-                                                </div>
-                                                <div class="event-info">
-                                                    <h3 class="mb-0"><a href="#" title="">Mesas de trabajo</a></h3>
-                                                    <p class="mb-0">- Mesa 5. Aspectos pedagógicos</p>
-                                                    <p class="mb-0">- Mesa 6. Seguimiento del aprendizaje</p>
-                                                    <p class="mb-0">- Mesa 7. Figuras y procesos operativos</p>
-                                                    <p class="mb-0">- Mesa 8. Institucionalización</p>
-
-                                                </div>
-                                            </div>-->
-                                           <!-- <div class="event-style1 w-100">
-                                                <div class="event-meta text-right">
-                                                    <i class="thm-clr">13:30 – 15:00 horas</i>
-                                                </div>
-                                                <div class="event-info">
-                                                    <h3 class="mb-0"><a href="#" title="">Mesas de trabajo</a></h3>
-                                                    <p class="mb-0">- Mesa 9. Evaluación </p>
-                                                    <p class="mb-0">- Mesa 10. Estructuras estatales y regionales</p>
-                                                    <p class="mb-0">- Mesa 11. Alcances</p>
-                                                    <p class="mb-0">- Mesa 12. Retos</p>
-                                                </div>
-                                            </div> --> 
+                              </div>     
+                    		</div>
 
 
-                                            <div class="event-style1 w-100">
-                                                <div class="event-meta text-right">
-                                                    <i class="thm-clr">17:00 – 19:00 horas</i>
-                                                </div>
-                                                <div class="event-info">      
-                                                    <h3 class="mb-0">Panel de experiencias de educación dual de la región</h3> 
-                                                </div>
-                                            </div> 
+                        </div> 
+                    </div>
+                </div>
+
+                <div class="imageContainer">
+                    <div class="imageCenterer">
+                        <img class="img-fluid " src="img/auditorio.png" >
+                    </div>
+                </div>
+                
+            </div>   
+            <!--CARDS-->
+
+
+
+                       <!-- Modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="width: 60%; height: 60%; padding-top: 5%" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="row">
+            <div class="col mb-12">                                           
+                   <h5 style="color: #860f01">Ingresa el correo electrónico con el que te registraste para descargar tu constancia de participación.</h5><br><br>
+                    <form action="controller/login.php" method="POST">
+                        <label for="nombre">Email</label>
+                        <input type="text" class="form-control" name="email" onChange="conMayusculas(this)" required=""><br>
+                        <button class="btn btn-success" type="submit">Descargar<span></span></button>
+                        <!--<a class="d-inline-block" href="javascript:void(0);" title="">Forget A Password</a>-->
+                    </form>  
+             </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
 
 
-
-
+        <div class="container-fluid" style="padding-top: 8%">
+            <section id="foros">
+                <div class="w-100 pt-120 pb-120 position-relative">
+                    <div class="container">
+                    <div class="sec-title mb-70 w-100 text-center">
+                            <div class="sec-title-inner d-inline-block">
+                                <i class=""></i>
+                                <!--<span class="d-block thm-clr">Overview Event</span>-->
+                                <h2 class="mb-0" style="color: #b48f5e"><strong>PROPÓSITO GENERAL:</strong><br><br><br></h2>
+                            </div>
+                    </div><!-- Sec Title -->        
+                        <div class="about-wrap w-100">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-lg-6 order-lg-1">
+                                    <div class="about-img w-100">
+                                        <div class="about-img-caro">
+                                            <div class="about-img-item"><img class="img-fluid w-100" src="img/Avartars.png" alt="About Image 1"></div>
                                         </div>
-
-
-                                        <div class="tab-pane fade" id="event-tab2">
-                                            <div class="event-style1 w-100">
-                                                <div class="event-meta text-right">
-                                                    <i class="thm-clr">09:30 – 10:00 horas</i>
-                                                </div>
-                                                <div class="event-info">
-                                                    <h3 class="mb-0">Inauguración del Foro</h3>
-                                                    <p class="mb-0">Mensajes de bienvenida por parte de los representantes federales y estatales.</p>
-                                                    
-                                                </div>
-                                            </div>
-                                           <!--<div class="event-style1 w-100">
-                                                <div class="event-meta text-right">
-                                                    <i class="thm-clr">10:00 – 10:20 horas</i>
-                                                </div>
-                                                <div class="event-info">
-                                                    <p class="mb-0">Presentación del propósito y temas de los “Lineamientos de emprendimiento asociativo” así como la dinámica para el análisis y discusión en grupos de trabajo.</p>
-
-                                                </div>
-                                            </div>-->
-                                            <div class="event-style1 w-100">
-                                                <div class="event-meta text-right">
-                                                    <i class="thm-clr">10:00 – 12:00 horas</i>
-                                                </div>
-                                                <div class="event-info">
-                                                    <h3 class="mb-0"><a href="event-detail.html" title="">Mesas de trabajo de Servicio Social</a></h3>
-                                                    <p class="mb-0">- <strong>Mesa  1:</strong> Situación actual del servicio social. Diagnóstico y posibilidades de cambio</p>
-                                                    <p class="mb-0">- <strong>Mesa 2:</strong> Principios fundamentos, definición, objetivos y características del servicio social con enfoque comunitario y participación social con perspectiva ética</p>
-                                                    <p class="mb-0"><strong>Mesa  3:</strong>El servicio social más allá de un requisito previo a la titulación, aplicación desde el primer año de estudios para todo el estudiantado.</p>
-                                                </div>
-                                            </div>
-
-                                            <div class="event-style1 w-100">
-                                                <div class="event-meta text-right">
-                                                    <i class="thm-clr">12:10 – 12:30 horas</i>
-                                                </div>
-                                                <div class="event-info">
-                                                    <h3 class="mb-0"><a href="event-detail.html" title="">Elaboración y presentación de conclusiones de las mesas 1, 2 y 3
-</a></h3>
-                                                </div>
-                                            </div>
-
-                                            <div class="event-style1 w-100">
-                                                <div class="event-meta text-right">
-                                                    <i class="thm-clr">12:00 – 14:00 horas</i>
-                                                </div>
-                                                <div class="event-info">
-                                                    <h3 class="mb-0"><a href="event-detail.html" title="">Mesa  4: El marco normativo del servicio social, análisis y propuestas de modificación</a></h3>
-                                                </div>
-                                            </div>
-
-                                            <div class="event-style1 w-100">
-                                                <div class="event-meta text-right">
-                                                    <i class="thm-clr">14:00 – 14:30 horas</i>
-                                                </div>
-                                                <div class="event-info">
-                                                    <h3 class="mb-0"><a href="event-detail.html" title="">Elaboración  y presentación de conclusiones generales</a></h3>
-                                                </div>
-                                            </div>
-                                            <div class="event-style1 w-100">
-                                                <div class="event-meta text-right">
-                                                    <i class="thm-clr">14:30</i>
-                                                </div>
-                                                <div class="event-info">
-                                                    <h3 class="mb-0"><a href="event-detail.html" title="">Clausura del foro</a></h3>
-                                                </div>
-                                            </div>
-
-
-                                        </div>
-
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-lg-6">
+                                    <div class="about-desc w-100"><br><br>
+                                        <h3 class="mb-0">Dialogar, analizar y construir sobre los temas de vinculación: educación dual, emprendimiento asociativo y servicio social, mediante un trabajo colectivo, y desde un enfoque territorial y de intercambio de saberes. 
+</h3>
                                     </div>
                                 </div>
                             </div>
-                        </div><!-- Event Wrap -->
+                        </div><!-- About Wrap -->
                     </div>
                 </div>
-            </section>
-
-
-
-              <div class="container">
-            <div class="row">
-              <div class="col-md-12 text-center marg">
-                <img alt="Responsive image" class="img-fluid" src="img/Logos_Institucionales.png">
-              </div>
+            </section>            
+            <section>
+            <br><br><br><br><br><br>
+            <div class="col-md-12 text-center">
+            <img class="img-fluid" src="img/Logos_Institucionales.png">
             </div>
+            </section>
         </div>
 
 
 
-        <footer style="background-color: #205b4e;" id="contacto">
+</div>
+</div>  
+
+<footer style="background-color: #235b4e;" id="contacto">
                 <div class="w-100 pt-121  opc1 position-relative">
                     <div class="container position-relative">
                         <div class="footer-wrap w-100 text-center">
                             <div class="footer-inner d-inline-block">
                                 <div class="logo d-inline-block">
-                                        <a href="index.html" title="">
-                                            <img src="img/Logo_b.png" class="img-fluid" alt="Responsive image">
+                                    <h1 class="mb-0">
+                                        <a href="index.html" title=""><br>
+                                            <img class="img-fluid" src="img/Logo_b.png" alt="Logo">
                                         </a>
+                                    </h1>
                                 </div>
-                                <p class="mb-0" style="color: #fff"><strong>Contacto:</strong></p>
-                                <p class="mb-0" style="color: #fff"><strong>forosdevinculacion@fese.mx</strong></p>
+                                <p class="mb-0" style="color: #fff">Contacto:</p>
+                                <p class="mb-0" style="color: #fff">forosdevinculacion@fese.mx</p><br><br><br>
                             </div>
                             <div class="footer-bottom d-flex flex-wrap justify-content-between w-100">                              
                             </div>
                         </div>
                     </div>
                 </div>
-            </footer><!-- Footer -->
+            </footer><!-- Footer -->	
+    
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>   
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-<!--script para javascript para que carga el modal -->
-<script>
-       
-   $(document).ready(function()
-   {
-      $("#Modal").modal("show");
-   });
-</script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/chai.js"></script>
+<script src="js/wp-embed.min.js"></script>
 </body>
 </html>

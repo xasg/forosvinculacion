@@ -1,6 +1,6 @@
 <?php
 $servername = "localhost";
-$dbname = "registro_dual";
+$dbname = "certificados";
 $username = "dual";
 $password = "WM2ODrcPMgxzG5nM";
 ?>
