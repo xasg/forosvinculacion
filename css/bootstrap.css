@@ -2290,7 +2290,7 @@ textarea.form-control {
 .btn {
   display: inline-block;
   font-weight: 400;
-  color: #212529;
+  color: #fff;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
@@ -2331,20 +2331,20 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #b48f5e;
+  background-color: #8D203D;
   border-color: #b48f5e;
 }
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #fff;
-  border-color: #fff;
+  background-color: #b48f5e;
+  border-color: #b48f5e;
 }
 
 .btn-primary:focus, .btn-primary.focus {
-  color: #fff;
-  background-color: #0069d9;
-  border-color: #0062cc;
+  color: #b48f5e;
+  background-color: #8D203D;
+  border-color: #b48f5e;
   box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
 }
 
