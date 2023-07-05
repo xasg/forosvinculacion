@@ -186,10 +186,10 @@ $region = view_region();
                               <input class="form-check-input" type="radio" name="organizacion" id="org_otro" value="social" required="">
                               <label class="form-check-label">Social</label>
                            </div>
-                           <div class="form-check form-check-inline">
+                           <!-- <div class="form-check form-check-inline">
                               <input class="form-check-input" type="radio" name="organizacion" id="org_otro" value="internacional" required="">
                               <label class="form-check-label" style="color:#98213A">Internacional</label>
-                           </div>
+                           </div> -->
                            <div class="form-check form-check-inline">
                               <input class="form-check-input" type="radio" name="organizacion" id="org_otro" value="publico" required="">
                               <label class="form-check-label">Público</label>
