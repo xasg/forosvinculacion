@@ -1,5 +1,5 @@
 <?php
-include_once('databases_usuario.php');
+include_once('databases_registro.php');
 mysqli_set_charset($mysqli, 'utf8');
 $entidad = view_entidad();
 $region = view_region();
@@ -83,14 +83,10 @@ $region = view_region();
          <img class="img-fluid" src="img/cintillo_header.png" width="100%" style="margin-top: 2%;">
       </div>
 
-
-      <section>
-         <div class="container">
-            <div class="row marg">
-               <form action="update_registro.php" method="POST">
-                  <!--Datos personales-->
-                  <div class="row">
-                     <div class="col-xl-12"><br><br>
+      <div class="container">
+         <form action="update_registro.php" method="POST">
+         <div class="row">
+                     <div class="col-md-12"><br><br>
                         <!-- <div class="alert alert-warning content">
                                           <a href="#" class="alert-link">El correo que ingresaste no se encuentra registrado. Llena el siguiente formulario</a>
                                        </div> -->
@@ -122,8 +118,8 @@ $region = view_region();
                            <input type="text" class="form-control" name="amaterno" onChange="conMayusculas(this)" required="">
                         </div>
                      </div>
-
                   </div>
+
                   <div class="row">
                      <div class="col-xl-4">
                         <div class="form-group">
@@ -150,7 +146,7 @@ $region = view_region();
                         </div>
                      </div>
                   </div>
-                  <!-- /Datos personales-->
+
 
                   <!-- Datos Institucionales-->
                   <div class="row">
@@ -192,7 +188,7 @@ $region = view_region();
                            </div>
                            <div class="form-check form-check-inline">
                               <input class="form-check-input" type="radio" name="organizacion" id="org_otro" value="internacional" required="">
-                              <label class="form-check-label">Internacional</label>
+                              <label class="form-check-label" style="color:#98213A">Internacional</label>
                            </div>
                            <div class="form-check form-check-inline">
                               <input class="form-check-input" type="radio" name="organizacion" id="org_otro" value="publico" required="">
@@ -205,6 +201,7 @@ $region = view_region();
                         </div>
                      </div>
                   </div>
+
 
                   <div class="row" id="org" style="display:none;">
                      <div class="col-md-8">
@@ -240,13 +237,9 @@ $region = view_region();
                            <label for="control1">Cargo que ocupa:</label>
                            <select class="form-control" name="cargo" onChange="mostrar(this.value);">
                               <option value="">Selecciona tu cargo</option>
-                              <option value="Autoridad Educativa Estatal">Autoridad Educativa Estatal</option>
-                              <option value="Estudiante">Estudiante</option>
-                              <option value="Egresado">Egresado</option>
-                              <option value="Docente">Docente</option>
-                              <option value="Investigador">Investigador</option>
-                              <option value="Jefe de Unidad">Jefe de Unidad</option>
-                              <option value="Rector/Director de IES">Rector/Director de IES</option>
+                              <option value="Titular de IES">Titular de IES</option>
+                              <option value="Responsable de vinculación">Responsable de vinculación</option>
+                              <option value="Responsable académico">Responsable académico</option>
                               <option value="otro">Otro:</option>
                            </select>
                         </div>
@@ -263,13 +256,13 @@ $region = view_region();
                   </div>
 
                   <div class="row">
-                     <div class="col-xl-12 pad">
+                     <div class="col-xl-12">
                         <h4>Semblanza</h4>
                         <div class="form-group">
-                           <label for="exampleFormControlTextarea1">
+                           <label>
                               Escriba una breve semblanza de del participante, donde destaque sus años de experiencia en una o varias de las temáticas tratadas, así como las actividades reelevantes en dichas temásticas y las apoortaciones que considere más reelevantes (máximo 200 palabras).
                            </label>
-                           <textarea class="form-control" name="comentario" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                           <textarea class="form-control" name="comentario" rows="3" required></textarea>
                         </div>
                      </div>
                   </div>
@@ -287,16 +280,11 @@ $region = view_region();
                         <input type="hidden" name="id_usuario" value="valor1" />
                      </div>
                      <div class="alert alert-secondary" role="alert">
-                        <p>El Comité Organizador revisará cuidadosamente cada registro y notificará a aquellos expertos que cumplan con los perfiles solicitados para confirmar su participación en el evento. Aquellos que no cumplan con los requisitos establecidos, podrán recibir una notificación indicando que no han sido seleccionados en esta ocasión.
-                           Agradecemos el interés y la participación de todos los expertos en este evento, y estamos comprometidos en garantizar la calidad y relevancia de los participantes para fomentar un ambiente de aprendizaje y colaboración óptimo.</p>
+                        <p>Agradecemos su participación,  se revisará su información para confirmar su registro y se enviará a su correo mayor información sobre el evento seleccionado.</p>
                      </div>
                   </div>
-               </form>
-            </div>
-         </div>
-      </section>
-
-
+         </form>
+      </div>
 
       <!-- Imagen greco de cabecera -->
       <div class="w-100 pt-121  opc1 position-relative">
