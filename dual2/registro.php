@@ -1,9 +1,9 @@
 <?php   
-  /** include_once('databases_usuario.php');
+  include_once('databases_usuario.php');
    mysqli_set_charset( $mysqli, 'utf8');
    $entidad=view_entidad();
    $region=view_region();
-   $foro=view_foro();**/
+   // $foro=view_foro();
    ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -95,15 +95,18 @@ $(document).ready(function() {
                                  <!--Datos personales-->
                                  <div class="row">
                                     <div class="col-xl-12"><br><br>
-                                       <div class="alert alert-warning content">
+                                       <!-- <div class="alert alert-warning content">
                                           <a href="#" class="alert-link">El correo que ingresaste no se encuentra registrado. Llena el siguiente formulario</a>
-                                       </div>
-                                       <h5 class="mb-0">Para descarga la constancia de participación por tu asistencia a los Foros de Vinculación para el fortalecimiento de la Educación Dual y el Emprendimiento Asociativo debes llenar el siguente registro.</h5>
-                                       <br><br>
-                                       <h4>Datos personales</h4>
+                                       </div> -->
+                                       <h5 class="mb-0">
+                                          Perfil del participante:
+                                       </h5>
                                        <div class="alert alert-secondary" role="alert">
-                                        El nombre registrado será el que se utilizará para generar la constancia de participación
+                                          <p>Se prodrán registrar aquellos expertos con más de 5 años operando en áreas de Educación Dual, Emprendimiento Asociativo y programas de impacto de servicio social para el nivel superior
+                                          (Instituciones de Educación Superior, Organismos de ls sociedad Civil o Iniciativa privada).</p>
                                        </div>
+                                       <h4>Datos personales</h4>
+                                       
                                     </div>
                                      <div class="col-xl-4">
                                        <div class="form-group"> 
@@ -173,6 +176,10 @@ $(document).ready(function() {
                                        <div class="form-group">                
                                           <label for="control">Entidad Federativa</label> 
                                           <select class="form-control" id="entidad" name="entidad" required="">
+                                          <option value="">Seleccionar la entidad</option>
+                                             <?php while($row = $region->fetch_assoc()) { ?>
+                                             <option value="<?php echo $row['id_cat_entidad']; ?>"><?php echo $row['nombre_entidad']; ?></option>
+                                             <?php } ?>
                                           </select>
                                        </div>
                                     </div>
@@ -261,9 +268,11 @@ $(document).ready(function() {
 
                                  <div class="row">
                                     <div class="col-xl-12 pad">
-                                       <h4>Comentario</h4>
+                                       <h4>Semblanza</h4>
                                        <div class="form-group">
-                                        <label for="exampleFormControlTextarea1">Escribe una aportación para la mesa de trabajo en la que participaste. Éstos comentarios serán utilizados como material de apoyo para la generación de Lineamientos Generales.</label>
+                                        <label for="exampleFormControlTextarea1">
+                                          Escriba una breve semblanza de del participante, donde destaque sus años de experiencia en una o varias de las temáticas tratadas, así como las actividades reelevantes en dichas temásticas y las apoortaciones que considere más reelevantes (máximo 200 palabras).
+                                        </label>
                                         <textarea class="form-control" name="comentario" id="exampleFormControlTextarea1" rows="3" required></textarea>
                                        </div>
                                     </div>
@@ -277,10 +286,14 @@ $(document).ready(function() {
                                   </div>  
                                   <div class="col-xl-4">
                                   </div>  
-                                  <div class="col-xl-4">
-                                    <button type="submit" class="btn btn-block btn-primary btn-lg">Guardar</button><br><br>
-                                    <input type="hidden" name="id_usuario" value="valor1" />
-                                  </div>
+                                    <div class="col-xl-4">
+                                       <button type="submit" class="btn btn-block btn-primary btn-lg">Enviar registro </button><br><br>
+                                       <input type="hidden" name="id_usuario" value="valor1" />
+                                    </div>
+                                    <div class="alert alert-secondary" role="alert">
+                                          <p>El Comité Organizador revisará cuidadosamente cada registro y notificará a aquellos expertos que cumplan con los perfiles solicitados para confirmar su participación en el evento. Aquellos que no cumplan con los requisitos establecidos, podrán recibir una notificación indicando que no han sido seleccionados en esta ocasión.
+                                             Agradecemos el interés y la participación de todos los expertos en este evento, y estamos comprometidos en garantizar la calidad y relevancia de los participantes para fomentar un ambiente de aprendizaje y colaboración óptimo.</p>
+                                    </div>
                                   </div>
                               </form>
                      </div>

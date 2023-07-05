@@ -2,11 +2,11 @@
 require_once('controller/conec.php');
 $mysqli = new mysqli($servername, $username, $password, $dbname);
 $result ='';
-if( $mysqli->connect_errno)
-{
-  echo '';
-  exit;
+if ($mysqli->connect_errno) {
+  echo "Falló la conexión: " . $mysqli->connect_error;
+  // Otras acciones, como registrar el error en un archivo de registro
 }
+
 
 
 function view_region()

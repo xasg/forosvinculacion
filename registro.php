@@ -1,9 +1,9 @@
 <?php   
-  /** include_once('databases_usuario.php');
+  include_once('databases_usuario.php');
    mysqli_set_charset( $mysqli, 'utf8');
    $entidad=view_entidad();
    $region=view_region();
-   $foro=view_foro();**/
+   // $foro=view_foro();
    ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -17,14 +17,14 @@
       <link rel="stylesheet" href="assets/css/all.min.css">
       <link rel="stylesheet" href="assets/css/flaticon.css">
       <link rel="stylesheet" href="assets/css/animate.min.css">
-      <link rel="stylesheet" href="css/bootstrap.css">
       <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
       <link rel="stylesheet" href="assets/css/jquery.bootstrap-touchspin.min.css">
       <link rel="stylesheet" href="assets/css/slick.css">
       <link rel="stylesheet" href="assets/css/responsive.css">
       <link rel="stylesheet" href="assets/css/color.css">
       <link rel="stylesheet" href="assets/css/bootstrap-multiselect.css">
-      <link rel="stylesheet" href="assets/css/style.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/bootstrap.css">
       <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HZVPVQSG3M"></script>
 <script>
@@ -49,44 +49,52 @@ $(document).ready(function() {
    </head>
    <body>
       <main>
-         <header class="stick style1 w-100" style=" background-color: #860f01;">
-            <div class="container">
-               <div class="logo-menu-wrap w-100 d-flex flex-wrap justify-content-between align-items-start">
-                  <div class="logo">
-                     <h1 class="mb-0"><a href="index.html" title="Home"><img class="img-fluid" src="assets/images/img/logoforos.png" alt="Logo" srcset="assets/images/img/logoforos.png"></a></h1>
-                  </div>
-                  <!-- Logo -->
-                  <nav class="d-inline-flex align-items-center">
-                     <div class="header-left">
-                        <ul class="mb-0 list-unstyled d-inline-flex">
-                           <li class="menu-item-has-children"><a href="index.html" title="">Inicio</a></li>
-                           <li class="menu-item-has-children"><a href="index.html#foros" title="">Foros</a></li>
-                           <li><a href="index.html#calendario" title="">Calendario</a></li>
-                           <li><a href="registro.php" title="">Registro</a></li>
-                           <li><a href="#contacto" title="">Contacto</a></li>
-                        </ul>
-                     </div>
-                  </nav>
-               </div>
-               <!-- Logo Menu Wrap -->
-            </div>
-         </header>
-         <!-- Header -->
-         <div class="menu-wrap">
-            <span class="menu-close"><i class="fas fa-times"></i></span>
-            <ul class="mb-0 list-unstyled w-100">
-               <li class="menu-item-has-children"><a href="index#.html">Inicio</a></li>
-               <li class="menu-item-has-children"><a href="index.html#foros">Foros</a></li>
-               <li><a href="index.html" title="">Calendario</a></li>
-               <li><a href="registro.php" title="">Registro</a></li>
-               <li><a href="#contato" title="">Contacto</a></li>
-            </ul>
-         </div>
-         <!-- Menu Wrap -->
-         <section>
-            <div class="w-100 text-center black-layer position-relative">                   
-            </div><br><br><br>
-         </section>
+      <div class="container-fluid mx-0 px-0" style="background-color: #8D203D;">
+    	<div class="container">
+            <nav class="navbar navbar-dark navbar-expand-lg">
+                <img alt="Responsive image" class="img-fluid" src="img/logo.png" width="150">
+                <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+                    <span class="navbar-toggler-icon">   </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto" style="width:0px;">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">
+                                INICIO
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">
+                                REGISTRO
+                            </a>
+                        </li>
+                        <!-- <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">AÑO</a>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="#">2021</a>
+                              <a class="dropdown-item" href="dual/">2020</a>
+                            </div>
+                          </li> -->
+
+                          <!-- <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">REGIÓN</a>
+                            <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="sur_sureste.html">SUR SURESTE</a>
+                                        <a class="dropdown-item" href="cdmx.html">CDMX Y ZONA METROPOLITANA</a>
+                                        <a class="dropdown-item" href="bajio.html">BAJIO OCCIDENTE</a>
+                                        <a class="dropdown-item" href="frontera.html">FRONTERA NORTE</a>
+                                        <a class="dropdown-item" href="noroeste.html">NOROESTE</a> 
+                            </div>
+                          </li>                                                 -->
+                    </ul>
+                </div>
+         </nav>
+		</div>
+    </div>
+    <div class="w-100 pt-121  opc1 position-relative" >
+        <img class="img-fluid" src="img/cintillo_header.png" width="100%" style="margin-top: 2%;">
+    </div>
+
 
          <section>
                <div class="container">
@@ -95,15 +103,18 @@ $(document).ready(function() {
                                  <!--Datos personales-->
                                  <div class="row">
                                     <div class="col-xl-12"><br><br>
-                                       <div class="alert alert-warning content">
+                                       <!-- <div class="alert alert-warning content">
                                           <a href="#" class="alert-link">El correo que ingresaste no se encuentra registrado. Llena el siguiente formulario</a>
-                                       </div>
-                                       <h5 class="mb-0">Para descarga la constancia de participación por tu asistencia a los Foros de Vinculación para el fortalecimiento de la Educación Dual y el Emprendimiento Asociativo debes llenar el siguente registro.</h5>
-                                       <br><br>
-                                       <h4>Datos personales</h4>
+                                       </div> -->
+                                       <h4 class="mb-0">
+                                          Perfil del participante:
+                                       </h4>
                                        <div class="alert alert-secondary" role="alert">
-                                        El nombre registrado será el que se utilizará para generar la constancia de participación
+                                          <p>Se prodrán registrar aquellos expertos con más de 5 años operando en áreas de Educación Dual, Emprendimiento Asociativo y programas de impacto de servicio social para el nivel superior
+                                          (Instituciones de Educación Superior, Organismos de ls sociedad Civil o Iniciativa privada).</p>
                                        </div>
+                                       <h4>Datos personales</h4>
+                                       
                                     </div>
                                      <div class="col-xl-4">
                                        <div class="form-group"> 
@@ -173,6 +184,10 @@ $(document).ready(function() {
                                        <div class="form-group">                
                                           <label for="control">Entidad Federativa</label> 
                                           <select class="form-control" id="entidad" name="entidad" required="">
+                                          <option value="">Seleccionar la entidad</option>
+                                             <?php while($row = $region->fetch_assoc()) { ?>
+                                             <option value="<?php echo $row['id_cat_entidad']; ?>"><?php echo $row['nombre_entidad']; ?></option>
+                                             <?php } ?>
                                           </select>
                                        </div>
                                     </div>
@@ -261,9 +276,11 @@ $(document).ready(function() {
 
                                  <div class="row">
                                     <div class="col-xl-12 pad">
-                                       <h4>Comentario</h4>
+                                       <h4>Semblanza</h4>
                                        <div class="form-group">
-                                        <label for="exampleFormControlTextarea1">Escribe una aportación para la mesa de trabajo en la que participaste. Éstos comentarios serán utilizados como material de apoyo para la generación de Lineamientos Generales.</label>
+                                        <label for="exampleFormControlTextarea1">
+                                          Escriba una breve semblanza de del participante, donde destaque sus años de experiencia en una o varias de las temáticas tratadas, así como las actividades reelevantes en dichas temásticas y las apoortaciones que considere más reelevantes (máximo 200 palabras).
+                                        </label>
                                         <textarea class="form-control" name="comentario" id="exampleFormControlTextarea1" rows="3" required></textarea>
                                        </div>
                                     </div>
@@ -277,10 +294,14 @@ $(document).ready(function() {
                                   </div>  
                                   <div class="col-xl-4">
                                   </div>  
-                                  <div class="col-xl-4">
-                                    <button type="submit" class="btn btn-block btn-primary btn-lg">Guardar</button><br><br>
-                                    <input type="hidden" name="id_usuario" value="valor1" />
-                                  </div>
+                                    <div class="col-xl-4">
+                                       <button type="submit" class="btn btn-block btn-primary btn-lg">Enviar registro </button><br><br>
+                                       <input type="hidden" name="id_usuario" value="valor1" />
+                                    </div>
+                                    <div class="alert alert-secondary" role="alert">
+                                          <p>El Comité Organizador revisará cuidadosamente cada registro y notificará a aquellos expertos que cumplan con los perfiles solicitados para confirmar su participación en el evento. Aquellos que no cumplan con los requisitos establecidos, podrán recibir una notificación indicando que no han sido seleccionados en esta ocasión.
+                                             Agradecemos el interés y la participación de todos los expertos en este evento, y estamos comprometidos en garantizar la calidad y relevancia de los participantes para fomentar un ambiente de aprendizaje y colaboración óptimo.</p>
+                                    </div>
                                   </div>
                               </form>
                      </div>
@@ -289,7 +310,11 @@ $(document).ready(function() {
 
 
 
-            <footer style="background-color: #860f01;" id="contacto">
+ <!-- Imagen greco de cabecera -->
+<div class="w-100 pt-121  opc1 position-relative" >
+    <img class="img-fluid" src="img/cintillo_footer.png" width="100%">
+</div>
+<footer style="background-color: #8D203D;" id="contacto">
                 <div class="w-100 pt-121  opc1 position-relative">
                     <div class="container position-relative">
                         <div class="footer-wrap w-100 text-center">
@@ -297,15 +322,15 @@ $(document).ready(function() {
                                 <div class="logo d-inline-block">
                                     <h1 class="mb-0">
                                         <a href="index.html" title=""><br>
-                                            <img class="img-fluid" src="assets/images/img/logoforos.png" alt="Logo">
+                                            <img class="img-fluid" src="img/logo.png" alt="Logo" width="30%">
                                         </a>
                                     </h1>
                                 </div>
                                 <p class="mb-0" style="color: #fff">Contacto:</p>
-                                <p class="mb-0" style="color: #fff">forosdevinculacion@fese.mx</p>
+                                <p class="mb-0" style="color: #fff">forosdevinculacion@fese.mx</p><br><br><br>
                             </div>
-                            <div class="footer-bottom d-flex flex-wrap justify-content-between w-100">                              
-                            </div>
+                            <!-- <div class="footer-bottom d-flex flex-wrap justify-content-between w-100">                              
+                            </div> -->
                         </div>
                     </div>
                 </div>
