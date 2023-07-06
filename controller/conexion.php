@@ -1,5 +1,6 @@
 <?php
-//servidor, usuario de base de datos, contraseña del usuario, nombre de base de datos
+	//servidor, usuario de base de datos, contraseña del usuario, nombre de base de datos
+	//$mysqli = new mysqli("localhost","root","","forosvinculacionprueba"); 
 	$mysqli = new mysqli("localhost","root","","forosvinculacion2023"); 
 	
 	if(mysqli_connect_errno()){
