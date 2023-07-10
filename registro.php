@@ -1,5 +1,5 @@
 <?php
-include_once('databases_usuario.php');
+include_once('databases_registro.php');
 mysqli_set_charset($mysqli, 'utf8');
 $entidad = view_entidad();
 $region = view_region();
@@ -70,10 +70,10 @@ $region = view_region();
                      </li>
                      <li class="nav-item active">
                         <a class="nav-link" href="#">
-                           REGISTRO
+                           PARTICIPACIÓN
                         </a>
                      </li>
-                    
+
                   </ul>
                </div>
             </nav>
@@ -83,224 +83,345 @@ $region = view_region();
          <img class="img-fluid" src="img/cintillo_header.png" width="100%" style="margin-top: 2%;">
       </div>
 
-
-      <section>
-         <div class="container">
-            <div class="row marg">
-               <form action="update_registro.php" method="POST">
-                  <!--Datos personales-->
-                  <div class="row">
-                     <div class="col-xl-12"><br><br>
-                        <!-- <div class="alert alert-warning content">
+      <div class="container">
+         <form action="update_registro.php" method="POST">
+            <div class="row">
+               <div class="col-md-12"><br><br>
+               <h2>Postulación de participación presencial</h2>
+                  <!-- <div class="alert alert-warning content">
                                           <a href="#" class="alert-link">El correo que ingresaste no se encuentra registrado. Llena el siguiente formulario</a>
                                        </div> -->
-                        <h4 class="mb-0">
-                           Perfil del participante:
-                        </h4>
-                        <div class="alert alert-secondary" role="alert">
-                           <p>Se prodrán registrar aquellos expertos con más de 5 años operando en áreas de Educación Dual, Emprendimiento Asociativo y programas de impacto de servicio social para el nivel superior
-                              (Instituciones de Educación Superior, Organismos de ls sociedad Civil o Iniciativa privada).</p>
-                        </div>
-                        <h4>Datos personales</h4>
-
-                     </div>
-                     <div class="col-xl-4">
-                        <div class="form-group">
-                           <label for="nombre">Nombre(s):</label>
-                           <input type="text" class="form-control" name="nombre" onChange="conMayusculas(this)" required="">
-                        </div>
-                     </div>
-                     <div class="col-xl-4">
-                        <div class="form-group">
-                           <label for="nombre">Apellido paterno:</label>
-                           <input type="text" class="form-control" name="apaterno" onChange="conMayusculas(this)" required="">
-                        </div>
-                     </div>
-                     <div class="col-xl-4">
-                        <div class="form-group">
-                           <label for="nombre">Apellido materno:</label>
-                           <input type="text" class="form-control" name="amaterno" onChange="conMayusculas(this)" required="">
-                        </div>
-                     </div>
-
-                  </div>
-                  <div class="row">
-                     <div class="col-xl-4">
-                        <div class="form-group">
-                           <label>Correo electrónico:</label>
-                           <input type="email" class="form-control" name="email" onChange="conMayusculas(this)" required="">
-                        </div>
-                     </div>
-                     <div class="col-xl-3">
-                        <div class="form-group">
-                           <label for="nombre">Teléfono institucional</label>
-                           <input type="text" class="form-control" name="tel_ins">
-                        </div>
-                     </div>
-                     <div class="col-xl-1">
-                        <div class="form-group">
-                           <label for="nombre">Ext.</label>
-                           <input type="text" class="form-control" name="ext">
-                        </div>
-                     </div>
-                     <div class="col-xl-4">
-                        <div class="form-group">
-                           <label for="nombre">Móvil</label>
-                           <input type="text" class="form-control" name="tel_movil" required="">
-                        </div>
-                     </div>
-                  </div>
-                  <!-- /Datos personales-->
-
-                  <!-- Datos Institucionales-->
-                  <div class="row">
-                     <div class="col-xl-12 pad">
-                        <h4>Datos institucionales</h4>
-                     </div>
-                     <div class="col-xl-3">
-                        <div class="form-group">
-                           <label for="control1">Región</label>
-                           <select class="form-control" name="region" id="region" required="">
-                              <option value="">Seleccionar región</option>
-                              <?php while ($row = $region->fetch_assoc()) { ?>
-                                 <option value="<?php echo $row['id_cat_region']; ?>"><?php echo $row['dt_nombre_region']; ?></option>
-                              <?php } ?>
-                           </select>
-                        </div>
-                     </div>
-                     <div class="col-xl-3">
-                        <div class="form-group">
-                           <label for="control">Entidad Federativa</label>
-                           <select class="form-control" id="entidad" name="entidad" required="">
-                              <option value="">Seleccionar la entidad</option>
-                              <?php while ($row = $region->fetch_assoc()) { ?>
-                                 <option value="<?php echo $row['id_cat_entidad']; ?>"><?php echo $row['nombre_entidad']; ?></option>
-                              <?php } ?>
-                           </select>
-                        </div>
-                     </div>
-                     <div class="col-xl-6">
-                        <label>Organización de procedencia</label><br>
-                        <div class="form-group">
-                           <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="organizacion" id="org_ies" value="ies" required="">
-                              <label class="form-check-label">IES</label>
-                           </div>
-                           <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="organizacion" id="org_otro" value="social" required="">
-                              <label class="form-check-label">Social</label>
-                           </div>
-                           <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="organizacion" id="org_otro" value="internacional" required="">
-                              <label class="form-check-label">Internacional</label>
-                           </div>
-                           <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="organizacion" id="org_otro" value="publico" required="">
-                              <label class="form-check-label">Público</label>
-                           </div>
-                           <div class="form-check form-check-inline">
-                              <input class="form-check-input" type="radio" name="organizacion" id="org_otro" value="privado" required="">
-                              <label class="form-check-label">Privado</label>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-
-                  <div class="row" id="org" style="display:none;">
-                     <div class="col-md-8">
-                        <div class="form-group">
-                           <label for="nombre">Organización a la que pertenece</label>
-                           <input type="text" class="form-control" name="nom_org2" onChange="conMayusculas(this)">
-                        </div>
-                     </div>
-                     <div class="col-xl-4">
-                        <div class="form-group">
-                           <label for="control1">Cargo que ocupa:</label>
-                           <select class="form-control" name="cargo2" onChange="mostrar(this.value);">
-                              <option value="">Selecciona tu cargo</option>
-                              <option value="Director General y/o Coordinador General">Director General y/o Coordinador General</option>
-                              <option value="Director de Área">Director de Área</option>
-                              <option value="Administrativo">Administrativo</option>
-                              <option value="otro">Otro:</option>
-                           </select>
-                        </div>
-                     </div>
-                  </div>
-
-                  <div class="row" id="sel_ies" style="display:none;">
-                     <div class="col-md-8">
-                        <div class="form-group">
-                           <label for="control">Seleccionar IES</label>
-                           <select class="form-control" name="nom_org" id="ies">
-                           </select>
-                        </div>
-                     </div>
-                     <div class="col-xl-4">
-                        <div class="form-group">
-                           <label for="control1">Cargo que ocupa:</label>
-                           <select class="form-control" name="cargo" onChange="mostrar(this.value);">
-                              <option value="">Selecciona tu cargo</option>
-                              <option value="Autoridad Educativa Estatal">Autoridad Educativa Estatal</option>
-                              <option value="Estudiante">Estudiante</option>
-                              <option value="Egresado">Egresado</option>
-                              <option value="Docente">Docente</option>
-                              <option value="Investigador">Investigador</option>
-                              <option value="Jefe de Unidad">Jefe de Unidad</option>
-                              <option value="Rector/Director de IES">Rector/Director de IES</option>
-                              <option value="otro">Otro:</option>
-                           </select>
-                        </div>
-                     </div>
-                  </div>
-
-                  <div class="row">
-                     <div class="col-xl-4" id="otro" style="display:none;">
-                        <div class="form-group">
-                           <label>Otro cargo:</label>
-                           <input type="text" class="form-control" name="otro_cargo" onChange="conMayusculas(this)">
-                        </div>
-                     </div>
-                  </div>
-
-                  <div class="row">
-                     <div class="col-xl-12 pad">
-                        <h4>Semblanza</h4>
-                        <div class="form-group">
-                           <label for="exampleFormControlTextarea1">
-                              Escriba una breve semblanza de del participante, donde destaque sus años de experiencia en una o varias de las temáticas tratadas, así como las actividades reelevantes en dichas temásticas y las apoortaciones que considere más reelevantes (máximo 200 palabras).
-                           </label>
-                           <textarea class="form-control" name="comentario" id="exampleFormControlTextarea1" rows="3" required></textarea>
-                        </div>
-                     </div>
+                  <div class="alert alert-secondary" role="alert">
+                     <p>Cuento con más de 5 años operando en áreas de Educación Dual, Emprendimiento Asociativo y programas de impacto de servicio social para el nivel superior
+                        (Instituciones de Educación Superior, Organismos de la sociedad Civil o Iniciativa privada).</p>
                   </div>
 
 
+                  <div class="col-md-12">
+                     <div class="form-group">
+                        <!--<div class="form-check form-check-inline">
+                                             <input class="form-check-input" type="radio" name="participacion" value="no" required="">
+                                             <label class="form-check-label">No participaré</label>
+                                          </div>-->
+                        <div class="form-check form-check-inline">
+                           <input class="form-check-input" type="radio" name="participacion" id="id1" value="part_si">
+                           <label class="form-check-label">Si</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                           <input class="form-check-input" type="radio" name="participacion" id="id2" value="part_no">
+                           <label class="form-check-label">No</label>
+                        </div>
 
-                  <div class="row">
-                     <div class="col-xl-12">
-                        <br>
-                     </div>
-                     <div class="col-xl-4">
-                     </div>
-                     <div class="col-xl-4">
-                        <button type="submit" class="btn btn-block btn-primary btn-lg">Enviar registro </button><br><br>
-                        <input type="hidden" name="id_usuario" value="valor1" />
-                     </div>
-                     <div class="alert alert-secondary" role="alert">
-                        <p>El Comité Organizador revisará cuidadosamente cada registro y notificará a aquellos expertos que cumplan con los perfiles solicitados para confirmar su participación en el evento. Aquellos que no cumplan con los requisitos establecidos, podrán recibir una notificación indicando que no han sido seleccionados en esta ocasión.
-                           Agradecemos el interés y la participación de todos los expertos en este evento, y estamos comprometidos en garantizar la calidad y relevancia de los participantes para fomentar un ambiente de aprendizaje y colaboración óptimo.</p>
                      </div>
                   </div>
-               </form>
+               </div>
             </div>
-         </div>
-      </section>
+            <div class="row" id="divid2" style="display:none;">
+               <div class="col-md-12">
+                  <p>Te invitamos a ver los Foros a traves de las redes sociales </p><br>
+               </div>
+               <div class="col-md-12">
+                  <img class="img-fluid" src="img/mapa.png">
+               </div>
+               <div class="col-md-12 ">
+                  <img class="img-fluid" src="img/regiones.png">
+               </div>
+
+            </div>
+
+            <div id="divid1" style="display:none;">
+
+               <div class="row">
+                  <div class="col-xl-12">
+                     <h4>Datos personales</h4><br>
+                  </div>
+                  <div class="col-xl-4">
+                     <div class="form-group">
+                        <label for="nombre">Nombre(s):</label>
+                        <input type="text" class="form-control" name="nombre" onChange="conMayusculas(this)" required="">
+                     </div>
+                  </div>
+                  <div class="col-xl-4">
+                     <div class="form-group">
+                        <label for="nombre">Apellido paterno:</label>
+                        <input type="text" class="form-control" name="apaterno" onChange="conMayusculas(this)" required="">
+                     </div>
+                  </div>
+                  <div class="col-xl-4">
+                     <div class="form-group">
+                        <label for="nombre">Apellido materno:</label>
+                        <input type="text" class="form-control" name="amaterno" onChange="conMayusculas(this)" required="">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="row">
+                  <div class="col-xl-4">
+                     <div class="form-group">
+                        <label>Correo electrónico:</label>
+                        <input type="email" class="form-control" name="email" onChange="conMayusculas(this)" required="">
+                     </div>
+                  </div>
+                  <div class="col-xl-3">
+                     <div class="form-group">
+                        <label for="nombre">Teléfono institucional</label>
+                        <input type="text" class="form-control" name="tel_ins">
+                     </div>
+                  </div>
+                  <div class="col-xl-1">
+                     <div class="form-group">
+                        <label for="nombre">Ext.</label>
+                        <input type="text" class="form-control" name="ext">
+                     </div>
+                  </div>
+                  <div class="col-xl-4">
+                     <div class="form-group">
+                        <label for="nombre">Móvil</label>
+                        <input type="text" class="form-control" name="tel_movil" required="">
+                     </div>
+                  </div>
+               </div>
 
 
+               <!-- Datos Institucionales-->
+               <div class="row">
+                  <div class="col-xl-12 pad">
+                     <h4>Datos institucionales</h4><br>
+                  </div>
+                  <div class="col-xl-3">
+                     <div class="form-group">
+                        <label for="control1">Región</label>
+                        <select class="form-control" name="region" id="region" required="">
+                           <option value="">Seleccionar región</option>
+                           <?php while ($row = $region->fetch_assoc()) { ?>
+                              <option value="<?php echo $row['id_cat_region']; ?>"><?php echo $row['dt_nombre_region']; ?></option>
+                           <?php } ?>
+                        </select>
+                     </div>
+                  </div>
+                  <div class="col-xl-3">
+                     <div class="form-group">
+                        <label for="control">Entidad Federativa</label>
+                        <select class="form-control" id="entidad" name="entidad" required="">
+                           <option value="">Seleccionar la entidad</option>
+                           <?php while ($row = $region->fetch_assoc()) { ?>
+                              <option value="<?php echo $row['id_cat_entidad']; ?>"><?php echo $row['nombre_entidad']; ?></option>
+                           <?php } ?>
+                        </select>
+                     </div>
+                  </div>
+                  <div class="col-xl-6">
+                     <label>Organización de procedencia</label><br>
+                     <div class="form-group">
+                        <div class="form-check form-check-inline">
+                           <input class="form-check-input" type="radio" name="organizacion" id="org_ies" value="ies" required="">
+                           <label class="form-check-label">IES</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                           <input class="form-check-input" type="radio" name="organizacion" id="org_otro" value="social" required="">
+                           <label class="form-check-label">Social</label>
+                        </div>
+                        <!-- <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="organizacion" id="org_otro" value="internacional" required="">
+                              <label class="form-check-label" style="color:#98213A">Internacional</label>
+                           </div> -->
+                        <div class="form-check form-check-inline">
+                           <input class="form-check-input" type="radio" name="organizacion" id="org_otro" value="publico" required="">
+                           <label class="form-check-label">Público</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                           <input class="form-check-input" type="radio" name="organizacion" id="org_otro" value="privado" required="">
+                           <label class="form-check-label">Privado</label>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+
+               <div class="row" id="org" style="display:none;">
+                  <div class="col-md-12">
+                     <div class="form-group">
+                        <label for="nombre">Organización a la que pertenece</label>
+                        <input type="text" class="form-control" name="nom_org2" onChange="conMayusculas(this)">
+                     </div>
+                  </div>
+                  <div class="col-xl-4">
+                     <div class="form-group">
+                        <label for="control1">Nivel del cargo:</label>
+                        <select class="form-control" name="cargo2" onChange="mostrar(this.value);">
+                           <option value="">Seleccione su cargo</option>
+                           <option value="Director General y/o Coordinador General">Director General y/o Coordinador General</option>
+                           <option value="Director de Área">Director de Área</option>
+                           <option value="Administrativo">Administrativo</option>
+                        </select>
+                     </div>
+                  </div>
+                  <div class="col-xl-8">
+                     <div class="form-group">
+                        <label>Nombre completo del cargo que ocupa en la institución</label>
+                        <input type="text" class="form-control" name="otro_cargo" onChange="conMayusculas(this)">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="row" id="sel_ies" style="display:none;">
+                  <div class="col-md-12">
+                     <div class="form-group">
+                        <label for="control">Seleccionar IES</label>
+                        <select class="form-control" name="nom_org" id="ies">
+                        </select>
+                     </div>
+                  </div>
+                  <div class="col-xl-4">
+                     <div class="form-group">
+                        <label for="control1">Nivel del cargo:</label>
+                        <select class="form-control" name="cargo" onChange="mostrar(this.value);">
+                           <option value="">Selecciona tu cargo</option>
+                           <option value="Titular de IES">Titular de IES</option>
+                           <option value="Responsable de vinculación">Responsable de vinculación</option>
+                           <option value="Responsable académico">Responsable académico</option>
+                        </select>
+                     </div>
+                  </div>
+                  <div class="col-xl-8">
+                     <div class="form-group">
+                        <label>Especifique cargo</label>
+                        <input type="text" class="form-control" name="otro_cargo" onChange="conMayusculas(this)">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="row">
+                  <div class="col-xl-12">
+                     <h4>Semblanza</h4>
+                     <div class="form-group">
+                        <label>
+                           Escriba una breve semblanza, donde destaque sus años de experiencia en una o varias de las temáticas tratadas, así como las actividades reelevantes en dichas temáticas y las aportaciones que considere más reelevantes <h6>(máximo 200 palabras).</h6>
+                        </label>
+                        <textarea class="form-control" name="comentario" rows="3" required></textarea>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="row">
+                  <div class="col-md-12"><br>
+                     <p><strong>Seleccione las actividades en las que participará</strong></p>
+                  </div>
+               </div>
+
+
+               <div class="row">
+                  <div class="col-md-12"><br>
+                     <p>Día 1. Reunión vinculadores</p>
+                  </div>
+
+                  <table class="table table-striped table-bordered">
+                     <thead>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <th scope="row" class="text-center">
+                              <p>16:00 – 18:00</p>
+                           </th>
+                           <td>
+                              <div class="form-check form-check-inline">
+                                 <input class="form-check-input" type="radio" name="mesa1">
+                                 <label class="form-check-label">
+                                    <strong>Mesa:</strong>Reunión de responsables de vinculación de las IES
+                                 </label><br>
+                              </div>
+                           </td>
+                        </tr>
+
+                     </tbody>
+                  </table>
+               </div>
+
+
+               <div class="row">
+                  <div class="col-md-12"><br>
+                     <p>Día 2. Mesas de expertos de alto nivel</p>
+                  </div>
+
+                  <table class="table table-striped table-bordered">
+                     <thead>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <th scope="row">
+                              <p>11:300 – 13:00</p>
+                           </th>
+                           <td>
+                              <div class="form-check form-check-inline">
+                                 <input class="form-check-input" type="radio" name="mesa2">
+                                 <label class="form-check-label">
+                                    <strong>Mesa 1:</strong>Emprendimiento asociativo(ESS)
+                                 </label><br>
+                              </div>
+                           </td>
+                        </tr>
+
+                        <tr>
+                           <th scope="row">
+                              <p>13:00 – 15:00</p>
+                           </th>
+                           <td table-primary>
+                              <div class="form-check form-check-inline">
+                                 <input class="form-check-input" type="radio" name="mesa3">
+                                 <label class="form-check-label">
+                                    <strong>Mesa 2:</strong> Educación Dual
+                                 </label>
+                              </div>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th scope="row">
+                              <p>15:00 – 16:00</p>
+                           </th>
+                           <td table-primary>
+                              <div class="form-check form-check-inline">
+                                 <input class="form-check-input" type="radio" name="mesa4">
+                                 <label class="form-check-label">
+                                    <strong>Mesa 3:</strong> Servicio Social
+                                 </label>
+                              </div>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+
+
+
+
+
+
+
+
+               <div class="row">
+                  <div class="col-xl-12">
+                     <br>
+                  </div>
+                  <div class="col-xl-4">
+                  </div>
+                  <div class="col-xl-4">
+                     <button type="submit" class="btn btn-block btn-primary btn-lg">Enviar postulación </button><br><br>
+                     <input type="hidden" name="id_usuario" value="valor1" />
+                  </div>
+                  <div class="alert alert-secondary" role="alert">
+                     <p>Agradecemos su postulación, se revisará su información  y se enviará a su correo mayor información sobre el evento.</p>
+                  </div>
+               </div>
+
+            </div>
+
+
+         </form>
+      </div>
 
       <!-- Imagen greco de cabecera -->
       <div class="w-100 pt-121  opc1 position-relative">
-         <img class="img-fluid" src="img/cintillo_footer.png" width="100%">
+         <img class="img-fluid" src="img/cintillo_footer.png" width="100%" style="padding-top: 10%">
       </div>
       <footer style="background-color: #8D203D;" id="contacto">
          <div class="w-100 pt-121  opc1 position-relative">
@@ -314,8 +435,7 @@ $region = view_region();
                            </a>
                         </h1>
                      </div>
-                     <p class="mb-0" style="color: #fff">Contacto:</p>
-                     <p class="mb-0" style="color: #fff">forosdevinculacion@fese.mx</p><br><br><br>
+                     <p class="mb-0" style="color: #fff">Contacto: forosdevinculacion@fese.mx</p><br>
                   </div>
                   <!-- <div class="footer-bottom d-flex flex-wrap justify-content-between w-100">                              
                             </div> -->
@@ -436,27 +556,20 @@ $region = view_region();
          }
       }
    </script>
+
+
+
    <script language="javascript">
       $(document).ready(function() {
          $("input[type=radio]").click(function(event) {
             var valor = $(event.target).val();
-            if (valor == "dia1") {
+            if (valor == "part_si") {
                $("#divid1").show();
                $("#divid2").hide();
-               $("#divid3").hide();
-            } else if (valor == "dia2") {
+            } else if (valor == "part_no") {
                $("#divid2").show();
                $("#divid1").hide();
-               $("#divid3").hide();
-            } else if (valor == "ambos") {
-               $("#divid1").show();
-               $("#divid2").show();
-               $("#divid3").hide();
-            } else if (valor == "no") {
-               $("#divid3").hide();
-               $("#divid1").hide();
-               $("#divid2").hide();
-            } else {
+            } {
                // Otra cosa
             }
          });
