@@ -69,20 +69,17 @@
                           
                               <h4 class="mb-0">Su numero de folio es: <strong><?php echo $participante['id_usuario'];?> </strong></h4><br>
 
-      <h4><strong>La sede del evento sera en <?php echo $participante['dt_region'] ?></strong></h4>                            
+      <h4><strong>La sede del evento sera en <?php echo $participante['dt_cede'] ?></strong></h4>                            
 
       </div>
        <div class="col-sm-8 col-md-8 offset-md-2 text-center">
            <img class="img-fluid" src="img/agenda.png">
       </div>
 
-      <div class="col-sm-12 col-md-12"><br><br>                            
-
-            <iframe src='<?php echo $participante['dt_ubicacion']; ?>' width='100%' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>                          
-                              
-                            
-        </div>
-        <br><br>
+      <div class="col-sm-12 col-md-12"><br><br>
+         <iframe src = <?php echo $participante['dt_ubicacion'] ?> width='100%' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>
+      </div>
+      <br><br>
 
 
 
