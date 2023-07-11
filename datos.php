@@ -69,7 +69,7 @@
                           
                               <h4 class="mb-0">Su numero de folio es: <strong><?php echo $participante['id_usuario'];?> </strong></h4><br>
 
-      <h4><strong>La sede del evento sera en <?php echo $participante['dt_cede'] ?></strong></h4>                            
+      <h4><strong>La sede del evento sera en <?php echo $participante['dt_region'] ?></strong></h4>                            
 
       </div>
        <div class="col-sm-8 col-md-8 offset-md-2 text-center">
