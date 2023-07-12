@@ -2,8 +2,11 @@
    include_once('databases_registro.php');
    session_start();
    mysqli_set_charset( $mysqli, 'utf8');  
-   $id=$_SESSION["id"];
+   $id= $_SESSION["id"];  
    $participante = run_participante($id);
+   $region = $participante['dt_region'];
+   $cede = $participante['dt_cede'];
+
    ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -61,16 +64,22 @@
          <img class="img-fluid" src="img/cintillo_header.png" width="100%" style="margin-top: 2%;">
       </div>
 
-
-
-
         <div class="col-sm-8 col-md-8 offset-md-2 text-center"><br><br>
-                              <h4 class="mb-0">HOLA <?php echo $participante['dt_nombre']," ".$participante['dt_apaterno']." ".$participante['dt_amaterno']; ?> TU REGISTRO SE REALIZÓ CORRECTAMENTE</h4><br>   
+                              <h4 class="mb-0">Hola <?php echo $participante['dt_nombre']," ".$participante['dt_apaterno']." ".$participante['dt_amaterno']; ?> tu registro se realizó correctamente</h4><br>   
                           
-                              <h5 class="mb-0">TU FOLIO DE REGISTRO ES: <strong><?php echo $participante['id_usuario'];?> </strong></h5><br>
-                              <img class="img-fluid" src="img/agenda.png">
-        </div>
-        <br><br>
+                              <h4 class="mb-0">Su numero de folio es: <strong><?php echo $participante['id_usuario'];?> </strong></h4><br>
+
+      <h4><strong>La sede del evento sera en <?php echo $participante['dt_cede'] ?></strong></h4>                            
+
+      </div>
+       <div class="col-sm-8 col-md-8 offset-md-2 text-center">
+           <img class="img-fluid" src="img/agenda.png">
+      </div>
+
+      <div class="col-sm-12 col-md-12"><br><br>
+         <iframe src = <?php echo $participante['dt_ubicacion'] ?> width='100%' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>
+      </div>
+      <br><br>
 
 
 
