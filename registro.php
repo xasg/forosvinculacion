@@ -331,7 +331,7 @@ $region = view_region();
                            <th scope="row" class="col-md-2">
                               <p>16:00 – 18:00</p>
                            </th>
-                           <td >
+                           <td>
                               <div class="form-check form-check-inline">
                                  <input class="form-check-input" type="radio" name="mesa1" value="si">
                                  <label class="form-check-label">
