@@ -50,6 +50,13 @@ $region = view_region();
          }, 6000);
       });
    </script>
+   <style>
+      .tamañoCelda
+	{
+		width: 450px;
+	}
+
+   </style>
 </head>
 
 <body>
@@ -309,49 +316,48 @@ $region = view_region();
                   </div>
                </div>
 
-
+               
                <div class="row">
                   <div class="col-md-12"><br>
                      <p>Día 1. Reunión vinculadores</p>
                   </div>
-
+                  
+                  <!----------------------------------------------------------->                  
                   <table class="table table-striped table-bordered">
                      <thead>
                      </thead>
                      <tbody>
                         <tr>
-                           <th scope="row" class="text-center">
+                           <th scope="row" class="col-md-2">
                               <p>16:00 – 18:00</p>
                            </th>
-                           <td>
+                           <td >
                               <div class="form-check form-check-inline">
                                  <input class="form-check-input" type="radio" name="mesa1">
                                  <label class="form-check-label">
-                                    <strong>Mesa:</strong>Reunión de responsables de vinculación de las IES
+                                    <strong>Mesa: </strong>Reunión de de responsables de vinculación de las IES 
                                  </label><br>
                               </div>
                            </td>
                         </tr>
-
                      </tbody>
                   </table>
+                  <!----------------------------------------------------------->
+                  
                </div>
-
-
                <div class="row">
                   <div class="col-md-12"><br>
                      <p>Día 2. Mesas de expertos de alto nivel</p>
                   </div>
-
                   <table class="table table-striped table-bordered">
                      <thead>
                      </thead>
                      <tbody>
                         <tr>
-                           <th scope="row">
-                              <p>11:300 – 13:00</p>
+                           <th scope="row" class="col-md-2">
+                              <p>11:30 – 13:00</p>
                            </th>
-                           <td>
+                           <td >
                               <div class="form-check form-check-inline">
                                  <input class="form-check-input" type="radio" name="mesa2">
                                  <label class="form-check-label">

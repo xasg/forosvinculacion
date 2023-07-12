@@ -111,6 +111,11 @@ transition: color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s
 	90% { opacity:100%;}
 	100% { opacity:0%;}
 	}
+
+	.tamañoCelda
+	{
+		width: 450px;
+	}
 	
 /*Accordion*/
 .tabla-h1{ font-size:46px; font-weight:700;}
