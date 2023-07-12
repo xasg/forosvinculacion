@@ -67,7 +67,7 @@
         <div class="col-sm-8 col-md-8 offset-md-2 text-center"><br><br>
                               <h4 class="mb-0">Hola <?php echo $participante['dt_nombre']," ".$participante['dt_apaterno']." ".$participante['dt_amaterno']; ?> tu registro se realizó correctamente</h4><br>   
                           
-                              <h4 class="mb-0">Su numero de folio es: <strong><?php echo $participante['id_usuario'];?> </strong></h4><br>
+                              <!--<h4 class="mb-0">Su numero de folio es: <strong></*?php echo $participante['id_usuario'];*/?> </strong></h4><br>-->
 
       <h4><strong>La sede del evento sera en <?php echo $participante['dt_cede'] ?></strong></h4>                            
 
