@@ -76,13 +76,10 @@
            <img class="img-fluid" src="img/agenda.png">
       </div>
 
-      <div class="col-sm-12 col-md-12"><br><br>                            
-
-            <iframe src='<?php echo $participante['dt_ubicacion']; ?>' width='100%' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>                          
-                              
-                            
-        </div>
-        <br><br>
+      <div class="col-sm-12 col-md-12"><br><br>
+         <iframe src = <?php echo $participante['dt_ubicacion'] ?> width='100%' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>
+      </div>
+      <br><br>
 
 
 
