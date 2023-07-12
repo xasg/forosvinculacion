@@ -259,7 +259,7 @@ $region = view_region();
                   <div class="col-xl-8">
                      <div class="form-group">
                         <label>Nombre completo del cargo que ocupa en la institución</label>
-                        <input type="text" class="form-control" name="otro_cargo" onChange="conMayusculas(this)">
+                        <input type="text" class="form-control" name="otro_cargo2" onChange="conMayusculas(this)">
                      </div>
                   </div>
                </div>
@@ -285,7 +285,7 @@ $region = view_region();
                   </div>
                   <div class="col-xl-8">
                      <div class="form-group">
-                        <label>Especifique cargo</label>
+                        <label>Nombre completo del cargo que ocupa en la institución</label>
                         <input type="text" class="form-control" name="otro_cargo" onChange="conMayusculas(this)">
                      </div>
                   </div>
@@ -325,7 +325,7 @@ $region = view_region();
                            </th>
                            <td>
                               <div class="form-check form-check-inline">
-                                 <input class="form-check-input" type="radio" name="mesa1">
+                                 <input class="form-check-input" type="radio" name="mesa1" value="si">
                                  <label class="form-check-label">
                                     <strong>Mesa:</strong>Reunión de responsables de vinculación de las IES
                                  </label><br>
@@ -353,7 +353,7 @@ $region = view_region();
                            </th>
                            <td>
                               <div class="form-check form-check-inline">
-                                 <input class="form-check-input" type="radio" name="mesa2">
+                                 <input class="form-check-input" type="radio" name="mesa2" value="si">
                                  <label class="form-check-label">
                                     <strong>Mesa 1:</strong>Emprendimiento asociativo(ESS)
                                  </label><br>
@@ -365,9 +365,10 @@ $region = view_region();
                            <th scope="row">
                               <p>13:00 – 15:00</p>
                            </th>
+
                            <td table-primary>
                               <div class="form-check form-check-inline">
-                                 <input class="form-check-input" type="radio" name="mesa3">
+                                 <input class="form-check-input" type="radio" name="mesa3" value="si">
                                  <label class="form-check-label">
                                     <strong>Mesa 2:</strong> Educación Dual
                                  </label>
@@ -380,7 +381,7 @@ $region = view_region();
                            </th>
                            <td table-primary>
                               <div class="form-check form-check-inline">
-                                 <input class="form-check-input" type="radio" name="mesa4">
+                                 <input class="form-check-input" type="radio" name="mesa4" value="si">
                                  <label class="form-check-label">
                                     <strong>Mesa 3:</strong> Servicio Social
                                  </label>
@@ -390,13 +391,6 @@ $region = view_region();
                      </tbody>
                   </table>
                </div>
-
-
-
-
-
-
-
 
                <div class="row">
                   <div class="col-xl-12">
