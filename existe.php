@@ -65,10 +65,15 @@
 
 
         <div class="col-sm-8 col-md-8 offset-md-2 text-center"><br><br>
-                              <h4 class="mb-0">HOLA <?php echo $participante['dt_nombre']," ".$participante['dt_apaterno']." ".$participante['dt_amaterno']; ?> YA CUENTAS CON UN REGISTRO</h4><br>   
-                          
-                              <h5 class="mb-0">TU FOLIO ES: <strong><?php echo $participante['id_usuario'];?> </strong></h5><br>
-                              <img class="img-fluid" src="img/agenda.png">
+
+            <h4 class="mb-0">HOLA <?php echo $participante['dt_nombre']," ".$participante['dt_apaterno']." ".$participante['dt_amaterno']; ?> YA CUENTAS CON UN REGISTRO</h4><br>   
+            <!-- Se eliminmo el folio y se agrego la sede del evento - (Alexis) -->
+            <h4><strong>La sede del evento sera en <?php echo $participante['dt_cede'] ?></strong></h4>
+            <img class="img-fluid" src="img/agenda.png">
+        </div>
+        <div class="col-sm-12 col-md-12"><br><br>                            
+         <!-- Se agrego el frame de la conmsulta a la base de datos de la sede - (Alexis) -->
+            <iframe src='<?php echo $participante['dt_ubicacion']; ?>' width='100%' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>
         </div>
         <br><br>
 
