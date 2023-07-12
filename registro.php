@@ -3,7 +3,6 @@ include_once('databases_registro.php');
 mysqli_set_charset($mysqli, 'utf8');
 $entidad = view_entidad();
 $region = view_region();
-// $foro=view_foro();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -252,7 +251,7 @@ $region = view_region();
                            <option value="">Seleccione su cargo</option>
                            <option value="Director General y/o Coordinador General">Director General y/o Coordinador General</option>
                            <option value="Director de Área">Director de Área</option>
-                           <option value="Administrativo">Administrativo</option>
+                           <option value="Administrativo">Otro</option>
                         </select>
                      </div>
                   </div>
