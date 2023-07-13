@@ -49,14 +49,7 @@ $region = view_region();
             $(".content2").fadeIn(1500);
          }, 6000);
       });
-   </script>
-   <style>
-      .tamañoCelda
-	{
-		width: 450px;
-	}
-
-   </style>
+   </script>   
 </head>
 
 <body>
