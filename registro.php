@@ -288,6 +288,7 @@ $region = view_region();
                            <option value="Titular de IES">Titular de IES</option>
                            <option value="Responsable de vinculación">Responsable de vinculación</option>
                            <option value="Responsable académico">Responsable académico</option>
+                           <option value="Otro">Otro</option>
                         </select>
                      </div>
                   </div>
@@ -330,7 +331,7 @@ $region = view_region();
                      <tbody>
                         <tr>
                            <th scope="row" class="col-md-2 text-center">
-                              <p>16:00 – 18:00</p>
+                              <p>16:00 – 19:00</p>
                            </th>
                            <td>
                               <div class="form-check form-check-inline">
