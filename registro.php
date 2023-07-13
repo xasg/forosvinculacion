@@ -25,6 +25,7 @@ $region = view_region();
    <link rel="stylesheet" href="assets/css/bootstrap-multiselect.css">
    <link rel="stylesheet" href="css/style.css">
    <link rel="stylesheet" href="css/bootstrap.css">
+   <link rel="stylesheet" href="css/style_navs.css">
    <!-- Global site tag (gtag.js) - Google Analytics -->
    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HZVPVQSG3M"></script>
    <script>
@@ -55,7 +56,7 @@ $region = view_region();
    <main>
       <div class="container-fluid mx-0 px-0" style="background-color: #8D203D;">
          <div class="container">
-            <nav class="navbar navbar-dark navbar-expand-lg">
+            <nav class="navbar navbar-dark navbar-expand-lg navigation">
                <img alt="Responsive image" class="img-fluid" src="img/logo.png" width="150">
                <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
                   <span class="navbar-toggler-icon"> </span>
@@ -67,7 +68,7 @@ $region = view_region();
                            INICIO
                         </a>
                      </li>
-                     <li class="nav-item active">
+                     <li class="nav-item active activo">
                         <a class="nav-link" href="#">
                            PARTICIPACIÓN
                         </a>
