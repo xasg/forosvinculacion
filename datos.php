@@ -54,7 +54,11 @@
                            REGISTRO
                         </a>
                      </li>
-                    
+                     <li class="nav-item active">
+                            <a class="nav-link" href="./agenda.html">
+                                AGENDA
+                            </a>
+                        </li>                    
                   </ul>
                </div>
             </nav>

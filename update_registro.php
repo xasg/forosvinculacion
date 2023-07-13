@@ -28,10 +28,11 @@
    $mesa2 = isset( $_POST['mesa2']) ? $_POST['mesa2'] : '';
    $mesa3 = isset( $_POST['mesa3']) ? $_POST['mesa3'] : '';
    $mesa4 = isset( $_POST['mesa4']) ? $_POST['mesa4'] : '';
+   $mesa5 = isset( $_POST['mesa5']) ? $_POST['mesa5'] : '';
    $comentario = isset( $_POST['comentario']) ? $_POST['comentario'] : '';
    $reg_usuario =acces_registro($email);
    if($reg_usuario==0){ 
-   insert_registro($apaterno, $amaterno, $nombre, $email, $tel_ins, $ext, $tel_movil, $region, $entidad, $organizacion, $nom_org, $nom_org2, $cargo, $cargo2, $otro_cargo, $otro_cargo2, $mesa1, $mesa2, $mesa3, $mesa4, $comentario);   
+   insert_registro($apaterno, $amaterno, $nombre, $email, $tel_ins, $ext, $tel_movil, $region, $entidad, $organizacion, $nom_org, $nom_org2, $cargo, $cargo2, $otro_cargo, $otro_cargo2, $mesa1, $mesa2, $mesa3, $mesa4, $mesa5, $comentario);   
     $id_usuario =acces_registro($email);
     $id_user=$id_usuario['id_usuario'];
     $d_nombre=$id_usuario['dt_nombre']." ".$id_usuario['dt_apaterno']." ".$id_usuario['dt_amaterno'];
