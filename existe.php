@@ -70,7 +70,8 @@
 
             <h4 class="mb-0">HOLA <?php echo $participante['dt_nombre']," ".$participante['dt_apaterno']." ".$participante['dt_amaterno']; ?> YA CUENTAS CON UN REGISTRO</h4><br>   
             <!-- Se eliminmo el folio y se agrego la sede del evento - (Alexis) -->
-            <h4><strong>La sede del evento sera en <?php echo $participante['dt_cede'] ?></strong></h4>
+            <h4><strong>El anfitrión será: <?php echo $participante['dt_cede'] ?></strong></h4>
+            <h4><strong>el día: <?php echo $participante['dt_fecha'] ?></strong></h4>
             <img class="img-fluid" src="img/agenda.png">
         </div>
         <div class="col-sm-12 col-md-12"><br><br>                            
