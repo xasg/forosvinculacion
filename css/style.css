@@ -112,6 +112,7 @@ transition: color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s
 	100% { opacity:0%;}
 	}
 	
+	
 /*Accordion*/
 .tabla-h1{ font-size:46px; font-weight:700;}
 #thead-lition th{border: 0px !important;}

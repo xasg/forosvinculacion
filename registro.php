@@ -48,7 +48,7 @@ $region = view_region();
             $(".content2").fadeIn(1500);
          }, 6000);
       });
-   </script>
+   </script>   
 </head>
 
 <body>
@@ -72,6 +72,11 @@ $region = view_region();
                            PARTICIPACIÓN
                         </a>
                      </li>
+                     <li class="nav-item active">
+                            <a class="nav-link" href="./agenda.html">
+                                AGENDA
+                            </a>
+                        </li>
 
                   </ul>
                </div>
@@ -91,7 +96,11 @@ $region = view_region();
                                           <a href="#" class="alert-link">El correo que ingresaste no se encuentra registrado. Llena el siguiente formulario</a>
                                        </div> -->
                   <div class="alert alert-secondary" role="alert">
-                     <p>engo más de 5 años de experiencia en la operación de las áreas de Educación Dual, Emprendimiento Asociativo y programas de impacto de servicio social para el nivel superior (Instituciones de Educación Superior, Organismos de la sociedad Civil o Iniciativa privada).</p>
+                     <p>  <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
+                     Tengo más de 5 años de experiencia en la operación de las áreas de Educación Dual, Emprendimiento Asociativo y 
+                     programas de impacto de servicio social para el nivel superior (Instituciones de Educación Superior, Organismos 
+                     de la sociedad Civil o Iniciativa privada).
+                     </p>
                   </div>
 
 
@@ -141,13 +150,13 @@ $region = view_region();
                   </div>
                   <div class="col-xl-4">
                      <div class="form-group">
-                        <label for="nombre">Primer apellido:</label>
+                        <label for="nombre">Primer Apellido:</label>  <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
                         <input type="text" class="form-control" name="apaterno" onChange="conMayusculas(this)" required="">
                      </div>
                   </div>
                   <div class="col-xl-4">
                      <div class="form-group">
-                        <label for="nombre">Segundo Apellido:</label>
+                        <label for="nombre">Segundo Apellido:</label>  <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
                         <input type="text" class="form-control" name="amaterno" onChange="conMayusculas(this)" required="">
                      </div>
                   </div>
@@ -250,7 +259,7 @@ $region = view_region();
                            <option value="">Seleccione su cargo</option>
                            <option value="Director General y/o Coordinador General">Director General y/o Coordinador General</option>
                            <option value="Director de Área">Director de Área</option>
-                           <option value="Administrativo">Otro</option>
+                           <option value="Otro">Otro</option> <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
                         </select>
                      </div>
                   </div>
@@ -293,8 +302,9 @@ $region = view_region();
                   <div class="col-xl-12">
                      <h4>Semblanza</h4>
                      <div class="form-group">
-                        <label>
-                           Escriba una breve semblanza, donde destaque sus años de experiencia en una o varias de las temáticas señaladas en el Foro, así como las actividades relevantes en las mismas, así como, las aportaciones que considere más relevantes <h6>(máximo 200 palabras).</h6>
+                        <label> <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
+                        Escriba una breve semblanza, donde destaque sus años de experiencia en una o varias de las temáticas señaladas en el Foro,
+                        así como las actividades relevantes en las mismas, así como, las aportaciones que considere más relevantes
                         </label>
                         <textarea class="form-control" name="comentario" rows="3" required></textarea>
                      </div>
@@ -303,73 +313,75 @@ $region = view_region();
 
                <div class="row">
                   <div class="col-md-12"><br>
-                     <p><strong>Seleccione las actividades en las que le interesa participar</strong></p>
+                     <p><strong>Seleccione las actividades en las que le interesa participar</strong></p> <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
                   </div>
                </div>
 
-
+               
                <div class="row">
                   <div class="col-md-12"><br>
                      <p>Día 1. Reunión vinculadores</p>
                   </div>
-
+                  
+                  <!----------------------------------------------------------->                  
                   <table class="table table-striped table-bordered">
                      
                      <tbody>
                         <tr>
-                           <th scope="row" class="text-center">
+                           <th scope="row" class="col-md-2 text-center">
                               <p>16:00 – 18:00</p>
                            </th>
                            <td>
                               <div class="form-check form-check-inline">
                                  <input class="form-check-input" type="radio" name="mesa1" value="si">
                                  <label class="form-check-label">
-                                    <strong>Mesa:</strong>Reunión de responsables de vinculación de las IES
+                                    <strong>Mesa: </strong>Reunión de de responsables de vinculación de las IES 
                                  </label><br>
                               </div>
                            </td>
                         </tr>
-
                      </tbody>
                   </table>
+                  <!----------------------------------------------------------->
+                  
                </div>
-
-
                <div class="row">
                   <div class="col-md-12"><br>
-                     <p>Día 2. Inauguración y mesas de expertos de alto nivel</p>
+                     <p>Día 2. Inaguración y mesas de expertos de alto nivel</p>  <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
                   </div>
-
                   <table class="table table-striped table-bordered">
-                    
+                     <thead>
+                     </thead>
                      <tbody>
+                        <!---------------------------------------------------------------------------------------->
                      <tr>
-                        <th scope="row" class="text-center">
-                              <p>10:00 – 11:30</p>
+                           <th scope="row" class="col-md-2 text-center">
+                              <p>10:00 – 11:30</p>   <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
                            </th>
-                           <td>
+                           <td >
                               <div class="form-check form-check-inline">
-                                 <input class="form-check-input" type="radio" name="inauguracion">
+                                 <input class="form-check-input" type="radio" name="mesa5" value="si">
                                  <label class="form-check-label">
-                                    <strong>Inauguración</strong>
-                                 </label>
+                                    <strong></strong>Inauguración del foro
+                                 </label><br>
                               </div>
                            </td>
                         </tr>
+                        <!---------------------------------------------------------------------------------------------->
                         <tr>
-                           <th scope="row" class="text-center">
+                        <tr>
+                           <th scope="row" class="col-md-2 text-center">
                               <p>11:30 – 13:00</p>
                            </th>
-                           <td>
+                           <td >
                               <div class="form-check form-check-inline">
                                  <input class="form-check-input" type="radio" name="mesa2" value="si">
                                  <label class="form-check-label">
-                                    <strong>Mesa 1:</strong>Emprendimiento asociativo(ESS)
-                                 </label>
+                                    <strong>Mesa 1: </strong>Emprendimiento asociativo(ESS)
+                                 </label><br>
                               </div>
                            </td>
                         </tr>
-
                         <tr>
                            <th scope="row" class="text-center">
                               <p>13:00 – 15:00</p>
