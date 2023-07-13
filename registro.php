@@ -91,8 +91,12 @@ $region = view_region();
                                           <a href="#" class="alert-link">El correo que ingresaste no se encuentra registrado. Llena el siguiente formulario</a>
                                        </div> -->
                   <div class="alert alert-secondary" role="alert">
-                     <p>Cuento con más de 5 años operando en áreas de Educación Dual, Emprendimiento Asociativo y programas de impacto de servicio social para el nivel superior
-                        (Instituciones de Educación Superior, Organismos de la sociedad Civil o Iniciativa privada).</p>
+                     <!--<p>Cuento con más de 5 años operando en áreas de Educación Dual, Emprendimiento Asociativo y programas de impacto de servicio social para el nivel superior
+                        (Instituciones de Educación Superior, Organismos de la sociedad Civil o Iniciativa privada).</p>-->
+                     <p>
+                     Tengo más de 5 años de experiencia en la operación de las áreas de Educación Dual, Emprendimiento Asociativo y programas de impacto de servicio social para el 
+                     nivel superior (Instituciones de Educación Superior, Organismos de la sociedad Civil o Iniciativa privada). <!---Cambio realizado a peticion del grupo de foros de vinculacion --->
+                     </p>
                   </div>
 
 
@@ -142,13 +146,15 @@ $region = view_region();
                   </div>
                   <div class="col-xl-4">
                      <div class="form-group">
-                        <label for="nombre">Apellido paterno:</label>
+                       <!-- <label for="nombre">Apellido paterno:</label>-->
+                        <label for="nombre">Primer Apellido:</label> <!--Cambio realizado a peticion del grupo de foros de vinculacion-->
                         <input type="text" class="form-control" name="apaterno" onChange="conMayusculas(this)" required="">
                      </div>
                   </div>
                   <div class="col-xl-4">
                      <div class="form-group">
-                        <label for="nombre">Apellido materno:</label>
+                        <!--<label for="nombre">Apellido materno:</label>-->
+                        <label for="nombre">Segundo Apellido:</label>  <!--Cambio realizado a peticion del grupo de foros de vinculacion-->
                         <input type="text" class="form-control" name="amaterno" onChange="conMayusculas(this)" required="">
                      </div>
                   </div>
@@ -304,7 +310,8 @@ $region = view_region();
 
                <div class="row">
                   <div class="col-md-12"><br>
-                     <p><strong>Seleccione las actividades en las que participará</strong></p>
+                     <!--<p><strong>Seleccione las actividades en las que participará</strong></p> --> <!-------Cambio realizado a peticion del grupo de foros de vinc--------->
+                     <p><strong>Seleccione las actividades en las que le interesa participar</strong></p>  <!-------Cambio realizado a peticion del grupo de foros de vinc--------->
                   </div>
                </div>
 
@@ -339,12 +346,27 @@ $region = view_region();
                </div>
                <div class="row">
                   <div class="col-md-12"><br>
-                     <p>Día 2. Mesas de expertos de alto nivel</p>
+                     <p>Día 2. Inaguración y mesas de expertos de alto nivel</p>
                   </div>
                   <table class="table table-striped table-bordered">
                      <thead>
                      </thead>
-                     <tbody>
+                     <tbody>                        
+                     <!--------------------------------------------------------------------------------->
+                        <tr>
+                           <th scope="row" class="col-md-2">  <!--cambio realizado a partir de el grupo de foros de vinculacion -->
+                              <p>10:00 – 11:30</p>
+                           </th>
+                           <td >
+                              <div class="form-check form-check-inline">
+                                 <input class="form-check-input" type="radio" name="mesa2" value="si">
+                                 <label class="form-check-label">
+                                    <strong>Mesa 1:</strong> Inaguracion del foro 
+                                 </label><br>
+                              </div>
+                           </td>
+                        </tr>
+                     <!--------------------------------------------------------------------------------->
                         <tr>
                            <th scope="row" class="col-md-2">
                               <p>11:30 – 13:00</p>
@@ -353,12 +375,11 @@ $region = view_region();
                               <div class="form-check form-check-inline">
                                  <input class="form-check-input" type="radio" name="mesa2" value="si">
                                  <label class="form-check-label">
-                                    <strong>Mesa 1:</strong>Emprendimiento asociativo(ESS)
+                                    <strong>Mesa 1:</strong> Emprendimiento asociativo(ESS)
                                  </label><br>
                               </div>
                            </td>
                         </tr>
-
                         <tr>
                            <th scope="row">
                               <p>13:00 – 15:00</p>
