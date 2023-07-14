@@ -82,8 +82,8 @@ try {
                   <tr>
                   <td align="center" style="padding:0px 0 10px 0;">
                     <h3><strong>Descarga los siguentes documentos</strong></h3>
-                     <h4>Marco de referencia del servicio social (Resultados de los Foros de Vinculación 2020)<a href="#">&nbsp;Descargar</a></h4>
-                     <h4>Marco de referencia del servicio social (Resultados de los Foros de Vinculación 2020)<a href="#">&nbsp;Descargar</a></h4>
+                     <h4>Marco General para la Educación Dual del Tipo Superior (versión actualizada 2022)<a href="Marco General para la Educación Dual del Tipo Superior (versión actualizada 2022).pdf">&nbsp;Descargar</a></h4>
+                     <h4>Marco General Emprendimiento Asociativo<a href="assets/pdf/Marco General Emprendimiento Asociativo.pdf">&nbsp;Descargar</a></h4>
                   </td>
                   </tr>
                   <tr>

@@ -68,11 +68,19 @@
 
         <div class="col-sm-8 col-md-8 offset-md-2 text-center"><br><br>
 
-            <h4 class="mb-0">HOLA <?php echo $participante['dt_nombre']," ".$participante['dt_apaterno']." ".$participante['dt_amaterno']; ?> YA CUENTAS CON UN REGISTRO</h4><br>   
+            <h4 class="mb-0">HOLA <?php echo $participante['dt_nombre']." ".$participante['dt_apaterno']." ".$participante['dt_amaterno']; ?> YA CUENTAS CON UN REGISTRO</h4><br>   
             <!-- Se eliminmo el folio y se agrego la sede del evento - (Alexis) -->
             <h4><strong>El anfitrión será: <?php echo $participante['dt_cede'] ?></strong></h4>
             <h4><strong>el día: <?php echo $participante['dt_fecha'] ?></strong></h4>
             <img class="img-fluid" src="img/agenda.png">
+            <br><br><br>
+           <h4>
+              Marco General para la Educación Dual del Tipo Superior <a href="assets/pdf/Marco General para la Educación Dual del Tipo Superior (versión actualizada 2022).pdf" target="_blank" style="background: #C6C6C6; border-radius: 10px; padding: 1px;"> Conlsultar </a>
+            </h4>
+            <br><br>
+           <h4>
+           Marco General Emprendimiento Asociativo <a href="assets/pdf/Marco General Emprendimiento Asociativo.pdf" target="_blank" style="background: #C6C6C6; border-radius: 10px; padding: 1px;"> Conlsultar </a>
+            </h4>
         </div>
         <div class="col-sm-12 col-md-12"><br><br>                            
          <!-- Se agrego el frame de la conmsulta a la base de datos de la sede - (Alexis) -->
