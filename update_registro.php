@@ -49,8 +49,8 @@ try {
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'mail.fese.org.mx';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'inaes@fese.org.mx';                     //SMTP username
-    $mail->Password   = 'HeVr1043D';                               //SMTP password
+    $mail->Username   = 'forosdevinculacion@fese.mx';                     //SMTP username
+    $mail->Password   = 'FoR0$3020';                               //SMTP password
     $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have 
     //Recipients
@@ -76,14 +76,17 @@ try {
                   </tr>
                   <tr>
                     <td align="center" style="padding:10px 0 10px 0;">
-                    <h3>'.$d_nombre.' te damos la bienvenida a los <strong>FOROS DE VINCULACIÓN 2023</strong> que se llevaran a cabo en<br> '.$d_cede.' el '.$d_fecha.' </h3>
+                    <h3>
+                      Apreciable '.$d_nombre.' confirmamos la recepción de su postulación, en breve recibirá mayor información de los Foros de Vinculación 2023, región ####, el cual se llevará a cabo de manera presencial en '.$d_cede.'.
+                      
+                    </h3>
                     </td>
                   </tr>
                   <tr>
                   <td align="center" style="padding:0px 0 10px 0;">
-                    <h3><strong>Descarga los siguentes documentos</strong></h3>
-                     <h4>Marco General para la Educación Dual del Tipo Superior (versión actualizada 2022)<a href="Marco General para la Educación Dual del Tipo Superior (versión actualizada 2022).pdf">&nbsp;Descargar</a></h4>
-                     <h4>Marco General Emprendimiento Asociativo<a href="assets/pdf/Marco General Emprendimiento Asociativo.pdf">&nbsp;Descargar</a></h4>
+                    <h3>A continuación le pedimos descargar los siguientes documentos y leerlos previamente para tener un panorama completo de los temas tratados.</h3>
+                     <h4>Marco General para la Educación Dual del Tipo Superior<a href="https://bit.ly/44nIaw3">Descargar</a></h4>
+                     <h4>Marco General Emprendimiento Asociativo<a href="https://bit.ly/3rvkcQV">Descargar</a></h4>
                   </td>
                   </tr>
                   <tr>
@@ -94,7 +97,7 @@ try {
 </table>
 
                   <p>¡Nos vemos pronto!</p> ';
-    //$mail->AltBody = 'Gracias por leer';
+    //$mail->AltBody = 'Confirmación de postulación Foros de Vinculación 2023';
 
     $mail->send();
 } catch (Exception $e) {
