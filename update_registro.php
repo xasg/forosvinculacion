@@ -58,7 +58,7 @@ try {
     $mail->addAddress($d_email, $d_nombre);     //Add a recipient
     //$mail->addAttachment('img/programa.png', 'new.jpg');    //Optional name
     //Content
-    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->isHTML(true);                                 //Set email format to HTML
     // Activo condificacción utf-8
     $mail->CharSet = 'UTF-8';
     $mail->Subject = 'FOROS DE VINCULACIÓN 2023..';
