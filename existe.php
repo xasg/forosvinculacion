@@ -258,11 +258,6 @@
         </div>
         <br><br>
         
-
-        <h4 class="mb-0">Hola <?php echo $participante['dt_nombre']." ".$participante['dt_apaterno']." ".$participante['dt_amaterno']; ?> tu registro se realizó correctamente</h4><br>
-
-
-
       <!-- Imagen greco de cabecera -->
       <div class="w-100 pt-121  opc1 position-relative">
          <img class="img-fluid" src="img/cintillo_footer.png" width="100%">
