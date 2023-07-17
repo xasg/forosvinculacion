@@ -32,6 +32,7 @@
    <link rel="stylesheet" href="css/style.css">
    <link rel="stylesheet" href="css/bootstrap.css">
    <link rel="stylesheet" href="css/style_navs.css">
+   <link rel="stylesheet" href="css/agenda.css">
    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
   
 </head>
@@ -77,7 +78,171 @@
             <!-- Se eliminmo el folio y se agrego la sede del evento - (Alexis) -->
             <h4><strong>El anfitrión será: <?php echo $participante['dt_cede'] ?></strong></h4>
             <h4><strong>el día: <?php echo $participante['dt_fecha'] ?></strong></h4>
-            <img class="img-fluid" src="img/agenda.png">
+            <!-- <img class="img-fluid" src="img/agenda.png"> -->
+                       <!-- Se agrega validacion en caso de requerirse por si es para el día 1 o 2 -->
+                       <?php
+            // if ($participante['dt_mesa1'] == 'si') {
+            ?>
+
+               <table class="table   table-borderless border align-middle">
+
+                  <thead class="table-light">
+
+                     <caption></caption>
+
+                     <div class="card">
+
+                     <div class="card-body cafe" >
+
+                        <h4 class="card-title">DÍA 1</h4>
+
+                        <h5 class="card-subtitle ">REUNIÓN VINCULADORES</h5>
+
+                     </div>
+
+                     </div>
+
+                     <tr class="text-justifyu" >
+
+                        <th class="verde">HORARIO</th>
+
+                        <th class="cafe-claro"><b>ACTIVIDAD</b></th>
+
+                     </tr>
+
+                     </thead>
+
+                     <tbody class="table-group-divider">
+
+                        <tr class="" >
+
+                           <td class="verde">16:00 - 18:00</td>
+
+                           <td class="text-left ">Reunión de responsables de vinculación de las IES</td>
+
+                           
+
+                        </tr>
+                        
+                        <tr class="">
+                           
+                           <td class="verde">18:00</td>
+                     
+                           <td class="text-left ">Actividad Integradora y cultural</td>
+
+                           
+
+                        </tr>
+
+                     </tbody>
+
+                     <tfoot>
+
+                     
+
+                     </tfoot>
+
+               </table>
+
+            <?php
+            // }
+            ?>
+
+            <?php 
+            // if ($participante['dt_mesa1'] == 'si') {
+            ?>
+               <table class="table table-borderless border align-middle">
+
+                  <thead class="table-light">
+
+                     <caption></caption>
+
+                     <div class="card">
+
+                     <div class="card-body cafe" >
+
+                        <h4 class="card-title" >DÍA 2</h4>
+
+                        <h5 class="card-subtitle">MESA DE EXPERTOS DE ALTO NIVEL</h5>
+
+                     </div>
+
+                     </div>
+
+                     <tr class="text-justifyu">
+
+                        <th class="verde">HORARIO</th>
+
+                        <th class="cafe-claro">ACTIVIDAD</th>
+
+                     </tr>
+
+                     </thead>
+
+                     <tbody class="table-group-divider">
+
+                        <tr class="" >
+
+                           <td class="verde">10:00 - 11:15</td>
+
+                           <td class="text-left">Bienvenida y mensajes de autoridades</td>
+
+                           
+
+                        </tr>
+
+                        <tr class="">
+
+                           <td class="verde">11:15 - 11:30</td>
+
+                           <td class="text-left cafe-claro-size">Fotografía oficial</td>
+
+                        </tr>
+
+                        <tr class="">
+
+                           <td class="verde">11:30 - 13:00</td>
+
+                           <td class="text-left">Emprendimiento asociativo (ESS)</td>
+
+                        </tr>
+
+                        <tr class="">
+
+                           <td class="verde">13:00 - 15:00</td>
+
+                           <td class="text-left cafe-claro-size">Educación Dual</td>
+
+                        </tr>
+
+                        <tr class="">
+
+                           <td class="verde">15:00 - 16:00</td>
+
+                           <td class="text-left">Servicio Social</td>
+
+                        </tr>
+
+                        <tr class="">
+
+                           <td class="verde">17:00 - 19:00</td>
+
+                           <td class="text-left cafe-claro-size">Buenas prácticas de educación dual, economia social y servicio social comunitario</td>
+
+                        </tr>
+
+                     </tbody>
+
+                     <tfoot>
+
+                     
+
+                     </tfoot>
+
+               </table>
+            <?php
+            // }
+            ?>
             <br><br><br>
            <h4>
               Marco General para la Educación Dual del Tipo Superior <a href="https://bit.ly/3rvkcQV" target="_blank" style="background: #C6C6C6; border-radius: 10px; padding: 1px;"> Descargar </a>
