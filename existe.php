@@ -79,6 +79,9 @@
             <iframe src='<?php echo $participante['dt_ubicacion']; ?>' width='100%' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>
         </div>
         <br><br>
+        
+
+        <h4 class="mb-0">Hola <?php echo $participante['dt_nombre']." ".$participante['dt_apaterno']." ".$participante['dt_amaterno']; ?> tu registro se realizó correctamente</h4><br>
 
 
 
