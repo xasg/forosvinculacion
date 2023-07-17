@@ -70,7 +70,7 @@
       </div>
 
         <div class="col-sm-8 col-md-8 offset-md-2 text-center"><br><br>
-                              <h4 class="mb-0">Hola <?php echo $participante['dt_nombre']," ".$participante['dt_apaterno']." ".$participante['dt_amaterno']; ?> tu registro se realizó correctamente</h4><br>   
+                              <h4 class="mb-0">Hola <?php echo $participante['dt_nombre']." ".$participante['dt_apaterno']." ".$participante['dt_amaterno']; ?> tu registro se realizó correctamente</h4><br>   
                           
                               <!--<h4 class="mb-0">Su numero de folio es: <strong></*?php echo $participante['id_usuario'];*/?> </strong></h4><br>-->
 
@@ -80,6 +80,16 @@
       </div>
        <div class="col-sm-8 col-md-8 offset-md-2 text-center">
            <img class="img-fluid" src="img/agenda.png">
+           <br><br><br>
+           <h4>
+              Marco General para la Educación Dual del Tipo Superior 
+            </h4>
+            <p><a href="https://bit.ly/44nIaw3" target="_blank" style="background: #C6C6C6; border-radius: 10px; padding: 1px;"> Descargar </a></p>
+            <br><br>
+           <h4>
+           Marco General Emprendimiento Asociativo 
+            </h4>
+            <p><a href="https://bit.ly/3rvkcQV" target="_blank" style="background: #C6C6C6; border-radius: 10px; padding: 1px;"> Descargar </a></p>
       </div>
 
       <div class="col-sm-12 col-md-12"><br><br>

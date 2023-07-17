@@ -335,7 +335,8 @@ $region = view_region();
                            </th>
                            <td>
                               <div class="form-check form-check-inline">
-                                 <input class="form-check-input" type="radio" name="mesa1" value="si">
+                                 <!--<input class="form-check-input" type="radio" name="mesa1" value="si">-->
+                                 <input class="form-check-input" type="checkbox" name="mesa1" value="si">
                                  <label class="form-check-label">
                                     <strong>Mesa: </strong>Reunión de de responsables de vinculación de las IES 
                                  </label><br>
@@ -362,7 +363,8 @@ $region = view_region();
                            </th>
                            <td >
                               <div class="form-check form-check-inline">
-                                 <input class="form-check-input" type="radio" name="mesa5" value="si">
+                                 <!--<input class="form-check-input" type="radio" name="mesa5" value="si">-->
+                                 <input class="form-check-input" type="checkbox" name="mesa5" value="si">
                                  <label class="form-check-label">
                                     <strong></strong>Inauguración del foro
                                  </label><br>
@@ -377,7 +379,8 @@ $region = view_region();
                            </th>
                            <td >
                               <div class="form-check form-check-inline">
-                                 <input class="form-check-input" type="radio" name="mesa2" value="si">
+                                 <!--<input class="form-check-input" type="radio" name="mesa2" value="si">-->
+                                 <input class="form-check-input" type="checkbox" name="mesa2" value="si">
                                  <label class="form-check-label">
                                     <strong>Mesa 1: </strong>Emprendimiento asociativo(ESS)
                                  </label><br>
@@ -391,7 +394,8 @@ $region = view_region();
 
                            <td table-primary>
                               <div class="form-check form-check-inline">
-                                 <input class="form-check-input" type="radio" name="mesa3" value="si">
+                                 <!--<input class="form-check-input" type="radio" name="mesa3" value="si">-->
+                                 <input class="form-check-input" type="checkbox" name="mesa3" value="si">
                                  <label class="form-check-label">
                                     <strong>Mesa 2:</strong> Educación Dual
                                  </label>
@@ -404,7 +408,8 @@ $region = view_region();
                            </th>
                            <td table-primary>
                               <div class="form-check form-check-inline">
-                                 <input class="form-check-input" type="radio" name="mesa4" value="si">
+                                 <!--<input class="form-check-input" type="radio" name="mesa4" value="si">-->
+                                 <input class="form-check-input" type="checkbox" name="mesa4" value="si">
                                  <label class="form-check-label">
                                     <strong>Mesa 3:</strong> Servicio Social
                                  </label>
