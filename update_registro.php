@@ -40,6 +40,22 @@
     $d_cede=$id_usuario['dt_cede'];
     $d_fecha=$id_usuario['dt_fecha'];
     $_SESSION["id"]=$id_usuario['id_usuario'];   
+    $regiones = [
+      '01' => 'SUR SURESTE',
+      '02' => 'CENTRO SUR',
+      '03' => 'CENTRO OCCIDENTE',
+      '04' => 'NORESTE',
+      '05' => 'NOROESTE',
+      '06' => 'METROPOLITANA',
+    ];
+  
+  $_region_name = $regiones[$region] ?? 'Valor no válido';
+  
+
+
+
+
+
     $body = file_get_contents('https://fese.mx');
    //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
@@ -64,7 +80,7 @@ try {
     $mail->Subject = 'FOROS DE VINCULACIÓN 2023..';
     $mail->Body    = '  
     <style>
-      h3 {color:blue; font-size:14px;}
+      h3 {color:black; font-size:14px;}
     </style>
                   
                                   
@@ -77,7 +93,7 @@ try {
                   <tr>
                     <td align="center" style="padding:10px 0 10px 0;">
                     <h3>
-                      Apreciable '.$d_nombre.' confirmamos la recepción de su postulación, en breve recibirá mayor información de los Foros de Vinculación 2023, región ####, el cual se llevará a cabo de manera presencial en '.$d_cede.'.
+                      Apreciable '.$d_nombre.' confirmamos la recepción de su postulación, en breve recibirá mayor información de los Foros de Vinculación 2023, región '.$_region_name.', el cual se llevará a cabo de manera presencial en '.$d_cede.'.
                       
                     </h3>
                     </td>
@@ -85,8 +101,8 @@ try {
                   <tr>
                   <td align="center" style="padding:0px 0 10px 0;">
                     <h3>A continuación le pedimos descargar los siguientes documentos y leerlos previamente para tener un panorama completo de los temas tratados.</h3>
-                     <h4>Marco General para la Educación Dual del Tipo Superior</h4><br><a href="https://bit.ly/44nIaw3">Descargar</a>
-                     <h4>Marco General Emprendimiento Asociativo</h4><br><p><a href="https://bit.ly/3rvkcQV">Descargar</a></p>
+                     <h4>Marco General para la Educación Dual del Tipo Superior</h4><a href="https://bit.ly/44nIaw3">Descargar</a>
+                     <h4>Marco General Emprendimiento Asociativo</h4><a href="https://bit.ly/3rvkcQV">Descargar</a>
                   </td>
                   </tr>
                   <tr>
