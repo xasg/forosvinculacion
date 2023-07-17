@@ -82,12 +82,14 @@
            <img class="img-fluid" src="img/agenda.png">
            <br><br><br>
            <h4>
-              Marco General para la Educación Dual del Tipo Superior <a href="https://bit.ly/44nIaw3" target="_blank" style="background: #C6C6C6; border-radius: 10px; padding: 1px;"> Descargar </a>
+              Marco General para la Educación Dual del Tipo Superior 
             </h4>
+            <p><a href="https://bit.ly/44nIaw3" target="_blank" style="background: #C6C6C6; border-radius: 10px; padding: 1px;"> Descargar </a></p>
             <br><br>
            <h4>
-           Marco General Emprendimiento Asociativo <a href="https://bit.ly/3rvkcQV" target="_blank" style="background: #C6C6C6; border-radius: 10px; padding: 1px;"> Descargar </a>
+           Marco General Emprendimiento Asociativo 
             </h4>
+            <p><a href="https://bit.ly/3rvkcQV" target="_blank" style="background: #C6C6C6; border-radius: 10px; padding: 1px;"> Descargar </a></p>
       </div>
 
       <div class="col-sm-12 col-md-12"><br><br>

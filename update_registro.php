@@ -49,10 +49,10 @@ try {
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'mail.fese.org.mx';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'forosdevinculacion@fese.mx';                     //SMTP username
-    $mail->Password   = 'FoR0$3020';                               //SMTP password
+    $mail->Username   = 'inaes@fese.org.mx';                     //SMTP username
+    $mail->Password   = 'HeVr1043D';                               //SMTP password
     $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
-    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have 
+    $mail->Port       = 465;                                      //TCP port to connect to; use 587 if you have 
     //Recipients
     $mail->setFrom('inaes@fese.org.mx', 'FOROS DE VINCULACIÓN 2023.');
     $mail->addAddress($d_email, $d_nombre);     //Add a recipient
@@ -85,8 +85,8 @@ try {
                   <tr>
                   <td align="center" style="padding:0px 0 10px 0;">
                     <h3>A continuación le pedimos descargar los siguientes documentos y leerlos previamente para tener un panorama completo de los temas tratados.</h3>
-                     <h4>Marco General para la Educación Dual del Tipo Superior<a href="https://bit.ly/44nIaw3">Descargar</a></h4>
-                     <h4>Marco General Emprendimiento Asociativo<a href="https://bit.ly/3rvkcQV">Descargar</a></h4>
+                     <h4>Marco General para la Educación Dual del Tipo Superior</h4><br><a href="https://bit.ly/44nIaw3">Descargar</a>
+                     <h4>Marco General Emprendimiento Asociativo</h4><br><p><a href="https://bit.ly/3rvkcQV">Descargar</a></p>
                   </td>
                   </tr>
                   <tr>
