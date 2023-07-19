@@ -344,7 +344,7 @@ $region = view_region();
                            <th scope="row" class="col-md-2 text-center">
                            <div class="form-check form-check-inline">
                                  <!-- <input class="form-check-input" type="radio" name="mesa1" value="si"> -->
-                                 <input class="form-check-input" type="checkbox" name="mesa1" value="si">
+                                 <input class="form-check-input" type="checkbox" name="mesa2" value="si">
                                  <br>
                               </div>
                            </th>
@@ -356,7 +356,7 @@ $region = view_region();
                            <th scope="row" class="col-md-2 text-center">
                            <div class="form-check form-check-inline">
                                  <!-- <input class="form-check-input" type="radio" name="mesa1" value="si"> -->
-                                 <input class="form-check-input" type="checkbox" name="mesa1" value="si">
+                                 <input class="form-check-input" type="checkbox" name="mesa3" value="si">
                                  <br>
                               </div>
                            </th>
@@ -366,6 +366,7 @@ $region = view_region();
                         </tr>
                      </tbody>
                   </table>
+                           </div>
                   <!----------------------------------------------------------->                  
                   <!-- <table class="table table-striped table-bordered">
                      
