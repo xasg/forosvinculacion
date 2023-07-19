@@ -324,15 +324,14 @@ $region = view_region();
                   <!-- <div class="col-md-12"><br>
                      <p>Día 1. Reunión vinculadores</p>
                   </div> -->
-                  
+                  <!-- Se comento la tabla de días  y se agrego la experiencia de expertos-->
                   <table class="table table-striped table-bordered">
                      
                      <tbody>
                         <tr>
                            <th scope="row" class="col-md-2 text-center">
                            <div class="form-check form-check-inline">
-                                 <!-- <input class="form-check-input" type="radio" name="mesa1" value="si"> -->
-                                 <input class="form-check-input" type="checkbox" name="mesa1" value="si">
+                                 <input class="form-check-input" type="checkbox" name="educacion_dual" value="1">
                                  <br>
                               </div>
                            </th>
@@ -343,8 +342,7 @@ $region = view_region();
                         <tr>
                            <th scope="row" class="col-md-2 text-center">
                            <div class="form-check form-check-inline">
-                                 <!-- <input class="form-check-input" type="radio" name="mesa1" value="si"> -->
-                                 <input class="form-check-input" type="checkbox" name="mesa2" value="si">
+                                 <input class="form-check-input" type="checkbox" name="servicio_social_comunitario" value="1">
                                  <br>
                               </div>
                            </th>
@@ -355,8 +353,7 @@ $region = view_region();
                         <tr>
                            <th scope="row" class="col-md-2 text-center">
                            <div class="form-check form-check-inline">
-                                 <!-- <input class="form-check-input" type="radio" name="mesa1" value="si"> -->
-                                 <input class="form-check-input" type="checkbox" name="mesa3" value="si">
+                                 <input class="form-check-input" type="checkbox" name="economia_social_solidaria" value="1">
                                  <br>
                               </div>
                            </th>
@@ -366,7 +363,7 @@ $region = view_region();
                         </tr>
                      </tbody>
                   </table>
-                           </div>
+               </div>
                   <!----------------------------------------------------------->                  
                   <!-- <table class="table table-striped table-bordered">
                      
