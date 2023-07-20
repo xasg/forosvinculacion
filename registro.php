@@ -172,20 +172,20 @@ $region = view_region();
                   </div>
                   <div class="col-xl-3">
                      <div class="form-group">
-                        <label for="nombre">Teléfono institucional</label>
+                        <label for="nombre">Teléfono institucional (10 dígitos)</label>
                         <input type="text" class="form-control" name="tel_ins" maxlength="10" min=0 pattern="[0-9]{10}" >
                      </div>
                   </div>
                   <div class="col-xl-1">
                      <div class="form-group">
                         <label for="nombre">Ext.</label>
-                        <input type="text" class="form-control" name="ext"  min=0 pattern="[0-9]">
+                        <input type="text" class="form-control" name="ext" >
                      </div>
                   </div>
                   <div class="col-xl-4">
                      <div class="form-group">
-                        <label for="nombre">Móvil</label>
-                        <input type="text" class="form-control" name="tel_movil" maxlength="10" min=0  required="" maxlength="10" min=0 pattern="[0-9]{10}">
+                        <label for="nombre">Móvil (10 dígitos sin espacios)</label>
+                        <input type="text" class="form-control" name="tel_movil" maxlength="10" min=0  required="" pattern="[0-9]{10}">
                      </div>
                   </div>
                </div>
