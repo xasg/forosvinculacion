@@ -55,7 +55,7 @@ function run_registros_tall()
   global $mysqli;
   $sql ='SELECT * FROM usuario
           LEFT JOIN cat_region ON(cat_region.id_cat_region=usuario.dt_region)';
-  //return $mysqli->query($sql);    // aqui se comento este doble return 
+  return $mysqli->query($sql);    // aqui se comento este doble
   return $result->fetch_assoc();
 }
 
