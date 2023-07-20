@@ -50,5 +50,33 @@ function run_participante($id)
    return $result->fetch_assoc();
 }
 
+function run_registros_tall()
+{
+  global $mysqli;
+  $sql ='SELECT * FROM usuario
+          LEFT JOIN cat_region ON(cat_region.id_cat_region=usuario.dt_region)';
+  return $mysqli->query($sql);    // aqui se comento este doble
+  return $result->fetch_assoc();
+}
+
+
+function run_asistencia_resumen()
+{
+  global $mysqli;
+  $sql ='SELECT cat_region.dt_nombre_region, COUNT(*) as numero FROM `usuario`
+LEFT JOIN cat_region ON(usuario.dt_region=cat_region.id_cat_region)
+GROUP BY `dt_region`';
+  return $mysqli->query($sql);  
+  return $result->fetch_assoc();
+}
+
+
+function update_user($id)
+{
+  global $mysqli;
+  $sql = "UPDATE usuario  SET tp_estatus=1 WHERE id_usuario ='{$id}' ";
+  $mysqli->query($sql);
+}
+
 
 ?>
