@@ -39,7 +39,7 @@ function acces_registro($email)
   $result = $mysqli->query($sql);
   return $result->fetch_assoc();
 }
-
+// Funci[on para obtener el listado de participantes por region
 function run_participante($id)
 {
   global $mysqli;
@@ -50,13 +50,25 @@ function run_participante($id)
    return $result->fetch_assoc();
 }
 
-function run_registros_tall()
+// Funcion para obtener el resumen de participantes por region
+function get_region_users()
 {
   global $mysqli;
-  $sql ='SELECT * FROM usuario
-          LEFT JOIN cat_region ON(cat_region.id_cat_region=usuario.dt_region)';
+  $sql = "SELECT dt_region, COUNT(*) AS users FROM usuario GROUP BY dt_region;";
+  $result = $mysqli->query($sql);
+  return $mysqli->query($sql); 
+}
+
+
+function run_registros_tall($reg)
+{
+  global $mysqli;
+  $sql ="SELECT * FROM usuario
+          LEFT JOIN cat_region ON(cat_region.id_cat_region=usuario.dt_region)
+          WHERE cat_region.id_region = {$reg}";
+  //print($sql);
   return $mysqli->query($sql);    // aqui se comento este doble
-  return $result->fetch_assoc();
+ // return $result->fetch_assoc();
 }
 
 
