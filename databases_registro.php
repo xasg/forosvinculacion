@@ -60,6 +60,16 @@ function get_region_users()
 }
 
 
+// Funcion para obtener el resumen de participantes validados por reigion
+function get_region_acept_users($region)
+{
+  global $mysqli;
+  $sql = "SELECT dt_region, SUM(tp_estatus) AS aceptados, COUNT(*) AS users FROM usuario where dt_region = '{$region}' GROUP BY dt_region;";
+  $result = $mysqli->query($sql);
+  return $mysqli->query($sql); 
+  # code...
+}
+
 function run_registros_tall($reg)
 {
   global $mysqli;
