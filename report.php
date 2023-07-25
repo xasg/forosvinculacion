@@ -154,8 +154,41 @@ while ($region = $participantes->fetch_assoc()) {
                 Servicio social comunitario
               <?php
 
-              }  ?>             
-          </td>
+              }  ?>  <br>
+              ACTIVIDADES SELECCIONADAS:
+              <?php if($reg['dt_mesa1']!=NULL) 
+              { 
+                ?>
+                <p>Mesa: Reunión de de responsables de vinculación de las IES</p>
+                <?php
+                
+              }  ?> 
+              
+              <?php if($reg['dt_mesa2']!=NULL) 
+              { 
+                ?>
+                <p>Mesa 1: Emprendimiento asociativo(ESS)</p>
+                <?php
+                
+              }  ?> 
+              
+              <?php if($reg['dt_mesa3']!=NULL) 
+              { 
+                ?>
+                <p>Mesa 2: Educación Dual</p>
+                <?php
+                
+              }  ?>
+              
+              <?php if($reg['dt_mesa4']!=NULL) 
+              { 
+                ?>
+                <p>Mesa 3: Servicio Social</p>
+                <?php
+                
+              }  ?>
+              
+              </td>
           <td>
             <a class="btn btn-success btn-sm btn-block" data-toggle="collapse" href="#collapse<?php echo $reg['id_usuario'];?>" role="button" aria-expanded="false" aria-controls="collapse<?php echo $reg['id_usuario'];?>">
               Consultar semblanza
