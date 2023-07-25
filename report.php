@@ -53,7 +53,9 @@ while ($region = $participantes->fetch_assoc()) {
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/style_navs.css">
-  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -69,7 +71,7 @@ while ($region = $participantes->fetch_assoc()) {
       </nav>
     </div>
   </div>
-
+  <br><br>
   <div class="container">
   <div class="row">
     <div class="col-md-12">
@@ -95,7 +97,7 @@ while ($region = $participantes->fetch_assoc()) {
       </ul>
     </div>
   </div>
-</div>
+</div><br>
 
 
   <div class="container">
@@ -103,7 +105,6 @@ while ($region = $participantes->fetch_assoc()) {
     <table id="example" class="table table-responsive table-striped table-bordered" style="width: 100%;">
       <thead>
         <tr>
-          <th class="col-md-1">Región</th>
           <th class="col-md-5">Datos</th>
           <th class="col-md-5">Semblanza</th>
           <th class="col-md-1">Estatus</th>
@@ -115,7 +116,6 @@ while ($region = $participantes->fetch_assoc()) {
         while ($reg = $registros->fetch_assoc()) {
         ?>
           <tr style="border-bottom:0px">
-            <td><?php echo $reg['dt_nombre_region']; ?></td>
             <td>
               INSTITUCIÓN: <?php if ($reg['dt_nom_org'] == NULL) {
                 echo $reg['dt_nom_org2'];
@@ -154,25 +154,83 @@ while ($region = $participantes->fetch_assoc()) {
                 Servicio social comunitario
               <?php
 
-              }  ?>             
-          </td>
+              }  ?>  <br>
+              ACTIVIDADES SELECCIONADAS:
+              <?php if($reg['dt_mesa1']!=NULL) 
+              { 
+                ?>
+                <p>Mesa: Reunión de de responsables de vinculación de las IES</p>
+                <?php
+                
+              }  ?> 
+              
+              <?php if($reg['dt_mesa2']!=NULL) 
+              { 
+                ?>
+                <p>Mesa 1: Emprendimiento asociativo(ESS)</p>
+                <?php
+                
+              }  ?> 
+              
+              <?php if($reg['dt_mesa3']!=NULL) 
+              { 
+                ?>
+                <p>Mesa 2: Educación Dual</p>
+                <?php
+                
+              }  ?>
+              
+              <?php if($reg['dt_mesa4']!=NULL) 
+              { 
+                ?>
+                <p>Mesa 3: Servicio Social</p>
+                <?php
+                
+              }  ?>
+              
+              </td>
           <td>
-            <?php echo $reg['dt_comentario']; ?>
+            <a class="btn btn-success btn-sm btn-block" data-toggle="collapse" href="#collapse<?php echo $reg['id_usuario'];?>" role="button" aria-expanded="false" aria-controls="collapse<?php echo $reg['id_usuario'];?>">
+              Consultar semblanza
+            </a>
+            <div class="collapse" id="collapse<?php echo $reg['id_usuario'];?>">
+            <div class="card card-body">
+             <?php echo $reg['dt_comentario']; ?>
+            </div>
+            </div>  
           </td>
-            
-
             <td>
-
               <?php if ($reg['tp_estatus'] == 0) {
               ?>
-                <form action="update_new.php" method="POST">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#example<?php echo $reg['id_usuario'] ?>">
+                Validar
+              </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="example<?php echo $reg['id_usuario'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">                      
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <h5>Estás seguro de validar a <?php echo $reg['dt_nombre'] . " " . $reg['dt_apaterno'] . " " . $reg['dt_amaterno']; ?> como asistente</h5>
+                    </div>
+                    <div class="modal-footer">
+                       <form action="update_new.php" method="POST">
                   <div class="form-group">
                     <input type="hidden" name="id" value="<?php echo $reg['id_usuario'] ?>">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Validar </button>
                   </div>
                 </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <?php
-
               } else {  ?>
                 <button type="submit" class="btn btn-success">Asistente</button>
               <?php } ?>
@@ -193,11 +251,6 @@ while ($region = $participantes->fetch_assoc()) {
     </table>
   </div>
   </div>
-
-
-
-
-
 </body>
 
 </html>

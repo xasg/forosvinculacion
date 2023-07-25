@@ -89,7 +89,7 @@ function run_asistencia_resumen()
 LEFT JOIN cat_region ON(usuario.dt_region=cat_region.id_cat_region)
 GROUP BY `dt_region`';
   return $mysqli->query($sql);  
-  return $result->fetch_assoc();
+ // return $result->fetch_assoc();
 }
 
 
