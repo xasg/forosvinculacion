@@ -378,7 +378,7 @@ $region = view_region();
                               <div class="form-check form-check-inline">
                                  <input class="form-check-input" type="checkbox" name="mesa1" value="si">
                                  <label class="form-check-label">
-                                    <strong>Mesa: </strong>Reunión de de responsables de vinculación de las IES 
+                                    Reunión de de responsables de vinculación de las IES 
                                  </label><br>
                               </div>
                            </td>
@@ -398,59 +398,22 @@ $region = view_region();
                      <tbody>
                         <!-- ------------------------------------------------------------------------------------ -->
                      <tr>
-                           <th scope="row" class="col-md-2 text-center">
-                              <p>10:00 – 11:30</p>    <!-- Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
+                           <th scope="row" class="col-md-2 text-center align-middle">
+                              <p>10:00 – 16:00</p>    <!-- Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
                            </th>
                            <td >
                               <div class="form-check form-check-inline">
                                  <input class="form-check-input" type="checkbox" name="mesa5" value="si">
                                  <label class="form-check-label">
-                                    <strong></strong>Inauguración del foro
+                                    Inauguración del foro  <br>
+                                    <strong>Mesa 1: </strong>Emprendimiento asociativo(ESS) <br>
+                                    <strong>Mesa 2:</strong> Educación Dual <br>
+                                    <strong>Mesa 3:</strong> Servicio Social <br>
                                  </label><br>
                               </div>
                            </td>
                         </tr>
-                        <!-- ------------------------------------------------------------------------------------------ -->
-                        <tr>
-                           <th scope="row" class="col-md-2 text-center">
-                              <p>11:30 – 13:00</p>
-                           </th>
-                           <td >
-                              <div class="form-check form-check-inline">
-                                 <input class="form-check-input" type="checkbox" name="mesa2" value="si">
-                                 <label class="form-check-label">
-                                    <strong>Mesa 1: </strong>Emprendimiento asociativo(ESS)
-                                 </label><br>
-                              </div>
-                           </td>
-                        </tr>
-                        <tr>
-                           <th scope="row" class="text-center">
-                              <p>13:00 – 15:00</p>
-                           </th>
-
-                           <td table-primary>
-                              <div class="form-check form-check-inline">
-                                 <input class="form-check-input" type="checkbox" name="mesa3" value="si">
-                                 <label class="form-check-label">
-                                    <strong>Mesa 2:</strong> Educación Dual
-                                 </label>
-                              </div>
-                           </td>
-                        </tr>
-                        <tr>
-                           <th scope="row" class="text-center">
-                              <p>15:00 – 16:00</p>
-                           </th>
-                           <td table-primary>
-                              <div class="form-check form-check-inline">
-                                 <input class="form-check-input" type="checkbox" name="mesa4" value="si">
-                                 <label class="form-check-label">
-                                    <strong>Mesa 3:</strong> Servicio Social
-                                 </label>
-                              </div>
-                           </td>
-                        </tr>
+                        
                      </tbody>
                   </table>
                </div>
