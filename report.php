@@ -102,6 +102,28 @@ while ($region = $participantes->fetch_assoc()) {
 
   <div class="container">
   <div class="row">
+    <form action="genera_report.php" method="POST">
+            <?php if($var_reg==1){ ?>
+           <input type="hidden" name="region" value="<?php echo '01';?>"><br>
+           <button type="submit" class="btn btn-primary">Generar reporte SUR SURESTE</button><br><br>
+           <?php } elseif ($var_reg==2){?>
+            <input type="hidden" name="region" value="<?php echo '02';?>"><br>
+            <button type="submit" class="btn btn-primary">Generar reporte CENTRO SUR</button><br><br> 
+           <?php } elseif ($var_reg==3){?>
+            <input type="hidden" name="region" value="<?php echo '03';?>"><br>
+            <button type="submit" class="btn btn-primary">Generar reporte CENTRO OCCIDENTE</button><br><br> 
+           <?php } elseif ($var_reg==4){?>
+            <input type="hidden" name="region" value="<?php echo '04';?>"><br>
+            <button type="submit" class="btn btn-primary">Generar reporte NORESTE</button><br><br> 
+           <?php } elseif ($var_reg==5){?>
+            <input type="hidden" name="region" value="<?php echo '05';?>"><br>
+            <button type="submit" class="btn btn-primary">Generar reporte NOROESTE</button><br><br> 
+           <?php } else {?>
+            <input type="hidden" name="region" value="<?php echo '06';?>"><br>
+            <button type="submit" class="btn btn-primary">Generar reporte METROPOLITANA</button><br><br> 
+           <?php } ?>
+            
+    </form>
     <table id="example" class="table table-responsive table-striped table-bordered" style="width: 100%;">
       <thead>
         <tr>
@@ -200,14 +222,13 @@ while ($region = $participantes->fetch_assoc()) {
             </div>  
           </td>
             <td>
-              <?php if ($reg['tp_estatus'] == 0) {
-              ?>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#example<?php echo $reg['id_usuario'] ?>">
+              <?php if ($reg['tp_estatus'] == "INSCRITO") { ?>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#example<?php echo $reg['id_usuario']; ?>">
                 Validar
               </button>
 
               <!-- Modal -->
-              <div class="modal fade" id="example<?php echo $reg['id_usuario'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal fade" id="example<?php echo $reg['id_usuario']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">                      
@@ -217,35 +238,50 @@ while ($region = $participantes->fetch_assoc()) {
                     </div>
                     <div class="modal-body">
                       <h5>Estás seguro de validar a <?php echo $reg['dt_nombre'] . " " . $reg['dt_apaterno'] . " " . $reg['dt_amaterno']; ?> como asistente</h5>
+                    
+                <form action="update_new.php" method="POST">
+                  <div class="row">
+                    <div class="col-md-12">                 
+                    <input type="hidden" name="id" value="<?php echo $reg['id_usuario']; ?>"><br>
+                    <input type="hidden" name="region" value="<?php echo $var_reg; ?>">
+                    <div class="col-md-6">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="validacion" value="ACEPTADO"><h5>Aceptado</h5>
+                        </label>
                     </div>
-                    <div class="modal-footer">
-                       <form action="update_new.php" method="POST">
-                  <div class="form-group">
-                    <input type="hidden" name="id" value="<?php echo $reg['id_usuario'] ?>">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="validacion" value="RECHAZADO"><h5>Rechazado</h5>
+                        </label>
+                      </div>
+                    </div><br>
+
                     <button type="submit" class="btn btn-primary">Validar </button>
+                 
                   </div>
+                </div>
                 </form>
-                    </div>
+                </div>
+
+                  <div class="modal-footer">
                   </div>
                 </div>
               </div>
-              <?php
-              } else {  ?>
-                <button type="submit" class="btn btn-success">Asistente</button>
+              <?php } elseif ($reg['tp_estatus']=="ACEPTADO") { ?>
+                <button type="submit" class="btn btn-success">Aceptado</button>
+              <?php } else { ?>
+                <button type="submit" class="btn btn-danger">Rechazado</button>
               <?php } ?>
+            </div>
+          </td>
 
-
-            </td>
 
           </tr>
 
-        <?php
-        }
-
-        ?>
-
-
+       <?php } ?>
 
       </tbody>
     </table>
