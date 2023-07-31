@@ -53,7 +53,9 @@ while ($region = $participantes->fetch_assoc()) {
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/style_navs.css">
-  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -69,7 +71,7 @@ while ($region = $participantes->fetch_assoc()) {
       </nav>
     </div>
   </div>
-
+  <br><br>
   <div class="container">
   <div class="row">
     <div class="col-md-12">
@@ -95,15 +97,36 @@ while ($region = $participantes->fetch_assoc()) {
       </ul>
     </div>
   </div>
-</div>
+</div><br>
 
 
   <div class="container">
   <div class="row">
+    <form action="genera_report.php" method="POST">
+            <?php if($var_reg==1){ ?>
+           <input type="hidden" name="region" value="<?php echo '01';?>"><br>
+           <button type="submit" class="btn btn-primary">Generar reporte SUR SURESTE</button><br><br>
+           <?php } elseif ($var_reg==2){?>
+            <input type="hidden" name="region" value="<?php echo '02';?>"><br>
+            <button type="submit" class="btn btn-primary">Generar reporte CENTRO SUR</button><br><br> 
+           <?php } elseif ($var_reg==3){?>
+            <input type="hidden" name="region" value="<?php echo '03';?>"><br>
+            <button type="submit" class="btn btn-primary">Generar reporte CENTRO OCCIDENTE</button><br><br> 
+           <?php } elseif ($var_reg==4){?>
+            <input type="hidden" name="region" value="<?php echo '04';?>"><br>
+            <button type="submit" class="btn btn-primary">Generar reporte NORESTE</button><br><br> 
+           <?php } elseif ($var_reg==5){?>
+            <input type="hidden" name="region" value="<?php echo '05';?>"><br>
+            <button type="submit" class="btn btn-primary">Generar reporte NOROESTE</button><br><br> 
+           <?php } else {?>
+            <input type="hidden" name="region" value="<?php echo '06';?>"><br>
+            <button type="submit" class="btn btn-primary">Generar reporte METROPOLITANA</button><br><br> 
+           <?php } ?>
+            
+    </form>
     <table id="example" class="table table-responsive table-striped table-bordered" style="width: 100%;">
       <thead>
         <tr>
-          <th class="col-md-1">Región</th>
           <th class="col-md-5">Datos</th>
           <th class="col-md-5">Semblanza</th>
           <th class="col-md-1">Estatus</th>
@@ -115,7 +138,6 @@ while ($region = $participantes->fetch_assoc()) {
         while ($reg = $registros->fetch_assoc()) {
         ?>
           <tr style="border-bottom:0px">
-            <td><?php echo $reg['dt_nombre_region']; ?></td>
             <td>
               INSTITUCIÓN: <?php if ($reg['dt_nom_org'] == NULL) {
                 echo $reg['dt_nom_org2'];
@@ -154,50 +176,117 @@ while ($region = $participantes->fetch_assoc()) {
                 Servicio social comunitario
               <?php
 
-              }  ?>             
-          </td>
+              }  ?>  <br>
+              ACTIVIDADES SELECCIONADAS:
+              <?php if($reg['dt_mesa1']!=NULL) 
+              { 
+                ?>
+                <p>Mesa: Reunión de de responsables de vinculación de las IES</p>
+                <?php
+                
+              }  ?> 
+              
+              <?php if($reg['dt_mesa2']!=NULL) 
+              { 
+                ?>
+                <p>Mesa 1: Emprendimiento asociativo(ESS)</p>
+                <?php
+                
+              }  ?> 
+              
+              <?php if($reg['dt_mesa3']!=NULL) 
+              { 
+                ?>
+                <p>Mesa 2: Educación Dual</p>
+                <?php
+                
+              }  ?>
+              
+              <?php if($reg['dt_mesa4']!=NULL) 
+              { 
+                ?>
+                <p>Mesa 3: Servicio Social</p>
+                <?php
+                
+              }  ?>
+              
+              </td>
           <td>
-            <?php echo $reg['dt_comentario']; ?>
+            <a class="btn btn-success btn-sm btn-block" data-toggle="collapse" href="#collapse<?php echo $reg['id_usuario'];?>" role="button" aria-expanded="false" aria-controls="collapse<?php echo $reg['id_usuario'];?>">
+              Consultar semblanza
+            </a>
+            <div class="collapse" id="collapse<?php echo $reg['id_usuario'];?>">
+            <div class="card card-body">
+             <?php echo $reg['dt_comentario']; ?>
+            </div>
+            </div>  
           </td>
-            
-
             <td>
+              <?php if ($reg['tp_estatus'] == "INSCRITO") { ?>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#example<?php echo $reg['id_usuario']; ?>">
+                Validar
+              </button>
 
-              <?php if ($reg['tp_estatus'] == 0) {
-              ?>
+              <!-- Modal -->
+              <div class="modal fade" id="example<?php echo $reg['id_usuario']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">                      
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <h5>Estás seguro de validar a <?php echo $reg['dt_nombre'] . " " . $reg['dt_apaterno'] . " " . $reg['dt_amaterno']; ?> como asistente</h5>
+                    
                 <form action="update_new.php" method="POST">
-                  <div class="form-group">
-                    <input type="hidden" name="id" value="<?php echo $reg['id_usuario'] ?>">
+                  <div class="row">
+                    <div class="col-md-12">                 
+                    <input type="hidden" name="id" value="<?php echo $reg['id_usuario']; ?>"><br>
+                    <input type="hidden" name="region" value="<?php echo $var_reg; ?>">
+                    <div class="col-md-6">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="validacion" value="ACEPTADO"><h5>Aceptado</h5>
+                        </label>
+                    </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="validacion" value="RECHAZADO"><h5>Rechazado</h5>
+                        </label>
+                      </div>
+                    </div><br>
+
                     <button type="submit" class="btn btn-primary">Validar </button>
+                 
                   </div>
+                </div>
                 </form>
-              <?php
+                </div>
 
-              } else {  ?>
-                <button type="submit" class="btn btn-success">Asistente</button>
+                  <div class="modal-footer">
+                  </div>
+                </div>
+              </div>
+              <?php } elseif ($reg['tp_estatus']=="ACEPTADO") { ?>
+                <button type="submit" class="btn btn-success">Aceptado</button>
+              <?php } else { ?>
+                <button type="submit" class="btn btn-danger">Rechazado</button>
               <?php } ?>
+            </div>
+          </td>
 
-
-            </td>
 
           </tr>
 
-        <?php
-        }
-
-        ?>
-
-
+       <?php } ?>
 
       </tbody>
     </table>
   </div>
   </div>
-
-
-
-
-
 </body>
 
 </html>

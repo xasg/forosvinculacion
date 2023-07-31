@@ -68,7 +68,6 @@ $mysqli->query($sql);
 }
 
 
-
 function acces_registro($email)
 {
   global $mysqli;
@@ -99,15 +98,23 @@ function get_region_users()
 }
 
 
+// Funcion para obtener el resumen de participantes validados por reigion
+function get_region_acept_users($region)
+{
+  global $mysqli;
+  $sql = "SELECT dt_region, SUM(tp_estatus) AS aceptados, COUNT(*) AS users FROM usuario where dt_region = '{$region}' GROUP BY dt_region;";
+  $result = $mysqli->query($sql);
+  return $mysqli->query($sql); 
+  # code...
+}
+
 function run_registros_tall($reg)
 {
   global $mysqli;
   $sql ="SELECT * FROM usuario
           LEFT JOIN cat_region ON(cat_region.id_cat_region=usuario.dt_region)
-          WHERE cat_region.id_region = {$reg}";
-  //print($sql);
-  return $mysqli->query($sql);    // aqui se comento este doble
- // return $result->fetch_assoc();
+          WHERE cat_region.id_region = '{$reg}'";
+  return $mysqli->query($sql);   
 }
 
 
@@ -118,14 +125,13 @@ function run_asistencia_resumen()
 LEFT JOIN cat_region ON(usuario.dt_region=cat_region.id_cat_region)
 GROUP BY `dt_region`';
   return $mysqli->query($sql);  
-  return $result->fetch_assoc();
 }
 
 
-function update_user($id)
+function update_user($id, $validacion)
 {
   global $mysqli;
-  $sql = "UPDATE usuario  SET tp_estatus=1 WHERE id_usuario ='{$id}' ";
+  $sql = "UPDATE usuario  SET tp_estatus='{$validacion}' WHERE id_usuario ='{$id}' ";
   $mysqli->query($sql);
 }
 
