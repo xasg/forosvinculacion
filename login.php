@@ -26,6 +26,39 @@
         }
     </style>
 
+    <?php 
+        function  procesarFormulario($correo, $contraseña)  // validamos que el usuario exista 
+        {
+            require_once('controller/conexion.php');
+            //session_start();
+            $sql = "SELECT * FROM usuario WHERE dt_email = '$correo' AND dt_password = '$contraseña'";
+		    $result = $mysqli->query($sql);
+            if ($result->num_rows > 0) 
+		    {			
+			    // Obtener la primera fila de resultados
+			    $row = $result->fetch_assoc();
+			    // Guardar el valor de la columna "tp_usuario" en la variable $tipoUsuario
+			    $tipoUsuario = $row["tp_usuario"];
+			    //echo "existe el usuario y es del tipo ". $tipoUsuario;
+			    if($tipoUsuario == 2)  // solo los usuarios del tipo 2 pueden acceder al reporte 
+			    {
+				    echo "<script language='javascript'>
+					window.location.replace('report.php');
+				    </script>";
+			    }
+			    else
+			    {   
+				    header('location:login.php?error=empty-password-invalid'); //si el usuario no es del tipo 2, se muestra un mensaje de error 
+			    }
+		    } 
+		    else 
+		    {
+			    // Usuario inválido, enviar respuesta al cliente.			
+			    header('location:login.php?error=empty-password-invalid');
+            }
+        }
+    ?>
+
 </head>
 
 <body class="page-template page-template-auditorio page-template-auditorio-php page page-id-304">
@@ -73,7 +106,10 @@
         <div class="container-fluid" style="padding-top: 3%">
             <div class="row justify-content-center ">
                 <div class="col-md-12 ">  
-                <form action="controller/login.php" method="POST">  <!------------------------------------SE CREA EL LOGIN----------------------------->
+
+                <!--------------------------------->
+                <form action="databases_registro.php" method="POST"> <!------------------------------------SE CREA EL LOGIN----------------------------->
+                    <?php /* <form action= "<?php echo $_SERVER['PHP_SELF']; ?>" method="POST"> */?>
                     <div class="row">
                         <div class="col-md-12">
                             <h2>Hola, le damos la bienvenida de nuevo.<br><br></h2>
@@ -105,6 +141,16 @@
                           Los datos de acceso que ingreso son incorrectos
                         </div>
                    <?php } ?>
+                    
+                   <?php/*
+                        
+                        // Verificamos si el formulario ha sido enviado
+                        if ($_SERVER['REQUEST_METHOD'] === 'POST')  
+                        {
+                            // Procesar los datos del formulario llamando a la función
+                            procesarFormulario($_POST['correo'], $_POST['password'],);
+                        }
+                    */?>
 
 
                      <div class="col-md-12 text-center">
@@ -120,11 +166,7 @@
                      </div>
                 </div>  
  </form>
-
-
-
-
-                    
+ <!----------------->
                 </div>
             </div>
         </div>
