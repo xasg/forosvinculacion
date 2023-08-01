@@ -62,12 +62,72 @@
 			    // }
 
                 switch ($tipoUsuario) {
-                    case 2:
+                    case 0:
                         // La validacion para los encargados de "VALIDAR a los aceptados o rechazados"
                         echo "<script language='javascript'>
                         	window.location.replace('report.php');
                             </script>";
                             $_SESSION['tp_user'] = 2;
+                            $_SESSION['dt_email'] = $correo;
+                            $_SESSION['dt_password'] = $contraseña;
+                            $_SESSION['dt_nombre'] = $nombre;
+                        break;
+                    case 3:
+                        // La validacion para los encargados de "VALIDAR a los aceptados o rechazados" SUR SURESTE
+                        echo "<script language='javascript'>
+                        	window.location.replace('report.php');
+                            </script>";
+                            $_SESSION['tp_user'] = 3;
+                            $_SESSION['dt_email'] = $correo;
+                            $_SESSION['dt_password'] = $contraseña;
+                            $_SESSION['dt_nombre'] = $nombre;
+                        break;
+                    case 4:
+                        // La validacion para los encargados de "VALIDAR a los aceptados o rechazados" CENTRO SUR
+                        echo "<script language='javascript'>
+                        	window.location.replace('report.php');
+                            </script>";
+                            $_SESSION['tp_user'] = 4;
+                            $_SESSION['dt_email'] = $correo;
+                            $_SESSION['dt_password'] = $contraseña;
+                            $_SESSION['dt_nombre'] = $contraseña;
+                        break;
+                    case 5:
+                        // La validacion para los encargados de "VALIDAR a los aceptados o rechazados" CENTRO OCCIDENTE
+                        echo "<script language='javascript'>
+                        	window.location.replace('report.php');
+                            </script>";
+                            $_SESSION['tp_user'] = 5;
+                            $_SESSION['dt_email'] = $correo;
+                            $_SESSION['dt_password'] = $contraseña;
+                            $_SESSION['dt_nombre'] = $contraseña;
+                        break;
+                    case 6:
+                        // La validacion para los encargados de "VALIDAR a los aceptados o rechazados" NORESTE
+                        echo "<script language='javascript'>
+                        	window.location.replace('report.php');
+                            </script>";
+                            $_SESSION['tp_user'] = 6;
+                            $_SESSION['dt_email'] = $correo;
+                            $_SESSION['dt_password'] = $contraseña;
+                            $_SESSION['dt_nombre'] = $contraseña;
+                        break;
+                    case 7:
+                        // La validacion para los encargados de "VALIDAR a los aceptados o rechazados" NOROESTE
+                        echo "<script language='javascript'>
+                        	window.location.replace('report.php');
+                            </script>";
+                            $_SESSION['tp_user'] = 7;
+                            $_SESSION['dt_email'] = $correo;
+                            $_SESSION['dt_password'] = $contraseña;
+                            $_SESSION['dt_nombre'] = $contraseña;
+                        break;
+                    case 8:
+                        // La validacion para los encargados de "VALIDAR a los aceptados o rechazados" METROPOLITANA
+                        echo "<script language='javascript'>
+                        	window.location.replace('report.php');
+                            </script>";
+                            $_SESSION['tp_user'] = 8;
                             $_SESSION['dt_email'] = $correo;
                             $_SESSION['dt_password'] = $contraseña;
                             $_SESSION['dt_nombre'] = $contraseña;

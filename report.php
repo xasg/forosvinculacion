@@ -4,6 +4,9 @@ if ($_SESSION['dt_email'] == false) {
   # code...
   header("Location:login.php");
 }
+
+$tipo = $_SESSION['tp_user'];
+$nombre = $_SESSION['dt_nombre'];
 include_once('databases_registro.php');
 mysqli_set_charset($mysqli, 'utf8');
 $var_reg=1;
@@ -68,11 +71,20 @@ while ($region = $participantes->fetch_assoc()) {
 
   <div class="container-fluid mx-0 px-0" style="background-color: #8D203D;">
     <div class="container">
-      <nav class="navbar navbar-dark navbar-expand-lg navigation">
+      <nav class="navbar navbar-dark navbar-expand-lg navigation d-flex justify-content-between">
         <img alt="Responsive image" class="img-fluid" src="img/logo.png" width="150">
-        <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
-          <span class="navbar-toggler-icon"> </span>
-        </button>
+        <ul class="d-flex justify-content-between text-center " >
+          <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"> </span>
+          </button>
+          <br>
+          <p style="text-aling:center; color: #fff; margin:auto; padding:7px;" >
+            <?php 
+              echo $nombre;
+            ?>
+          </p>
+            <a name="" id="" class="btn" href="logout.php" style="font-size: 15px;" >cerrar sesión</a>
+        </ul>
       </nav>
     </div>
   </div>
@@ -80,6 +92,10 @@ while ($region = $participantes->fetch_assoc()) {
   <div class="container">
   <div class="row">
     <div class="col-md-12">
+      <?php
+        if ($tipo == 2) {
+          #SOLO LOS QUE VALIDANM VENM ESTA INMFORMACIONM
+      ?>
       <ul class="nav nav-tabs">
         <li class="nav-item">
           <a class="nav-link <?php if($var_reg==1){echo 'active';}?>" href="report.php?region=1">SUR SURESTE (<?=$sur_sureste?>)</a>
@@ -100,6 +116,74 @@ while ($region = $participantes->fetch_assoc()) {
           <a class="nav-link <?php if($var_reg==6){echo 'active';}?>" href="report.php?region=6">METROPOLITANA (<?=$metropolitana?>)</a>
         </li>
       </ul>
+      <?php
+        }elseif ($tipo == 3) {
+          # SUR SURESTE REPORTE
+          ?>
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link <?php if($var_reg==1){echo 'active';}?>" href="report.php?region=1">SUR SURESTE (<?=$sur_sureste?>)</a>
+            </li>
+          </ul>
+          <?php
+        }
+        elseif ($tipo == 4) {
+          # CENMTRO SUR RREPORTE
+          $var_reg = 2;
+          ?>
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+            <a class="nav-link <?php echo 'active';?>" href="report.php?region=2">CENTRO SUR (<?=$centro_sur?>)</a>
+            </li>
+          </ul>
+          <?php
+        }
+        elseif ($tipo == 5) {
+          # CENMTRO SUR RREPORTE
+          $var_reg = 3;
+          ?>
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+            <a class="nav-link <?php if($var_reg==3){echo 'active';}?>" href="report.php?region=3">CENTRO OCCIDENTE (<?=$centro_occidente?>)</a>
+            </li>
+          </ul>
+          <?php
+        }
+        elseif ($tipo == 6) {
+          # CENMTRO SUR RREPORTE
+          $var_reg = 4;
+          ?>
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+            <a class="nav-link <?php if($var_reg==4){echo 'active';}?>" href="report.php?region=4">NORESTE (<?=$noreste?>)</a>
+            </li>
+          </ul>
+          <?php
+        }
+        elseif ($tipo == 7) {
+          # CENMTRO SUR RREPORTE
+          $var_reg = 5;
+          ?>
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+            <a class="nav-link <?php if($var_reg==5){echo 'active';}?>" href="report.php?region=5">NOROESTE (<?=$noroeste?>)</a>
+            </li>
+          </ul>
+          <?php
+        }
+        elseif ($tipo == 8) {
+          # CENMTRO SUR RREPORTE
+          $var_reg = 6;
+          ?>
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+            <a class="nav-link <?php if($var_reg==6){echo 'active';}?>" href="report.php?region=6">METROPOLITANA (<?=$metropolitana?>)</a>
+            </li>
+          </ul>
+          <?php
+        }
+      ?>
+      
     </div>
   </div>
 </div><br>
@@ -129,6 +213,11 @@ while ($region = $participantes->fetch_assoc()) {
            <?php } ?>
             
     </form>
+    <!-- sOLO LOS QUE VALIDANM PUEDENM VER ESTA INMFORMACION -->
+    <?php
+      if ($tipo == 2) {
+      
+    ?>
     <table id="example" class="table table-responsive table-striped table-bordered" style="width: 100%;">
       <thead>
         <tr>
@@ -290,6 +379,9 @@ while ($region = $participantes->fetch_assoc()) {
 
       </tbody>
     </table>
+    <?php
+    }
+    ?>
   </div>
   </div>
 </body>
