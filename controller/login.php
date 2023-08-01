@@ -6,7 +6,10 @@ if($_POST)
 {
  $correo = isset( $_POST['correo']) ? $_POST['correo'] : '';
  $password = isset( $_POST['password']) ? $_POST['password'] : '';
- $user =get_user_acces($correo);
+ echo " el nombre del usuario es " ; 
+ $user = get_user_acces($correo);
+
+
  if( $user['dt_password']==$password)
  {    
  	$_SESSION["id_user"] = $user['id_usuario'];

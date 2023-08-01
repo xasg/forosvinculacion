@@ -101,8 +101,12 @@ function get_user_acces($correo)
   global $mysqli;
   $sql = "SELECT * FROM usuario 
   LEFT JOIN cat_region ON(usuario.dt_region=cat_region.id_cat_region)
-  WHERE dt_email = '{$correo}' AND tp_usuario=1";
+  WHERE dt_email = '{$correo}' AND tp_usuario=1";   //  aqui deberia estar la condicion en el tp_usuario = 2
   $result = $mysqli->query($sql);
+  
+
+
+
   return $result->fetch_assoc();
 }
 
