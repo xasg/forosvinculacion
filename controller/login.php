@@ -6,9 +6,9 @@ if($_POST)
 {
  $correo = isset( $_POST['correo']) ? $_POST['correo'] : '';
  $password = isset( $_POST['password']) ? $_POST['password'] : '';
- echo " el nombre del usuario es " ; 
  $user = get_user_acces($correo);
-
+ //echo "el correo es ".$password. " contraseña DE LA FUNCION ES  ".$user['dt_password'];
+ //echo "el correo es ".$correo. " contraseña DE LA FUNCION ES  ".$user['dt_password'];
 
  if( $user['dt_password']==$password)
  {    
@@ -16,12 +16,15 @@ if($_POST)
  	$_SESSION["region"] = $user['dt_region'];
  	$_SESSION["nom_region"] = $user['dt_nombre_region'];
   ?>
-				<script>
-        <?php if($user['tp_usuario']==2) { ?>
+	<script>
+    	<?php if($user['tp_usuario']==2) 
+		{ ?>
           window.location="../report_region.php"
-        <?php } elseif ($user['tp_usuario']==3) { ?>
+        <?php } 
+		elseif ($user['tp_usuario']==3) { ?>
           window.location="../report.php"       
-        <?php } else { ?> 
+        <?php } 
+		else { ?> 
           window.location="../login.php?error=empty-password-invalid" 
         <?php }  ?> 
         </script>
