@@ -74,7 +74,7 @@ function run_registros_tall($reg)
   global $mysqli;
   $sql ="SELECT * FROM usuario
           LEFT JOIN cat_region ON(cat_region.id_cat_region=usuario.dt_region)
-          WHERE cat_region.id_region = '{$reg}'";
+          WHERE cat_region.id_region = '{$reg}' AND tp_usuario=1";
   return $mysqli->query($sql);   
 }
 
@@ -88,12 +88,22 @@ GROUP BY `dt_region`';
   return $mysqli->query($sql);  
 }
 
-
 function update_user($id, $validacion)
 {
   global $mysqli;
   $sql = "UPDATE usuario  SET tp_estatus='{$validacion}' WHERE id_usuario ='{$id}' ";
   $mysqli->query($sql);
+}
+
+
+function get_user_acces($correo)
+{
+  global $mysqli;
+  $sql = "SELECT * FROM usuario 
+  LEFT JOIN cat_region ON(usuario.dt_region=cat_region.id_cat_region)
+  WHERE dt_email = '{$correo}' AND tp_usuario=1";
+  $result = $mysqli->query($sql);
+  return $result->fetch_assoc();
 }
 
 
