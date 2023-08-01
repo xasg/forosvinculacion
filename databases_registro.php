@@ -63,7 +63,7 @@ function get_region_users()
 function get_region_acept_users($region)
 {
   global $mysqli;
-  $sql = "SELECT dt_region, SUM(tp_estatus) AS aceptados, COUNT(*) AS users FROM usuario where dt_region = '{$region}' GROUP BY dt_region;";
+  $sql = "SELECT dt_region, SUM(tp_estatus_conteo) AS aceptados, COUNT(*) AS users FROM usuario where dt_region = '{$region}' GROUP BY dt_region;";
   $result = $mysqli->query($sql);
   return $mysqli->query($sql); 
   # code...
@@ -88,10 +88,10 @@ GROUP BY `dt_region`';
   return $mysqli->query($sql);  
 }
 
-function update_user($id, $validacion)
+function update_user($id, $validacion, $estatus_validacion)
 {
   global $mysqli;
-  $sql = "UPDATE usuario  SET tp_estatus='{$validacion}' WHERE id_usuario ='{$id}' ";
+  $sql = "UPDATE usuario  SET tp_estatus='{$validacion}', tp_estatus_conteo='{$estatus_validacion}' WHERE id_usuario ='{$id}' ";
   $mysqli->query($sql);
 }
 
