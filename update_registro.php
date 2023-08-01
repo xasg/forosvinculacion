@@ -124,7 +124,7 @@
                        <h3>A continuación le pedimos descargar los siguientes documentos y leerlos previamente para tener un panorama completo de los temas tratados.</h3>
                         <h4>Marco General para la Educación Dual del Tipo Superior</h4><a href="https://bit.ly/44nIaw3">Descargar</a>
                         <h4>Marco General Emprendimiento Asociativo</h4><a href="https://bit.ly/3rvkcQV">Descargar</a>
-                        <h4>Ficha de Anfitrionia<br><a href="docs\AnfitrioniaSureste.pdf">Descargar</a>
+                        <h4>Ficha de Anfitrionia</h4><a href="https://bit.ly/47ibKoz">Descargar</a>
                      </td>
                      </tr>
                      <tr>
