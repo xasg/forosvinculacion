@@ -90,7 +90,7 @@
                             $_SESSION['tp_user'] = 4;
                             $_SESSION['dt_email'] = $correo;
                             $_SESSION['dt_password'] = $contraseña;
-                            $_SESSION['dt_nombre'] = $contraseña;
+                            $_SESSION['dt_nombre'] = $nombre;
                         break;
                     case 5:
                         // La validacion para los encargados de "VALIDAR a los aceptados o rechazados" CENTRO OCCIDENTE
@@ -100,7 +100,7 @@
                             $_SESSION['tp_user'] = 5;
                             $_SESSION['dt_email'] = $correo;
                             $_SESSION['dt_password'] = $contraseña;
-                            $_SESSION['dt_nombre'] = $contraseña;
+                            $_SESSION['dt_nombre'] = $nombre;
                         break;
                     case 6:
                         // La validacion para los encargados de "VALIDAR a los aceptados o rechazados" NORESTE
@@ -110,7 +110,7 @@
                             $_SESSION['tp_user'] = 6;
                             $_SESSION['dt_email'] = $correo;
                             $_SESSION['dt_password'] = $contraseña;
-                            $_SESSION['dt_nombre'] = $contraseña;
+                            $_SESSION['dt_nombre'] = $nombre;
                         break;
                     case 7:
                         // La validacion para los encargados de "VALIDAR a los aceptados o rechazados" NOROESTE
@@ -120,7 +120,7 @@
                             $_SESSION['tp_user'] = 7;
                             $_SESSION['dt_email'] = $correo;
                             $_SESSION['dt_password'] = $contraseña;
-                            $_SESSION['dt_nombre'] = $contraseña;
+                            $_SESSION['dt_nombre'] = $nombre;
                         break;
                     case 8:
                         // La validacion para los encargados de "VALIDAR a los aceptados o rechazados" METROPOLITANA
@@ -130,7 +130,7 @@
                             $_SESSION['tp_user'] = 8;
                             $_SESSION['dt_email'] = $correo;
                             $_SESSION['dt_password'] = $contraseña;
-                            $_SESSION['dt_nombre'] = $contraseña;
+                            $_SESSION['dt_nombre'] = $nombre;
                         break;
                     
                     default:
