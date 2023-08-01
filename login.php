@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <!-- Un comentario perron que no comenta nada-->
@@ -27,11 +30,17 @@
     </style>
 
     <?php 
-        function  procesarFormulario($correo, $contraseña)  // validamos que el usuario exista 
-        {
+    // ---->>Se cambio la funcion por la validacion por post en el mismo formulario para redireccionar o indicar al usuario que es incorrecta las credenciales o son correctas
+        // function  procesarFormulario($correo, $contraseña)  // validamos que el usuario exista 
+        // {
+          if (isset($_POST['dtcorreo']) && isset($_POST['dtpassword']))
+              {
+            $correo = $_POST['dtcorreo'] ;
+            $contraseña = $_POST['dtpassword'];
+
             require_once('controller/conexion.php');
             //session_start();
-            $sql = "SELECT * FROM usuario WHERE dt_email = '$correo' AND dt_password = '$contraseña'";
+            $sql = "SELECT * FROM encargado WHERE dt_email = '$correo' AND dt_password = '$contraseña'";
 		    $result = $mysqli->query($sql);
             if ($result->num_rows > 0) 
 		    {			
@@ -39,17 +48,36 @@
 			    $row = $result->fetch_assoc();
 			    // Guardar el valor de la columna "tp_usuario" en la variable $tipoUsuario
 			    $tipoUsuario = $row["tp_usuario"];
+                $nombre = $row['dt_nombre'];
 			    //echo "existe el usuario y es del tipo ". $tipoUsuario;
-			    if($tipoUsuario == 2)  // solo los usuarios del tipo 2 pueden acceder al reporte 
-			    {
-				    echo "<script language='javascript'>
-					window.location.replace('report.php');
-				    </script>";
-			    }
-			    else
-			    {   
-				    header('location:login.php?error=empty-password-invalid'); //si el usuario no es del tipo 2, se muestra un mensaje de error 
-			    }
+			    // if($tipoUsuario == 2)  // solo los usuarios del tipo 2 pueden acceder al reporte 
+			    // {
+				//     echo "<script language='javascript'>
+				// 	window.location.replace('report.php');
+				//     </script>";
+			    // }
+			    // else
+			    // {   
+				//     header('location:login.php?error=empty-password-invalid'); //si el usuario no es del tipo 2, se muestra un mensaje de error 
+			    // }
+
+                switch ($tipoUsuario) {
+                    case 2:
+                        // La validacion para los encargados de "VALIDAR a los aceptados o rechazados"
+                        echo "<script language='javascript'>
+                        	window.location.replace('report.php');
+                            </script>";
+                            $_SESSION['tp_user'] = 2;
+                            $_SESSION['dt_email'] = $correo;
+                            $_SESSION['dt_password'] = $contraseña;
+                            $_SESSION['dt_nombre'] = $contraseña;
+                        break;
+                    
+                    default:
+                        # code...
+                        header('location:login.php?error=empty-password-invalid'); //si el usuario no es del tipo 2, se muestra un mensaje de error 
+                        break;
+                }
 		    } 
 		    else 
 		    {
@@ -108,7 +136,8 @@
                 <div class="col-md-12 ">  
 
                 <!--------------------------------->
-                <form action="databases_registro.php" method="POST"> <!------------------------------------SE CREA EL LOGIN----------------------------->
+                <!-- <form action="databases_registro.php" method="POST"> ----------------------------------SE CREA EL LOGIN--------------------------- -->
+                <form action="" method="POST"> <!------------------------------------SE CREA EL LOGIN----------------------------->
                     <?php /* <form action= "<?php echo $_SERVER['PHP_SELF']; ?>" method="POST"> */?>
                     <div class="row">
                         <div class="col-md-12">
@@ -120,13 +149,13 @@
                             <div class="col-md-12"><br>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Email</label>
-                                    <input type="text" class="form-control" name="correo"  placeholder="Ingresa tu email" onChange="conMayusculas(this)" required>
+                                    <input type="text" class="form-control" name="dtcorreo"  placeholder="Ingresa tu email" onChange="conMayusculas(this)" required>
                                 </div>                      
                             </div>
                         <div class="col-md-12">    
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Contraseña</label>
-                                <input type="password" class="form-control" name="password"  placeholder="Ingresa tu contraseña" required>
+                                <input type="password" class="form-control" name="dtpassword"  placeholder="Ingresa tu contraseña" required>
                             </div>                      
                         </div>
                         <div class="col-md-12"> <br>

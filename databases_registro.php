@@ -1,14 +1,16 @@
 <?php
 require_once('controller/conexion.php');
 
-
+/* 
+se comenta validacion en databases
 if ($_SERVER["REQUEST_METHOD"] === "POST") 
 {
   session_start();
   $correo = $_POST['correo'];
 	$contraseña = $_POST['password'];
   //echo " el password es".$_POST['password'];;
-	$sql = "SELECT * FROM usuario WHERE dt_email = '$correo' AND dt_password = '$contraseña'";		
+	// $sql = "SELECT * FROM usuario WHERE dt_email = '$correo' AND dt_password = '$contraseña'";		
+	$sql = "SELECT * FROM encargado WHERE dt_email = '$correo' AND dt_password = '$contraseña'";		
 	$result = $mysqli->query($sql);
 	if ($result->num_rows > 0) 
 		{			
@@ -38,8 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST")
       /*  echo "<script language='javascript'>
 					window.location.replace('login.php');
 				</script>";    */
-		  }      
-}  
+		  // }      
+// }  
 
 function view_region()
 {
