@@ -4,10 +4,12 @@
    if( $_POST )
    {  
    $id = isset( $_POST['id']) ? $_POST['id'] : '';
-   update_user($id);
+   $region = isset( $_POST['region']) ? $_POST['region'] : '';
+   $validacion = isset( $_POST['validacion']) ? $_POST['validacion'] : '';
+   update_user($id, $validacion);
 ?>
     <script>
-       window.location="report.php"
+       window.location="report.php?region=<?php echo $region?>"
     </script>
 <?php
 
