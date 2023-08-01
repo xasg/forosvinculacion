@@ -41,8 +41,9 @@
   //  Se valida que no este llena con 30 participantes primero
   foreach ($maximo_participantes as  $tope) {
     # code...
-    if ($tope['aceptados'] == 30 ) {
+    if ($tope['aceptados'] >= 70 ) {
       # code...
+      insert_registro($apaterno, $amaterno, $nombre, $email, $tel_ins, $ext, $tel_movil, $region, $entidad, $organizacion, $nom_org, $nom_org2, $cargo, $cargo2, $otro_cargo, $otro_cargo2,$educacion_dual_dt,$servicio_social_comunitario_dt, $economia_social_solidaria_dt , $mesa1, $mesa2, $mesa3, $mesa4, $mesa5, $comentario);   
       $bandera = false;
       header("Location: limite.php");
     }
@@ -148,14 +149,20 @@
       $id_usuario =acces_registro($email);
       $id_user=$id_usuario['id_usuario'];
       $_SESSION["id"]=$id_usuario['id_usuario'];  
+        foreach ($id_usuario as $value) {
+          $estats = $value['tp_estatus_conteo'];
+        }
+      if ($estats == null) {
+        header("Location: limite.php");
+      }
    //caso contario (else) es porque ese user ya esta registrado 
     ?>
    <script>
       window.location="existe.php"
    </script>
    <?php
-   
-         }
+        
+      }
       }
   
   

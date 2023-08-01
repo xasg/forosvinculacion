@@ -91,7 +91,7 @@ GROUP BY `dt_region`';
 function update_user($id, $validacion, $estatus_validacion)
 {
   global $mysqli;
-  $sql = "UPDATE usuario  SET tp_estatus='{$validacion}', tp_estatus_conteo='{$estatus_validacion}' WHERE id_usuario ='{$id}' ";
+  $sql = "UPDATE usuario SET tp_estatus_conteo='{$estatus_validacion}',tp_estatus='{$validacion}'  WHERE id_usuario ='{$id}' ";
   $mysqli->query($sql);
 }
 
