@@ -14,8 +14,14 @@ if($_POST)
  	$_SESSION["nom_region"] = $user['dt_nombre_region'];
   ?>
 				<script>
-					window.location="../report_region.php"	
-				</script>
+        <?php if($user['tp_usuario']==2) { ?>
+          window.location="../report_region.php"
+        <?php } elseif ($user['tp_usuario']==3) { ?>
+          window.location="../report.php"       
+        <?php } else { ?> 
+          window.location="../login.php?error=empty-password-invalid" 
+        <?php }  ?> 
+        </script>
 <?php
      //die();
  }else{
@@ -28,3 +34,6 @@ if($_POST)
 
 } 
 ?>
+
+
+
