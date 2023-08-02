@@ -8,7 +8,41 @@ if(isset($_GET['region'])){
 // Funcion para obtener el listado de participantes por region
 $registros = run_registros_tall($var_reg);
 // Funcion para obtener el resumen de participantes por region
-$participantes = get_region_users();
+$participantes = get_region_users();;
+
+// Inicializacion de Funcion para obtener participantes por region aceptados --------------------
+    $sur_sureste_aceptados = '01';  //----------------------------------------> Region SUR SURESTE
+    $array_reg = get_region_acept_users($sur_sureste_aceptados); 
+    foreach ($array_reg as $value) {
+      $aceptados_region_sur_sureste = $value['aceptados'];
+    }
+    $centro_sur_aceptados = '02';//----------------------------------------> Region CENTRO SUR
+    $array_reg = get_region_acept_users($centro_sur_aceptados);
+    foreach ($array_reg as $value) {
+      $aceptados_region_centro_sur = $value['aceptados'];
+    }
+    $centro_occidente_aceptados = '03';//----------------------------------------> Region CENTRO OCCIDENTE
+    $array_reg = get_region_acept_users($centro_occidente_aceptados);
+    foreach ($array_reg as $value) {
+      $aceptados_region_centro_occidente = $value['aceptados'];
+    }
+    $noreste_aceptados = '04';//----------------------------------------> Region NORESTE
+    $array_reg = get_region_acept_users($noreste_aceptados);
+    foreach ($array_reg as $value) {
+      $aceptados_region_noreste = $value['aceptados'];
+    }
+    $noroeste_aceptados = '05';//----------------------------------------> Region NOROESTE
+    $array_reg = get_region_acept_users($noroeste_aceptados);
+    foreach ($array_reg as $value) {
+      $aceptados_region_noroeste = $value['aceptados'];
+    }
+    $metropolitana_aceptados = '06';//----------------------------------------> Region METROPOLITANA
+    $array_reg = get_region_acept_users($metropolitana_aceptados);
+    foreach ($array_reg as $value) {
+      $aceptados_region_metropolitana = $value['aceptados'];
+    }
+    // --------------------------------------------- Se agrego validaciòn por region de usuarios aceptados, se espera retro
+
 
 // Inicializacion de variables por region
 $sur_sureste = $centro_sur = $centro_occidente = $noreste = $noroeste = $metropolitana = 0;
@@ -88,22 +122,22 @@ while ($region = $participantes->fetch_assoc()) {
     <div class="col-md-12">
       <ul class="nav nav-tabs">
         <li class="nav-item">
-          <a class="nav-link <?php if($var_reg==1){echo 'active';}?>" href="report.php?region=1">SUR SURESTE (<?=$sur_sureste?>)</a>
+          <a class="nav-link <?php if($var_reg==1){echo 'active';}?>" href="report.php?region=1">SUR SURESTE (<?=$sur_sureste?><sub>/<?php echo $aceptados_region_sur_sureste?></sub>)</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?php if($var_reg==2){echo 'active';}?>" href="report.php?region=2">CENTRO SUR (<?=$centro_sur?>)</a>
+          <a class="nav-link <?php if($var_reg==2){echo 'active';}?>" href="report.php?region=2">CENTRO SUR (<?=$centro_sur?><sub>/<?php echo $aceptados_region_centro_sur?></sub>)</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?php if($var_reg==3){echo 'active';}?>" href="report.php?region=3">CENTRO OCCIDENTE (<?=$centro_occidente?>)</a>
+          <a class="nav-link <?php if($var_reg==3){echo 'active';}?>" href="report.php?region=3">CENTRO OCCIDENTE (<?=$centro_occidente?><sub>/<?php echo $aceptados_region_centro_occidente?></sub>)</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?php if($var_reg==4){echo 'active';}?>" href="report.php?region=4">NORESTE (<?=$noreste?>)</a>
+          <a class="nav-link <?php if($var_reg==4){echo 'active';}?>" href="report.php?region=4">NORESTE (<?=$noreste?><sub>/<?php echo $aceptados_region_noreste?></sub>)</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?php if($var_reg==5){echo 'active';}?>" href="report.php?region=5">NOROESTE (<?=$noroeste?>)</a>
+          <a class="nav-link <?php if($var_reg==5){echo 'active';}?>" href="report.php?region=5">NOROESTE (<?=$noroeste?><sub>/<?php echo $aceptados_region_noroeste?></sub>)</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?php if($var_reg==6){echo 'active';}?>" href="report.php?region=6">METROPOLITANA (<?=$metropolitana?>)</a>
+          <a class="nav-link <?php if($var_reg==6){echo 'active';}?>" href="report.php?region=6">METROPOLITANA (<?=$metropolitana?><sub>/<?php echo $aceptados_region_metropolitana?></sub>)</a>
         </li>
       </ul>
     </div>

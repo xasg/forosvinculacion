@@ -53,7 +53,7 @@ function run_participante($id)
 function get_region_users()
 {
   global $mysqli;
-  $sql = "SELECT dt_region, COUNT(*) AS users FROM usuario GROUP BY dt_region;";
+  $sql = "SELECT dt_region, COUNT(*) AS users FROM usuario where tp_usuario = 1 GROUP BY dt_region;"; // Se modifico la consulta para mostrar solo a los usuarios de tipo 1 y no incluir admins
   $result = $mysqli->query($sql);
   return $mysqli->query($sql); 
 }
