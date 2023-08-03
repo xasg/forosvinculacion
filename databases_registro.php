@@ -74,6 +74,15 @@ function run_registros_tall($reg)
   global $mysqli;
   $sql ="SELECT * FROM usuario
           LEFT JOIN cat_region ON(cat_region.id_cat_region=usuario.dt_region)
+          WHERE cat_region.id_region = '{$reg}' AND tp_usuario=1";
+  return $mysqli->query($sql);   
+}
+// Funcion solo para aceptados por region
+function run_registros_tall_acept($reg)
+{
+  global $mysqli;
+  $sql ="SELECT * FROM usuario
+          LEFT JOIN cat_region ON(cat_region.id_cat_region=usuario.dt_region)
           WHERE cat_region.id_region = '{$reg}' AND tp_usuario=1 AND tp_estatus_conteo=1";
   return $mysqli->query($sql);   
 }

@@ -6,7 +6,7 @@ $id_user = $_SESSION["id_user"];
 $var_reg = $_SESSION["region"];
 $nom_region = $_SESSION["nom_region"];
 // Funcion para obtener el listado de participantes por region
-$registros = run_registros_tall($var_reg);  
+$registros = run_registros_tall_acept($var_reg);  
 ?>
 
 <!DOCTYPE html>
