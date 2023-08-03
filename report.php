@@ -147,28 +147,28 @@ while ($region = $participantes->fetch_assoc()) {
 
   <div class="container">
   <div class="row">
-    <form action="genera_report.php" method="POST">
-            <?php if($var_reg==1){ ?>
-           <input type="hidden" name="region" value="<?php echo '01';?>"><br>
+    <!--<form action="genera_report.php" method="POST">
+            <?php //if($var_reg==1){ ?>
+           <input type="hidden" name="region" value="<?php// echo '01';?>"><br>
            <button type="submit" class="btn btn-primary">Generar reporte SUR SURESTE</button><br><br>
-           <?php } elseif ($var_reg==2){?>
-            <input type="hidden" name="region" value="<?php echo '02';?>"><br>
+           <?php// } elseif ($var_reg==2){?>
+            <input type="hidden" name="region" value="<?php //echo '02';?>"><br>
             <button type="submit" class="btn btn-primary">Generar reporte CENTRO SUR</button><br><br> 
-           <?php } elseif ($var_reg==3){?>
-            <input type="hidden" name="region" value="<?php echo '03';?>"><br>
+           <?php// } elseif ($var_reg==3){?>
+            <input type="hidden" name="region" value="<?php //echo '03';?>"><br>
             <button type="submit" class="btn btn-primary">Generar reporte CENTRO OCCIDENTE</button><br><br> 
-           <?php } elseif ($var_reg==4){?>
-            <input type="hidden" name="region" value="<?php echo '04';?>"><br>
+           <?php //} elseif ($var_reg==4){?>
+            <input type="hidden" name="region" value="<?php// echo '04';?>"><br>
             <button type="submit" class="btn btn-primary">Generar reporte NORESTE</button><br><br> 
-           <?php } elseif ($var_reg==5){?>
-            <input type="hidden" name="region" value="<?php echo '05';?>"><br>
+           <?php //} elseif ($var_reg==5){?>
+            <input type="hidden" name="region" value="<?php // echo '05';?>"><br>
             <button type="submit" class="btn btn-primary">Generar reporte NOROESTE</button><br><br> 
-           <?php } else {?>
-            <input type="hidden" name="region" value="<?php echo '06';?>"><br>
+           <?php //} else {?>
+            <input type="hidden" name="region" value="<?php // echo '06';?>"><br>
             <button type="submit" class="btn btn-primary">Generar reporte METROPOLITANA</button><br><br> 
-           <?php } ?>
+           <?php //} ?>
             
-    </form>
+    </form>-->
     <table id="example" class="table table-responsive table-striped table-bordered" style="width: 100%;">
       <thead>
         <tr>
