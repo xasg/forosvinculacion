@@ -96,7 +96,7 @@ $registros = run_registros_tall($var_reg);
         <tr>
           <th class="col-md-5">Datos</th>
           <th class="col-md-5">Semblanza</th>
-          <th class="col-md-1">Estatus</th>
+          <!-- <th class="col-md-1">Estatus</th> -->
         </tr>
       </thead>
       <tbody>
@@ -188,7 +188,7 @@ $registros = run_registros_tall($var_reg);
             </div>
             </div>  
           </td>
-            <td>
+            <!-- <td>
               <?php if ($reg['tp_estatus'] == "INSCRITO") { ?>
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#example<?php echo $reg['id_usuario']; ?>">
                 Inscrito
@@ -198,7 +198,7 @@ $registros = run_registros_tall($var_reg);
               <?php } else { ?>
                 <button type="submit" class="btn btn-danger">Rechazado</button>
               <?php } ?>
-          </td>
+          </td> -->
           </tr>
        <?php } ?>
       </tbody>
