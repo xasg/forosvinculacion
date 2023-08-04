@@ -111,7 +111,7 @@ while ($region = $participantes->fetch_assoc()) {
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto navigation" style="width:0px;">                        
                         <li class="nav-item activo">
-                            <a class="nav-link" href="./logout.php">
+                            <a class="nav-link" href="./logout.php"> <!--Se agrega el logout-->
                                 SALIR
                             </a>
                         </li>
