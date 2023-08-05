@@ -1,6 +1,6 @@
 <?php
 session_start();
-if ($_SESSION['id_user'] == false) {
+if ($_SESSION['id_user'] != 2) {
   # code...
   header("Location:login.php");
 }

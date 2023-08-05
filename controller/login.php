@@ -12,7 +12,7 @@ if($_POST)
 
  if( $user['dt_password']==$password)
  {    
- 	$_SESSION["id_user"] = $user['id_usuario'];
+ 	$_SESSION["id_user"] = $user['tp_usuario']; //se cambio el id_usuario por tp_usuario para validacion de sesion por region
  	$_SESSION["region"] = $user['dt_region'];
  	$_SESSION["nom_region"] = $user['dt_nombre_region'];
   ?>
