@@ -69,7 +69,7 @@
      
      $_region_name = $regiones[$region] ?? 'Valor no válido';
      
-     $mapa = llamarMapa($region);
+     
        $body = file_get_contents('https://fese.mx');
       //Create an instance; passing `true` enables exceptions
    $mail = new PHPMailer(true);
@@ -128,11 +128,7 @@
                           <img src="http://forosdevinculacion.anuies.mx/img/dia1.png" alt="" width="600" style="height:auto;display:block;" />
                         </td>
                      </tr>
-                     <tr>
-                        <td align="center" style="padding:20px 0 30px 0;">
-                          <img src="http://forosdevinculacion.anuies.mx/img/Logos_Institucionales.png" alt="" width="600" style="height:auto;display:block;" />
-                        </td>                   
-                     </tr>  
+                     
       </table>
    
                      <p>¡Nos vemos pronto!</p> ';

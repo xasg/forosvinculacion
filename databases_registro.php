@@ -157,15 +157,6 @@ function get_user_acces($correo)
   return  $result->fetch_assoc();
 }
 
-function llamarMapa($region)
-{
-  global $mysqli;
-  $sql ="SELECT `dt_ubicacion` FROM `cat_region` WHERE id_cat_region = '{$region}'";  
-  $result = $mysqli->query($sql); 
-  
-  
-  
-  
-}
+
     
 ?>
