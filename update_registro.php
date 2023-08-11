@@ -69,7 +69,11 @@
      
      $_region_name = $regiones[$region] ?? 'Valor no válido';
      
-     
+    
+    
+   
+   
+   
        $body = file_get_contents('https://fese.mx');
       //Create an instance; passing `true` enables exceptions
    $mail = new PHPMailer(true);
@@ -92,7 +96,7 @@
        // Activo condificacción utf-8
        $mail->CharSet = 'UTF-8';
        $mail->Subject = 'FOROS DE VINCULACIÓN 2023..';
-      //if ($region == 02)
+      //if ($region == 01)
       //{
         //////////////////////////////////////////////////////////////
         $mail->Body    = '  
@@ -116,26 +120,62 @@
                        </td>
                      </tr>
                      <tr>
-                        <td align="center" style="padding:0px 0 10px 0;">
-                          <h3>A continuación le pedimos descargar los siguientes documentos y leerlos previamente para tener un panorama completo de los temas tratados.</h3>
-                          <h4>Marco General para la Educación Dual del Tipo Superior</h4><a href="https://bit.ly/44nIaw3">Descargar</a>
-                          <h4>Marco General Emprendimiento Asociativo</h4><a href="https://bit.ly/3rvkcQV">Descargar</a>
-                          <h4>Ficha de Anfitrionia</h4><a href="http://forosdevinculacion.anuies.mx/docs/Anfitrionia'.$region.'.pdf">Descargar</a>
-                        </td>
+                     <td align="center" style="padding:0px 0 10px 0;">
+                       <h3>A continuación le pedimos descargar los siguientes documentos y leerlos previamente para tener un panorama completo de los temas tratados.</h3>
+                        <h4>Marco General para la Educación Dual del Tipo Superior</h4><a href="https://bit.ly/44nIaw3">Descargar</a>
+                        <h4>Marco General Emprendimiento Asociativo</h4><a href="https://bit.ly/3rvkcQV">Descargar</a>
+                        <h4>Ficha de Anfitrionia</h4><a href="http://forosdevinculacion.anuies.mx/docs/Anfitrionia'.$region.'.pfd">Descargar</a>
+                     </td>
                      </tr>
                      <tr>
-                        <td>
-                          <img src="http://forosdevinculacion.anuies.mx/img/dia1.png" alt="" width="600" style="height:auto;display:block;" />
-                        </td>
-                     </tr>
-                      
+                      <td align="center" style="padding:20px 0 30px 0;">
+                      <img src="http://forosdevinculacion.anuies.mx/img/Logos_Institucionales.png" alt="" width="600" style="height:auto;display:block;" />
+                      </td>                   
+                     </tr>  
       </table>
    
                      <p>¡Nos vemos pronto!</p> ';
 
         /////////////////////////////////////////////////////////////
       //}
-     
+      //else
+      /*{
+       $mail->Body    = '  
+       <style>
+         h3 {color:black; font-size:14px;}
+       </style>
+                     
+                                     
+                  <table style="width:950px;border-collapse:collapse;border:1px solid #cccccc;border-spacing:0;text-align:left;">               
+                     <tr>
+                        <td align="center" style="padding:20px 0 30px 0;">
+                          <img src="http://forosdevinculacion.anuies.mx/img/logo_central.png" alt="" width="300" style="height:auto;display:block;" />
+                        </td>
+                     </tr>
+                     <tr>
+                       <td align="center" style="padding:10px 0 10px 0;">
+                       <h3>
+                         Apreciable '.$d_nombre.' confirmamos la recepción de su postulación, en breve recibirá mayor información de los Foros de Vinculación 2023, región '.$_region_name.', el cual se llevará a cabo de manera presencial en '.$d_cede.'.
+                         
+                       </h3>
+                       </td>
+                     </tr>
+                     <tr>
+                     <td align="center" style="padding:0px 0 10px 0;">
+                       <h3>A continuación le pedimos descargar los siguientes documentos y leerlos previamente para tener un panorama completo de los temas tratados.</h3>
+                        <h4>Marco General para la Educación Dual del Tipo Superior</h4><a href="https://bit.ly/44nIaw3">Descargar</a>
+                        <h4>Marco General Emprendimiento Asociativo</h4><a href="https://bit.ly/3rvkcQV">Descargar</a>
+                     </td>
+                     </tr>
+                     <tr>
+                      <td align="center" style="padding:20px 0 30px 0;">
+                      <img src="http://forosdevinculacion.anuies.mx/img/Logos_Institucionales.png" alt="" width="600" style="height:auto;display:block;" />
+                      </td>                   
+                     </tr>  
+      </table>
+   
+                     <p>¡Nos vemos pronto!</p> ';
+    }*/
       //////////////////////////////////////////////////////////////////////////////////////////////////// 
 
        $mail->AltBody = 'Confirmación de postulación Foros de Vinculación 2023';
@@ -170,6 +210,10 @@
    <?php
         
       }
-      } 
+      }
+  
+  
+
+  
 
    ?>
