@@ -154,8 +154,18 @@ function get_user_acces($correo)
   LEFT JOIN cat_region ON(usuario.dt_region=cat_region.id_cat_region)
   WHERE dt_email = '{$correo}'";
   $result = $mysqli->query($sql);
-  return $result->fetch_assoc();
+  return  $result->fetch_assoc();
 }
 
-
+function llamarMapa($region)
+{
+  global $mysqli;
+  $sql ="SELECT `dt_ubicacion` FROM `cat_region` WHERE id_cat_region = '{$region}'";  
+  $result = $mysqli->query($sql); 
+  
+  
+  
+  
+}
+    
 ?>
