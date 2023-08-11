@@ -1,9 +1,5 @@
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
-require 'PHPMailer/src/Exception.php';  
+
 require_once('controller/conexion.php');
 
 /* 
@@ -148,9 +144,6 @@ function update_user($id, $validacion, $estatus_validacion)
   $sql = "UPDATE usuario SET tp_estatus_conteo='{$estatus_validacion}',tp_estatus='{$validacion}'  WHERE id_usuario ='{$id}' ";
   $mysqli->query($sql);
 }
-
-
-
 
 function get_user_acces($correo)
 {
