@@ -159,12 +159,8 @@ function get_user_acces($correo)
   LEFT JOIN cat_region ON(usuario.dt_region=cat_region.id_cat_region)
   WHERE dt_email = '{$correo}'";
   $result = $mysqli->query($sql);
-  return $result->fetch_assoc();
+  return  $result->fetch_assoc();
 }
 
-function get_create_email()
-{
-  return ("hola");
-}
-    
+
 ?>

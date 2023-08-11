@@ -5,7 +5,7 @@
    use PHPMailer\PHPMailer\Exception;
    require 'PHPMailer/src/PHPMailer.php';
    require 'PHPMailer/src/SMTP.php';
-   require 'PHPMailer/src/Exception.php';  
+   require 'PHPMailer/src/Exception.php'; 
    if( $_POST )
    { 
    $apaterno = isset( $_POST['apaterno']) ? $_POST['apaterno'] : '';
@@ -96,8 +96,9 @@
        // Activo condificacción utf-8
        $mail->CharSet = 'UTF-8';
        $mail->Subject = 'FOROS DE VINCULACIÓN 2023..';
-      if ($region == 02)
-      {
+      //if ($region == 02)
+      //{
+     
         //////////////////////////////////////////////////////////////
         $mail->Body    = '  
        <style>
@@ -138,7 +139,7 @@
 
         /////////////////////////////////////////////////////////////
       }
-      else
+      /*else
       {
        $mail->Body    = '  
        <style>
@@ -175,7 +176,7 @@
       </table>
    
                      <p>¡Nos vemos pronto!</p> ';
-    }
+    }*/
       //////////////////////////////////////////////////////////////////////////////////////////////////// 
 
        $mail->AltBody = 'Confirmación de postulación Foros de Vinculación 2023';
