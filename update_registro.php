@@ -96,7 +96,7 @@
        // Activo condificacción utf-8
        $mail->CharSet = 'UTF-8';
        $mail->Subject = 'FOROS DE VINCULACIÓN 2023..';
-      if ($region == 01)
+      if ($region == 02)
       {
         //////////////////////////////////////////////////////////////
         $mail->Body    = '  
