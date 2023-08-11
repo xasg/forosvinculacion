@@ -88,9 +88,80 @@
            <!-- <img class="img-fluid" src="img/agenda.png"> -->
             <!-- Se agrega validacion en caso de requerirse por si es para el día 1 o 2 -->
             <?php
-            // if ($participante['dt_mesa1'] == 'si') {
+            if ($region == '06') {
             ?>
 
+               <table class="table   table-borderless border align-middle">
+
+                  <thead class="table-light">
+
+                     <caption></caption>
+
+                     <div class="card">
+
+                     <div class="card-body cafe" >
+
+                        <h4 class="card-title">DÍA 1</h4>
+
+                        <h5 class="card-subtitle ">REUNIÓN DE RESPONSABLES DE VINCULACIÓN Y ACTIVIDAD CULTURAL</h5>
+
+                     </div>
+
+                     </div>
+
+                     <tr class="text-justifyu" >
+
+                        <th class="verde">HORARIO</th>
+
+                        <th class="cafe-claro"><b>ACTIVIDAD</b></th>
+
+                     </tr>
+
+                     </thead>
+
+                     <tbody class="table-group-divider">
+
+                        <tr class="" >
+
+                           <td class="verde">14:00 - 15:30</td>
+
+                           <td class="text-left ">Plan de Buenas Practicas</td>
+
+                           
+
+                        </tr>
+                        
+                        <tr class="">
+                           
+                           <td class="verde">16:00 - 18:00</td>
+                     
+                           <td class="text-left ">Reunión de responsables de vinculación de las IES</td>
+
+                           
+
+                        </tr>
+                        <tr class="">
+                           
+                           <td class="verde">18:00 - 19:00</td>
+                     
+                           <td class="text-left ">Actividad Integradora y cultural </td>
+
+                           
+
+                        </tr>
+
+                     </tbody>
+
+                     <tfoot>
+
+                     
+
+                     </tfoot>
+
+               </table>
+            <?php
+            }else{
+            ?>
                <table class="table   table-borderless border align-middle">
 
                   <thead class="table-light">
@@ -152,11 +223,11 @@
                </table>
 
             <?php
-            // }
+            }
             ?>
 
             <?php 
-            // if ($participante['dt_mesa1'] == 'si') {
+            if ($region == '06') {
             ?>
                <table class="table table-borderless border align-middle">
 
@@ -170,7 +241,99 @@
 
                         <h4 class="card-title" >DÍA 2</h4>
 
-                        <h5 class="card-subtitle">MESA DE EXPERTOS DE ALTO NIVEL</h5>
+                        <h5 class="card-subtitle">MESA DE EXPERTOS DE ALTO NIVEL(TITULARES DE IES)</h5>
+
+                     </div>
+
+                     </div>
+
+                     <tr class="text-justifyu">
+
+                        <th class="verde">HORARIO</th>
+
+                        <th class="cafe-claro">ACTIVIDAD</th>
+
+                     </tr>
+
+                     </thead>
+
+                     <tbody class="table-group-divider">
+
+                        <tr class="" >
+
+                           <td class="verde">10:00 - 10:50</td>
+
+                           <td class="text-left">Bienvenida y mensajes de autoridades</td>
+
+                           
+
+                        </tr>
+
+                        <tr class="">
+
+                           <td class="verde">10:50 - 11:00</td>
+
+                           <td class="text-left cafe-claro-size">Fotografía oficial</td>
+
+                        </tr>
+
+                        <tr class="">
+
+                           <td class="verde">11:00 - 12:20</td>
+
+                           <td class="text-left">Emprendimiento asociativo (ESS)</td>
+
+                        </tr>
+
+                        <tr class="">
+
+                           <td class="verde">12:20 - 14:00</td>
+
+                           <td class="text-left cafe-claro-size">Educación Dual</td>
+
+                        </tr>
+
+                        <tr class="">
+
+                           <td class="verde">14:00 - 14:30</td>
+
+                           <td class="text-left">Servicio Social</td>
+
+                        </tr>
+
+                        <tr class="">
+
+                           <td class="verde">14:30 - 15:30</td>
+
+                           <td class="text-left cafe-claro-size">CLAUSURA GENERAL</td>
+
+                        </tr>
+
+                     </tbody>
+
+                     <tfoot>
+
+                     
+
+                     </tfoot>
+
+               </table>
+               <?php
+            }else{
+            ?>
+               <table class="table table-borderless border align-middle">
+
+                  <thead class="table-light">
+
+                     <caption></caption>
+
+                     <div class="card">
+
+                     <div class="card-body cafe" >
+
+                        <h4 class="card-title" >DÍA 2</h4>
+
+                        <h5 class="card-subtitle">MESA DE EXPERTOS DE ALTO NIVEL(TITULARES DE IES)</h5>
 
                      </div>
 
@@ -230,13 +393,13 @@
 
                         </tr>
 
-                        <tr class="">
+                        <!-- <tr class="">
 
                            <td class="verde">17:00 - 19:00</td>
 
                            <td class="text-left cafe-claro-size">Buenas prácticas de educación dual, economia social y servicio social comunitario</td>
 
-                        </tr>
+                        </tr> -->
 
                      </tbody>
 
@@ -248,7 +411,7 @@
 
                </table>
             <?php
-            // }
+            }
             ?>
            <br><br><br>
            <h4>
