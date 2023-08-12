@@ -68,7 +68,28 @@
        ];
      
      $_region_name = $regiones[$region] ?? 'Valor no válido';
-     
+       
+     switch ($region) {
+      case 02:
+        $user_sede_name = "Hotel Emporio Acapulco";
+        break;
+      case 03:
+        $user_sede_name = "Universidad Tecnológica de Morelia";
+        break;
+      case 04:
+        $user_sede_name = "Instalaciones de la UPSLP, Edificio ASA";
+        break;
+      case 05:
+        $user_sede_name = "Hotel San Carlos Plaza, Beach & Convention Center";
+        break;
+      case 06:
+        $user_sede_name = "IPN Zacatenco";
+        break;
+      
+      default:
+      $user_sede_name = 'Valor no válido';
+        break;
+     }
     
     
    
@@ -114,7 +135,7 @@
                      <tr>
                        <td align="center" style="padding:10px 0 10px 0;">
                        <h3>
-                         Apreciable '.$d_nombre.' confirmamos la recepción de su postulación, en breve recibirá mayor información de los Foros de Vinculación 2023, región '.$_region_name.', el cual se llevará a cabo de manera presencial en '.$d_cede.'.
+                         Apreciable '.$d_nombre.' confirmamos la recepción de su postulación, en breve recibirá mayor información de los Foros de Vinculación 2023, región '.$_region_name.', el anfitrion es '.$d_cede.', el cual se llevará a cabo de manera presencial en '.$user_sede_name.'.
                          
                        </h3>
                        </td>
@@ -124,7 +145,7 @@
                        <h3>A continuación le pedimos descargar los siguientes documentos y leerlos previamente para tener un panorama completo de los temas tratados.</h3>
                         <h4>Marco General para la Educación Dual del Tipo Superior</h4><a href="https://bit.ly/44nIaw3">Descargar</a>
                         <h4>Marco General Emprendimiento Asociativo</h4><a href="https://bit.ly/3rvkcQV">Descargar</a>
-                        <h4>Ficha de Anfitrionia</h4><a href="http://forosdevinculacion.anuies.mx/docs/Anfitrionia'.$region.'.pfd">Descargar</a>
+                        <h4>Ficha de Anfitrionia</h4><a href="http://forosdevinculacion.anuies.mx/docs/Anfitrionia'.$region.'.pdf">Descargar</a>                                                                                                                  
                      </td>
                      </tr>
                      <tr>
