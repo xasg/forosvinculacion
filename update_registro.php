@@ -72,18 +72,23 @@
      switch ($region) {
       case 02:
         $user_sede_name = "Hotel Emporio Acapulco";
+        $user_address = "Av. Costera Miguel Alemán 121 Fracc. Magallanes CP.39670, Acapulco Guerrero";
         break;
       case 03:
         $user_sede_name = "Universidad Tecnológica de Morelia";
+        $user_address = "Av. Vicepresidente Pino Suárez No. 750, Col. Ciudad Industrial, C.P. 58200, Morelia, Michoacán.";
         break;
       case 04:
         $user_sede_name = "Instalaciones de la UPSLP, Edificio ASA";
+        $user_address = "Urbano Villalón No. 500, Col. La Ladrillera, C.P. 78363, S.L.P.";
         break;
       case 05:
         $user_sede_name = "Hotel San Carlos Plaza, Beach & Convention Center";
+        $user_address = "Paseo Mar Bermejo 4 Playa los Algodones, 85506 San Carlos, Nuevo Guaymas, Sonora";
         break;
       case 06:
-        $user_sede_name = "IPN Zacatenco";
+        $user_sede_name = "IPN Zacatenco, Patio Piramidal de la Dirección de Formación e Innovación Educativa (DFIE)";
+        $user_address = "Av. Wilfrido Massieu 326, Nueva Industrial Vallejo, Gustavo A. Madero, 07738 Ciudad de México, CDMX";
         break;
       
       default:
@@ -135,7 +140,7 @@
                      <tr>
                        <td align="center" style="padding:10px 0 10px 0;">
                        <h3>
-                         Apreciable '.$d_nombre.' confirmamos la recepción de su postulación, en breve recibirá mayor información de los Foros de Vinculación 2023, región '.$_region_name.', el anfitrion es '.$d_cede.', el cual se llevará a cabo de manera presencial en '.$user_sede_name.'.
+                         Apreciable '.$d_nombre.' confirmamos la recepción de su postulación, en breve recibirá mayor información de los Foros de Vinculación 2023, región '.$_region_name.', el anfitrion es '.$d_cede.', el cual se llevará a cabo de manera presencial en '.$user_sede_name.' con  direccion: <br> '.$user_address.'
                          
                        </h3>
                        </td>
@@ -149,7 +154,7 @@
                         </td>
                      </tr>
                      <tr>
-                        <td>
+                        <td align="center">
                           <img src="http://forosdevinculacion.anuies.mx/img/dia1.png" alt="" width="600" style="height:auto;display:block;" />
                         </td>
                      </tr>
