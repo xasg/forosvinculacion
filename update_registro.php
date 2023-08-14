@@ -68,7 +68,7 @@
        ];
      
      $_region_name = $regiones[$region] ?? 'Valor no válido';
-       
+    
      switch ($region) {
       case 02:
         $user_sede_name = "Hotel Emporio Acapulco";
@@ -91,6 +91,7 @@
         break;
      }
     
+
     
    
    
