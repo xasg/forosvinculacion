@@ -73,6 +73,7 @@ $mysqli->query($sql);
 
 function acces_registro($email)
 {
+  
   global $mysqli;
   $sql = "SELECT * FROM usuario
   LEFT JOIN cat_region ON(cat_region.id_cat_region=usuario.dt_region)

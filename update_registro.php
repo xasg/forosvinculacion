@@ -36,6 +36,11 @@
    $mesa5 = isset( $_POST['mesa5']) ? $_POST['mesa5'] : '';
    $comentario = isset( $_POST['comentario']) ? $_POST['comentario'] : '';
    $reg_usuario =acces_registro($email);
+///////////////////////////////////////
+//echo $reg_usuario." esto es lo que nos trae"; 
+
+/////////////////////////////////////
+
    $maximo_participantes = get_region_acept_users($region);
    $bandera = true;
   //  Se valida que no este llena con 30 participantes primero
