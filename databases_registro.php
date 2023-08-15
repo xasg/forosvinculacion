@@ -95,7 +95,8 @@ function run_participante($id)
 function get_region_users()
 {
   global $mysqli;
-  $sql = "SELECT dt_region, COUNT(*) AS users FROM usuario where tp_usuario = 1 GROUP BY dt_region;"; // Se modifico la consulta para mostrar solo a los usuarios de tipo 1 y no incluir admins
+  // $sql = "SELECT dt_region, COUNT(*) AS users FROM usuario where tp_usuario = 1 GROUP BY dt_region;"; // Se modifico la consulta para mostrar solo a los usuarios de tipo 1 y no incluir admins
+  $sql = "SELECT dt_region, COUNT(*) AS users FROM usuario where tp_usuario = 1 AND dt_email NOT IN('AMDELATORRE@FESE.MX','DIANA.SANTIAGO@ANUIES.MX','NANCY.HUERTA@NUBE.SEP.GOB.M','NANCY.HUERTAE@GMAIL.COM','NANCY_HUERTAE@YAHOO.COM.MX','NANCY.HUERTA@GMAIL.COM','NANCY_HUERTA@YAHOO.COM.MX','KATIA.AGUILAQ@NUBE.SEP.GOB.MX')GROUP BY dt_region;"; // Se modifico la consulta para mostrar solo a los usuarios de tipo 1 y no incluir admins 
   $result = $mysqli->query($sql);
   return $mysqli->query($sql); 
 }
@@ -106,7 +107,7 @@ function get_region_acept_users($region)
 {
   global $mysqli;
   // $sql = "SELECT dt_region, SUM(tp_estatus_conteo) AS aceptados, COUNT(*) AS users FROM usuario where dt_region = '{$region}' GROUP BY dt_region;";
-  $sql = "SELECT dt_region, SUM(tp_estatus_conteo) AS aceptados, COUNT(*) AS users FROM usuario where dt_region = '{$region}'  AND dt_email NOT IN('AMDELATORRE@FESE.MX','DIANA.SANTIAGO@ANUIES.MX','NANCY.HUERTA@NUBE.SEP.GOB.M','NANCY.HUERTAE@GMAIL.COM','NANCY_HUERTAE@YAHOO.COM.MX','NANCY.HUERTA@GMAIL.COM','NANCY_HUERTA@YAHOO.COM.MX','KATIA.AGUILAQ@NUBE.SEP.GOB.MX')GROUP BY dt_region;"; //Se agrego centencia a la query que no va a mostrar a estos usuarios, sin tener que modificar la base de datos de produccion
+  $sql = "SELECT dt_region, SUM(tp_estatus_conteo) AS aceptados, COUNT(*) AS users FROM usuario where dt_region = {$region}  AND dt_email NOT IN('AMDELATORRE@FESE.MX','DIANA.SANTIAGO@ANUIES.MX','NANCY.HUERTA@NUBE.SEP.GOB.M','NANCY.HUERTAE@GMAIL.COM','NANCY_HUERTAE@YAHOO.COM.MX','NANCY.HUERTA@GMAIL.COM','NANCY_HUERTA@YAHOO.COM.MX','KATIA.AGUILAQ@NUBE.SEP.GOB.MX')GROUP BY dt_region;"; //Se agrego centencia a la query que no va a mostrar a estos usuarios, sin tener que modificar la base de datos de produccion
   $result = $mysqli->query($sql);
   return $mysqli->query($sql); 
   # code...
