@@ -154,11 +154,7 @@
                           <h4>Ficha de Anfitrionia</h4><a href="http://forosdevinculacion.anuies.mx/docs/Anfitrionia'.$region.'.pdf">Descargar</a>
                         </td>
                      </tr>
-                     <tr>
-                        <td align="center">
-                          <img src="http://forosdevinculacion.anuies.mx/img/dia1.png" alt="" width="600" style="height:auto;display:block;" />
-                        </td>
-                     </tr>
+                     
                      <tr>
                       <td align="center" style="padding:20px 0 30px 0;">
                       <img src="http://forosdevinculacion.anuies.mx/img/Logos_Institucionales.png" alt="" width="600" style="height:auto;display:block;" />
