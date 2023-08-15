@@ -116,9 +116,11 @@ function get_region_acept_users($region)
 function run_registros_tall($reg)
 {
   global $mysqli;
+  // ---------------------------------------------------------------------------------Query Modificada, para Ocultarla de la vista a los Admin y correos indicados 
   $sql ="SELECT * FROM usuario
           LEFT JOIN cat_region ON(cat_region.id_cat_region=usuario.dt_region)
-          WHERE cat_region.id_region = '{$reg}' AND tp_usuario=1";
+          WHERE cat_region.id_region = '{$reg}' AND tp_usuario=1 AND dt_email NOT IN('AMDELATORRE@FESE.MX','DIANA.SANTIAGO@ANUIES.MX','NANCY.HUERTA@NUBE.SEP.GOB.M','NANCY.HUERTAE@GMAIL.COM','NANCY_HUERTAE@YAHOO.COM.MX','NANCY.HUERTA@GMAIL.COM','NANCY_HUERTA@YAHOO.COM.MX','KATIA.AGUILAQ@NUBE.SEP.GOB.MX')"; 
+  // ---------------------------------------------------------------------------------Query Modificada, para Ocultarla de la vista a los Admin y correos indicados
   return $mysqli->query($sql);   
 }
 // Funcion solo para aceptados por region
