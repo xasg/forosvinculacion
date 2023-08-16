@@ -2,7 +2,7 @@
 // Se agrega validacion de registro para poder acceder a ventana de existe
    session_start();  
    include_once('databases_registro.php'); 
-   if($_SESSION== null){
+   if($_SESSION['id']== false){
     header("Location:index.html");
    }
 // -----------------------------------

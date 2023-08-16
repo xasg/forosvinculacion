@@ -74,7 +74,7 @@ $region = view_region();
                         </a>
                      </li>
                      <li class="nav-item active">
-                            <a class="nav-link" href="./agenda.html">
+                            <a class="nav-link" href="./agenda.php">
                                 AGENDA
                             </a>
                         </li>
