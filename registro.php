@@ -142,7 +142,7 @@ $region = view_region();
                   <div class="container text-danger text-center">
                   <h3><b> El Registro de la región metropolitana ha sido cerrado</b></h3>
                             <p> Agradecemos a todos por sus contribuciones y entusiasmo. 
-                               <br> ¡Permanezcan atentos! <br> Gracias.</p>
+                                <br> Gracias.</p>
 
                   </div>
                <div class="row">
