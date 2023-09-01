@@ -140,7 +140,7 @@ $region = view_region();
 
                Mensaje de cierre de convocatoria
                   <div class="container text-danger text-center">
-                  <h3><b> El Registro de la región metropolitana ha sido cerrado</b></h3>
+                  <h3><b> El Registro de la región metropolitana(Ciudad de México) ha sido cerrado</b></h3>
                             <p> Agradecemos a todos por sus contribuciones y entusiasmo. 
                                 <br> Gracias.</p>
 
