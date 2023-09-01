@@ -138,13 +138,13 @@ $region = view_region();
 
             <div id="divid1" style="display:none;">
 
-               <!-- Mensaje de cierre de convocatoria
+               Mensaje de cierre de convocatoria
                   <div class="container text-danger text-center">
                   <h3><b> El Registro de la región metropolitana ha sido cerrado</b></h3>
                             <p> Agradecemos a todos por sus contribuciones y entusiasmo. 
                                 <br> Gracias.</p>
 
-                  </div> -->
+                  </div>
                <div class="row">
                   <div class="col-xl-12">
                      <h4>Datos personales</h4><br>
