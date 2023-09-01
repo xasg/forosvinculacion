@@ -184,15 +184,15 @@
    <?php
    }else{
    
-      $id_usuario =acces_registro($email);
-      $id_user=$id_usuario['id_usuario'];
-      $_SESSION["id"]=$id_usuario['id_usuario'];  
-        foreach ($id_usuario as $value) {
-          $estats = $value['tp_estatus_conteo'];
-        }
-      if ($estats == null) {
-        header("Location: limite.php");
-      }
+      // $id_usuario =acces_registro($email);
+      // $id_user=$id_usuario['id_usuario'];
+      // $_SESSION["id"]=$id_usuario['id_usuario'];  
+      //   foreach ($id_usuario as $value) {
+      //     $estats = $value['tp_estatus_conteo'];
+      //   }
+      // if ($estats == null) {
+      //   header("Location: limite.php");
+      // }
    //caso contario (else) es porque ese user ya esta registrado 
     ?>
    <script>

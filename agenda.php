@@ -1,3 +1,10 @@
+<?php
+// Validación que recibe por get el tab seleccionado para mostrar la región seleccionada
+$var_reg = 1;
+if(isset($_GET['region'])){
+   $var_reg=$_GET['region'];
+ }
+?>
 <!DOCTYPE html>
 <html lang="es">
 <!-- Un comentario perron que no comenta nada-->
@@ -66,25 +73,73 @@
     </div>
 
     <div class="container-fluid px-0">
-        <div class="container-fluid" style="padding-top: 3%">
+       <div class="container">
+         <div class="row">
+            <!-- ************************** TABS que indican la region seleccionada para mostrar la agenda respectiva -->
+            <div class="col-md-12">
+              <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link <?php if($var_reg==1){echo 'active';}?>" href="agenda.php?region=1">SUR SURESTE </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link <?php if($var_reg==2){echo 'active';}?>" href="agenda.php?region=2">CENTRO SUR </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link <?php if($var_reg==3){echo 'active';}?>" href="agenda.php?region=3">CENTRO OCCIDENTE</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link <?php if($var_reg==4){echo 'active';}?>" href="agenda.php?region=4">NORESTE</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link <?php if($var_reg==5){echo 'active';}?>" href="agenda.php?region=5">NOROESTE </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link <?php if($var_reg==6){echo 'active';}?>" href="agenda.php?region=6">METROPOLITANA </a>
+                </li>
+              </ul>
+            </div>
+         </div>
+         <div class="container-fluid" style="padding-top: 3%">
             <div class="row justify-content-center ">
                 <div class="col-md-10 ">
                     <!-- <img class="img-fluid" src="img/agenda.png" width="100%"  style="margin-top: 4%;"> -->
-                    <table class="table   table-borderless border align-middle text-center">
-
-                        <thead class="table-light">
-      
-                           <caption></caption>
-      
+                    <!-- -----------------------------------------------------------------------------se agrego validacion por region en la agenda paramostrar sus agendas por región -->
+                     <?php if ($var_reg == 1 || $var_reg == 2 || $var_reg == 3 || $var_reg == 4 || $var_reg == 5) {
+                           switch ($var_reg) {
+                              case 1:
+                                 $nombre_region = 'SUR SURESTE';
+                                 break;
+                              case 2:
+                                 $nombre_region = 'CENTRO SUR';
+                                 break;
+                              case 3:
+                                 $nombre_region = 'CENTRO OCCIDENTE';
+                                 break;
+                              case 4:
+                                 $nombre_region = 'NORESTE';
+                                 break;
+                              case 5:
+                                 $nombre_region = 'NOROESTE';
+                                 break;
+                              
+                              default:
+                                 $nombre_region ="REGION";
+                                 break;
+                           }
+                        ?>
+                        <h2 class="table-light verde text-center" style="font-size: 32px !important; padding: 15px !important;">Agenda - Región <?= $nombre_region;?></h2>
+                        <br>
+                     <table class="table   table-borderless border align-middle text-center">
+                        <thead class="table-light">      
                            <div class="card">
       
-                           <div class="card-body cafe text-center" >
-      
-                              <h4 class="card-title">DÍA 1</h4>
-      
-                              <h5 class="card-subtitle ">REUNIÓN VINCULADORES</h5>
-      
-                           </div>
+                                 <div class="card-body cafe text-center" >
+            
+                                    <h4 class="card-title">DÍA 1</h4>
+            
+                                    <h5 class="card-subtitle ">REUNIÓN VINCULADORES</h5>
+            
+                                 </div>
       
                            </div>
       
@@ -96,7 +151,7 @@
       
                            </tr>
       
-                           </thead>
+                        </thead>
       
                            <tbody class="table-group-divider">
       
@@ -121,14 +176,8 @@
                               </tr>
       
                            </tbody>
-      
-                           <tfoot>
-      
-                           
-      
-                           </tfoot>
-      
                      </table>
+
                      <table class="table   table-borderless border align-middle text-center">
 
                         <thead class="table-light">
@@ -218,8 +267,9 @@
                            </tfoot>
       
                      </table>
-
-                     <h2 class="table-light verde text-center" style="font-size: 32px !important; padding: 15px !important;">Agenda para Región Metropolitana</h2>
+                     
+                     <?php }elseif ($var_reg == 6) {?> <!--*************************************************VALIDACIÓN PARA LA AGENDA DE REGION METROPOLITANA QUE CAMBIA EN ESTA REGIÓN-->
+                        <h2 class="table-light verde text-center" style="font-size: 32px !important; padding: 15px !important;">Agenda - Región METROPOLITANA</h2>
                      <br>
                      <table class="table   table-borderless border align-middle text-center">
 
@@ -378,10 +428,16 @@
                            </tfoot>
       
                      </table>
+      
+                     <?php }?>
                      
+                     
+                
                 </div>
             </div>
         </div>
+      </div>
+        
         <!-- Cintillo divisor -->
         <div class="w-100 pt-121  opc1 position-relative">
             <img class="img-fluid" src="img/cintillo_divisor.png" width="100%"
