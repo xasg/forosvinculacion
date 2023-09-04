@@ -138,12 +138,12 @@ $region = view_region();
 
             <div id="divid1" style="display:none;">
 
-               Mensaje de cierre de convocatoria
+               <!-- Mensaje de cierre de convocatoria -->
                   <div class="container text-danger text-center">
-                  <h3><b> El Registro de la región metropolitana(Ciudad de México) ha sido cerrado</b></h3>
+                  <h3><b> El Registro de la región metropolitana ha sido cerrado</b></h3>
                             <p> Agradecemos a todos por sus contribuciones y entusiasmo. 
                                 <br> Gracias.</p>
-                     <p>Para mayor información contactese al correo: <a href="mailto:katia.aguila@nube.sep.gob.mx" style="color:red;">katia.aguila@nube.sep.gob.mx</a></p>
+
                   </div>
                <div class="row">
                   <div class="col-xl-12">
@@ -259,7 +259,7 @@ $region = view_region();
                         <input type="text" class="form-control" name="nom_org2" onChange="conMayusculas(this)">
                      </div>
                   </div>
-                  <div class="col-xl-4">
+                  <div git class="col-xl-4">
                      <div class="form-group">
                         <label for="control1">Nivel del cargo:</label>
                         <select class="form-control" name="cargo2" onChange="mostrar(this.value);">
