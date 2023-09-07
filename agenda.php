@@ -53,11 +53,11 @@ if(isset($_GET['region'])){
                                 INICIO
                             </a>
                         </li>
-                        <li class="nav-item active">
+                        <!-- <li class="nav-item active">
                             <a class="nav-link" href="./registro.php">
                                 PARTICIPACIÓN
                             </a>
-                        </li>
+                        </li> -->
                         <li class="nav-item active activo">
                             <a class="nav-link" href="./agenda.html">
                                 AGENDA
