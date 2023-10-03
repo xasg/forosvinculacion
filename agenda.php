@@ -58,9 +58,14 @@ if(isset($_GET['region'])){
                                 PARTICIPACIÓN
                             </a>
                         </li> -->
-                        <li class="nav-item active activo">
+                        <!--<li class="nav-item active activo">
                             <a class="nav-link" href="./agenda.html">
                                 AGENDA
+                            </a>
+                        </li>-->
+                        <li class="nav-item active">
+                            <a class="nav-link" href="./contanciasForos2023/constancia.html">
+                                CONSTANCIA
                             </a>
                         </li>
                     </ul>

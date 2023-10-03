@@ -183,6 +183,10 @@ Version: 1.0.0
 .text-color19{color:var(--color19);}
 .text-color20{color:var(--color20);}
 
+
+
+
+
 /*=== General Styling ===*/
 body, 
 html {overflow-x: hidden;}
@@ -203,6 +207,9 @@ h6 {
   color: var(--color3);
   font-weight: 800;
 }
+
+
+
 p {
   font-family: Roboto;
   color: #666766;
@@ -2361,7 +2368,7 @@ span.event-loc i {margin-right: .5rem;}
   background-color: #000;
   opacity: 0;
   z-index: 1;
-  content: ;
+  /*content: ;*/
 }
 .post-style1:hover .post-img > a::before {opacity: .5;}
 .post-info {padding-top: 1.375rem;}

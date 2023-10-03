@@ -3,6 +3,7 @@ include_once('databases_registro.php');
 mysqli_set_charset($mysqli, 'utf8');
 $entidad = view_entidad();
 $region = view_region();
+//header("Location: index.html"); 
 ?>
 <!DOCTYPE html>
 <html lang="es">
