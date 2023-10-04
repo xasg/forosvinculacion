@@ -1,10 +1,48 @@
-<?php
-// Validación que recibe por get el tab seleccionado para mostrar la región seleccionada
-$var_reg = 1;
-if(isset($_GET['region'])){
-   $var_reg=$_GET['region'];
- }
+<?php 
+session_start();
+
+include_once('databases_usuario.php');
+$id = $_SESSION["id"];
+$region = $_SESSION["region"];
+//mysqli_set_charset( $mysqli, 'utf8');
+$participante = run_participante($id, $region);
+
+
+
+/*****************************************/
+// esta funcion se usa para poder cambiar el valor de status_contancia a 1, esto indica que ya genero su constancia 
+ $correo =  $participante['dt_email'];
+ 
+if ( $region==01) 
+{
+	$cede = 'SUR - SURESTE' ;
+}
+elseif ($region==02) 
+{
+	$cede = 'CENTRO SUR' ;
+}
+elseif ($region==03) 
+{
+	$cede = 'CENTRO - OCCIDENTE' ;
+}
+elseif ($region==04) 
+{
+	$cede = 'NORESTE' ;
+}
+elseif ($region==05) 
+{
+	$cede = 'NOROESTE' ;
+}
+elseif ($region==06) 
+{
+	$cede = 'METROPOLITANA' ;
+}
+
+
+
 ?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <!-- Un comentario perron que no comenta nada-->
@@ -46,14 +84,6 @@ if(isset($_GET['region'])){
 
 <body class="page-template page-template-auditorio page-template-auditorio-php page page-id-304">
     <!-- Menu de navegación -->
-
-
-
-
-    
-
-
-      
 
     <div class="container-fluid mx-0 px-0" style="background-color: #8D203D;">
         <div class="container">
@@ -102,6 +132,9 @@ if(isset($_GET['region'])){
                     <!-- <img class="img-fluid" src="img/agenda.png" width="100%"  style="margin-top: 4%;"> -->
                     <!-- -----------------------------------------------------------------------------se agrego validacion por region en la agenda paramostrar sus agendas por región -->
                         <h2 class="table-light text-center" style="font-size: 32px !important; padding: 15px !important;">No hemos encontrado información relacionada a su correo electrónico.  </h2>
+                        <strong><h2 class="table-light text-center" style="font-size: 32px !important; padding: 15px !important; color: #8D203D;"><?php echo  $correo   ?>  </h2></strong>
+                        <h2 class="table-light text-center" style="font-size: 32px !important; padding: 15px !important;">En la region </h2>
+                        <strong><h2 class="table-light text-center" style="font-size: 32px !important; padding: 15px !important; color: #8D203D;"><?php echo  $cede   ?>  </h2></strong>
                         <h2 class="table-light text-center" style="font-size: 32px !important; padding: 15px !important;">Para brindarle la mejor atención posible, le pedimos se ponga en contacto con nuestro equipo. </h2>
                         <h2 class="table-light text-center" style="font-size: 32px !important; padding: 15px !important;">Estamos para ayudarle. </h2>
                         <br>
@@ -112,6 +145,8 @@ if(isset($_GET['region'])){
                            <li>Correo electrónico</li>
                            <li>Institución de Educación Superior</li>
                            <li>Región del evento al que asistió</li>
+                           <?php echo "vamos a ver si esto jala " . $correo   ?>
+                        
                         </lu>
                         <br><br>
 

@@ -13,8 +13,24 @@
     <script language="JavaScript">
         function conMayusculas(field) {
             field.value = field.value.toUpperCase()
-        }   
+        }  
+
+      /*  function confirmarEnvio() 
+        {
+            if (confirm("¿Esta usted seguro que los datos ingresados son los correctos?"))
+            {
+                document.querySelector('form').submit();
+            } 
+            else 
+            {
+                // Redirigir al usuario a otra página
+                window.location.href = "constancia.html";
+                
+            }
+        }*/
+
     </script>
+
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
@@ -102,7 +118,8 @@
                             <br>
                         <label for="nombre">Email</label>
                         <input type="text" class="form-control" name="email" onChange="conMayusculas(this)" required=""><br>
-                        <button class="btn btn-success" type="submit"><h5>Descargar</h5><span></span></button>
+                        <!--al boton de confirmar se le abre una ventana de alerta confirmando si los valores agregados estan bien -->
+                        <button class="btn btn-success" type="submit"></button>><h5>Descargar</h5><span></span></button>
                         <!--<a class="d-inline-block" href="javascript:void(0);" title="">Forget A Password</a>-->
                     </form>  
              </div>
