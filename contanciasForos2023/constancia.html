@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Un comentario perron -->
+<head>
+    <title>Foros de Vinculación &raquo; </title>
+    <meta charset="UTF-8">
+    <meta name="language" content="es-MX">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style_navs.css">
+    <script src="js/jquery.js"></script>
+    <script language="JavaScript">
+        function conMayusculas(field) {
+            field.value = field.value.toUpperCase()
+        }   
+    </script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Menu de navegación -->
+    <div class="container-fluid mx-0 px-0" style="background-color: #8D203D;">
+        <div class="container">
+            <nav class="navbar navbar-dark navbar-expand-lg navigation">
+                <img alt="Responsive image" class="img-fluid" src="img/logo.png" width="150">
+                <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+                    <span class="navbar-toggler-icon"> </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto" style="width:0px;">
+                        <li class="nav-item active activo">
+                            <a class="nav-link " href="../index.html">
+                                INICIO
+                            </a>
+                        </li>
+                        <!--<li class="nav-item active">
+                            <a class="nav-link" href="#">
+                                PARTICIPACIÓN
+                            </a>
+                        </li>-->
+                        <li class="nav-item active">
+                            <a class="nav-link" href="../agenda.php">
+                                AGENDA
+                            </a>
+                        </li> 
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="w-100 pt-121  opc1 position-relative">
+        <img class="img-fluid" src="img/cintillo_header.png" width="100%" style="margin-top: 2%;">
+    </div>
+
+    <div class="container-fluid px-0">
+        <div class="container-fluid portada" style="padding-top: 3%" >
+
+            <div class="row justify-content-center ">
+            <div class="col-md-6 col-md-offset-3">
+                <img class="img-fluid" src="img/logo_central.png" style="margin-top: 4%;">
+            </div>
+           
+            <div class="col-md-10 text-center"><br><br>
+                    <h5 class="mb-0" style="color: #8D203D;">Propósito: Construir una agenda para el año 2024 a través de espacios de diálogo, con base en los avances y retos en materia de Educación Dual, Emprendimiento Asociativo, Economía Social y Solidaria, así como del Servicio Social.
+                    </h5><br>                   
+            </div>
+            </div>
+            <div class="col-md-12 text-center" style="margin-top: 2%;">
+                <a data-toggle="modal" data-target="#exampleModal1">
+                    <button class="btn btn-primary btn-lg">Descarga tu constancia aquí</button>
+                </a>
+            </div>
+       
+       
+                        <!-- Modal -->
+
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="width: 95%; height: 100%; padding-top: 5%" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="row">
+            <div class="col mb-12" style="padding-left: 15px; padding-right: 15px;">                                           
+                   <h5 style="color: #860f01">Ingresa el correo electrónico y región con el que te registraste para descargar tu constancia de participación.</h5><br><br>
+                    <form action="controller/login.php" method="POST">
+                        <label>Región</label>
+                            <select class="form-control" name="region"  required>
+                              <option value="">Selecciona la regíon</option>
+                              <option value="01">Sur Sureste</option>
+                              <option value="02">Centro Sur</option>
+                              <option value="03">Centro Occidente</option>
+                              <option value="04">Noreste</option>
+                              <option value="05">Noroeste</option>
+                              <option value="06">Metropolitana</option>
+                            </select>
+                            <br>
+                        <label for="nombre">Email</label>
+                        <input type="text" class="form-control" name="email" onChange="conMayusculas(this)" required=""><br>
+                        <button class="btn btn-success" type="submit"><h5>Descargar</h5><span></span></button>
+                        <!--<a class="d-inline-block" href="javascript:void(0);" title="">Forget A Password</a>-->
+                    </form>  
+             </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+ </div>       
+
+<div class="container-fluid" style="padding-top: 3%">
+      <section>
+         <div id="accordion">
+            <div class="row">
+               <div class="pad col-4 col-lg-2 col-md-2 text-center">
+                  <a data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                     <div class="view overlay">
+                        <button type="button" class="btn btn-outline-danger">
+                        <img src="img/mision/sur_sureste.png" class="img-fluid" alt="Responsive image">   
+                        </button>                    
+                     </div>
+                  </a>
+               </div>
+               
+               <div class="pad col-4 col-lg-2 col-md-2 text-center">
+                  <a data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                     <div class="view overlay">
+                     <button type="button" class="btn btn-outline-danger">
+                        <img src="img/mision/centro_sur.png" class="img-fluid" alt="Responsive image">
+                     </button>                      
+                     </div>
+                  </a>
+               </div>
+               <div class="pad col-4 col-lg-2 col-md-2 text-center">
+                  <a data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                     <div class="view overlay">
+                    <button type="button" class="btn btn-outline-danger">
+                        <img src="img/mision/centro_occidente.png" class="img-fluid" alt="Responsive image">
+                    </button>
+                     </div>
+                  </a>
+               </div>
+               <div class="pad col-4 col-ms-3 col-lg-2 col-md-2 text-center">
+                  <a data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                     <div class="view overlay">
+                     <button type="button" class="btn btn-outline-danger">
+                        <img src="img/mision/noreste.png" class="img-fluid" alt="Responsive image">
+                     </button>                        
+                     </div>
+                  </a>
+               </div>
+               <div class="pad col-4 col-lg-2 col-md-2 text-center">
+                  <a data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                     <div class="view overlay">
+                     <button type="button" class="btn btn-outline-danger">
+                        <img src="img/mision/noroeste.png" class="img-fluid" alt="Responsive image">
+                     </button>                      
+                     </div>
+                  </a>
+               </div>
+               <div class="pad col-4 col-lg-2 col-md-2 text-center">
+                  <a data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                     <div class="view overlay">
+                    <button type="button" class="btn btn-outline-danger">
+                        <img src="img/mision/metropolitana.png" class="img-fluid" alt="Responsive image"> 
+                    </button>                     
+                     </div>
+                  </a>
+               </div>
+            </div><br><br>
+
+
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+             <div class="card-body">
+                <div class="row">
+                <div class="col-md-6 text-center" style="background-color:#8D203D">
+                  <h1>Videos Sur sureste</h1>
+                </div>
+                </div><br><br><br><br>
+
+            <div class="container">
+                <div class="row">
+                <div class="col-md-5 col-lg-5">
+                     <iframe width="100%" height="300" src="https://www.youtube.com/embed/q9RM_5B73bI" title="Convocatoria Líderes ANUIES-FESE 2018" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                     <div class="col-md-2 col-lg-2">
+                        <br>
+                    </div>
+                    <div class="col-md-5 col-lg-5">
+                     <iframe width="100%" height="300" src="https://www.youtube.com/embed/q9RM_5B73bI" title="Convocatoria Líderes ANUIES-FESE 2018" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+
+
+
+
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                <div class="row">
+                <div class="col-md-6 text-center" style="background-color:#8D203D;">
+                  <h1>Videos Centro Sur</h1>
+                </div>
+                </div><br><br><br><br>
+
+            <div class="container">
+                <div class="row">
+                <div class="col-md-5 col-lg-5">
+                     <iframe width="100%" height="300" src="https://www.youtube.com/embed/q9RM_5B73bI" title="Convocatoria Líderes ANUIES-FESE 2018" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                     <div class="col-md-2 col-lg-2">
+                        <br>
+                    </div>
+                    <div class="col-md-5 col-lg-5">
+                     <iframe width="100%" height="300" src="https://www.youtube.com/embed/q9RM_5B73bI" title="Convocatoria Líderes ANUIES-FESE 2018" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                </div>
+            </div>
+
+            </div>
+            </div>  
+
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+               <div class="card-body">
+                <div class="row">
+                <div class="col-md-6 text-center" style="background-color:#8D203D">
+                  <h1>Videos Centro Occidente</h1>
+                </div>
+                </div><br><br><br><br>
+
+            <div class="container">
+                <div class="row">
+                <div class="col-md-5 col-lg-5">
+                     <iframe width="100%" height="300" src="https://www.youtube.com/embed/q9RM_5B73bI" title="Convocatoria Líderes ANUIES-FESE 2018" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                     <div class="col-md-2 col-lg-2">
+                        <br>
+                    </div>
+                    <div class="col-md-5 col-lg-5">
+                     <iframe width="100%" height="300" src="https://www.youtube.com/embed/q9RM_5B73bI" title="Convocatoria Líderes ANUIES-FESE 2018" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                </div>
+            </div>
+            </div>
+            </div>
+
+
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+               <div class="card-body">
+                <div class="row">
+                <div class="col-md-6 text-center" style="background-color:#8D203D">
+                  <h1>Vídeos Noreste</h1>
+                </div>
+                </div><br><br><br><br>
+
+            <div class="container">
+                <div class="row">
+                <div class="col-md-5 col-lg-5">
+                     <iframe width="100%" height="300" src="https://www.youtube.com/embed/q9RM_5B73bI" title="Convocatoria Líderes ANUIES-FESE 2018" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                     <div class="col-md-2 col-lg-2">
+                        <br>
+                    </div>
+                    <div class="col-md-5 col-lg-5">
+                     <iframe width="100%" height="300" src="https://www.youtube.com/embed/q9RM_5B73bI" title="Convocatoria Líderes ANUIES-FESE 2018" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                </div>
+            </div>
+            </div>
+            </div>
+
+
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+               <div class="card-body">
+                <div class="row">
+                <div class="col-md-6 text-center" style="background-color:#8D203D">
+                  <h1>Videos Noroeste</h1>
+                </div>
+                </div><br><br><br><br>
+
+            <div class="container">
+                <div class="row">
+                <div class="col-md-5 col-lg-5">
+                     <iframe width="100%" height="300" src="https://www.youtube.com/embed/q9RM_5B73bI" title="Convocatoria Líderes ANUIES-FESE 2018" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                     <div class="col-md-2 col-lg-2">
+                        <br>
+                    </div>
+                    <div class="col-md-5 col-lg-5">
+                     <iframe width="100%" height="300" src="https://www.youtube.com/embed/q9RM_5B73bI" title="Convocatoria Líderes ANUIES-FESE 2018" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                </div>
+            </div>
+            </div>
+            </div>
+
+
+                        <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+               <div class="card-body">
+                <div class="row">
+                <div class="col-md-6 text-center" style="background-color:#8D203D">
+                  <h1>Videos Metropolitana</h1>
+                </div>
+                </div><br><br><br><br>
+
+            <div class="container">
+                <div class="row">
+                <div class="col-md-5 col-lg-5">
+                     <iframe width="100%" height="300" src="https://www.youtube.com/embed/q9RM_5B73bI" title="Convocatoria Líderes ANUIES-FESE 2018" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                     <div class="col-md-2 col-lg-2">
+                        <br>
+                    </div>
+                    <div class="col-md-5 col-lg-5">
+                     <iframe width="100%" height="300" src="https://www.youtube.com/embed/q9RM_5B73bI" title="Convocatoria Líderes ANUIES-FESE 2018" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                </div>
+            </div>
+            </div>
+            </div>
+         </div>
+      </section>  
+  </div>
+    </div>
+
+
+    <div class="w-100 pt-121  opc1 position-relative">
+                <img class="img-fluid" src="img/Logos_Institucionales.png" style="margin-top: 5%; ">
+    </div>
+   
+    <!-- Imagen greco de cabecera -->
+    <div class="w-100 pt-121  opc1 position-relative">
+        <img class="img-fluid" src="img/cintillo_footer.png" width="100%">
+    </div>
+
+
+    <footer style="background-color: #8D203D;" id="contacto">
+        <div class="w-100 pt-121  opc1 position-relative">
+            <div class="container position-relative">
+                <div class="footer-wrap w-100 text-center">
+                    <div class="footer-inner d-inline-block">
+                        <div class="logo d-inline-block">
+                            <h1 class="mb-0">
+                                <a href="index.html" title=""><br>
+                                    <img class="img-fluid" src="img/logo.png" alt="Logo" width="30%">
+                                </a>
+                            </h1>
+                        </div>
+                        <p class="mb-0" style="color: #fff">Contacto: forosdevinculacion@fese.mx</p><br>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer><!-- Footer -->
+
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/popper.min.js"></script>
+</body>
+
+</html>
