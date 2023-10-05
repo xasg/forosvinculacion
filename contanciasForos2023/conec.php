@@ -6,6 +6,6 @@ $password = "HeVr1043D";*/
 
 $servername = "localhost";
 $dbname = "forosvinculacion2023";
-$username = "root";
-$password = "";
+$username = "dual";
+$password = "WM2ODrcPMgxzG5nM";
 ?>
