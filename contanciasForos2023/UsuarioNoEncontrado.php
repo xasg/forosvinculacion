@@ -145,7 +145,7 @@ elseif ($region==06)
                            <li>Correo electrónico</li>
                            <li>Institución de Educación Superior</li>
                            <li>Región del evento al que asistió</li>
-                           <?php echo "vamos a ver si esto jala " . $correo   ?>
+                           <?php /*echo "vamos a ver si esto jala " . $correo   */?>
                         
                         </lu>
                         <br><br>
