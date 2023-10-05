@@ -41,10 +41,10 @@ function update_user($id, $nombre, $apaterno, $amaterno, $email)
 
 
 
-function insert_user($nombre, $apaterno, $amaterno, $email, $region)
+function insert_user($nombre, $apaterno, $amaterno, $email, $region, $tp_usuario)
 {
 global $mysqli;
-$sql="INSERT INTO usuario_constancia(id_usuario, dt_nombre, dt_apaterno, dt_amaterno, dt_email, dt_region) VALUES (null, '{$nombre}', '{$apaterno}', '{$amaterno}', '{$email}' , '{$region}')";
+$sql="INSERT INTO usuario_constancia(id_usuario, dt_nombre, dt_apaterno, dt_amaterno, dt_email, dt_region, tp_usuario) VALUES (null, '{$nombre}', '{$apaterno}', '{$amaterno}', '{$email}' , '{$region}', '{$tp_usuario}')";
 $mysqli->query($sql);
 }
 

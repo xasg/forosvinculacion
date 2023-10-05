@@ -19,6 +19,12 @@
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.js"></script>
       <script type="text/javascript" src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>     
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+      
+      <script language="JavaScript">
+        function conMayusculas(field) {
+            field.value = field.value.toUpperCase()
+        }   
+    </script>
    </head>
    <body>
    
@@ -64,27 +70,27 @@
                     <div class="col-md-12">
                     <div class="form-check">
                          <label for="exampleInputEmail1">Nombre</label>
-                         <input type="text"  name="nombre" class="form-control">
+                         <input type="text"  name="nombre" class="form-control" onChange="conMayusculas(this)">
                     </div>
                     </div><br>
 
                     <div class="col-md-12">
                     <div class="form-check">
                          <label for="exampleInputEmail1">Apellido Paterno</label>
-                         <input type="text" name="apaterno" class="form-control">
+                         <input type="text" name="apaterno" class="form-control" onChange="conMayusculas(this)">
                     </div>
                     </div><br>
                     <div class="col-md-12">
                     <div class="form-check">
                          <label for="exampleInputEmail1">Apellido Materno</label>
-                         <input type="text"  name="amaterno" class="form-control">
+                         <input type="text"  name="amaterno" class="form-control" onChange="conMayusculas(this)">
                     </div>
                     </div>
                     <br>
                      <div class="col-md-12">
                     <div class="form-check">
                          <label for="exampleInputEmail1">Email</label>
-                         <input type="text" name="email" class="form-control">
+                         <input type="text" name="email" class="form-control" onChange="conMayusculas(this)">
                     </div>
                     </div>
                     <br>
