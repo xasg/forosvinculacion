@@ -61,11 +61,11 @@
                                 PARTICIPACIÓN
                             </a>
                         </li>-->
-                        <li class="nav-item active">
+                        <!--<li class="nav-item active">
                             <a class="nav-link" href="../agenda.php">
                                 AGENDA
                             </a>
-                        </li> 
+                        </li> -->
                     </ul>
                 </div>
             </nav>
@@ -103,9 +103,9 @@
       <div class="modal-body">
         <div class="row">
             <div class="col mb-12" style="padding-left: 15px; padding-right: 15px;">                                           
-                   <h5 style="color: #860f01">Ingresa el correo electrónico y región con el que te registraste para descargar tu constancia de participación.</h5><br><br>
+                   <h5 style="color: #860f01">Ingresa el correo electrónico y región con el que te registraste, para descargar tu constancia de participación.</h5><br><br>
                     <form action="controller/login.php" method="POST">
-                        <label>Región</label>
+                        <label>Región del foro</label>
                             <select class="form-control" name="region"  required>
                               <option value="">Selecciona la regíon</option>
                               <option value="01">Sur Sureste</option>
@@ -116,12 +116,14 @@
                               <option value="06">Metropolitana</option>
                             </select>
                             <br>
-                        <label for="nombre">Email</label>
+                        <label for="nombre">Correo  electrónico</label>
                         <input type="text" class="form-control" name="email" onChange="conMayusculas(this)" required=""><br>
                         
                         <button class="btn btn-success" type="submit"><h5>Descargar</h5><span></span></button>
                         <!--<a class="d-inline-block" href="javascript:void(0);" title="">Forget A Password</a>-->
-                    </form>  
+                    </form> 
+                    
+                    <br>
              </div>
         </div>
       </div>
@@ -134,7 +136,7 @@
  </div>       
 
 <div class="container-fluid" style="padding-top: 3%">
-      <section>
+     <!-- <section>
          <div id="accordion">
             <div class="row">
                <div class="pad col-4 col-lg-2 col-md-2 text-center">
@@ -347,7 +349,7 @@
             </div>
             </div>
          </div>
-      </section>  
+      </section>  -->
   </div>
     </div>
 

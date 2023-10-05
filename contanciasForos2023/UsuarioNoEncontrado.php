@@ -105,14 +105,14 @@ elseif ($region==06)
                                 INICIO
                             </a>
                         </li>
-                        <li class="nav-item active">
+                        <!--<li class="nav-item active">
                             <a class="nav-link" href="../agenda.php">
                                 AGENDA
                             </a>
-                        </li>
+                        </li>-->
                         <li class="nav-item active">
                             <a class="nav-link" href="constancia.html">
-                                CONSTANCIA
+                               DESCARGAR CONSTANCIA
                             </a>
                         </li>
 

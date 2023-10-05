@@ -12,7 +12,7 @@
 
 ?>
     <script>
-       window.location="admin.php"
+       window.location="contanciasForos2023.php"
     </script>
 <?php
 
