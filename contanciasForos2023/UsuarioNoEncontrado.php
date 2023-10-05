@@ -2,16 +2,21 @@
 session_start();
 
 include_once('databases_usuario.php');
-$id = $_SESSION["id"];
-$region = $_SESSION["region"];
+//$id = $_SESSION["id"];
+//$region = $_SESSION["region"];
 //mysqli_set_charset( $mysqli, 'utf8');
-$participante = run_participante($id, $region);
+//$participante = run_participante($id, $region);
+
+$correo = isset($_SESSION['email']) ? $_SESSION['email'] : '';
+$region = isset($_SESSION['region']) ? $_SESSION['region'] : '';
+
+
 
 
 
 /*****************************************/
 // esta funcion se usa para poder cambiar el valor de status_contancia a 1, esto indica que ya genero su constancia 
- $correo =  $participante['dt_email'];
+ 
  
 if ( $region==01) 
 {
