@@ -138,7 +138,7 @@ elseif ($region==06)
                     <!-- -----------------------------------------------------------------------------se agrego validacion por region en la agenda paramostrar sus agendas por región -->
                         <h2 class="table-light text-center" style="font-size: 32px !important; padding: 15px !important;">No hemos encontrado información relacionada a su correo electrónico.  </h2>
                         <strong><h2 class="table-light text-center" style="font-size: 32px !important; padding: 15px !important; color: #8D203D;"><?php echo  $correo   ?>  </h2></strong>
-                        <h2 class="table-light text-center" style="font-size: 32px !important; padding: 15px !important;">En la region </h2>
+                        <h2 class="table-light text-center" style="font-size: 32px !important; padding: 15px !important;">En la región </h2>
                         <strong><h2 class="table-light text-center" style="font-size: 32px !important; padding: 15px !important; color: #8D203D;"><?php echo  $cede   ?>  </h2></strong>
                         <h2 class="table-light text-center" style="font-size: 32px !important; padding: 15px !important;">Para brindarle la mejor atención posible, le pedimos se ponga en contacto con nuestro equipo. </h2>
                         <h2 class="table-light text-center" style="font-size: 32px !important; padding: 15px !important;">Estamos para ayudarle. </h2>
