@@ -3,19 +3,12 @@ $servername = "localhost";
 $dbname = "forosvinculacion2023";
 $username = "root";
 $password = "";
-
-
-
-
 /*
 $servername = "8080";
 $dbname = "forosvinculacion2023";
 $username = "root";
 $password = "dxSOw7iAZdib";
 */
-
-
-
 ?>
 
 
