@@ -1,5 +1,5 @@
 <?php
-require_once('conec.php');
+require_once('../../controller/conexion.php');
 $mysqli = new mysqli($servername, $username, $password, $dbname);
 $result ='establecido';
 if( $mysqli->connect_errno )
