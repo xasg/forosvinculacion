@@ -73,17 +73,46 @@ elseif ($region==06)
          field.value = field.value.toUpperCase()
       }   
    </script>
+   <script language="JavaScript">
+        document.getElementById("enviarCorreo").addEventListener("click", function() {
+        var asunto = "Constancia no Generada";
+        var cuerpoCorreo = "Este es el texto que se incluirá en el correo.";
+        // Forma el enlace de correo electrónico con el asunto y el cuerpo
+        var enlaceCorreo = "mailto:forosdevinculacion@fese.mx?subject=" + encodeURIComponent(asunto) + "&body=" + encodeURIComponent(cuerpoCorreo);
+        // Abre el cliente de correo electrónico predeterminado
+        //window.location.href = enlaceCorreo;
+        });
+</script>
    <style>
-      body
-      {
-         font-family: 'Montserrat', sans-serif;
-      }
+        body
+        {
+            font-family: 'Montserrat', sans-serif;
+        }
 
-      .sangria
-      {    
-         margin-right: 1em;
-      }
+        .sangria
+        {    
+            margin-right: 1em;
+            color :white;
+        }
+        .paddingTop
+        {    
+            padding-top: 15px;
+            
+        }
+        .paddingBottom
+        {              
+            padding-bottom: 15px;
+        }
+        /* Estilos para centrar el botón en el centro de la pantalla */
+        .centrar-botones 
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
    </style>
+   
 
 </head>
 
@@ -133,17 +162,33 @@ elseif ($region==06)
             
          <div class="container-fluid" style="padding-top: 3%">
             <div class="row justify-content-center ">
-               <div class="col-md-10 ">
+              <div class="col-md-10 ">
                     <!-- <img class="img-fluid" src="img/agenda.png" width="100%"  style="margin-top: 4%;"> -->
                     <!-- -----------------------------------------------------------------------------se agrego validacion por region en la agenda paramostrar sus agendas por región -->
                         <h2 class="table-light text-center" style="font-size: 32px !important; padding: 15px !important;">No hemos encontrado información relacionada a su correo electrónico.  </h2>
                         <strong><h2 class="table-light text-center" style="font-size: 32px !important; padding: 15px !important; color: #8D203D;"><?php echo  $correo   ?>  </h2></strong>
                         <h2 class="table-light text-center" style="font-size: 32px !important; padding: 15px !important;">En la región </h2>
                         <strong><h2 class="table-light text-center" style="font-size: 32px !important; padding: 15px !important; color: #8D203D;"><?php echo  $cede   ?>  </h2></strong>
-                        <h2 class="table-light text-center" style="font-size: 32px !important; padding: 15px !important;">Para brindarle la mejor atención posible, le pedimos se ponga en contacto con nuestro equipo. </h2>
-                        <h2 class="table-light text-center" style="font-size: 32px !important; padding: 15px !important;">Estamos para ayudarle. </h2>
+                        <!--<h2 class="table-light text-center" style="font-size: 32px !important; padding: 15px !important;">Para brindarle la mejor atención posible, le pedimos se ponga en contacto con nuestro equipo. </h2>-->
+                        <h2 class="table-light text-center" style="font-size: 32px !important; padding: 15px !important;">Le pedimos se contacte con nosotros por correo, dando clic en el siguiente botón: </h2>
                         <br>
-                        <h4 class="table-light text-center" > Para acelerar el proceso, favor de compartirnos la siguiente información: </h4>
+                        
+                        
+                        <div class="col-md-12 centrar-botones ">
+                            <a href="mailto:forosdevinculacion@fese.mx?subject=Constancia%20no%20generada
+                                &body=Para%20acelerar%20el%20proceso,%20favor%20de%20compartirnos%20la%20siguiente%20información:%0A%0A
+                                •  Nombre completo %0A
+                                •  Correo electrónico%0A
+                                •  Institución de Educación Superior%0A
+                                •  Región del evento al que asistió%0A%0A">                            
+                                <button class="btn btn-primary btn-lg" type="submit">Mandar correo</button>
+                        </a>
+
+                        </div>
+    
+
+
+                        <!--<h4 class="table-light text-center" > Para acelerar el proceso, favor de compartirnos la siguiente información: </h4>
                         <br>
                         <lu>
                            <li>Nombre completo</li>
@@ -152,24 +197,35 @@ elseif ($region==06)
                            <li>Región del evento al que asistió</li>
                            <?php /*echo "vamos a ver si esto jala " . $correo   */?>
                         
-                        </lu>
+                        </lu>-->
                         <br><br>
 
-                        <div class="col-md-12 text-center" >
+                        <!--<div class="col-md-12 text-center" >
                            <a href="https://wa.me/525551012306" target="_blank" class="contact-link sangria">
                               <img src="img/whatsApp.png" alt="WhatsApp" width="40" height="40" title = "Mandar un mensaje por WhatsApp ">                           
-                           </a>  <strong class = "sangria"> 55 5101 2306 </strong>                            
+                           </a>  <strong class = "sangria"> 55 5101 2306 </strong>                            -->
                             
                         
-                           <a href="mailto:forosdevinculacion@fese.mx" class = "sangria">
+                           <!--<a href="mailto:forosdevinculacion@fese.mx? Subject= Constancia%20no%20Generada" class = "sangria" >
                               <img src="img/email.png" alt="Correo" width="40" height="40" title = "Mandar Correo electrónico " >                           
-                           </a>  <strong class = "sangria"> forosdevinculacion@fese.mx  </strong>
-                        
+                           </a>  <strong class = "sangria"> forosdevinculacion@fese.mx  </strong>-->
 
-                           <a href="tel:+5554204900,,2073"    class="contact-link  sangria">
+                            <!--<a href= "mailto:forosdevinculacion@fese.mx?subject= Constancia%20no%20generada" &body=" el mensaje estandar">
+                                <img src="img/email.png" alt="Correo" width="40" height="40" title="Mandar Correo electrónico">
+                                <strong class="sangria">forosdevinculacion@fese.mx</strong>
+                            </a>-->
+
+                            <!--<a href="mailto:forosdevinculacion@fese.mx?subject=Constancia%20no%20generada
+                            &body=Para%20acelerar%20el%20proceso,%20favor%20de%20compartirnos%20la%20siguiente%20información:%0A%0A
+                            •  Nombre completo %0A
+                            •  Correo electrónico%0A
+                            •  Institución de Educación Superior%0A
+                            •  Región del evento al que asistió%0A%0A">Contacta conmigo por email</a>                        -->
+
+                          <!-- <a href="tel:+5554204900,,2073"    class="contact-link  sangria">
                               <img src="img/telefono.png" alt="Llamada telefónica" width="40" height="40" title = "Marcar al numero telefónico">
                            </a> <strong>55 5420 4900 Ext. 2073 </strong>
-                        </div>
+                        </div>-->
 
                         
                         
@@ -188,10 +244,11 @@ elseif ($region==06)
     
     <!-- Imagen greco de cabecera -->
     
-    <footer style="background-color: #8D203D;" id="contacto">
+    <!--<footer style="background-color: #8D203D;" id="contacto">
         <div class="w-100 pt-121  opc1 position-relative">
             <div class="container position-relative">
                 <div class="footer-wrap w-100 text-center">
+                    
                     <div class="footer-inner d-inline-block">
                         <div class="logo d-inline-block">
                             <h1 class="mb-0">
@@ -200,13 +257,52 @@ elseif ($region==06)
                                 </a>
                             </h1>
                         </div>
+                       
                         <p class="mb-0" style="color: #fff">Contacto: forosdevinculacion@fese.mx</p><br>
+                        <br>
+
+                       
                     </div>
+                    
+
 
                 </div>
             </div>
         </div>
+    </footer>--><!-- Footer -->
+
+
+
+    <!------------------------------------------------------------------------------------------------------->
+    <footer style="background-color: #8D203D;" id="contacto" class = "position-relative paddingBottom">
+        <div class="col-md-12 text-center  paddingTop container" >
+            <div class="footer-inner d-inline-block paddingTop row ">                        
+                
+                <a href="https://wa.me/525551012306" target="_blank" class="contact-link sangria ">
+                    <img src="../img/whatsapp.png" alt="WhatsApp" width="40" height="40" title = "Mandar un mensaje por WhatsApp ">                           
+                      
+                </a><strong class = "sangria"> 55 5101 2306 </strong>     
+                
+                <a href="mailto:forosdevinculacion@fese" class = "sangria" >
+                    <img src="../img/correo.png" alt="Correo" width="40" height="40" title = "Mandar Correo electrónico " >                           
+                </a>  <strong class = "sangria"> forosdevinculacion@fese.mx  </strong>
+                                  
+                <a href="tel:+5554204900,,2073"    class="contact-link sangria">
+                <img src="../img/llamada.png" alt="Llamada telefónica" width="40" height="40" title = "Marcar al numero telefónico">
+                </a> <strong class = "sangria ">55 5420 4900 Ext. 2073 </strong>
+                
+            </div>
+            <div class="logo  ">
+                <h1 class="mb-0">
+                    <a href="index.html" title=""><br>
+                        <img class="img-fluid " src="img/logo.png" alt="Logo" width="10%">
+                    </a>
+                    <p></p>
+                </h1>
+            </div>  
+        </div>             
     </footer><!-- Footer -->
+
 
 
     <script src="js/jquery.min.js"></script>
