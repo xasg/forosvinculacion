@@ -13,7 +13,7 @@
 
 ?>
     <script>
-       window.location="contanciasForos2023.php"
+       window.location="constanciasForos2023.php"
     </script>
 <?php
 
