@@ -1,6 +1,6 @@
 <?php
- session_start();
 require_once('databases_log.php');
+ session_start();
  $email = isset( $_POST['email']) ? $_POST['email'] : '';
  $region = isset( $_POST['region']) ? $_POST['region'] : '';
  $_SESSION['email'] = $email;
@@ -27,4 +27,10 @@ if($user == null)
 				</script>
 	   <?php    
  		  }
-       ?>
+       ?> 
+
+
+
+?>
+
+	   
