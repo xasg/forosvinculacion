@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="css/animation.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style_navs.css">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
     <script src="js/jquery.js"></script>
     <script src="js/scrollbooster.min.js"></script>
     <script language="JavaScript">
@@ -44,16 +47,21 @@
                                 INICIO
                             </a>
                         </li>
-                        <li class="nav-item active">
+                        <!-- <li class="nav-item active">
                             <a class="nav-link" href="./registro.php">
                                 PARTICIPACIÓN
                             </a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="./agenda.html">
+                        </li> -->
+                        <!--<li class="nav-item active">
+                            <a class="nav-link" href="./agenda.php">
                                 AGENDA
                             </a>
-                        </li>
+                        </li>-->
+                        <!--<li class="nav-item active">
+                            <a class="nav-link" href="./contanciasForos2023/constancia.html">
+                                 DESCAGAR CONSTANCIA
+                            </a>
+                        </li>-->
                     </ul>
                 </div>
             </nav>
@@ -65,8 +73,7 @@
 
     <div class="container-fluid px-0">
         <div class="container-fluid" style="padding-top: 3%">
-
-             <div class="row justify-content-center ">
+            <div class="row justify-content-center ">
             <div class="col-md-6 col-md-offset-3">
                 <img class="img-fluid" src="img/logo_central.png" style="margin-top: 4%;">
             </div>
@@ -74,17 +81,92 @@
                 <div class="col-md-10 text-center"><br><br>
                     <h5 class="mb-0" style="color: #8D203D;">Propósito: Construir una agenda para el año 2024 a través de espacios de diálogo, con base en los avances y retos en materia de Educación Dual, Emprendimiento Asociativo, Economía Social y Solidaria, así como del Servicio Social.
                     </h5><br>
-                    <h5 class="mb-0" style="color: #8D203D;">
+                    
+        <!-- Se agrega el mensaje modificado en donde se indica que podran descargar su constancia de participación -->
+                    <hr class="border-bottom">
+                    <div class="container text-center" style="color:#ac9474;">
+                        <h3><b>  Si asistió a alguno de los Foros y desea descargar su constancia de participación, de clic en el siguiente botón:</b></h3>
+                                  <!--<p> 
+                                    En breve podrán descargar su constancia de participación. Mientras tanto los invitamos a consultar las transmisiones de cada una de las regiones en el canal oficial  de la SEP  en la siguiente liga: <a href="https://es-la.facebook.com/SEPmx" style="color: #8D203D;">https://es-la.facebook.com/SEPmx</a>
+                                    </p>-->
+                           
+                    </div>
+
+                    <!------------------------------------------------------------------------------------->
+                    <!--------------------este codigo es el original--------------------------------------->
+                    <!--<div class="col-md-12 text-center">
+
+                        <h3 class="mb-0" style="color:#ac9474;"><strong>
+                            Si asistió a alguno de los Foros y desea descargar su constancia de participación, dé clic en el siguiente botón:
+                        </strong></h3> <br>
+                        <form method="post" action="./contanciasForos2023/constancia.html">
+                            <input  class="btn btn-primary btn-lg"  type="submit" name="redireccionar" value="Descarga tu constancia aquí">
+                        </form>
+                    </div>-->
+
+                    <!---------------este codigo es el de prueva ---------------------------------->
+                    <div class="col-md-12 text-center" style="margin-top: 2%;">
+                        <a data-toggle="modal" data-target="#exampleModal1">
+                            <button class="btn btn-primary btn-lg">Descarga tu constancia aquí</button>
+                        </a>
+                    </div>
+                    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" style="width: 95%; height: 100%; padding-top: 5%" role="document">
+                          <div class="modal-content">
+                            <div class="modal-body">
+                              <div class="row">
+                                  <div class="col mb-12" style="padding-left: 15px; padding-right: 15px;">                                           
+                                         <h5 style="color: #860f01">Ingresa el correo electrónico y región con el que te registraste, para descargar tu constancia de participación.</h5><br><br>
+                                          <form action="contanciasForos2023/controller/login.php" method="POST">
+                                              <label>Región del foro</label>
+                                                  <select class="form-control" name="region"  required>
+                                                    <option value="">Selecciona la regíon</option>
+                                                    <option value="01">Sur Sureste</option>
+                                                    <option value="02">Centro Sur</option>
+                                                    <option value="03">Centro Occidente</option>
+                                                    <option value="04">Noreste</option>
+                                                    <option value="05">Noroeste</option>
+                                                    <option value="06">Metropolitana</option>
+                                                  </select>
+                                                  <br>
+                                              <label for="nombre">Correo  electrónico</label>
+                                              <input type="text" class="form-control" name="email" onChange="conMayusculas(this)" required=""><br>
+                                              
+                                              <button class="btn btn-primary btn-lg" type="submit">Descargar</button>
+                                              <!--<a class="d-inline-block" href="javascript:void(0);" title="">Forget A Password</a>-->
+                                          </form> 
+                                          
+                                          <br>
+                                   </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+               
+
+                    <!---------------------------------------------------------------------------------->
+                    
+                    <!-- <h5 class="mb-0" style="color: #8D203D;">
                         Si cuentas con experiencia actualizada en los temas que se desarrollarán:
-                    </h5>
+                    </h5> -->
                 </div>
             </div>
             <div class="col-md-12 text-center" style="margin-top: 2%;">
-                <a href="./registro.php">
+                <!-- <a href="./registro.php">
                     <button class="btn btn-primary btn-lg">Postulate aquí</button>
-                </a>
+                </a> -->
             </div>
+                           
+                           <!-- <div class="container text-danger text-center">
+                            <h3><b> Agradecemos a todos por su entusiasmo y participación.</b></h3>
+                            <p> El registro se ha cerrado, síguenos en las transmisiones en canales oficiales SEP, ANUIES, FESE.
+                                Siguenos en: <a class="nav-link " style="color:blue;"  href="https://es-la.facebook.com/SEPmx/">Facebook  </a>
 
+                                
+                            </p>
+                         </div> -->
+                        
         </div>
         <!-- Cintillo divisor -->
         <div class="w-100 pt-121  opc1 position-relative">
