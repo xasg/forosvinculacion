@@ -25,6 +25,7 @@ $region = view_region();
    <link rel="stylesheet" href="assets/css/bootstrap-multiselect.css">
    <link rel="stylesheet" href="css/style.css">
    <link rel="stylesheet" href="css/bootstrap.css">
+   <link rel="stylesheet" href="css/style_navs.css">
    <!-- Global site tag (gtag.js) - Google Analytics -->
    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HZVPVQSG3M"></script>
    <script>
@@ -48,14 +49,14 @@ $region = view_region();
             $(".content2").fadeIn(1500);
          }, 6000);
       });
-   </script>
+   </script>   
 </head>
 
 <body>
    <main>
       <div class="container-fluid mx-0 px-0" style="background-color: #8D203D;">
          <div class="container">
-            <nav class="navbar navbar-dark navbar-expand-lg">
+            <nav class="navbar navbar-dark navbar-expand-lg navigation">
                <img alt="Responsive image" class="img-fluid" src="img/logo.png" width="150">
                <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
                   <span class="navbar-toggler-icon"> </span>
@@ -67,11 +68,16 @@ $region = view_region();
                            INICIO
                         </a>
                      </li>
-                     <li class="nav-item active">
+                     <li class="nav-item active activo">
                         <a class="nav-link" href="#">
                            PARTICIPACIÓN
                         </a>
                      </li>
+                     <li class="nav-item active">
+                            <a class="nav-link" href="./agenda.html">
+                                AGENDA
+                            </a>
+                        </li>
 
                   </ul>
                </div>
@@ -91,7 +97,11 @@ $region = view_region();
                                           <a href="#" class="alert-link">El correo que ingresaste no se encuentra registrado. Llena el siguiente formulario</a>
                                        </div> -->
                   <div class="alert alert-secondary" role="alert">
-                     <p>engo más de 5 años de experiencia en la operación de las áreas de Educación Dual, Emprendimiento Asociativo y programas de impacto de servicio social para el nivel superior (Instituciones de Educación Superior, Organismos de la sociedad Civil o Iniciativa privada).</p>
+                     <p>  <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
+                     Tengo más de 5 años de experiencia en la operación de las áreas de Educación Dual, Emprendimiento Asociativo y 
+                     programas de impacto de servicio social para el nivel superior (Instituciones de Educación Superior, Organismos 
+                     de la sociedad Civil o Iniciativa privada).
+                     </p>
                   </div>
 
 
@@ -141,13 +151,13 @@ $region = view_region();
                   </div>
                   <div class="col-xl-4">
                      <div class="form-group">
-                        <label for="nombre">Primer apellido:</label>
+                        <label for="nombre">Primer Apellido:</label>  <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
                         <input type="text" class="form-control" name="apaterno" onChange="conMayusculas(this)" required="">
                      </div>
                   </div>
                   <div class="col-xl-4">
                      <div class="form-group">
-                        <label for="nombre">Segundo Apellido:</label>
+                        <label for="nombre">Segundo Apellido:</label>  <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
                         <input type="text" class="form-control" name="amaterno" onChange="conMayusculas(this)" required="">
                      </div>
                   </div>
@@ -162,20 +172,20 @@ $region = view_region();
                   </div>
                   <div class="col-xl-3">
                      <div class="form-group">
-                        <label for="nombre">Teléfono institucional</label>
-                        <input type="text" class="form-control" name="tel_ins">
+                        <label for="nombre">Teléfono institucional (10 dígitos)</label>
+                        <input type="text" class="form-control" name="tel_ins" maxlength="10" min=0 pattern="[0-9]{10}" >
                      </div>
                   </div>
                   <div class="col-xl-1">
                      <div class="form-group">
                         <label for="nombre">Ext.</label>
-                        <input type="text" class="form-control" name="ext">
+                        <input type="text" class="form-control" name="ext" >
                      </div>
                   </div>
                   <div class="col-xl-4">
                      <div class="form-group">
-                        <label for="nombre">Móvil</label>
-                        <input type="text" class="form-control" name="tel_movil" required="">
+                        <label for="nombre">Móvil (10 dígitos sin espacios)</label>
+                        <input type="text" class="form-control" name="tel_movil" maxlength="10" min=0  required="" pattern="[0-9]{10}">
                      </div>
                   </div>
                </div>
@@ -250,14 +260,14 @@ $region = view_region();
                            <option value="">Seleccione su cargo</option>
                            <option value="Director General y/o Coordinador General">Director General y/o Coordinador General</option>
                            <option value="Director de Área">Director de Área</option>
-                           <option value="Administrativo">Otro</option>
+                           <option value="Otro">Otro</option> <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
                         </select>
                      </div>
                   </div>
                   <div class="col-xl-8">
                      <div class="form-group">
                         <label>Nombre completo del cargo que ocupa en la institución</label>
-                        <input type="text" class="form-control" name="otro_cargo" onChange="conMayusculas(this)">
+                        <input type="text" class="form-control" name="otro_cargo2" onChange="conMayusculas(this)">
                      </div>
                   </div>
                </div>
@@ -278,12 +288,13 @@ $region = view_region();
                            <option value="Titular de IES">Titular de IES</option>
                            <option value="Responsable de vinculación">Responsable de vinculación</option>
                            <option value="Responsable académico">Responsable académico</option>
+                           <option value="Otro">Otro</option>
                         </select>
                      </div>
                   </div>
                   <div class="col-xl-8">
                      <div class="form-group">
-                        <label>Especifique cargo</label>
+                        <label>Nombre completo del cargo que ocupa en la institución</label>
                         <input type="text" class="form-control" name="otro_cargo" onChange="conMayusculas(this)">
                      </div>
                   </div>
@@ -293,8 +304,9 @@ $region = view_region();
                   <div class="col-xl-12">
                      <h4>Semblanza</h4>
                      <div class="form-group">
-                        <label>
-                           Escriba una breve semblanza, donde destaque sus años de experiencia en una o varias de las temáticas señaladas en el Foro, así como las actividades relevantes en las mismas, así como, las aportaciones que considere más relevantes <h6>(máximo 200 palabras).</h6>
+                        <label> <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
+                        Escriba una breve semblanza, donde destaque sus años de experiencia en una o varias de las temáticas señaladas en el Foro,
+                        así como las actividades relevantes en las mismas, así como, las aportaciones que considere más relevantes
                         </label>
                         <textarea class="form-control" name="comentario" rows="3" required></textarea>
                      </div>
@@ -303,109 +315,108 @@ $region = view_region();
 
                <div class="row">
                   <div class="col-md-12"><br>
-                     <p><strong>Seleccione las actividades en las que le interesa participar</strong></p>
+                     <p><strong>Seleccione las áreas en las cuales cuenta con experiencia de más de 5 años</strong></p> <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
                   </div>
                </div>
 
-
+               
                <div class="row">
-                  <div class="col-md-12"><br>
-                     <p>Día 1. Reunión vinculadores</p>
-                  </div>
-
+                  <!-- Se descomento la tabla de días  y se agrego la experiencia de expertos-->
                   <table class="table table-striped table-bordered">
                      
                      <tbody>
                         <tr>
-                           <th scope="row" class="text-center">
-                              <p>16:00 – 18:00</p>
+                           <th scope="row" class="col-md-2 text-center">
+                           <div class="form-check form-check-inline">
+                                 <input class="form-check-input" type="checkbox" name="educacion_dual" value="1">
+                                 <br>
+                              </div>
+                           </th>
+                           <td>
+                              <p>Educación Dual</p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th scope="row" class="col-md-2 text-center">
+                           <div class="form-check form-check-inline">
+                                 <input class="form-check-input" type="checkbox" name="servicio_social_comunitario" value="1">
+                                 <br>
+                              </div>
+                           </th>
+                           <td>
+                              <p>Servicio Social Comunitario</p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th scope="row" class="col-md-2 text-center">
+                           <div class="form-check form-check-inline">
+                                 <input class="form-check-input" type="checkbox" name="economia_social_solidaria" value="1">
+                                 <br>
+                              </div>
+                           </th>
+                           <td>
+                              <p>Emprendimiento asociativo y Economía Social y Solidaria</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+
+                  <div class="col-md-12"><br>
+                     <p>Día 1. Reunión vinculadores</p>
+                  </div>
+                  
+               
+                  <!----------------------------------------------------------->                  
+                  <table class="table table-striped table-bordered">
+                     
+                     <tbody>
+                        <tr>
+                           <th scope="row" class="col-md-2 text-center">
+                              <p>16:00 – 19:00</p>
                            </th>
                            <td>
                               <div class="form-check form-check-inline">
-                                 <input class="form-check-input" type="radio" name="mesa1">
+                                 <input class="form-check-input" type="checkbox" name="mesa1" value="si">
                                  <label class="form-check-label">
-                                    <strong>Mesa:</strong>Reunión de responsables de vinculación de las IES
+                                    Reunión de de responsables de vinculación de las IES 
                                  </label><br>
                               </div>
                            </td>
                         </tr>
-
                      </tbody>
                   </table>
+                  <!----------------------------------------------------------->
                </div>
-
-
                <div class="row">
                   <div class="col-md-12"><br>
-                     <p>Día 2. Inauguración y mesas de expertos de alto nivel</p>
+                     <p>Día 2. Inaguración y mesas de expertos de alto nivel</p> <!-- Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
                   </div>
 
                   <table class="table table-striped table-bordered">
-                    
+                     <thead>
+                     </thead>
                      <tbody>
+                        <!-- ------------------------------------------------------------------------------------ -->
                      <tr>
-                        <th scope="row" class="text-center">
-                              <p>10:00 – 11:30</p>
+                           <th scope="row" class="col-md-2 text-center align-middle">
+                              <p>10:00 – 16:00</p>    <!-- Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
                            </th>
-                           <td>
+                           <td >
                               <div class="form-check form-check-inline">
-                                 <input class="form-check-input" type="radio" name="inauguracion">
+                                 <input class="form-check-input" type="checkbox" name="mesa5" value="si">
                                  <label class="form-check-label">
-                                    <strong>Inauguración</strong>
-                                 </label>
+                                    Inauguración del foro  <br>
+                                    <strong>Mesa 1: </strong>Emprendimiento asociativo(ESS) <br>
+                                    <strong>Mesa 2:</strong> Educación Dual <br>
+                                    <strong>Mesa 3:</strong> Servicio Social <br>
+                                 </label><br>
                               </div>
                            </td>
                         </tr>
-                        <tr>
-                           <th scope="row" class="text-center">
-                              <p>11:30 – 13:00</p>
-                           </th>
-                           <td>
-                              <div class="form-check form-check-inline">
-                                 <input class="form-check-input" type="radio" name="mesa2">
-                                 <label class="form-check-label">
-                                    <strong>Mesa 1:</strong>Emprendimiento asociativo(ESS)
-                                 </label>
-                              </div>
-                           </td>
-                        </tr>
-
-                        <tr>
-                           <th scope="row" class="text-center">
-                              <p>13:00 – 15:00</p>
-                           </th>
-                           <td table-primary>
-                              <div class="form-check form-check-inline">
-                                 <input class="form-check-input" type="radio" name="mesa3">
-                                 <label class="form-check-label">
-                                    <strong>Mesa 2:</strong> Educación Dual
-                                 </label>
-                              </div>
-                           </td>
-                        </tr>
-                        <tr>
-                           <th scope="row" class="text-center">
-                              <p>15:00 – 16:00</p>
-                           </th>
-                           <td table-primary>
-                              <div class="form-check form-check-inline">
-                                 <input class="form-check-input" type="radio" name="mesa4">
-                                 <label class="form-check-label">
-                                    <strong>Mesa 3:</strong> Servicio Social
-                                 </label>
-                              </div>
-                           </td>
-                        </tr>
+                        
                      </tbody>
                   </table>
                </div>
-
-
-
-
-
-
-
 
                <div class="row">
                   <div class="col-xl-12">

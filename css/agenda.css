@@ -1,0 +1,21 @@
+.verde{
+    background:#245c4f !important;
+    color: #fff !important; 
+    font-size: 20px !important;
+    border-bottom: 2px solid #fff !important;
+}
+
+.cafe-claro{
+    background:#efe6d5; 
+    color: #000; 
+    font-size: 20px;
+}
+.cafe-claro-size{
+    background:#efe6d5; 
+    color: #000; 
+}
+
+.cafe{
+    background:#bfa27a; 
+    color: #fff;
+}
