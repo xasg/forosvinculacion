@@ -3,8 +3,8 @@
 
 	$servername = "localhost";
 	$dbname = "forosvinculacion2023";
-	$username = "root";
-	$password = "";
+	$username = "dual";
+	$password = "WM2ODrcPMgxzG5nM";
 
 	//servidor, usuario de base de datos, contraseña del usuario, nombre de base de datos
 	$mysqli = new mysqli("localhost","dual","WM2ODrcPMgxzG5nM","forosvinculacion2023"); 	
