@@ -2313,6 +2313,7 @@ textarea.form-control {
 .btn:hover {
   color: #212529;
   text-decoration: none;
+  background-color: #b48f5e;
 }
 
 .btn:focus, .btn.focus {
@@ -2329,27 +2330,9 @@ fieldset:disabled a.btn {
   pointer-events: none;
 }
 
-.btn-videos 
-{
-    color: #f9f9f9;
-    background-color:#b48f5e ;
-    border-color: #8D203D;
-}
-.btn-videos:hover 
-{
-    background-color: #a77b4d; /* Cambia el color cuando el mouse está sobre el botón */
-}
-.btn-videos:active
-{
-    background-color: #936b3a; /* Cambia el color cuando se hace clic en el botón */            
-}
 
-.btn-videos:active,.btn-videos:focus  
-{
-    background-color:#8D203D ;
-    border-color:  #b48f5e;
-    color: #000
-}
+
+
 
 
 
@@ -6319,7 +6302,7 @@ a.close.disabled {
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
 button.bg-primary:focus {
-  background-color: #0062cc !important;
+  background-color: #ac670d !important;
 }
 
 .bg-secondary {
