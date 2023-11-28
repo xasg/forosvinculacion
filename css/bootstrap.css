@@ -2329,11 +2329,41 @@ fieldset:disabled a.btn {
   pointer-events: none;
 }
 
+.btn-videos 
+{
+    color: #f9f9f9;
+    background-color:#b48f5e ;
+    border-color: #8D203D;
+}
+.btn-videos:hover 
+{
+    background-color: #a77b4d; /* Cambia el color cuando el mouse está sobre el botón */
+}
+.btn-videos:active
+{
+    background-color: #936b3a; /* Cambia el color cuando se hace clic en el botón */            
+}
+
+.btn-videos:active,.btn-videos:focus  
+{
+    background-color:#8D203D ;
+    border-color:  #b48f5e;
+    color: #000
+}
+
+
+
+
+
 .btn-primary {
   color: #fff;
   background-color: #8D203D;
   border-color: #b48f5e;
 }
+
+
+
+
 
 .btn-primary:hover {
   color: #fff;
