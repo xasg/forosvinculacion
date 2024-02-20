@@ -1,8 +1,8 @@
 <?php
-include_once('databases_registro.php');
-mysqli_set_charset($mysqli, 'utf8');
-$entidad = view_entidad();
-$region = view_region();
+//include_once('databases_registro.php');
+//mysqli_set_charset($mysqli, 'utf8');
+//$entidad = view_entidad();
+//$region = view_region();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -57,7 +57,7 @@ $region = view_region();
       <div class="container-fluid mx-0 px-0" style="background-color: #8D203D;">
          <div class="container">
             <nav class="navbar navbar-dark navbar-expand-lg navigation">
-               <img alt="Responsive image" class="img-fluid" src="img/logo.png" width="150">
+               <img alt="Responsive image" class="img-fluid" src="img/logo_2024.png" width="150">
                <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
                   <span class="navbar-toggler-icon"> </span>
                </button>
@@ -74,7 +74,7 @@ $region = view_region();
                         </a>
                      </li>
                      <li class="nav-item active">
-                            <a class="nav-link" href="./agenda.php">
+                            <a class="nav-link" href="./agenda_2024.html">
                                 AGENDA
                             </a>
                         </li>
@@ -84,9 +84,9 @@ $region = view_region();
             </nav>
          </div>
       </div>
-      <div class="w-100 pt-121  opc1 position-relative">
+      <!--<div class="w-100 pt-121  opc1 position-relative">
          <img class="img-fluid" src="img/cintillo_header.png" width="100%" style="margin-top: 2%;">
-      </div>
+      </div>      ESTE DISEÑO YA NO LLEVA CINTILLO --> 
 
       <div class="container">
          <form action="update_registro.php" method="POST">
@@ -98,9 +98,10 @@ $region = view_region();
                                        </div> -->
                   <div class="alert alert-secondary" role="alert">
                      <p>  <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
-                     Tengo más de 5 años de experiencia en la operación de las áreas de Educación Dual, Emprendimiento Asociativo y 
-                     programas de impacto de servicio social para el nivel superior (Instituciones de Educación Superior, Organismos 
-                     de la sociedad Civil o Iniciativa privada).
+                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim 
+                     ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+                     reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
                      </p>
                   </div>
 
@@ -138,12 +139,12 @@ $region = view_region();
 
             <div id="divid1" style="display:none;">
 
-               Mensaje de cierre de convocatoria
+               <!--Mensaje de cierre de convocatoria
                   <div class="container text-danger text-center">
                   <h3><b> El Registro de la región metropolitana(Ciudad de México) ha sido cerrado</b></h3>
                             <p> Agradecemos a todos por sus contribuciones y entusiasmo. 
                                 <br> Gracias.</p>
-                     <p>Para mayor información contactese al correo: <a href="mailto:katia.aguila@nube.sep.gob.mx" style="color:red;">katia.aguila@nube.sep.gob.mx</a></p>
+                     <p>Para mayor información contactese al correo: <a href="mailto:katia.aguila@nube.sep.gob.mx" style="color:red;">katia.aguila@nube.sep.gob.mx</a></p>-->
                   </div>
                <div class="row">
                   <div class="col-xl-12">
@@ -207,9 +208,9 @@ $region = view_region();
                         <label for="control1">Región</label>
                         <select class="form-control" name="region" id="region" required="">
                            <option value="">Seleccionar región</option>
-                           <?php while ($row = $region->fetch_assoc()) { ?>
+                           <?php /*while ($row = $region->fetch_assoc()) { ?>
                               <option value="<?php echo $row['id_cat_region']; ?>"><?php echo $row['dt_nombre_region']; ?></option>
-                           <?php } ?>
+                           <?php } */?>
                         </select>
                      </div>
                   </div>
@@ -218,9 +219,9 @@ $region = view_region();
                         <label for="control">Entidad Federativa</label>
                         <select class="form-control" id="entidad" name="entidad" required="">
                            <option value="">Seleccionar la entidad</option>
-                           <?php while ($row = $region->fetch_assoc()) { ?>
+                          <?php /*while ($row = $region->fetch_assoc()) { ?>
                               <option value="<?php echo $row['id_cat_entidad']; ?>"><?php echo $row['nombre_entidad']; ?></option>
-                           <?php } ?>
+                           <?php } */?>
                         </select>
                      </div>
                   </div>
@@ -457,7 +458,7 @@ $region = view_region();
                      <div class="logo d-inline-block">
                         <h1 class="mb-0">
                            <a href="index.html" title=""><br>
-                              <img class="img-fluid" src="img/logo.png" alt="Logo" width="30%">
+                              <img class="img-fluid" src="img/logo_2024.png" alt="Logo" width="50%">
                            </a>
                         </h1>
                      </div>
