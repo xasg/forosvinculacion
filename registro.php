@@ -92,17 +92,17 @@ $region = view_region();
          <form action="update_registro.php" method="POST">
             <div class="row">
                <div class="col-md-12"><br><br>
-               <h2>Registro de participación presencial</h2>
+               <h2>Registro de participación</h2>
                   <!-- <div class="alert alert-warning content">
                                           <a href="#" class="alert-link">El correo que ingresaste no se encuentra registrado. Llena el siguiente formulario</a>
                                        </div> -->
-                  <div class="alert alert-secondary" role="alert">
-                     <p>  <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
-                    <!-- Cuento con experiencia en la operación de las áreas de Educación Dual, Emprendimiento Asociativo y 
+                  <!--<div class="alert alert-secondary" role="alert">
+                     <p> 
+                    <Cuento con experiencia en la operación de las áreas de Educación Dual, Emprendimiento Asociativo y 
                      programas de impacto de servicio social para el nivel superior (Instituciones de Educación Superior, Organismos 
-                     de la sociedad Civil o Iniciativa privada).-->
+                     de la sociedad Civil o Iniciativa privada)
                      </p>
-                  </div>
+                  </div>-->
 
                   <div class="col-md-12">
                      <div class="form-group">
