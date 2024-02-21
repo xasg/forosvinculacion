@@ -1,8 +1,8 @@
 <?php
-//include_once('databases_registro.php');
-//mysqli_set_charset($mysqli, 'utf8');
-//$entidad = view_entidad();
-//$region = view_region();
+include_once('databases_registro.php');
+mysqli_set_charset($mysqli, 'utf8');
+$entidad = view_entidad();
+$region = view_region();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -74,7 +74,7 @@
                         </a>
                      </li>
                      <li class="nav-item active">
-                            <a class="nav-link" href="./agenda_2024.html">
+                            <a class="nav-link" href="./agenda.php">
                                 AGENDA
                             </a>
                         </li>
@@ -84,24 +84,23 @@
             </nav>
          </div>
       </div>
-      <!--<div class="w-100 pt-121  opc1 position-relative">
+     <!-- <div class="w-100 pt-121  opc1 position-relative">
          <img class="img-fluid" src="img/cintillo_header.png" width="100%" style="margin-top: 2%;">
-      </div>      ESTE DISEÑO YA NO LLEVA CINTILLO --> 
+      </div>-->
 
       <div class="container">
          <form action="update_registro.php" method="POST">
             <div class="row">
                <div class="col-md-12"><br><br>
-               <h2>Postulación de participación presencial</h2>
+               <h2>Registro de participación presencial</h2>
                   <!-- <div class="alert alert-warning content">
                                           <a href="#" class="alert-link">El correo que ingresaste no se encuentra registrado. Llena el siguiente formulario</a>
                                        </div> -->
                   <div class="alert alert-secondary" role="alert">
                      <p>  <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
-                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim 
-                     ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-                     reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                     Cuento con experiencia en la operación de las áreas de Educación Dual, Emprendimiento Asociativo y 
+                     programas de impacto de servicio social para el nivel superior (Instituciones de Educación Superior, Organismos 
+                     de la sociedad Civil o Iniciativa privada).
                      </p>
                   </div>
 
@@ -124,10 +123,10 @@
                   </div>
                </div>
             </div>
-            <div class="row" id="divid2" style="display:none;">
-               <div class="col-md-12">
+            <div class="row" id="divid2" style="display:none;">   <!---SI LA RESPUESTA ES NO, MOSTRARA LO SIGUIENTE ---->
+               <!--<div class="col-md-12">
                   <p>Te invitamos a ver los Foros a traves de las redes sociales </p><br>
-               </div>
+               </div>-->
                <div class="col-md-12">
                   <img class="img-fluid" src="img/mapa.png">
                </div>
@@ -139,13 +138,13 @@
 
             <div id="divid1" style="display:none;">
 
-               <!--Mensaje de cierre de convocatoria
-                  <div class="container text-danger text-center">
+               
+                  <!--<div class="container text-danger text-center">
                   <h3><b> El Registro de la región metropolitana(Ciudad de México) ha sido cerrado</b></h3>
                             <p> Agradecemos a todos por sus contribuciones y entusiasmo. 
                                 <br> Gracias.</p>
-                     <p>Para mayor información contactese al correo: <a href="mailto:katia.aguila@nube.sep.gob.mx" style="color:red;">katia.aguila@nube.sep.gob.mx</a></p>-->
-                  </div>
+                     <p>Para mayor información contactese al correo: <a href="mailto:katia.aguila@nube.sep.gob.mx" style="color:red;">katia.aguila@nube.sep.gob.mx</a></p>
+                  </div>-->
                <div class="row">
                   <div class="col-xl-12">
                      <h4>Datos personales</h4><br>
@@ -201,16 +200,16 @@
                <!-- Datos Institucionales-->
                <div class="row">
                   <div class="col-xl-12 pad">
-                     <h4>Datos institucionales</h4><br>
+                     <h4>Datos de procedencia</h4><br>
                   </div>
                   <div class="col-xl-3">
                      <div class="form-group">
                         <label for="control1">Región</label>
                         <select class="form-control" name="region" id="region" required="">
                            <option value="">Seleccionar región</option>
-                           <?php /*while ($row = $region->fetch_assoc()) { ?>
+                           <?php while ($row = $region->fetch_assoc()) { ?>
                               <option value="<?php echo $row['id_cat_region']; ?>"><?php echo $row['dt_nombre_region']; ?></option>
-                           <?php } */?>
+                           <?php } ?>
                         </select>
                      </div>
                   </div>
@@ -219,9 +218,9 @@
                         <label for="control">Entidad Federativa</label>
                         <select class="form-control" id="entidad" name="entidad" required="">
                            <option value="">Seleccionar la entidad</option>
-                          <?php /*while ($row = $region->fetch_assoc()) { ?>
+                           <?php while ($row = $region->fetch_assoc()) { ?>
                               <option value="<?php echo $row['id_cat_entidad']; ?>"><?php echo $row['nombre_entidad']; ?></option>
-                           <?php } */?>
+                           <?php } ?>
                         </select>
                      </div>
                   </div>
@@ -248,6 +247,8 @@
                            <input class="form-check-input" type="radio" name="organizacion" id="org_otro" value="privado" required="">
                            <label class="form-check-label">Privado</label>
                         </div>
+                        
+                       
                      </div>
                   </div>
                </div>
@@ -295,6 +296,8 @@
                            <option value="Titular de IES">Titular de IES</option>
                            <option value="Responsable de vinculación">Responsable de vinculación</option>
                            <option value="Responsable académico">Responsable académico</option>
+                           <option value="Egresado">Egresado</option>
+                           <option value="Estudiante">Estudiante</option>
                            <option value="Otro">Otro</option>
                         </select>
                      </div>
@@ -307,22 +310,22 @@
                   </div>
                </div>
 
-               <div class="row">
+               <!--<div class="row">
                   <div class="col-xl-12">
                      <h4>Semblanza</h4>
                      <div class="form-group">
-                        <label> <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
-                        Escriba una breve semblanza, donde destaque sus años de experiencia en una o varias de las temáticas señaladas en el Foro,
+                        <label>--> <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
+                        <!--Escriba una breve semblanza, donde destaque sus años de experiencia en una o varias de las temáticas señaladas en el Foro,
                         así como las actividades relevantes en las mismas, así como, las aportaciones que considere más relevantes
                         </label>
                         <textarea class="form-control" name="comentario" rows="3" required></textarea>
                      </div>
                   </div>
-               </div>
+               </div>-->
 
                <div class="row">
                   <div class="col-md-12"><br>
-                     <p><strong>Seleccione las áreas en las cuales cuenta con experiencia de más de 5 años</strong></p> <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
+                     <p><strong>Seleccione las áreas en las cuales cuenta con experiencia</strong></p> <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
                   </div>
                </div>
 
@@ -447,18 +450,18 @@
       </div>
 
       <!-- Imagen greco de cabecera -->
-      <div class="w-100 pt-121  opc1 position-relative">
+      <!--<div class="w-100 pt-121  opc1 position-relative">
          <img class="img-fluid" src="img/cintillo_footer.png" width="100%" style="padding-top: 10%">
-      </div>
+      </div>-->
       <footer style="background-color: #8D203D;" id="contacto">
-         <div class="w-100 pt-121  opc1 position-relative">
-            <div class="container position-relative">
+         <div class="w-100 pt-121  opc1 position-relative footer ">
+            <div class="container position-relative ">
                <div class="footer-wrap w-100 text-center">
                   <div class="footer-inner d-inline-block">
                      <div class="logo d-inline-block">
                         <h1 class="mb-0">
                            <a href="index.html" title=""><br>
-                              <img class="img-fluid" src="img/logo_2024.png" alt="Logo" width="50%">
+                              <img class="img-fluid" src="img/logo_2024.png" alt="Logo" width="30%">
                            </a>
                         </h1>
                      </div>
