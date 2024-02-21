@@ -454,7 +454,7 @@ $region = view_region();
          <img class="img-fluid" src="img/cintillo_footer.png" width="100%" style="padding-top: 10%">
       </div>-->
       <footer style="background-color: #8D203D;" id="contacto">
-         <div class="w-100 pt-121  opc1 position-relative footer ">
+         <div class="w-100 pt-121  opc1 position-relative ">
             <div class="container position-relative ">
                <div class="footer-wrap w-100 text-center">
                   <div class="footer-inner d-inline-block">
