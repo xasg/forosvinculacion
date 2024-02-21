@@ -98,9 +98,9 @@ $region = view_region();
                                        </div> -->
                   <div class="alert alert-secondary" role="alert">
                      <p>  <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
-                     Cuento con experiencia en la operación de las áreas de Educación Dual, Emprendimiento Asociativo y 
+                    <!-- Cuento con experiencia en la operación de las áreas de Educación Dual, Emprendimiento Asociativo y 
                      programas de impacto de servicio social para el nivel superior (Instituciones de Educación Superior, Organismos 
-                     de la sociedad Civil o Iniciativa privada).
+                     de la sociedad Civil o Iniciativa privada).-->
                      </p>
                   </div>
 
