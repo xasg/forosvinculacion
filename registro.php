@@ -57,7 +57,7 @@ $region = view_region();
       <div class="container-fluid mx-0 px-0" style="background-color: #8D203D;">
          <div class="container">
             <nav class="navbar navbar-dark navbar-expand-lg navigation">
-               <img alt="Responsive image" class="img-fluid" src="img/logo.png" width="150">
+               <img alt="Responsive image" class="img-fluid" src="img/logo_2024.png" width="150">
                <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
                   <span class="navbar-toggler-icon"> </span>
                </button>
@@ -84,25 +84,25 @@ $region = view_region();
             </nav>
          </div>
       </div>
-      <div class="w-100 pt-121  opc1 position-relative">
+     <!-- <div class="w-100 pt-121  opc1 position-relative">
          <img class="img-fluid" src="img/cintillo_header.png" width="100%" style="margin-top: 2%;">
-      </div>
+      </div>-->
 
       <div class="container">
          <form action="update_registro.php" method="POST">
             <div class="row">
                <div class="col-md-12"><br><br>
-               <h2>Postulación de participación presencial</h2>
+               <h2>Registro de participación</h2>
                   <!-- <div class="alert alert-warning content">
                                           <a href="#" class="alert-link">El correo que ingresaste no se encuentra registrado. Llena el siguiente formulario</a>
                                        </div> -->
-                  <div class="alert alert-secondary" role="alert">
-                     <p>  <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
-                     Tengo más de 5 años de experiencia en la operación de las áreas de Educación Dual, Emprendimiento Asociativo y 
+                  <!--<div class="alert alert-secondary" role="alert">
+                     <p> 
+                    <Cuento con experiencia en la operación de las áreas de Educación Dual, Emprendimiento Asociativo y 
                      programas de impacto de servicio social para el nivel superior (Instituciones de Educación Superior, Organismos 
-                     de la sociedad Civil o Iniciativa privada).
+                     de la sociedad Civil o Iniciativa privada)
                      </p>
-                  </div>
+                  </div>-->
 
                   <div class="col-md-12">
                      <div class="form-group">
@@ -123,10 +123,10 @@ $region = view_region();
                   </div>
                </div>
             </div>
-            <div class="row" id="divid2" style="display:none;">
-               <div class="col-md-12">
+            <div class="row" id="divid2" style="display:none;">   <!---SI LA RESPUESTA ES NO, MOSTRARA LO SIGUIENTE ---->
+               <!--<div class="col-md-12">
                   <p>Te invitamos a ver los Foros a traves de las redes sociales </p><br>
-               </div>
+               </div>-->
                <div class="col-md-12">
                   <img class="img-fluid" src="img/mapa.png">
                </div>
@@ -138,13 +138,13 @@ $region = view_region();
 
             <div id="divid1" style="display:none;">
 
-               Mensaje de cierre de convocatoria
-                  <div class="container text-danger text-center">
+               
+                  <!--<div class="container text-danger text-center">
                   <h3><b> El Registro de la región metropolitana(Ciudad de México) ha sido cerrado</b></h3>
                             <p> Agradecemos a todos por sus contribuciones y entusiasmo. 
                                 <br> Gracias.</p>
                      <p>Para mayor información contactese al correo: <a href="mailto:katia.aguila@nube.sep.gob.mx" style="color:red;">katia.aguila@nube.sep.gob.mx</a></p>
-                  </div>
+                  </div>-->
                <div class="row">
                   <div class="col-xl-12">
                      <h4>Datos personales</h4><br>
@@ -200,7 +200,7 @@ $region = view_region();
                <!-- Datos Institucionales-->
                <div class="row">
                   <div class="col-xl-12 pad">
-                     <h4>Datos institucionales</h4><br>
+                     <h4>Datos de procedencia</h4><br>
                   </div>
                   <div class="col-xl-3">
                      <div class="form-group">
@@ -247,6 +247,8 @@ $region = view_region();
                            <input class="form-check-input" type="radio" name="organizacion" id="org_otro" value="privado" required="">
                            <label class="form-check-label">Privado</label>
                         </div>
+                        
+                       
                      </div>
                   </div>
                </div>
@@ -294,6 +296,8 @@ $region = view_region();
                            <option value="Titular de IES">Titular de IES</option>
                            <option value="Responsable de vinculación">Responsable de vinculación</option>
                            <option value="Responsable académico">Responsable académico</option>
+                           <option value="Egresado">Egresado</option>
+                           <option value="Estudiante">Estudiante</option>
                            <option value="Otro">Otro</option>
                         </select>
                      </div>
@@ -306,22 +310,22 @@ $region = view_region();
                   </div>
                </div>
 
-               <div class="row">
+               <!--<div class="row">
                   <div class="col-xl-12">
                      <h4>Semblanza</h4>
                      <div class="form-group">
-                        <label> <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
-                        Escriba una breve semblanza, donde destaque sus años de experiencia en una o varias de las temáticas señaladas en el Foro,
+                        <label>--> <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
+                        <!--Escriba una breve semblanza, donde destaque sus años de experiencia en una o varias de las temáticas señaladas en el Foro,
                         así como las actividades relevantes en las mismas, así como, las aportaciones que considere más relevantes
                         </label>
                         <textarea class="form-control" name="comentario" rows="3" required></textarea>
                      </div>
                   </div>
-               </div>
+               </div>-->
 
                <div class="row">
                   <div class="col-md-12"><br>
-                     <p><strong>Seleccione las áreas en las cuales cuenta con experiencia de más de 5 años</strong></p> <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
+                     <p><strong>Seleccione las áreas en las cuales cuenta con experiencia</strong></p> <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
                   </div>
                </div>
 
@@ -446,18 +450,18 @@ $region = view_region();
       </div>
 
       <!-- Imagen greco de cabecera -->
-      <div class="w-100 pt-121  opc1 position-relative">
+      <!--<div class="w-100 pt-121  opc1 position-relative">
          <img class="img-fluid" src="img/cintillo_footer.png" width="100%" style="padding-top: 10%">
-      </div>
+      </div>-->
       <footer style="background-color: #8D203D;" id="contacto">
-         <div class="w-100 pt-121  opc1 position-relative">
-            <div class="container position-relative">
+         <div class="w-100 pt-121  opc1 position-relative ">
+            <div class="container position-relative ">
                <div class="footer-wrap w-100 text-center">
                   <div class="footer-inner d-inline-block">
                      <div class="logo d-inline-block">
                         <h1 class="mb-0">
                            <a href="index.html" title=""><br>
-                              <img class="img-fluid" src="img/logo.png" alt="Logo" width="30%">
+                              <img class="img-fluid" src="img/logo_2024.png" alt="Logo" width="30%">
                            </a>
                         </h1>
                      </div>
