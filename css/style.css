@@ -111,7 +111,8 @@
             margin-left:10%; /* Ajusta el margen izquierdo según sea necesario */
             
             z-index: 1;
-            margin-top: 48em; /* Ajusta el margen inferior según sea necesario */
+           /* margin-top: 48em; /* Ajusta el margen inferior según sea necesario */
+           bottom: -4%;
         }
 
         #logo-imagen-fese
@@ -161,6 +162,7 @@
             /*z-index: 1;*/
             right: 6%;            
             margin-top: 5%; 
+            
         }
        
 
@@ -170,10 +172,11 @@
             width: 85%;
             height: 40%;
             margin-left: 5%; /* Ajusta el margen izquierdo según sea necesario */
-            margin-top: 20em; /* Ajusta el margen superior según sea necesario */
+            margin-top: 10%; /* Ajusta el margen superior según sea necesario */
             
             text-align: right; /* Alinea el contenido (en este caso, los botones) hacia el lado derecho */            
-            /*object-fit: contain;*/
+            object-fit: contain;
+            bottom:22%; /* Ajusta el margen inferior según sea necesario */
         }
 
         #contenedor-logos-ies
@@ -200,7 +203,7 @@
           
         }
 
-        @media (max-width: 500px) 
+        @media (max-width: 599px) 
         {
             #contenedor-menu 
             {
@@ -208,17 +211,22 @@
             }
             .texto_derecha
             {
-               font-size: 14px;
+               font-size: 10px;
                color: white;               
             }
             #logo-imagen-sep
             {
-                        
                 width: 110%; 
-                
-                
             }
-    
+        }
+
+        @media (min-width: 600px) and (max-width: 1366px) 
+        {
+            .texto_derecha
+            {
+               font-size: 14px;
+               color: white;               
+            }
         }
 
 
