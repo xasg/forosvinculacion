@@ -73,7 +73,10 @@
             /*width: 35%;  */
             height: 100%;
             right: 0;
-            background: url('../img/Marco_derecho.png') center center / cover no-repeat; 
+            
+            background-image: url('../img/Marco_derecho.png');
+            background-size: cover; /* Cubre todo el área del div */
+            background-position: center;
         }
         
 
@@ -81,7 +84,7 @@
 
         .texto
          {
-            font-size: 20px;
+            font-size: 16px;
             color: white;
             
         }
@@ -127,7 +130,7 @@
         }
 
         /*******************************************************/
-		 #contenedor-logo-sep
+		#contenedor-logo-sep
         {
             position: absolute;
             width: 50%;
@@ -177,7 +180,7 @@
             text-align: right; /* Alinea el contenido (en este caso, los botones) hacia el lado derecho */            
             object-fit: contain;
             bottom:22%; /* Ajusta el margen inferior según sea necesario */
-        }
+        }   
 
         #contenedor-logos-ies
         {
@@ -185,7 +188,7 @@
             
             height: 20%;
             */
-            /*z-index: 1;*/
+               /*z-index: 1;*/
             margin-left:-10%;  
         
             /*position: fixed;*/
@@ -203,11 +206,32 @@
           
         }
 
-        @media (max-width: 599px) 
+        .texto_subrayado:hover   /*estilo para subrayar los enlaces */
         {
+            color: white; /* Cambia el color del texto a azul cuando el mouse está sobre él */
+            text-decoration: underline; /* Subraya el texto cuando el mouse está sobre él */
+        }
+        
+
+        
+        @media (max-width: 500px) 
+        {
+
+        #contenedor-logo-sep
+        {
+            bottom: 83%;
+        } 
+        #contenedor-logo-foros
+        {                     
+            bottom: 85%;             
+        }
             #contenedor-menu 
             {
                 width: 40%;
+                
+                background-size: 100% 100%; /* Ajusta la imagen de fondo al 100% de altura y ancho */
+                background-repeat: no-repeat;
+                height: 100vh;
             }
             .texto_derecha
             {
@@ -218,6 +242,35 @@
             {
                 width: 110%; 
             }
+
+            .texto
+            {
+                /*font-size: 12px;*/
+                color: white;
+            }
+            #contenedor-texto
+            {
+                position: absolute;
+                bottom: 2%;
+                color: white;
+                text-align: left;
+                width: 50%;
+                margin-left: 5%;
+               
+            }
+            #contenedor-logo-fese
+            {
+                position: absolute;
+                width: 90%;
+                height: 20%;
+                margin-left:10%; /* Ajusta el margen izquierdo según sea necesario */
+                
+                z-index: 1;
+               /* margin-top: 48em; /* Ajusta el margen inferior según sea necesario */
+               
+            }
+
+            
         }
 
         @media (min-width: 600px) and (max-width: 1366px) 
