@@ -6,7 +6,6 @@ $region = view_region();
 ?>
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -57,7 +56,7 @@ $region = view_region();
       <div class="container-fluid mx-0 px-0" style="background-color: #8D203D;">
          <div class="container">
             <nav class="navbar navbar-dark navbar-expand-lg navigation">
-               <img alt="Responsive image" class="img-fluid" src="img/logo_2024.png" width="150">
+               <img alt="Responsive image" class="img-fluid" src="img/logo_2024.png" width="250">
                <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
                   <span class="navbar-toggler-icon"> </span>
                </button>
@@ -68,11 +67,11 @@ $region = view_region();
                            INICIO
                         </a>
                      </li>
-                     <li class="nav-item active activo">
+                    <!-- <li class="nav-item active activo">
                         <a class="nav-link" href="#">
                            PARTICIPACIÓN
                         </a>
-                     </li>
+                     </li>-->
                      <li class="nav-item active">
                             <a class="nav-link" href="./agenda.php">
                                 AGENDA
@@ -84,67 +83,15 @@ $region = view_region();
             </nav>
          </div>
       </div>
-     <!-- <div class="w-100 pt-121  opc1 position-relative">
-         <img class="img-fluid" src="img/cintillo_header.png" width="100%" style="margin-top: 2%;">
-      </div>-->
 
       <div class="container">
          <form action="update_registro.php" method="POST">
             <div class="row">
                <div class="col-md-12"><br><br>
-               <h2>Registro de participación presencial</h2>
-                  <!-- <div class="alert alert-warning content">
-                                          <a href="#" class="alert-link">El correo que ingresaste no se encuentra registrado. Llena el siguiente formulario</a>
-                                       </div> -->
-                  <div class="alert alert-secondary" role="alert">
-                     <p>  <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
-                    <!-- Cuento con experiencia en la operación de las áreas de Educación Dual, Emprendimiento Asociativo y 
-                     programas de impacto de servicio social para el nivel superior (Instituciones de Educación Superior, Organismos 
-                     de la sociedad Civil o Iniciativa privada).-->
-                     </p>
-                  </div>
-
-                  <div class="col-md-12">
-                     <div class="form-group">
-                        <!--<div class="form-check form-check-inline">
-                                             <input class="form-check-input" type="radio" name="participacion" value="no" required="">
-                                             <label class="form-check-label">No participaré</label>
-                                          </div>-->
-                        <div class="form-check form-check-inline">
-                           <input class="form-check-input" type="radio" name="participacion" id="id1" value="part_si">
-                           <label class="form-check-label">Si</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                           <input class="form-check-input" type="radio" name="participacion" id="id2" value="part_no">
-                           <label class="form-check-label">No</label>
-                        </div>
-
-                     </div>
-                  </div>
+               <h2>Registro de participación</h2>
+               <hr>
                </div>
             </div>
-            <div class="row" id="divid2" style="display:none;">   <!---SI LA RESPUESTA ES NO, MOSTRARA LO SIGUIENTE ---->
-               <!--<div class="col-md-12">
-                  <p>Te invitamos a ver los Foros a traves de las redes sociales </p><br>
-               </div>-->
-               <div class="col-md-12">
-                  <img class="img-fluid" src="img/mapa.png">
-               </div>
-               <div class="col-md-12 ">
-                  <img class="img-fluid" src="img/regiones.png">
-               </div>
-
-            </div>
-
-            <div id="divid1" style="display:none;">
-
-               
-                  <!--<div class="container text-danger text-center">
-                  <h3><b> El Registro de la región metropolitana(Ciudad de México) ha sido cerrado</b></h3>
-                            <p> Agradecemos a todos por sus contribuciones y entusiasmo. 
-                                <br> Gracias.</p>
-                     <p>Para mayor información contactese al correo: <a href="mailto:katia.aguila@nube.sep.gob.mx" style="color:red;">katia.aguila@nube.sep.gob.mx</a></p>
-                  </div>-->
                <div class="row">
                   <div class="col-xl-12">
                      <h4>Datos personales</h4><br>
@@ -157,13 +104,13 @@ $region = view_region();
                   </div>
                   <div class="col-xl-4">
                      <div class="form-group">
-                        <label for="nombre">Primer Apellido:</label>  <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
+                        <label for="nombre">Primer Apellido:</label>
                         <input type="text" class="form-control" name="apaterno" onChange="conMayusculas(this)" required="">
                      </div>
                   </div>
                   <div class="col-xl-4">
                      <div class="form-group">
-                        <label for="nombre">Segundo Apellido:</label>  <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
+                        <label for="nombre">Segundo Apellido:</label>  
                         <input type="text" class="form-control" name="amaterno" onChange="conMayusculas(this)" required="">
                      </div>
                   </div>
@@ -199,13 +146,13 @@ $region = view_region();
 
                <!-- Datos Institucionales-->
                <div class="row">
-                  <div class="col-xl-12 pad">
+                  <div class="col-xl-12 pad"><br>
                      <h4>Datos de procedencia</h4><br>
                   </div>
                   <div class="col-xl-3">
                      <div class="form-group">
                         <label for="control1">Región</label>
-                        <select class="form-control" name="region" id="region" required="">
+                        <select class="form-control" name="region" id="region" onChange="mostrar(this.value);" required="">
                            <option value="">Seleccionar región</option>
                            <?php while ($row = $region->fetch_assoc()) { ?>
                               <option value="<?php echo $row['id_cat_region']; ?>"><?php echo $row['dt_nombre_region']; ?></option>
@@ -229,7 +176,7 @@ $region = view_region();
                      <div class="form-group">
                         <div class="form-check form-check-inline">
                            <input class="form-check-input" type="radio" name="organizacion" id="org_ies" value="ies" required="">
-                           <label class="form-check-label">IES</label>
+                           <label class="form-check-label">Educativo</label>
                         </div>
                         <div class="form-check form-check-inline">
                            <input class="form-check-input" type="radio" name="organizacion" id="org_otro" value="social" required="">
@@ -246,9 +193,7 @@ $region = view_region();
                         <div class="form-check form-check-inline">
                            <input class="form-check-input" type="radio" name="organizacion" id="org_otro" value="privado" required="">
                            <label class="form-check-label">Privado</label>
-                        </div>
-                        
-                       
+                        </div>        
                      </div>
                   </div>
                </div>
@@ -309,97 +254,338 @@ $region = view_region();
                      </div>
                   </div>
                </div>
-
-               <!--<div class="row">
-                  <div class="col-xl-12">
-                     <h4>Semblanza</h4>
-                     <div class="form-group">
-                        <label>--> <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
-                        <!--Escriba una breve semblanza, donde destaque sus años de experiencia en una o varias de las temáticas señaladas en el Foro,
-                        así como las actividades relevantes en las mismas, así como, las aportaciones que considere más relevantes
-                        </label>
-                        <textarea class="form-control" name="comentario" rows="3" required></textarea>
-                     </div>
-                  </div>
-               </div>-->
-
+               <hr>        
                <div class="row">
                   <div class="col-md-12"><br>
-                     <p><strong>Seleccione las áreas en las cuales cuenta con experiencia</strong></p> <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
+                  <strong><p>Día 1.</p></strong>
                   </div>
+
+                  
+<!--Mesas Sur Sureste -->
+<div id="sec_sur_sureste" style="display:none;">
+                  <table class="table table-striped table-bordered">
+                                             <thead>
+                                             </thead>
+                                             <h5>SUR SURESTE</h5>
+                                             <tbody>
+                                                <tr>
+                                                   <th scope="row">
+                                                      <p>10:00 – 12:00</p>
+                                                   </th>                                                   
+                                                   <td>
+                                                      <div class="form-check form-check-inline">
+                                                         <input class="form-check-input" type="radio" name="mesa"  value="01">
+                                                         <label class="form-check-label">
+                                                            <strong>Mesa 1:</strong>
+                                                         </label><br>
+                                                      </div>
+                                                   </td>
+                                                   <td>
+                                                      <div class="form-check form-check-inline">
+                                                         <input class="form-check-input" type="radio" name="mesa" value="02" >
+                                                         <label class="form-check-label">
+                                                           <strong>Mesa 2:</strong> 
+                                                         </label>
+                                                      </div>
+                                                   </td>
+                                                   <td table-primary>
+                                                      <div class="form-check form-check-inline">
+                                                         <input class="form-check-input" type="radio" name="mesa" value="03" >
+                                                         <label class="form-check-label">
+                                                             <strong>Mesa  3:</strong>
+                                                             </label>
+                                                      </div>
+                                                   </td>                                                   
+                                                </tr>                                                  
+                                             </tbody>
+                  </table> 
+</div>
+
+<!--Mesas centro sur -->
+<div id="sec_centro_sur" style="display:none;">
+                  <table class="table table-striped table-bordered">
+                                             <thead>
+                                             </thead>
+                                             <h5>CENTRO SUR</h5>
+                                             <tbody>
+                                                <tr>
+                                                   <th scope="row">
+                                                      <p>10:00 – 12:00</p>
+                                                   </th>                                                   
+                                                   <td>
+                                                      <div class="form-check form-check-inline">
+                                                         <input class="form-check-input" type="radio" name="mesa"  value="01">
+                                                         <label class="form-check-label">
+                                                            <strong>Mesa 1:</strong>
+                                                         </label><br>
+                                                      </div>
+                                                   </td>
+                                                   <td>
+                                                      <div class="form-check form-check-inline">
+                                                         <input class="form-check-input" type="radio" name="mesa" value="02" >
+                                                         <label class="form-check-label">
+                                                           <strong>Mesa 2:</strong> 
+                                                         </label>
+                                                      </div>
+                                                   </td>
+                                                   <td table-primary>
+                                                      <div class="form-check form-check-inline">
+                                                         <input class="form-check-input" type="radio" name="mesa" value="03" >
+                                                         <label class="form-check-label">
+                                                             <strong>Mesa  3:</strong>
+                                                             </label>
+                                                      </div>
+                                                   </td>                                                   
+                                                </tr>                                                  
+                                             </tbody>
+                  </table> 
+</div>
+
+
+
+<!--Mesas centro sur -->
+<div id="sec_centro_sur" style="display:none;">
+                  <table class="table table-striped table-bordered">
+                                             <thead>
+                                             </thead>
+                                             <h5>CENTRO SUR</h5>
+                                             <tbody>
+                                                <tr>
+                                                   <th scope="row">
+                                                      <p>10:00 – 12:00</p>
+                                                   </th>                                                   
+                                                   <td>
+                                                      <div class="form-check form-check-inline">
+                                                         <input class="form-check-input" type="radio" name="mesa"  value="01">
+                                                         <label class="form-check-label">
+                                                            <strong>Mesa 1:</strong>
+                                                         </label><br>
+                                                      </div>
+                                                   </td>
+                                                   <td>
+                                                      <div class="form-check form-check-inline">
+                                                         <input class="form-check-input" type="radio" name="mesa" value="02" >
+                                                         <label class="form-check-label">
+                                                           <strong>Mesa 2:</strong> 
+                                                         </label>
+                                                      </div>
+                                                   </td>
+                                                   <td table-primary>
+                                                      <div class="form-check form-check-inline">
+                                                         <input class="form-check-input" type="radio" name="mesa" value="03" >
+                                                         <label class="form-check-label">
+                                                             <strong>Mesa  3:</strong>
+                                                             </label>
+                                                      </div>
+                                                   </td>                                                   
+                                                </tr>                                                  
+                                             </tbody>
+                  </table> 
+</div>
+
+
+
+<!--Mesas centro occidente -->
+<div id="sec_centro_occidente" style="display:none;">
+                  <table class="table table-striped table-bordered">
+                                             <thead>
+                                             </thead>
+                                             <h5>CENTRO OCCIDENTE</h5>
+                                             <tbody>
+                                                <tr>
+                                                   <th scope="row">
+                                                      <p>10:00 – 12:00</p>
+                                                   </th>                                                   
+                                                   <td>
+                                                      <div class="form-check form-check-inline">
+                                                         <input class="form-check-input" type="radio" name="mesa"  value="01">
+                                                         <label class="form-check-label">
+                                                            <strong>Mesa 1:</strong>
+                                                         </label><br>
+                                                      </div>
+                                                   </td>
+                                                   <td>
+                                                      <div class="form-check form-check-inline">
+                                                         <input class="form-check-input" type="radio" name="mesa" value="02" >
+                                                         <label class="form-check-label">
+                                                           <strong>Mesa 2:</strong> 
+                                                         </label>
+                                                      </div>
+                                                   </td>
+                                                   <td table-primary>
+                                                      <div class="form-check form-check-inline">
+                                                         <input class="form-check-input" type="radio" name="mesa" value="03" >
+                                                         <label class="form-check-label">
+                                                             <strong>Mesa  3:</strong>
+                                                             </label>
+                                                      </div>
+                                                   </td>                                                   
+                                                </tr>                                                  
+                                             </tbody>
+                  </table> 
+</div>
+
+
+
+<!--Mesas noreste -->
+<div id="sec_noreste" style="display:none;">
+                  <table class="table table-striped table-bordered">
+                                             <thead>
+                                             </thead>
+                                             <h5>NORESTE</h5>
+                                             <tbody>
+                                                <tr>
+                                                   <th scope="row">
+                                                      <p>10:00 – 12:00</p>
+                                                   </th>                                                   
+                                                   <td>
+                                                      <div class="form-check form-check-inline">
+                                                         <input class="form-check-input" type="radio" name="mesa"  value="01">
+                                                         <label class="form-check-label">
+                                                            <strong>Mesa 1:</strong>
+                                                         </label><br>
+                                                      </div>
+                                                   </td>
+                                                   <td>
+                                                      <div class="form-check form-check-inline">
+                                                         <input class="form-check-input" type="radio" name="mesa" value="02" >
+                                                         <label class="form-check-label">
+                                                           <strong>Mesa 2:</strong> 
+                                                         </label>
+                                                      </div>
+                                                   </td>
+                                                   <td table-primary>
+                                                      <div class="form-check form-check-inline">
+                                                         <input class="form-check-input" type="radio" name="mesa" value="03" >
+                                                         <label class="form-check-label">
+                                                             <strong>Mesa  3:</strong>
+                                                             </label>
+                                                      </div>
+                                                   </td>                                                   
+                                                </tr>                                                  
+                                             </tbody>
+                  </table> 
+</div>
+
+<!--Mesas noroeste -->
+<div id="sec_noroeste" style="display:none;">
+                  <table class="table table-striped table-bordered">
+                                             <thead>
+                                             </thead>
+                                             <h5>NOROESTE</h5>
+                                             <tbody>
+                                                <tr>
+                                                   <th scope="row">
+                                                      <p>10:00 – 12:00</p>
+                                                   </th>                                                   
+                                                   <td>
+                                                      <div class="form-check form-check-inline">
+                                                         <input class="form-check-input" type="radio" name="mesa"  value="01">
+                                                         <label class="form-check-label">
+                                                            <strong>Mesa 1:</strong>
+                                                         </label><br>
+                                                      </div>
+                                                   </td>
+                                                   <td>
+                                                      <div class="form-check form-check-inline">
+                                                         <input class="form-check-input" type="radio" name="mesa" value="02" >
+                                                         <label class="form-check-label">
+                                                           <strong>Mesa 2:</strong> 
+                                                         </label>
+                                                      </div>
+                                                   </td>
+                                                   <td table-primary>
+                                                      <div class="form-check form-check-inline">
+                                                         <input class="form-check-input" type="radio" name="mesa" value="03" >
+                                                         <label class="form-check-label">
+                                                             <strong>Mesa  3:</strong>
+                                                             </label>
+                                                      </div>
+                                                   </td>                                                   
+                                                </tr>                                                  
+                                             </tbody>
+                  </table> 
+</div>
+
+<!--Mesas noreste -->
+<div id="sec_metropolitana" style="display:none;">
+                  <table class="table table-striped table-bordered">
+                                             <thead>
+                                             </thead>
+                                             <h5>METROPOLITANA</h5>
+                                             <tbody>
+                                                <tr>
+                                                   <th scope="row">
+                                                      <p>10:00 – 12:00</p>
+                                                   </th>                                                   
+                                                   <td>
+                                                      <div class="form-check form-check-inline">
+                                                         <input class="form-check-input" type="radio" name="mesa"  value="01">
+                                                         <label class="form-check-label">
+                                                            <strong>Mesa 1:</strong>
+                                                         </label><br>
+                                                      </div>
+                                                   </td>
+                                                   <td>
+                                                      <div class="form-check form-check-inline">
+                                                         <input class="form-check-input" type="radio" name="mesa" value="02" >
+                                                         <label class="form-check-label">
+                                                           <strong>Mesa 2:</strong> 
+                                                         </label>
+                                                      </div>
+                                                   </td>
+                                                   <td table-primary>
+                                                      <div class="form-check form-check-inline">
+                                                         <input class="form-check-input" type="radio" name="mesa" value="03" >
+                                                         <label class="form-check-label">
+                                                             <strong>Mesa  3:</strong>
+                                                             </label>
+                                                      </div>
+                                                   </td>                                                   
+                                                </tr>                                                  
+                                             </tbody>
+                  </table> 
+</div>
+
+
+
+
+
+<div class="row">
+                  <div class="col-xl-12"><br>
+                  <label for="nombre">Invitacion a catering</label>
+                  <br><br>
+                  </div>
+                  <div class="col-xl-2">  
+                  <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                     si
+                  </label>
+                  </div>                   
+                  </div>
+
+                  <div class="col-xl-2">  
+                  <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                     no
+                  </label>
+                  </div>                   
+                  </div>   
                </div>
 
-               
-               <div class="row">
-                  <!-- Se descomento la tabla de días  y se agrego la experiencia de expertos-->
-                  <table class="table table-striped table-bordered">
-                     
-                     <tbody>
-                        <tr>
-                           <th scope="row" class="col-md-2 text-center">
-                           <div class="form-check form-check-inline">
-                                 <input class="form-check-input" type="checkbox" name="educacion_dual" value="1">
-                                 <br>
-                              </div>
-                           </th>
-                           <td>
-                              <p>Educación Dual</p>
-                           </td>
-                        </tr>
-                        <tr>
-                           <th scope="row" class="col-md-2 text-center">
-                           <div class="form-check form-check-inline">
-                                 <input class="form-check-input" type="checkbox" name="servicio_social_comunitario" value="1">
-                                 <br>
-                              </div>
-                           </th>
-                           <td>
-                              <p>Servicio Social Comunitario</p>
-                           </td>
-                        </tr>
-                        <tr>
-                           <th scope="row" class="col-md-2 text-center">
-                           <div class="form-check form-check-inline">
-                                 <input class="form-check-input" type="checkbox" name="economia_social_solidaria" value="1">
-                                 <br>
-                              </div>
-                           </th>
-                           <td>
-                              <p>Emprendimiento asociativo y Economía Social y Solidaria</p>
-                           </td>
-                        </tr>
-                     </tbody>
-                  </table>
 
-                  <div class="col-md-12"><br>
-                     <p>Día 1. Reunión vinculadores</p>
-                  </div>
-                  
-               
-                  <!----------------------------------------------------------->                  
-                  <table class="table table-striped table-bordered">
-                     
-                     <tbody>
-                        <tr>
-                           <th scope="row" class="col-md-2 text-center">
-                              <p>16:00 – 19:00</p>
-                           </th>
-                           <td>
-                              <div class="form-check form-check-inline">
-                                 <input class="form-check-input" type="checkbox" name="mesa1" value="si">
-                                 <label class="form-check-label">
-                                    Reunión de de responsables de vinculación de las IES 
-                                 </label><br>
-                              </div>
-                           </td>
-                        </tr>
-                     </tbody>
-                  </table>
+
+
+
+                                
                   <!----------------------------------------------------------->
                </div>
+               <hr>
                <div class="row">
                   <div class="col-md-12"><br>
-                     <p>Día 2. Inaguración y mesas de expertos de alto nivel</p> <!-- Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
+                     <p><strong>Día 2. </strong></p> <!-- Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
                   </div>
 
                   <table class="table table-striped table-bordered">
@@ -409,41 +595,33 @@ $region = view_region();
                         <!-- ------------------------------------------------------------------------------------ -->
                      <tr>
                            <th scope="row" class="col-md-2 text-center align-middle">
-                              <p>10:00 – 16:00</p>    <!-- Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
+                              <p>09:00 – 16:00</p>    <!-- Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
                            </th>
                            <td >
                               <div class="form-check form-check-inline">
-                                 <input class="form-check-input" type="checkbox" name="mesa5" value="si">
                                  <label class="form-check-label">
-                                    Inauguración del foro  <br>
-                                    <strong>Mesa 1: </strong>Emprendimiento asociativo(ESS) <br>
-                                    <strong>Mesa 2:</strong> Educación Dual <br>
-                                    <strong>Mesa 3:</strong> Servicio Social <br>
+                                    <strong>AGENDA </strong>
                                  </label><br>
                               </div>
                            </td>
-                        </tr>
-                        
+                        </tr>                        
                      </tbody>
                   </table>
                </div>
+
 
                <div class="row">
                   <div class="col-xl-12">
                      <br>
                   </div>
-                  <div class="col-xl-4">
-                  </div>
-                  <div class="col-xl-4">
-                     <button type="submit" class="btn btn-block btn-primary btn-lg">Enviar postulación </button><br><br>
+                  <div class="d-grid gap-2 col-xl-3 mx-auto">
+                     <button type="submit" class="btn btn-outline-danger">Enviar registro </button><br><br>
                      <input type="hidden" name="id_usuario" value="valor1" />
                   </div>
                   <div class="alert alert-secondary" role="alert">
-                     <p>Agradecemos su postulación, se revisará su información  y se enviará a su correo mayor información sobre el evento.</p>
+                     <p>Agradecemos su registro, se enviará a su correo tu <strong>folio</strong> de registro el cual se te solicitara el dia del evento.</p>
                   </div>
                </div>
-
-            </div>
 
 
          </form>
@@ -579,6 +757,8 @@ $region = view_region();
          field.value = field.value.toUpperCase()
       }
    </script>
+   
+<!--   
    <script type="text/javascript">
       function mostrar(id) {
          if (id == "otro") {
@@ -586,9 +766,58 @@ $region = view_region();
          }
       }
    </script>
+   -->
+   <script type="text/javascript">
+         function mostrar(id) {
+             if (id == "01") {
+                 $("#sec_sur_sureste").show();
+                 $("#sec_centro_sur").hide();
+                 $("#sec_centro_occidente").hide();
+                 $("#sec_noreste").hide();
+                 $("#sec_noroeste").hide();
+                 $("#sec_metropolitana").hide();
+             } if (id == "02") {
+                 $("#sec_sur_sureste").hide();
+                 $("#sec_centro_sur").show();
+                 $("#sec_centro_occidente").hide();
+                 $("#sec_noreste").hide();
+                 $("#sec_noroeste").hide();
+                 $("#sec_metropolitana").hide();
+             } if (id == "03") {
+                 $("#sec_sur_sureste").hide();
+                 $("#sec_centro_sur").hide();
+                 $("#sec_centro_occidente").show();
+                 $("#sec_noreste").hide();
+                 $("#sec_noroeste").hide();
+                 $("#sec_metropolitana").hide();
+             }  if (id == "04") {
+                 $("#sec_sur_sureste").hide();
+                 $("#sec_centro_sur").hide();
+                 $("#sec_centro_occidente").hide();
+                 $("#sec_noreste").show();
+                 $("#sec_noroeste").hide();
+                 $("#sec_metropolitana").hide();
+             } if (id == "05") {
+                 $("#sec_sur_sureste").hide();
+                 $("#sec_centro_sur").hide();
+                 $("#sec_centro_occidente").hide();
+                 $("#sec_noreste").hide();
+                 $("#sec_noroeste").show();
+                 $("#sec_metropolitana").hide();
+             } if (id == "06") {
+                 $("#sec_sur_sureste").hide();
+                 $("#sec_centro_sur").hide();
+                 $("#sec_centro_occidente").hide();
+                 $("#sec_noreste").hide();
+                 $("#sec_noroeste").hide();
+                 $("#sec_metropolitana").show();
+             }
+         }
+      </script>
 
 
 
+<!--
    <script language="javascript">
       $(document).ready(function() {
          $("input[type=radio]").click(function(event) {
@@ -604,7 +833,7 @@ $region = view_region();
             }
          });
       })
-   </script>
+   </script>-->
    <script language="javascript">
       $(document).ready(function() {
          $("input[type=radio]").click(function(event) {

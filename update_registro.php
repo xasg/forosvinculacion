@@ -24,17 +24,7 @@
    $cargo2 = isset( $_POST['cargo2']) ? $_POST['cargo2'] : '';
    $otro_cargo = isset( $_POST['otro_cargo']) ? $_POST['otro_cargo'] : '';
    $otro_cargo2 = isset( $_POST['otro_cargo2']) ? $_POST['otro_cargo2'] : '';
-   // Se agrega el issset para realizar el insert en la base de datos con los campos agregados en registro  
-   $educacion_dual_dt = isset( $_POST['educacion_dual']) ? $_POST['educacion_dual'] : '';
-   $servicio_social_comunitario_dt = isset( $_POST['servicio_social_comunitario']) ? $_POST['servicio_social_comunitario'] : '';
-   $economia_social_solidaria_dt = isset( $_POST['economia_social_solidaria']) ? $_POST['economia_social_solidaria'] : ''; 
-   // -------------------------------------------------------------------------
-   $mesa1 = isset( $_POST['mesa1']) ? $_POST['mesa1'] : '';
-   $mesa2 = isset( $_POST['mesa2']) ? $_POST['mesa2'] : '';
-   $mesa3 = isset( $_POST['mesa3']) ? $_POST['mesa3'] : '';
-   $mesa4 = isset( $_POST['mesa4']) ? $_POST['mesa4'] : '';
-   $mesa5 = isset( $_POST['mesa5']) ? $_POST['mesa5'] : '';
-   $comentario = isset( $_POST['comentario']) ? $_POST['comentario'] : '';
+   $mesa1 = isset( $_POST['mesa']) ? $_POST['mesa'] : '';
    $reg_usuario =acces_registro($email);
    $maximo_participantes = get_region_acept_users($region);
    $bandera = true;
@@ -43,14 +33,14 @@
     # code...
     if ($tope['aceptados'] >= 70 ) {
       # code...
-      insert_registro($apaterno, $amaterno, $nombre, $email, $tel_ins, $ext, $tel_movil, $region, $entidad, $organizacion, $nom_org, $nom_org2, $cargo, $cargo2, $otro_cargo, $otro_cargo2,$educacion_dual_dt,$servicio_social_comunitario_dt, $economia_social_solidaria_dt , $mesa1, $mesa2, $mesa3, $mesa4, $mesa5, $comentario);   
+      insert_registro($apaterno, $amaterno, $nombre, $email, $tel_ins, $ext, $tel_movil, $region, $entidad, $organizacion, $nom_org, $nom_org2, $cargo, $cargo2, $otro_cargo, $otro_cargo2, $mesa1);   
       $bandera = false;
       header("Location: limite.php");
     }
     }
 // ------------------------------------
     if($reg_usuario==0 && $bandera ){ //se agrega validación de bandera
-      insert_registro($apaterno, $amaterno, $nombre, $email, $tel_ins, $ext, $tel_movil, $region, $entidad, $organizacion, $nom_org, $nom_org2, $cargo, $cargo2, $otro_cargo, $otro_cargo2,$educacion_dual_dt,$servicio_social_comunitario_dt, $economia_social_solidaria_dt , $mesa1, $mesa2, $mesa3, $mesa4, $mesa5, $comentario);   
+      insert_registro($apaterno, $amaterno, $nombre, $email, $tel_ins, $ext, $tel_movil, $region, $entidad, $organizacion, $nom_org, $nom_org2, $cargo, $cargo2, $otro_cargo, $otro_cargo2, $mesa1);   
        $id_usuario =acces_registro($email);
        $id_user=$id_usuario['id_usuario'];
        $d_nombre=$id_usuario['dt_nombre']." ".$id_usuario['dt_apaterno']." ".$id_usuario['dt_amaterno'];
@@ -97,9 +87,7 @@
      }
     
 
-    
-   
-   
+       
    
        $body = file_get_contents('https://fese.mx');
       //Create an instance; passing `true` enables exceptions
