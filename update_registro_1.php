@@ -24,8 +24,30 @@
    $cargo2 = isset( $_POST['cargo2']) ? $_POST['cargo2'] : '';
    $otro_cargo = isset( $_POST['otro_cargo']) ? $_POST['otro_cargo'] : '';
    $otro_cargo2 = isset( $_POST['otro_cargo2']) ? $_POST['otro_cargo2'] : '';
-   $mesa1 = isset( $_POST['mesa']) ? $_POST['mesa'] : '';
-   $reg_usuario =acces_registro($email);  
+   // Se agrega el issset para realizar el insert en la base de datos con los campos agregados en registro  
+   $educacion_dual_dt = isset( $_POST['educacion_dual']) ? $_POST['educacion_dual'] : '';
+   $servicio_social_comunitario_dt = isset( $_POST['servicio_social_comunitario']) ? $_POST['servicio_social_comunitario'] : '';
+   $economia_social_solidaria_dt = isset( $_POST['economia_social_solidaria']) ? $_POST['economia_social_solidaria'] : ''; 
+   // -------------------------------------------------------------------------
+   $mesa1 = isset( $_POST['mesa1']) ? $_POST['mesa1'] : '';
+   $mesa2 = isset( $_POST['mesa2']) ? $_POST['mesa2'] : '';
+   $mesa3 = isset( $_POST['mesa3']) ? $_POST['mesa3'] : '';
+   $mesa4 = isset( $_POST['mesa4']) ? $_POST['mesa4'] : '';
+   $mesa5 = isset( $_POST['mesa5']) ? $_POST['mesa5'] : '';
+   $comentario = isset( $_POST['comentario']) ? $_POST['comentario'] : '';
+   $reg_usuario =acces_registro($email);
+   $maximo_participantes = get_region_acept_users($region);
+   $bandera = true;
+  //  Se valida que no este llena con 30 participantes primero
+  foreach ($maximo_participantes as  $tope) {
+    # code...
+    if ($tope['aceptados'] >= 70 ) {
+      # code...
+      insert_registro($apaterno, $amaterno, $nombre, $email, $tel_ins, $ext, $tel_movil, $region, $entidad, $organizacion, $nom_org, $nom_org2, $cargo, $cargo2, $otro_cargo, $otro_cargo2,$educacion_dual_dt,$servicio_social_comunitario_dt, $economia_social_solidaria_dt , $mesa1, $mesa2, $mesa3, $mesa4, $mesa5, $comentario);   
+      $bandera = false;
+      header("Location: limite.php");
+    }
+    }
 // ------------------------------------
     if($reg_usuario==0 && $bandera ){ //se agrega validación de bandera
       insert_registro($apaterno, $amaterno, $nombre, $email, $tel_ins, $ext, $tel_movil, $region, $entidad, $organizacion, $nom_org, $nom_org2, $cargo, $cargo2, $otro_cargo, $otro_cargo2,$educacion_dual_dt,$servicio_social_comunitario_dt, $economia_social_solidaria_dt , $mesa1, $mesa2, $mesa3, $mesa4, $mesa5, $comentario);   
@@ -35,7 +57,6 @@
        $d_email=$id_usuario['dt_email'];
        $d_cede=$id_usuario['dt_cede'];
        $d_fecha=$id_usuario['dt_fecha'];
-       $ubicacion=$id_usuario['dt_ubicacion'];
        $_SESSION["id"]=$id_usuario['id_usuario'];   
        $regiones = [
          '01' => 'SUR SURESTE',
@@ -44,8 +65,42 @@
          '04' => 'NORESTE',
          '05' => 'NOROESTE',
          '06' => 'METROPOLITANA',
-       ];     
-     $_region_name = $regiones[$region] ?? 'Valor no válido'; 
+       ];
+     
+     $_region_name = $regiones[$region] ?? 'Valor no válido';
+    
+     switch ($region) {
+      case 02:
+        $user_sede_name = "Hotel Emporio Acapulco";
+        $user_address = "Av. Costera Miguel Alemán 121 Fracc. Magallanes CP.39670, Acapulco Guerrero";
+        break;
+      case 03:
+        $user_sede_name = "Universidad Tecnológica de Morelia";
+        $user_address = "Av. Vicepresidente Pino Suárez No. 750, Col. Ciudad Industrial, C.P. 58200, Morelia, Michoacán.";
+        break;
+      case 04:
+        $user_sede_name = "Instalaciones de la UPSLP, Edificio ASA";
+        $user_address = "Urbano Villalón No. 500, Col. La Ladrillera, C.P. 78363, S.L.P.";
+        break;
+      case 05:
+        $user_sede_name = "Hotel San Carlos Plaza, Beach & Convention Center";
+        $user_address = "Paseo Mar Bermejo 4 Playa los Algodones, 85506 San Carlos, Nuevo Guaymas, Sonora";
+        break;
+      case 06:
+        $user_sede_name = "IPN Zacatenco, Patio Piramidal de la Dirección de Formación e Innovación Educativa (DFIE)";
+        $user_address = "Av. Wilfrido Massieu 326, Nueva Industrial Vallejo, Gustavo A. Madero, 07738 Ciudad de México, CDMX";
+        break;
+      
+      default:
+      $user_sede_name = 'Valor no válido';
+        break;
+     }
+    
+
+    
+   
+   
+   
        $body = file_get_contents('https://fese.mx');
       //Create an instance; passing `true` enables exceptions
    $mail = new PHPMailer(true);
@@ -53,14 +108,14 @@
        //Server settings
        $mail->SMTPDebug = 0;                      //Enable verbose debug output
        $mail->isSMTP();                                            //Send using SMTP
-       $mail->Host       = 'smtp.office365.com';                     //Set the SMTP server to send through
+       $mail->Host       = 'mail.fese.org.mx';                     //Set the SMTP server to send through
        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-       $mail->Username   = 'forosdevinculacion@fese.mx';                     //SMTP username
+       $mail->Username   = 'inaes@fese.org.mx';                     //SMTP username
        $mail->Password   = 'HeVr1043D';                               //SMTP password
-       $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
-       $mail->Port       = 587;                                      //TCP port to connect to; use 587 if you have 
+       $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
+       $mail->Port       = 465;                                      //TCP port to connect to; use 587 if you have 
        //Recipients
-       $mail->setFrom('forosdevinculacion@fese.mx', 'FOROS DE VINCULACIÓN 2023.');
+       $mail->setFrom('inaes@fese.org.mx', 'FOROS DE VINCULACIÓN 2023.');
        $mail->addAddress($d_email, $d_nombre);     //Add a recipient
        //$mail->addAttachment('img/programa.png', 'new.jpg');    //Optional name
        //Content
@@ -85,17 +140,10 @@
                      </tr>
                      <tr>
                        <td align="center" style="padding:10px 0 10px 0;">
-                       <p>
-                         Apreciable <strong>'.$d_nombre.'</strong> agradecemos tu participación a los <strong>Foros de Vinculación 2024</strong>, región <strong>'.$_region_name.'</strong>, el anfitrion es <strong>'.$d_cede.'</strong>, el cual se llevará a cabo de manera presencial en la ubicacion: <br> '.$ubicacion.'
+                       <h3>
+                         Apreciable '.$d_nombre.' confirmamos la recepción de su postulación, en breve recibirá mayor información de los Foros de Vinculación 2023, región '.$_region_name.', el anfitrion es '.$d_cede.', el cual se llevará a cabo de manera presencial en '.$user_sede_name.' con  direccion: <br> '.$user_address.'
                          
-                       </p>
-
-
-                       <h1>Tu folio es:  '.$id_user.'</h1> <p>(el cual se te solicitara el dia del evento)<p>
-
-
-
-
+                       </h3>
                        </td>
                      </tr>
                      <tr>
