@@ -56,7 +56,9 @@ $region = view_region();
       <div class="container-fluid mx-0 px-0" style="background-color: #8D203D;">
          <div class="container">
             <nav class="navbar navbar-dark navbar-expand-lg navigation">
+            <a href="index.html" >
                <img alt="Responsive image" class="img-fluid" src="img/logo_2024.png" width="250">
+            </a>
                <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
                   <span class="navbar-toggler-icon"> </span>
                </button>
@@ -88,8 +90,35 @@ $region = view_region();
          <form action="update_registro.php" method="POST">
             <div class="row">
                <div class="col-md-12"><br><br>
-               <h2>Registro de participación</h2>
-               <hr>
+               <h2>Registro de participación presencial</h2>
+                  <!-- <div class="alert alert-warning content">
+                                          <a href="#" class="alert-link">El correo que ingresaste no se encuentra registrado. Llena el siguiente formulario</a>
+                                       </div> -->
+                  <div class="alert alert-secondary" role="alert">
+                     <p>  <!--Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
+                    <!-- Cuento con experiencia en la operación de las áreas de Educación Dual, Emprendimiento Asociativo y 
+                     programas de impacto de servicio social para el nivel superior (Instituciones de Educación Superior, Organismos 
+                     de la sociedad Civil o Iniciativa privada).-->
+                     </p>
+                  </div>
+
+                  <div class="col-md-12">
+                     <div class="form-group">
+                        <!--<div class="form-check form-check-inline">
+                                             <input class="form-check-input" type="radio" name="participacion" value="no" required="">
+                                             <label class="form-check-label">No participaré</label>
+                                          </div>-->
+                        <div class="form-check form-check-inline">
+                           <input class="form-check-input" type="radio" name="participacion" id="id1" value="part_si">
+                           <label class="form-check-label">Si</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                           <input class="form-check-input" type="radio" name="participacion" id="id2" value="part_no">
+                           <label class="form-check-label">No</label>
+                        </div>
+
+                     </div>
+                  </div>
                </div>
             </div>
                <div class="row">
@@ -632,7 +661,7 @@ $region = view_region();
          <img class="img-fluid" src="img/cintillo_footer.png" width="100%" style="padding-top: 10%">
       </div>-->
       <footer style="background-color: #8D203D;" id="contacto">
-         <div class="w-100 pt-121  opc1 position-relative footer ">
+         <div class="w-100 pt-121  opc1 position-relative ">
             <div class="container position-relative ">
                <div class="footer-wrap w-100 text-center">
                   <div class="footer-inner d-inline-block">
