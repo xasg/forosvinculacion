@@ -9,21 +9,65 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style-stands.css">
+    
     <link rel="stylesheet" href="css/animation.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style_navs.css">
+    <link rel="stylesheet" href="contanciasForos2023/css/style_navs.css">
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/scrollbooster.min.js"></script>
+   
+   
+
+
+    <style>
+
+        body 
+        {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Evita las barras de desplazamiento */
+        }
+        .footer 
+        {
+           
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100px; /* Altura del footer */
+            background-color: #8D203D; /* Color de fondo del footer */          
+            
+        }
+
+       
+        @media (max-width: 599px) 
+        {
+            .footer 
+            {           
+                
+               height:8%; /* Altura del footer */
+                
+            }
+
+        }
+
+
+       
+
+    </style>
 </head>
 
 <body class="page-template page-template-auditorio page-template-auditorio-php page page-id-304">
     <!-- Menu de navegación -->
     <div class="container-fluid mx-0 px-0" style="background-color: #8D203D;">
         <div class="container">
-            <nav class="navbar navbar-dark navbar-expand-lg navigation">
-                <img alt="Responsive image" class="img-fluid" src="img/logo_2024.png" width="150">
+            
+            <!--<nav class="navbar navbar-dark navbar-expand-lg navigation">
+                <a class="nav-link " href="index.html">
+                    <img alt="Responsive image" class="img-fluid" src="img/logo_2024.png" width="150">
+                </a>
+                
                 <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
                     class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
                     <span class="navbar-toggler-icon"> </span>
@@ -37,7 +81,26 @@
                         </li>
                     </ul>
                 </div>
+            </nav>-->
+
+            <nav class="navbar navbar-dark navbar-expand-lg navigation">
+                <a class="navbar-brand" href="index.html">
+                    <img alt="Responsive image" class="img-fluid" src="img/logo_2024.png" width="150">
+                </a>
+
+                
+                <a  id= "inicioDescargable" class="nav-link" href="index.html"><h1 class =  "texto">INICIO</h1></a>
+                
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto"> <!-- Aquí he cambiado mx-auto por ml-auto para alinear a la derecha -->
+                        <li class="nav-item active">
+                            <!--<a class="nav-link" href="index.html">INICIO</a>-->
+                        </li>
+                        <!-- Aquí podrías agregar más elementos de navegación si los necesitas -->
+                    </ul>
+                </div>
             </nav>
+            
         </div>
     </div>
 
@@ -114,7 +177,7 @@
 
     <!-- Imagen greco de cabecera -->
     <br><br><br>
-    <footer style="background-color: #8D203D;" id="contacto">
+  <!--  <footer style="background-color: #8D203D;" id="contacto">
         <div class="w-100 pt-121  opc1 position-relative">
             <div class="container position-relative">
                 <div class="footer-wrap w-100 text-center">
@@ -134,7 +197,18 @@
                 </div>
             </div>
         </div>
-    </footer><!-- Footer -->
+    </footer>--><!-- Footer -->
+    <div class="footer">
+        <div class="footer-inner">
+            <div class="logo">
+                <h1 class="mb-0">
+                    <a href="index.html" title="">
+                        <img class="img-fluid" src="img/logo_2024.png" alt="Logo" width="20%">
+                    </a>
+                </h1>
+            </div>
+        </div>
+    </div>
 
 
     <script src="js/jquery.min.js"></script>
