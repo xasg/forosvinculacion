@@ -26,8 +26,11 @@
    $otro_cargo2 = isset( $_POST['otro_cargo2']) ? $_POST['otro_cargo2'] : '';
    $mesa1 = isset( $_POST['mesa']) ? $_POST['mesa'] : '';
    $reg_usuario =acces_registro($email);  
+   
+
+   
 // ------------------------------------
-    if($reg_usuario==0 && $bandera ){ //se agrega validación de bandera
+    if($reg_usuario==0 ){ //se agrega validación de bandera
       insert_registro($apaterno, $amaterno, $nombre, $email, $tel_ins, $ext, $tel_movil, $region, $entidad, $organizacion, $nom_org, $nom_org2, $cargo, $cargo2, $otro_cargo, $otro_cargo2,$educacion_dual_dt,$servicio_social_comunitario_dt, $economia_social_solidaria_dt , $mesa1, $mesa2, $mesa3, $mesa4, $mesa5, $comentario);   
        $id_usuario =acces_registro($email);
        $id_user=$id_usuario['id_usuario'];
@@ -46,7 +49,7 @@
          '06' => 'METROPOLITANA',
        ];     
      $_region_name = $regiones[$region] ?? 'Valor no válido'; 
-       $body = file_get_contents('https://fese.mx');
+      //  $body = file_get_contents('https://fese.mx');
       //Create an instance; passing `true` enables exceptions
    $mail = new PHPMailer(true);
    try {
@@ -124,6 +127,7 @@
        $mail->AltBody = 'Confirmación de postulación Foros de Vinculación 2023';
    
        $mail->send();
+       
    } catch (Exception $e) {
        echo "Mensaje de error: {$mail->ErrorInfo}";
    }
