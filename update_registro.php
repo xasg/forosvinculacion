@@ -27,7 +27,7 @@
    $mesa1 = isset( $_POST['mesa']) ? $_POST['mesa'] : '';
    $reg_usuario =acces_registro($email);  
 // ------------------------------------
-    if($reg_usuario==0 && $bandera ){ //se agrega validación de bandera
+    if($reg_usuario==0 ){ //se agrega validación de bandera
       insert_registro($apaterno, $amaterno, $nombre, $email, $tel_ins, $ext, $tel_movil, $region, $entidad, $organizacion, $nom_org, $nom_org2, $cargo, $cargo2, $otro_cargo, $otro_cargo2,$educacion_dual_dt,$servicio_social_comunitario_dt, $economia_social_solidaria_dt , $mesa1, $mesa2, $mesa3, $mesa4, $mesa5, $comentario);   
        $id_usuario =acces_registro($email);
        $id_user=$id_usuario['id_usuario'];
@@ -128,6 +128,9 @@
        echo "Mensaje de error: {$mail->ErrorInfo}";
    }
    
+   include 'chat/mail.php';
+
+
    ?>
        <script>
           window.location="datos.php";
