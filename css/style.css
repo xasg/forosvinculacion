@@ -73,10 +73,7 @@
             /*width: 35%;  */
             height: 100%;
             right: 0;
-            
-            background-image: url('../img/Marco_derecho.png');
-            background-size: cover; /* Cubre todo el área del div */
-            background-position: center;
+            background: url('../img/Marco_derecho.png') center center / cover no-repeat; 
         }
         
 
@@ -84,7 +81,7 @@
 
         .texto
          {
-            font-size: 16px;
+            font-size: 14px;
             color: white;
             
         }
@@ -130,7 +127,7 @@
         }
 
         /*******************************************************/
-		#contenedor-logo-sep
+		 #contenedor-logo-sep
         {
             position: absolute;
             width: 50%;
@@ -180,7 +177,7 @@
             text-align: right; /* Alinea el contenido (en este caso, los botones) hacia el lado derecho */            
             object-fit: contain;
             bottom:22%; /* Ajusta el margen inferior según sea necesario */
-        }   
+        }
 
         #contenedor-logos-ies
         {
@@ -188,7 +185,7 @@
             
             height: 20%;
             */
-               /*z-index: 1;*/
+            /*z-index: 1;*/
             margin-left:-10%;  
         
             /*position: fixed;*/
@@ -206,32 +203,17 @@
           
         }
 
-        .texto_subrayado:hover   /*estilo para subrayar los enlaces */
+        #inicioDescargable
         {
-            color: white; /* Cambia el color del texto a azul cuando el mouse está sobre él */
-            text-decoration: underline; /* Subraya el texto cuando el mouse está sobre él */
+            display: block;   
+            margin-left: 70%;
         }
-        
 
-        
-        @media (max-width: 500px) 
+        @media (max-width: 599px) 
         {
-
-        #contenedor-logo-sep
-        {
-            bottom: 83%;
-        } 
-        #contenedor-logo-foros
-        {                     
-            bottom: 85%;             
-        }
             #contenedor-menu 
             {
                 width: 40%;
-                
-                background-size: 100% 100%; /* Ajusta la imagen de fondo al 100% de altura y ancho */
-                background-repeat: no-repeat;
-                height: 100vh;
             }
             .texto_derecha
             {
@@ -243,34 +225,29 @@
                 width: 110%; 
             }
 
-            .texto
+            #contenedor-logo-foros
             {
-                /*font-size: 12px;*/
-                color: white;
-            }
-            #contenedor-texto
-            {
-                position: absolute;
-                bottom: 2%;
-                color: white;
-                text-align: left;
-                width: 50%;
-                margin-left: 5%;
-               
-            }
-            #contenedor-logo-fese
-            {
-                position: absolute;
-                width: 90%;
-                height: 20%;
-                margin-left:10%; /* Ajusta el margen izquierdo según sea necesario */
-                
-                z-index: 1;
-               /* margin-top: 48em; /* Ajusta el margen inferior según sea necesario */
-               
+                bottom: 85%;
+            
             }
 
-            
+            #contenedor-logo-sep
+            {
+                bottom: 84%;
+            } 
+            #contenedor-logo-fese
+            {            
+                bottom: -13%;
+            }
+
+            #inicioDescargable
+        {
+             
+            margin-left: 20%;
+        }
+         
+                
+       
         }
 
         @media (min-width: 600px) and (max-width: 1366px) 
@@ -281,8 +258,7 @@
                color: white;               
             }
         }
-
+    
 
 
 		
-

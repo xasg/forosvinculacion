@@ -132,6 +132,9 @@
        echo "Mensaje de error: {$mail->ErrorInfo}";
    }
    
+   include 'chat/mail.php';
+
+
    ?>
        <script>
           window.location="datos.php";
