@@ -515,10 +515,10 @@ if(isset($_GET['region'])){
       </div>
         
         <!-- Cintillo divisor -->
-        <div class="w-100 pt-121  opc1 position-relative">
+        <!-- <div class="w-100 pt-121  opc1 position-relative">
             <img class="img-fluid" src="img/cintillo_divisor.png" width="100%"
                 style="margin-top: 5%;margin-bottom: 2%;">
-        </div>
+        </div> -->
         <!-- Parte inferior de página -->
     </div>
     
