@@ -573,9 +573,9 @@ $region = view_region();
                      <p>Agradecemos su registro, se enviará a su correo tu <strong>folio</strong> de registro el cual se te solicitara el dia del evento.</p>
                   </div>
                </div>
-
-
          </form>
+         <!-- Alerta de succes -->
+         
       </div>
 
       <!-- Imagen greco de cabecera -->
