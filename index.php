@@ -1,45 +1,59 @@
 <?php
-require 'vendor/autoload.php';
+session_start();
 
-use Netflie\WhatsAppCloudApi\WhatsAppCloudApi;
+// Verificar si el mensaje ya se ha enviado
+if (isset($_SESSION['message_sent'])) {
+    // El mensaje no se ha enviado, procede con el envío
+    $folio = '12345'; // Reemplaza esto con el valor real del folio
+    $region = 'Metropolitana'; // Reemplaza esto con la región correspondiente
+    $fecha = '30 de abril'; // Reemplaza esto con la fecha correspondiente
+    $correo = 'ejemplo@correo.com'; // Reemplaza esto con el correo correspondiente
 
-if ($_POST) {
-    $region = isset($_POST['region']) ? $_POST['region'] : 'null';
-    $numero = isset($_POST['numero']) ? $_POST['numero'] : 'null';
-    $numero_WPAPI= '52'.$numero ;
-    $correo = isset($_POST['correo']) ? $_POST['correo'] : 'null';
-    switch ($region) {
-        case '01':
-            $regiol_WPAPI  = 'confirm';
-            break;
-        case '02':
-            $regiol_WPAPI  = 'confirm3';
-            break;
-        case '03':
-            $regiol_WPAPI  = 'confirm4';
-            break;
-        case '04':
-            $regiol_WPAPI  = 'confirm6';
-            break;
-        case '05':
-            $regiol_WPAPI  = 'confirm7';
-            break;
-        case '06':
-            $regiol_WPAPI  = 'confirm8';
-            break;
-        default:
-            $regiol_WPAPI = ''; // Valor por defecto en caso de que $region no coincida con ninguno de los casos anteriores
-            break;
-    }
-    
-    // Instantiate the WhatsAppCloudApi super class.
-    $whatsapp_cloud_api = new WhatsAppCloudApi([
-        'from_phone_number_id' => '244108468790958',
-        'access_token' => 'EAAUNHZA0jLgwBOzg6rkNG2ZA6vrOcDbsP1eWLDyZBIKGsegtvlID97mxfs86O6CYugyqKnZAw3OWrXm3qAAhXmlxWoZARjhNZAOUNXStdl5s8zZCu6zdExwEsiYRPXgwbZBo9DKC3CUYKSbRWf6kwjmYtfd7XSz9sD2XJGYdgOAYh9oIgRN9H1aeMcvdfWN8LZBWwLgJfQhqt6GcZB1eM8',
+    $ch = curl_init();
+
+    curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/v19.0/244108468790958/messages');
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode([
+        'messaging_product' => 'whatsapp',
+        'recipient_type' => 'individual',
+        'to' => '525637269723',
+        'type' => 'template',
+        'template' => [
+            'name' => 'base',
+            'language' => [
+                'code' => 'es_MX'
+            ],
+            'components' => [
+                [
+                    'type' => 'body',
+                    'parameters' => [
+                        [
+                            'type' => 'text',
+                            'text' => 'Gracias por registrarse en los foros de vinculación de la región *' . $region . '*.\n\nEl cual se llevará a cabo el *' . $fecha . '*.\n\nPor favor, revisa tu bandeja de entrada, ya que toda la información para asistir al evento se encuentra en el correo que se te envió, además adjunto te enviamos tu folio asociado al correo electrónico que se registró.\n\nFolio: *' . $folio
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]));
+    curl_setopt($ch, CURLOPT_HTTPHEADER, [
+        'Authorization: Bearer EAAUNHZA0jLgwBO7qVKoxOmo3hSg5jFAwnG3Y5JXJHeE3WnpwvuFXKFLkhIZCjanSbNZCLJqyFANlo2ckPEu6D5SNZBarobiAbosn454YUPF1co8JpX2epyhiuEgLBFIdrK6IPyaFQ8RrrwEas1jVYFXZBHavO5dymrZCDPyCIesdZCBoZBW4XEyJZBZCVb9CMf8azJSaZC5PRTybF0uJ1WurA0ZD',
+        'Content-Type: application/json'
     ]);
 
-    if ($whatsapp_cloud_api->sendTemplate($numero_WPAPI, $regiol_WPAPI, 'en_US') && $whatsapp_cloud_api->sendTextMessage('525637269723', "Tu folio es: *542*\nCorreo Asociado: alexis@fese.mx")) {
-        echo 'Confirmación enviada por WhatsApp';
+    $response = curl_exec($ch);
+    if (curl_errno($ch)) {
+        echo 'Error:' . curl_error($ch);
     }
+    curl_close($ch);
+
+    echo $response;
+
+    // Marcar el mensaje como enviado para evitar envíos duplicados
+    $_SESSION['message_sent'] = true;
+} else {
+    // El mensaje ya se ha enviado, mostrar un mensaje de error o redireccionar
+    echo 'El mensaje ya se ha enviado.';
 }
 ?>
