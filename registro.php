@@ -56,13 +56,7 @@ $region = view_region();
       <div class="container-fluid mx-0 px-0" style="background-color: #8D203D;">
          <div class="container">
             <nav class="navbar navbar-dark navbar-expand-lg navigation">
-<<<<<<< HEAD
-            <a href="index.html" >
                <img alt="Responsive image" class="img-fluid" src="img/logo_2024.png" width="250">
-            </a>
-=======
-               <img alt="Responsive image" class="img-fluid" src="img/logo_2024.png" width="250">
->>>>>>> foros2024-wp
                <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
                   <span class="navbar-toggler-icon"> </span>
                </button>
