@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
-<!-- Un comentario perron -->
 <head>
     <title>Foros de Vinculación &raquo; </title>
     <meta charset="UTF-8">
     <meta name="language" content="es-MX">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy6mLZ5lHrN5t9dKmU/IJq7gT9xJEMf" crossorigin="anonymous">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style-stands.css">
     <link rel="stylesheet" href="css/animation.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style_navs.css">
-    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">    
+    <link rel="icon" href="img/icon.png">
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-
     <script src="js/jquery.js"></script>
     <script src="js/scrollbooster.min.js"></script>
     <script language="JavaScript">
@@ -23,203 +23,89 @@
         }   
     </script>
     <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
+      body 
+        {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Evita las barras de desplazamiento */
         }
     </style>
-
 </head>
-
-<body class="page-template page-template-auditorio page-template-auditorio-php page page-id-304">
-    <!-- Menu de navegación -->
-    <div class="container-fluid mx-0 px-0" style="background-color: #8D203D;">
-        <div class="container">
-            <nav class="navbar navbar-dark navbar-expand-lg navigation">
-                <img alt="Responsive image" class="img-fluid" src="img/logo.png" width="150">
-                <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-                    class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
-                    <span class="navbar-toggler-icon"> </span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mx-auto" style="width:0px;">
-                        <li class="nav-item active activo">
-                            <a class="nav-link " href="">
-                                INICIO
-                            </a>
-                        </li>
-                        <!-- <li class="nav-item active">
-                            <a class="nav-link" href="./registro.php">
-                                PARTICIPACIÓN
-                            </a>
-                        </li> -->
-                        <!--<li class="nav-item active">
-                            <a class="nav-link" href="./agenda.php">
-                                AGENDA
-                            </a>
-                        </li>-->
-                        <!--<li class="nav-item active">
-                            <a class="nav-link" href="./contanciasForos2023/constancia.html">
-                                 DESCAGAR CONSTANCIA
-                            </a>
-                        </li>-->
-                    </ul>
-                </div>
-            </nav>
-        </div>
+<body>
+<div id="contenedor-video">
+    <div id="contenedor-logo-sep">
+        <img id="logo-imagen-sep" src="img/Logo_gobierno_mex.png" alt="Logo Gobierno de Mexico">
     </div>
-    <div class="w-100 pt-121  opc1 position-relative">
-        <img class="img-fluid" src="img/cintillo_header.png" width="100%" style="margin-top: 2%;">
-    </div>
-
-    <div class="container-fluid px-0">
-        <div class="container-fluid" style="padding-top: 3%">
-            <div class="row justify-content-center ">
-            <div class="col-md-6 col-md-offset-3">
-                <img class="img-fluid" src="img/logo_central.png" style="margin-top: 4%;">
-            </div>
-           
-                <div class="col-md-10 text-center"><br><br>
-                    <h5 class="mb-0" style="color: #8D203D;">Propósito: Construir una agenda para el año 2024 a través de espacios de diálogo, con base en los avances y retos en materia de Educación Dual, Emprendimiento Asociativo, Economía Social y Solidaria, así como del Servicio Social.
-                    </h5><br>
-                    
-        <!-- Se agrega el mensaje modificado en donde se indica que podran descargar su constancia de participación -->
-                    <hr class="border-bottom">
-                    <div class="container text-center" style="color:#ac9474;">
-                        <h3><b>  Si asistió a alguno de los Foros y desea descargar su constancia de participación, de clic en el siguiente botón:</b></h3>
-                                  <!--<p> 
-                                    En breve podrán descargar su constancia de participación. Mientras tanto los invitamos a consultar las transmisiones de cada una de las regiones en el canal oficial  de la SEP  en la siguiente liga: <a href="https://es-la.facebook.com/SEPmx" style="color: #8D203D;">https://es-la.facebook.com/SEPmx</a>
-                                    </p>-->
-                           
-                    </div>
-
-                    <!------------------------------------------------------------------------------------->
-                    <!--------------------este codigo es el original--------------------------------------->
-                    <!--<div class="col-md-12 text-center">
-
-                        <h3 class="mb-0" style="color:#ac9474;"><strong>
-                            Si asistió a alguno de los Foros y desea descargar su constancia de participación, dé clic en el siguiente botón:
-                        </strong></h3> <br>
-                        <form method="post" action="./contanciasForos2023/constancia.html">
-                            <input  class="btn btn-primary btn-lg"  type="submit" name="redireccionar" value="Descarga tu constancia aquí">
-                        </form>
-                    </div>-->
-
-                    <!---------------este codigo es el de prueva ---------------------------------->
-                    <div class="col-md-12 text-center" style="margin-top: 2%;">
-                        <a data-toggle="modal" data-target="#exampleModal1">
-                            <button class="btn btn-primary btn-lg">Descarga tu constancia aquí</button>
-                        </a>
-                    </div>
-                    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" style="width: 95%; height: 100%; padding-top: 5%" role="document">
-                          <div class="modal-content">
-                            <div class="modal-body">
-                              <div class="row">
-                                  <div class="col mb-12" style="padding-left: 15px; padding-right: 15px;">                                           
-                                         <h5 style="color: #860f01">Ingresa el correo electrónico y región con el que te registraste, para descargar tu constancia de participación.</h5><br><br>
-                                          <form action="contanciasForos2023/controller/login.php" method="POST">
-                                              <label>Región del foro</label>
-                                                  <select class="form-control" name="region"  required>
-                                                    <option value="">Selecciona la regíon</option>
-                                                    <option value="01">Sur Sureste</option>
-                                                    <option value="02">Centro Sur</option>
-                                                    <option value="03">Centro Occidente</option>
-                                                    <option value="04">Noreste</option>
-                                                    <option value="05">Noroeste</option>
-                                                    <option value="06">Metropolitana</option>
-                                                  </select>
-                                                  <br>
-                                              <label for="nombre">Correo  electrónico</label>
-                                              <input type="text" class="form-control" name="email" onChange="conMayusculas(this)" required=""><br>
-                                              
-                                              <button class="btn btn-primary btn-lg" type="submit">Descargar</button>
-                                              <!--<a class="d-inline-block" href="javascript:void(0);" title="">Forget A Password</a>-->
-                                          </form> 
-                                          
-                                          <br>
-                                   </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-               
-
-                    <!---------------------------------------------------------------------------------->
-                    
-                    <!-- <h5 class="mb-0" style="color: #8D203D;">
-                        Si cuentas con experiencia actualizada en los temas que se desarrollarán:
-                    </h5> -->
-                </div>
-            </div>
-            <div class="col-md-12 text-center" style="margin-top: 2%;">
-                <!-- <a href="./registro.php">
-                    <button class="btn btn-primary btn-lg">Postulate aquí</button>
-                </a> -->
-            </div>
-                           
-                           <!-- <div class="container text-danger text-center">
-                            <h3><b> Agradecemos a todos por su entusiasmo y participación.</b></h3>
-                            <p> El registro se ha cerrado, síguenos en las transmisiones en canales oficiales SEP, ANUIES, FESE.
-                                Siguenos en: <a class="nav-link " style="color:blue;"  href="https://es-la.facebook.com/SEPmx/">Facebook  </a>
-
-                                
-                            </p>
-                         </div> -->
-                        
+    <video id="video" autoplay loop muted>
+        <source src="img/Foros_de_Vinculaci%C3%B3n_Web.mp4" type="video/mp4">
+        Tu navegador no admite la etiqueta de video.
+    </video>
+    <div id="contenedor-texto">
+        <p class="texto">
+            Los foros de vinculación buscan generar espacios de dialogo para la construcción colectiva de una agenda 2025. 
+        </p>
+        <br>
+        <p class="texto">
+            Con base a los avances y retos en materia de Educación Dual, Emprendimiento Asociativo, Economía Social y Solidaria y Servicio Social. 
+        </p>
+        
+       
+        <div  id = "contenedor-logos-ies">
+            <img   id = "logos-imagen-ies" src="img/Tira_de_Logos_IES.png" alt="Logo">
         </div>
-        <!-- Cintillo divisor -->
-        <div class="w-100 pt-121  opc1 position-relative">
-            <img class="img-fluid" src="img/cintillo_divisor.png" width="100%"
-                style="margin-top: 5%;margin-bottom: 2%;">
-        </div>
-        <!-- Parte inferior de página -->
-        <div class="container-fluid" style="padding-top: 3%">
-            <div class="row justify-content-md-center">
-                <div class="col-md-8">
-                    <img class="img-fluid" src="img/mapa.jpeg">
-                </div>
-                <div class="col-md-10">
-                    <img class="img-fluid" src="img/regiones.png">
-                </div>
-            
-            
-            <div class="col-md-8 col-md-offset-2">
-                <img class="img-fluid" src="img/avatars.png" style="margin-top: 5%;">
-            </div>
-            <div class="col-md-10 col-md-offset-1">
-                <img class="img-fluid" src="img/Logos_Institucionales.png"
-                    style="margin-top: 5%; margin-bottom: 5%;">
-            </div>
-            </div>
-        </div>
+        
+    </div>
+    
+    
+        
+
+</div>
+
+<div id="contenedor-menu">
+    <div id="contenedor-logo-foros">
+        <img id="logo-imagen-foros" src="img/logo_2024.png" alt="Logo foros 2024">
+    </div>
+    <div id="contenedor-botones" >
+        <a class="texto text-decoration-none" href="registro.php" title="Ve a nuestra página de Registro"><h4 class="  texto_subrayado texto_derecha">Regístrate</h4></a><br>
+        <a class="texto text-decoration-none" href="docs/Agenda.pdf" title="Consulta la fecha y sedes" download><h4 class="texto_subrayado texto_derecha">Fechas y sedes</h4></a><br>
+        
+        <a class="text-decoration-none" href="descargables.html" title="Consulta los documentos" > <h4 class=" texto_subrayado texto_derecha">Material descargable</h4></a><br>       
+        <a class="text-decoration-none" href="contanciasForos2023/FDV_2023.html" title="Mira los foros del año pasado"><h4 class="texto_subrayado texto_derecha texto_derecha">FDV 2023</h4></a><br>
+        
+        <!--<lu class="texto texto_derecha" >
+            <li>Regìstrate</li>
+            <li>Fechas y sedes</li>
+            <li>Material descargable</li>
+            <li>FDV 2023</li>
+
+        </lu>-->
+        <!--<a href="agenda_2024.html" class="btn btn-outline-light">Fechas y sedes</a>
+        <br>
+        <br>
+        <b> </b><a href="registro.php" class="btn btn-outline-light">Registrate</a>-->
+       
+    
+        
+        
+    </div>
+    
+    <div  id = "contenedor-logo-fese">
+        <img  id="logo-imagen-fese" src="img/ANUIES_FESE.png" alt="Logo">
+    </div>
+    <!--<div id="contenedor-botones" >
+        <a href="agenda_2024.html" class="btn btn-outline-light">Fechas y sedes</a>
+        <br>
+        <br>
+        <b> </b><a href="registro.php" class="btn btn-outline-light">Registrate</a>
+    </div>-->
+
+    
+
+    
 
 
-    </div>
-    </div>
-    <!-- Imagen greco de cabecera -->
-    <div class="w-100 pt-121  opc1 position-relative">
-        <img class="img-fluid" src="img/cintillo_footer.png" width="100%">
-    </div>
-    <footer style="background-color: #8D203D;" id="contacto">
-        <div class="w-100 pt-121  opc1 position-relative">
-            <div class="container position-relative">
-                <div class="footer-wrap w-100 text-center">
-                    <div class="footer-inner d-inline-block">
-                        <div class="logo d-inline-block">
-                            <h1 class="mb-0">
-                                <a href="index.html" title=""><br>
-                                    <img class="img-fluid" src="img/logo.png" alt="Logo" width="30%">
-                                </a>
-                            </h1>
-                        </div>
-                        <p class="mb-0" style="color: #fff">Contacto: forosdevinculacion@fese.mx</p><br>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </footer><!-- Footer -->
+</div>
+  
 
 
     <script src="js/jquery.min.js"></script>
@@ -229,6 +115,11 @@
     <script src="js/popper.min.js"></script>
     <script src="js/chai.js"></script>
     <script src="js/wp-embed.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js" integrity="sha384-vtA7x/4AMByUUsf1gEKuAOp6Ujsr88%2B6W5r5FQJXdAVlXrgv3C2eLw1g5V/pk33x" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy6mLZ5lHrN5t9dKmU/IJq7gT9xJEMf" crossorigin="anonymous"></script>
+   
+       
 </body>
 
 </html>

@@ -32,6 +32,43 @@ if(isset($_GET['region'])){
         body {
             font-family: 'Montserrat', sans-serif;
         }
+        .verde{
+    background:#245c4f !important;
+    color: #fff !important; 
+    font-size: 20px !important;
+    border-bottom: 2px solid #fff !important;
+}
+
+.cafe-claro{
+    background:#efe6d5 !important; 
+    color: #000 !important; 
+    font-size: 20px;
+}
+.cafe-claro-size{
+    background:#efe6d5 !important; 
+    color: #000 !important; 
+    text-align: left !important;
+}
+.text-left{
+    text-align: left !important;
+    width:70%;
+}
+
+.cafe{
+    background:#bfa27a; 
+    color: #fff;
+}
+.nav.nav-tabs .nav-item a.nav-link {
+    color: #8D203D ;
+}
+.nav.nav-tabs .nav-item a.nav-link:hover {
+    color: #fff ;
+    background:#8D203D !important;
+}
+.active{
+    background: #8D203D !important;
+    color:#fff !important;
+}
     </style>
 
 </head>
@@ -41,7 +78,7 @@ if(isset($_GET['region'])){
     <div class="container-fluid mx-0 px-0" style="background-color: #8D203D;">
         <div class="container">
             <nav class="navbar navbar-dark navbar-expand-lg navigation">
-                <img alt="Responsive image" class="img-fluid" src="img/logo.png" width="150">
+            <img alt="Responsive image" class="img-fluid" src="img/logo_2024.png" width="250">
                 <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
                     class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
                     <span class="navbar-toggler-icon"> </span>
@@ -53,21 +90,21 @@ if(isset($_GET['region'])){
                                 INICIO
                             </a>
                         </li>
-                        <!-- <li class="nav-item active">
+                        <li class="nav-item active">
                             <a class="nav-link" href="./registro.php">
                                 PARTICIPACIÓN
                             </a>
-                        </li> -->
+                        </li>
                         <!--<li class="nav-item active activo">
                             <a class="nav-link" href="./agenda.html">
                                 AGENDA
                             </a>
                         </li>-->
-                        <li class="nav-item active">
+                        <!-- <li class="nav-item active">
                             <a class="nav-link" href="./contanciasForos2023/constancia.html">
                                 CONSTANCIA
                             </a>
-                        </li>
+                        </li> -->
 
 
                     </ul>
@@ -75,13 +112,13 @@ if(isset($_GET['region'])){
             </nav>
         </div>
     </div>
-    <div class="w-100 pt-121  opc1 position-relative">
+    <!-- <div class="w-100 pt-121  opc1 position-relative">
         <img class="img-fluid" src="img/cintillo_header.png" width="100%" style="margin-top: 2%;">
-    </div>
+    </div> -->
 
     <div class="container-fluid px-0">
        <div class="container">
-         <div class="row">
+         <div class="row"> 
             <!-- ************************** TABS que indican la region seleccionada para mostrar la agenda respectiva -->
             <div class="col-md-12">
               <ul class="nav nav-tabs">
@@ -111,7 +148,7 @@ if(isset($_GET['region'])){
                 <div class="col-md-10 ">
                     <!-- <img class="img-fluid" src="img/agenda.png" width="100%"  style="margin-top: 4%;"> -->
                     <!-- -----------------------------------------------------------------------------se agrego validacion por region en la agenda paramostrar sus agendas por región -->
-                     <?php if ($var_reg == 1 || $var_reg == 2 || $var_reg == 3 || $var_reg == 4 || $var_reg == 5) {
+                     <?php if ($var_reg == 1 || $var_reg == 2 || $var_reg == 3 || $var_reg == 4 || $var_reg == 5 || $var_reg == 6) {
                            switch ($var_reg) {
                               case 1:
                                  $nombre_region = 'SUR SURESTE';
@@ -127,6 +164,9 @@ if(isset($_GET['region'])){
                                  break;
                               case 5:
                                  $nombre_region = 'NOROESTE';
+                                 break;
+                              case 6:
+                                 $nombre_region = 'METROPOLITANA';
                                  break;
                               
                               default:
@@ -144,7 +184,7 @@ if(isset($_GET['region'])){
             
                                     <h4 class="card-title">DÍA 1</h4>
             
-                                    <h5 class="card-subtitle ">REUNIÓN VINCULADORES</h5>
+                                    <h5 class="card-subtitle "> <b> MESAS DE TRABAJO SIMULTÁNEAS </b></h5>
             
                                  </div>
       
@@ -164,9 +204,9 @@ if(isset($_GET['region'])){
       
                               <tr class="" >
       
-                                 <td class="verde">16:00 - 18:00</td>
+                                 <td class="verde">15:30 - 16:00</td>
       
-                                 <td class="text-left ">Reunión de responsables de vinculación de las IES</td>
+                                 <td class="text-left ">Registro de asistencia de los invitados</td>
       
                                  
       
@@ -174,11 +214,25 @@ if(isset($_GET['region'])){
                               
                               <tr class="">
                                  
-                                 <td class="verde">18:00</td>
+                                 <td class="verde">16:00 – 16:30</td>
                            
-                                 <td class="text-left ">Actividad Integradora y cultural</td>
+                                 <td class="text-left cafe-claro-size ">Bienvenida y apertura de los trabajos</td>
       
+                              </tr>
+
+                              <tr class="">
                                  
+                                 <td class="verde">16:30 – 18:30</td>
+                           
+                                 <td class="text-left ">Mesas de trabajo simultáneas con la participación de industria,  gobierno y academia por sectores económicos específicos de la región</td>
+      
+                              </tr>
+
+                              <tr class="">
+                                 
+                                 <td class="verde">18:30</td>
+                           
+                                 <td class="text-left cafe-claro-size ">Actividad de integración de redes colaborativas (catering)</td>
       
                               </tr>
       
@@ -197,7 +251,7 @@ if(isset($_GET['region'])){
       
                               <h4 class="card-title" >DÍA 2</h4>
       
-                              <h5 class="card-subtitle">MESA DE EXPERTOS DE ALTO NIVEL(TITULARES DE IES)</h5>
+                              <h5 class="card-subtitle"> <b>TRABAJO COLEGIADO EN PLENARIA</b></h5>
       
                            </div>
       
@@ -217,9 +271,9 @@ if(isset($_GET['region'])){
       
                               <tr class="" >
       
-                                 <td class="verde">10:00 - 11:15</td>
+                                 <td class="verde">09:00 – 10:00</td>
       
-                                 <td class="text-left">Bienvenida y mensajes de autoridades</td>
+                                 <td class="text-left">Registro de asistencia de los invitados</td>
       
                                  
       
@@ -227,7 +281,23 @@ if(isset($_GET['region'])){
       
                               <tr class="">
       
-                                 <td class="verde">11:15 - 11:30</td>
+                                 <td class="verde">10:00 - 11:00</td>
+      
+                                 <td class="text-left cafe-claro-size">Inauguración oficial del Foro de Vinculación (Transmisión en vivo por canales oficiales)</td>
+      
+                              </tr>
+      
+                              <tr class="">
+      
+                                 <td class="verde">11:00 - 11:10</td>
+      
+                                 <td class="text-left">Presentación de las Memorias de Buenas Prácticas de Vinculación y entrega de los Marcos Generales de Educación Dual y Emprendimiento Asociativo</td>
+      
+                              </tr>
+      
+                              <tr class="">
+      
+                                 <td class="verde">11:10 – 11:20</td>
       
                                  <td class="text-left cafe-claro-size">Fotografía oficial</td>
       
@@ -235,33 +305,32 @@ if(isset($_GET['region'])){
       
                               <tr class="">
       
-                                 <td class="verde">11:30 - 13:00</td>
+                                 <td class="verde">11:20 – 11:25</td>
       
-                                 <td class="text-left">Emprendimiento asociativo (ESS)</td>
-      
-                              </tr>
-      
-                              <tr class="">
-      
-                                 <td class="verde">13:00 - 15:00</td>
-      
-                                 <td class="text-left cafe-claro-size">Educación Dual</td>
+                                 <td class="text-left">Resultados de los trabajos del día 1</td>
       
                               </tr>
       
                               <tr class="">
       
-                                 <td class="verde">15:00 - 16:00</td>
+                                 <td class="verde">11:25 – 12:00</td>
       
-                                 <td class="text-left">Servicio Social</td>
+                                 <td class="text-left cafe-claro-size">Avances y retos por parte de las autoridades educativas estatales de la región</td>
       
                               </tr>
-      
                               <tr class="">
       
-                                 <td class="verde">17:00 - 19:00</td>
+                                 <td class="verde">12:00 – 15:00</td>
       
-                                 <td class="text-left cafe-claro-size">Titulares de IES o alianzas</td>
+                                 <td class="text-left">Diálogo de alto nivel:
+                                    Intercambio entre sectores privado, público y social, en torno a los temas prioritarios de vinculación a nivel regional y estatal.</td>
+      
+                              </tr>
+                              <tr class="">
+      
+                                 <td class="verde">15:00 – 15:30</td>
+      
+                                 <td class="text-left cafe-claro-size">Conclusiones y cierre</td>
       
                               </tr>
       
@@ -275,7 +344,7 @@ if(isset($_GET['region'])){
       
                      </table>
                      
-                     <?php }elseif ($var_reg == 6) {?> <!--*************************************************VALIDACIÓN PARA LA AGENDA DE REGION METROPOLITANA QUE CAMBIA EN ESTA REGIÓN-->
+                     <?php }elseif ($var_reg == /*6*/ 7) {?> <!--*************************************************VALIDACIÓN PARA LA AGENDA DE REGION METROPOLITANA QUE CAMBIA EN ESTA REGIÓN-->
                         <h2 class="table-light verde text-center" style="font-size: 32px !important; padding: 15px !important;">Agenda - Región METROPOLITANA</h2>
                      <br>
                      <table class="table   table-borderless border align-middle text-center">
@@ -322,7 +391,7 @@ if(isset($_GET['region'])){
                                  
                                  <td class="verde">16:00 - 18:00</td>
                            
-                                 <td class="text-left ">Reunión de responsables de vinculación de las IES</td>
+                                 <td class="text-left cafe-claro-size">Reunión de responsables de vinculación de las IES</td>
       
                                  
       
@@ -446,10 +515,10 @@ if(isset($_GET['region'])){
       </div>
         
         <!-- Cintillo divisor -->
-        <div class="w-100 pt-121  opc1 position-relative">
+        <!-- <div class="w-100 pt-121  opc1 position-relative">
             <img class="img-fluid" src="img/cintillo_divisor.png" width="100%"
                 style="margin-top: 5%;margin-bottom: 2%;">
-        </div>
+        </div> -->
         <!-- Parte inferior de página -->
     </div>
     
@@ -462,9 +531,9 @@ if(isset($_GET['region'])){
                     <div class="footer-inner d-inline-block">
                         <div class="logo d-inline-block">
                             <h1 class="mb-0">
-                                <a href="index.html" title=""><br>
-                                    <img class="img-fluid" src="img/logo.png" alt="Logo" width="30%">
-                                </a>
+                            <a href="index.html" title=""><br>
+                              <img class="img-fluid" src="img/logo_2024.png" alt="Logo" width="30%">
+                           </a>
                             </h1>
                         </div>
                         <p class="mb-0" style="color: #fff">Contacto: forosdevinculacion@fese.mx</p><br>
