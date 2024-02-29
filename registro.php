@@ -49,11 +49,23 @@ $region = view_region();
          }, 6000);
       });
    </script>   
+   <style>
+      .btn-outline-danger{
+         color:#10312B;
+         border-color:#235b4e;
+         transition: all linear .6s;
+      }
+      .btn-outline-danger:hover{
+         background: linear-gradient(to top ,#10312B,#235b4e);
+         border-color:  #10312B;
+         transition: all linear .6s;
+      }
+   </style>
 </head>
 
 <body>
    <main>
-      <div class="container-fluid mx-0 px-0" style="background-color: #8D203D;">
+      <div class="container-fluid mx-0 px-0" style="background: linear-gradient(to top ,#10312B,#235b4e);">
          <div class="container">
             <nav class="navbar navbar-dark navbar-expand-lg navigation">
                <img alt="Responsive image" class="img-fluid" src="img/logo_2024.png" width="250">
@@ -72,11 +84,11 @@ $region = view_region();
                            PARTICIPACIÓN
                         </a>
                      </li>-->
-                     <li class="nav-item active">
+                     <!-- <li class="nav-item active">
                             <a class="nav-link" href="./agenda.php">
                                 AGENDA
                             </a>
-                        </li>
+                        </li> -->
 
                   </ul>
                </div>
@@ -582,7 +594,7 @@ $region = view_region();
       <!--<div class="w-100 pt-121  opc1 position-relative">
          <img class="img-fluid" src="img/cintillo_footer.png" width="100%" style="padding-top: 10%">
       </div>-->
-      <footer style="background-color: #8D203D;" id="contacto">
+      <footer style="background: linear-gradient(to top ,#10312B,#235b4e);" id="contacto">
          <div class="w-100 pt-121  opc1 position-relative footer ">
             <div class="container position-relative ">
                <div class="footer-wrap w-100 text-center">

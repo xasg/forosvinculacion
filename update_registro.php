@@ -156,7 +156,7 @@ curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode([
   'messaging_product' => 'whatsapp',
   'recipient_type' => 'individual',
-  'to' => '525637269723',
+  'to' => $tel_movil  ,
   'type' => 'template',
   'template' => [
       'name' => 'base',
