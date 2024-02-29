@@ -17,10 +17,28 @@
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/scrollbooster.min.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+
     <script language="JavaScript">
         function conMayusculas(field) {
             field.value = field.value.toUpperCase()
         }   
+    </script>
+    <script>
+        var video_frame = document.getElementById('video_frame');
+        video_frame.onload = function() {
+            var player = new YT.Player(video_frame, {
+                events: {
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        };
+    
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.ENDED) {
+                event.target.playVideo(); // Reinicia el video cuando termina
+            }
+        }
     </script>
     <style>
       body 
@@ -36,17 +54,27 @@
     <div id="contenedor-logo-sep">
         <img id="logo-imagen-sep" src="img/Logo_gobierno_mex.png" alt="Logo Gobierno de Mexico">
     </div>
-    <video id="video" autoplay loop muted>
-        <source src="img/Foros_de_Vinculaci%C3%B3n_Web.mp4" type="video/mp4">
+
+    <iframe id="video_frame" width="100%"  height="100%"   src="https://www.youtube.com/embed/HWW6d7n6otw?si=mCAPpA-ktbAJy9sS&controls=0&loop=1&autoplay=1&mute=1&autopause=0" 
+    title="Foros de vinculacion" frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+</iframe>
+
+
+
+
+    <!--<video id="video" autoplay loop muted>
+        <source src="img/Foros_de_Vinculacion_Web.mp4" type="video/mp4">
         Tu navegador no admite la etiqueta de video.
-    </video>
+    </video>-->
     <div id="contenedor-texto">
         <p class="texto">
-            Los foros de vinculación buscan generar espacios de dialogo para la construcción colectiva de una agenda 2025. 
+            Los Foros de Vinculacion 2024 para la Educación Dual, el Emprendimiento Asociativo, el Servicio Social Comunitario y la Industria de Alta Tecnología buscan dar seguimiento al trabajo colectivo 
         </p>
         <br>
         <p class="texto">
-            Con base a los avances y retos en materia de Educación Dual, Emprendimiento Asociativo, Economía Social y Solidaria y Servicio Social. 
+            Y en particular fortalecer las acciones de vinculación con los sectores productivos estratégicos, que permita potencializar las líneas de acción impulsadas, con un enfoque primordialmente regional y estatal.
         </p>
         
        
@@ -90,7 +118,7 @@
     </div>
     
     <div  id = "contenedor-logo-fese">
-        <img  id="logo-imagen-fese" src="img/ANUIES_FESE.png" alt="Logo">
+        <!--<img  id="logo-imagen-fese" src="img/ANUIES_FESE.png" alt="Logo">-->
     </div>
     <!--<div id="contenedor-botones" >
         <a href="agenda_2024.html" class="btn btn-outline-light">Fechas y sedes</a>
@@ -118,6 +146,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js" integrity="sha384-vtA7x/4AMByUUsf1gEKuAOp6Ujsr88%2B6W5r5FQJXdAVlXrgv3C2eLw1g5V/pk33x" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy6mLZ5lHrN5t9dKmU/IJq7gT9xJEMf" crossorigin="anonymous"></script>
+    
    
        
 </body>

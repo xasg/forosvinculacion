@@ -3,7 +3,11 @@
     color: #f9f9f9;
     background-color: #8D203D ;
     border-color: #8D203D;
-}       
+} 
+
+.tabla {
+    display: none; /* Ocultar todas las tablas por defecto */
+}
 
 .btn-videos:hover 
 {
@@ -54,9 +58,10 @@
         #contenedor-video 
         {
             position: absolute;
-            width:85%; /* Ajusta según sea necesario */
+            width:89%; /* Ajusta según sea necesario */
             height: 100%;
             overflow: hidden;
+            margin-left: 0%;
         }
 
         #video 
@@ -70,8 +75,11 @@
         {
             position: absolute;
             width: 20%;
+            bottom: 5%;
+            margin-bottom: -4%;
             /*width: 35%;  */
-            height: 100%;
+            height: 110vh; /* Establece el alto al 100% del viewport height */
+           
             right: 0;
             background: url('../img/Marco_derecho.png') center center / cover no-repeat; 
         }
@@ -81,7 +89,7 @@
 
         .texto
          {
-            font-size: 14px;
+            font-size: 18px;
             color: white;
             
         }
@@ -134,15 +142,15 @@
             height: 20%;
             z-index: 1;
             left: 0;            
-            margin-top: 2em; /* Ajusta el margen superior según sea necesario */
-            margin-left: 5%;
+            margin-top: 0%; /* Ajusta el margen superior según sea necesario */
+            margin-left:0%;
         } 
 
         
         #logo-imagen-sep
         {
             position: absolute;           
-            width: 80%; 
+            width: 60%; 
             height: 80%; 
             object-fit: contain;
         }
@@ -209,11 +217,20 @@
             margin-left: 70%;
         }
 
+       
+
         @media (max-width: 599px) 
         {
+           
+            
             #contenedor-menu 
             {
                 width: 40%;
+                bottom: 0%;
+                margin-bottom: -5%;
+                /*width: 35%;  */
+                height: 110vh; /* Establece el alto al 100% del viewport height */
+                
             }
             .texto_derecha
             {
@@ -227,13 +244,15 @@
 
             #contenedor-logo-foros
             {
-                bottom: 85%;
-            
+                bottom: 75%;
+                margin-right: 12%;            
             }
+            
+    
 
             #contenedor-logo-sep
             {
-                bottom: 84%;
+                bottom: 79%;
             } 
             #contenedor-logo-fese
             {            
@@ -257,6 +276,8 @@
                font-size: 14px;
                color: white;               
             }
+
+           
         }
     
 
