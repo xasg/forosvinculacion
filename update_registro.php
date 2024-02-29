@@ -45,7 +45,16 @@
          '05' => 'NOROESTE',
          '06' => 'METROPOLITANA',
        ];     
+       $regiones_fehchas = [
+         '01' => '11 y 12 de abril',
+         '02' => '15 y 16 de abril',
+         '03' => '18 y 19 de abril',
+         '04' => '22 y 23 de abril',
+         '05' => '25 y 26 de abril',
+         '06' => '3 de mayo',
+       ];     
      $_region_name = $regiones[$region] ?? 'Valor no válido'; 
+     $_region_fecha = $regiones_fehchas[$region] ?? 'Valor no válido'; 
        $body = file_get_contents('https://fese.mx');
       //Create an instance; passing `true` enables exceptions
    $mail = new PHPMailer(true);
@@ -128,7 +137,53 @@
        echo "Mensaje de error: {$mail->ErrorInfo}";
    }
    
-   include 'chat/mail.php';
+  //  include 'chat/mail.php';
+   
+  $folio = $id_user; // Reemplaza esto con el valor real del folio
+  $region_wp = $_region_name; // Reemplaza esto con la región correspondiente
+  $fecha = $_region_fecha; // Reemplaza esto con la fecha correspondiente
+  $correo =  $d_email; // Reemplaza esto con el correo correspondiente
+
+$ch = curl_init();
+
+curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/v19.0/244108468790958/messages');
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode([
+  'messaging_product' => 'whatsapp',
+  'recipient_type' => 'individual',
+  'to' => '525637269723',
+  'type' => 'template',
+  'template' => [
+      'name' => 'base',
+      'language' => [
+          'code' => 'es_MX'
+      ],
+      'components' => [
+          [
+              'type' => 'body',
+              'parameters' => [
+                  [
+                      'type' => 'text',
+                      'text' => 'Gracias por registrarse en los foros de vinculación de la región *' . $region_wp . '*.\n\nEl cual se llevará a cabo el *' . $fecha . '*.\n\nPor favor, revisa tu bandeja de entrada, ya que toda la información para asistir al evento se encuentra en el correo que se te envió, además adjunto te enviamos tu folio asociado al correo electrónico que se registró.\n\nFolio: *' . $folio . '*\nCorreo: ' . $correo. '\n'
+                  ]
+              ]
+          ]
+      ]
+  ]
+]));
+curl_setopt($ch, CURLOPT_HTTPHEADER, [
+  'Authorization: Bearer EAAUNHZA0jLgwBOzg6rkNG2ZA6vrOcDbsP1eWLDyZBIKGsegtvlID97mxfs86O6CYugyqKnZAw3OWrXm3qAAhXmlxWoZARjhNZAOUNXStdl5s8zZCu6zdExwEsiYRPXgwbZBo9DKC3CUYKSbRWf6kwjmYtfd7XSz9sD2XJGYdgOAYh9oIgRN9H1aeMcvdfWN8LZBWwLgJfQhqt6GcZB1eM8',
+  'Content-Type: application/json'
+]);
+
+$response = curl_exec($ch);
+if (curl_errno($ch)) {
+  echo 'Error:' . curl_error($ch);
+}
+curl_close($ch);
+
+echo $response;
 
 
    ?>
