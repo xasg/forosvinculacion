@@ -663,7 +663,7 @@ $region = view_region();
       
                                  <td class="verde">11:00 - 11:10</td>
       
-                                 <td class="text-left">Presentación de las Memorias de Buenas Prácticas de Vinculación y entrega de los Marcos Generales de Educación Dual y Emprendimiento Asociativo</td>
+                                 <td class="text-left">Presentación de las Memorias de Buenas Prácticas de Vinculación</td>
       
                               </tr>
       
