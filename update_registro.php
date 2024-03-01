@@ -72,14 +72,14 @@
        $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
        $mail->Port       = 587;                                      //TCP port to connect to; use 587 if you have 
        //Recipients
-       $mail->setFrom('forosdevinculacion@fese.mx', 'FOROS DE VINCULACIÓN 2023.');
+       $mail->setFrom('forosdevinculacion@fese.mx', 'FOROS DE VINCULACIÓN 2024.');
        $mail->addAddress($d_email, $d_nombre);     //Add a recipient
        //$mail->addAttachment('img/programa.png', 'new.jpg');    //Optional name
        //Content
        $mail->isHTML(true);                                 //Set email format to HTML
        // Activo condificacción utf-8
        $mail->CharSet = 'UTF-8';
-       $mail->Subject = 'FOROS DE VINCULACIÓN 2023..';
+       $mail->Subject = 'CONFIRMACIÓN DE REGISTRO A LOS FOROS DE VINCULACIÓN 2024..';
       //if ($region == 02)
       //{
         //////////////////////////////////////////////////////////////
@@ -153,21 +153,21 @@
                       <td align="center" style="padding:10px 0 10px 0;">
                       <h3>
                         <p>
-                          Apreciable <strong>'.$d_nombre.'</strong> agradecemos tu participación a los <strong>Foros de Vinculación 2024</strong>, región <strong>'.$_region_name.'</strong>, el anfitrion es <strong>'.$d_cede.'</strong>, el cual se llevará a cabo de manera presencial en la ubicacion: <br> '.$ubicacion.'
+                          Apreciable <strong>'.$d_nombre.'</strong> agradecemos tu participación a los <strong>Foros de Vinculación 2024</strong>, región <strong>'.$_region_name.'</strong>, el anfitrion es <strong>'.$d_cede.'</strong>, el cual se llevará a cabo de manera presencial en la ubicacion: <br>  <iframe src="" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">'.$ubicacion.'</iframe>
                           
                         </p>
       
                         
                         <h1>Tu folio es:  '.$id_user.'</h1> <p>(el cual se te solicitara el dia del evento)<p>
       
-      
-      
                       </h3>
                       </td>
                     </tr>
                     <tr>
+                    <td align="center" style="padding:0px 0 10px 0;">
+                      <h4>Ficha de Anfitrionia</h4><a href="http://forosdevinculacion.anuies.mx/docs/Anfitrionia'.$region.'.pdf">Descargar</a>
+                      </td>
                     </tr>
-                    
                     <tr>
                      <td align="center" style="padding:20px 0 30px 0;">
                      <img src="http://forosdevinculacion.anuies.mx/img/Logos_Institucionales.png" alt="" width="600" style="height:auto;display:block;" />
