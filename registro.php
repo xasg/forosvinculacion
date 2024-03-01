@@ -144,9 +144,7 @@ $region = view_region();
             <div class="row">
                <div class="col-md-12"><br><br>
                <h2>Registro de participación</h2>
-               <p>Estimado participante, le pedimos colocar su correo electrónico y teléfono móvil con WhatsApp ya que las notificaciones se le estarán haciendo llegar por éste medio. Así mismo le pedimos revisar su 
-                  correo no deseado si la confirmación del presente correo no se visualiza en la en su bandeja principal.
-               </p>
+               <p>Estimado participante.  Le pedimos colocar su correo electrónico y teléfono móvil con WhatsApp, ya que las notificaciones se le estarán haciendo llegar por estos medios. Así mismo, le pedimos revisar su carpeta de correos no deseados si la confirmación de su registro no se visualiza en su bandeja principal.</p>
                <hr>
                </div>
             </div>
