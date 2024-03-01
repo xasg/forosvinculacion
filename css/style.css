@@ -142,17 +142,18 @@
             height: 20%;
             z-index: 1;
             left: 0;            
-            margin-top: 0%; /* Ajusta el margen superior según sea necesario */
-            margin-left:0%;
+            margin-top: 1%; /* Ajusta el margen superior según sea necesario */
+            margin-left:3%;
         } 
 
         
         #logo-imagen-sep
         {
             position: absolute;           
-            width: 60%; 
-            height: 80%; 
+            width: 40%; 
+            height: 60%; 
             object-fit: contain;
+            
         }
         #logo-imagen-foros    
         {
@@ -169,7 +170,8 @@
             height: 20%;
             /*z-index: 1;*/
             right: 6%;            
-            margin-top: 5%; 
+            margin-top: 10%; 
+            margin-right: 3%;
             
         }
        
