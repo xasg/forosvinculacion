@@ -117,7 +117,6 @@
             <h4><strong>El anfitrión será: <?php echo $participante['dt_cede'] ?></strong></h4>
             <h4><strong>el día: <?php echo $participante['dt_fecha'] ?></strong></h4>
 
-
             <table class="table   table-borderless border align-middle text-center">
 
 <thead class="table-light">
@@ -130,7 +129,7 @@
 
       <h4 class="card-title" >DÍA 2</h4>
 
-      <h5 class="card-subtitle">MESA DE EXPERTOS DE ALTO NIVEL(TITULARES DE IES)</h5>
+      <h5 class="card-subtitle"> <b>TRABAJO COLEGIADO EN PLENARIA</b></h5>
 
    </div>
 
@@ -150,9 +149,9 @@
 
       <tr class="" >
 
-         <td class="verde">10:00 - 10:50</td>
+         <td class="verde">09:00 – 10:00</td>
 
-         <td class="text-left">Bienvenida y mensajes de autoridades</td>
+         <td class="text-left">Registro de asistencia de los invitados</td>
 
          
 
@@ -160,41 +159,56 @@
 
       <tr class="">
 
-         <td class="verde">10:50 - 11:00</td>
+         <td class="verde">10:00 - 11:10</td>
 
-         <td class="text-left cafe-claro-size">Fotografía oficial</td>
+         <td class="text-left cafe-claro-size">Inauguración oficial del Foro de Vinculación (Transmisión en vivo por canales oficiales)</td>
+
+      </tr>
+
+      <!-- <tr class="">
+
+         <td class="verde">11:00 - 11:10</td>
+
+         <td class="text-left">Presentación de las Memorias de Buenas Prácticas de Vinculación</td>
+
+      </tr> -->
+
+      <tr class="">
+
+         <td class="verde">11:10 – 11:20</td>
+
+         <td class="text-left ">Fotografía oficial</td>
 
       </tr>
 
       <tr class="">
 
-         <td class="verde">11:00 - 12:20</td>
+         <td class="verde">11:20 – 11:25</td>
 
-         <td class="text-left">Emprendimiento asociativo (ESS)</td>
-
-      </tr>
-
-      <tr class="">
-
-         <td class="verde">12:20 - 14:00</td>
-
-         <td class="text-left cafe-claro-size">Educación Dual</td>
+         <td class="text-left cafe-claro-size">Resultados de los trabajos del día 1</td>
 
       </tr>
 
       <tr class="">
 
-         <td class="verde">14:00 - 14:30</td>
+         <td class="verde">11:25 – 12:00</td>
 
-         <td class="text-left">Servicio Social</td>
+         <td class="text-left ">Avances y retos por parte de las autoridades educativas estatales de la región</td>
 
       </tr>
-
       <tr class="">
 
-         <td class="verde">14:30 - 15:30</td>
+         <td class="verde">12:00 – 15:00</td>
 
-         <td class="text-left cafe-claro-size">CLAUSURA GENERAL</td>
+         <td class="text-left cafe-claro-size">Diálogo de alto nivel:
+            Intercambio entre sectores privado, público y social, en torno a los temas prioritarios de vinculación a nivel regional y estatal.</td>
+
+      </tr>
+      <tr class="">
+
+         <td class="verde">15:00 – 15:30</td>
+
+         <td class="text-left ">Conclusiones y cierre</td>
 
       </tr>
 
