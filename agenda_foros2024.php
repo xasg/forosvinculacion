@@ -165,7 +165,7 @@ if(isset($_GET['region'])){
                         ?>
                         <!-- <h2 class="table-light verde text-center" style="font-size: 32px !important; padding: 15px !important;">Agenda - Región <?= $nombre_region;?></h2> -->
                         <br>
-                     <table class="table   table-borderless border align-middle text-center">
+                     <!-- <table class="table   table-borderless border align-middle text-center">
                         <thead class="table-light">      
                            <div class="card">
       
@@ -226,7 +226,7 @@ if(isset($_GET['region'])){
                                 </tr>
         
                             </tbody>
-                        </table>
+                        </table> -->
 
                         <table class="table   table-borderless border align-middle text-center">
 
@@ -276,13 +276,7 @@ if(isset($_GET['region'])){
 
                             </tr>
 
-                            <!-- <tr class="">
 
-                                <td class="verde">11:00 - 11:10</td>
-
-                                <td class="text-left">Presentación de las Memorias de Buenas Prácticas de Vinculación</td>
-
-                            </tr> -->
 
                             <tr class="">
 
