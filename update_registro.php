@@ -153,7 +153,7 @@
                       <td align="center" style="padding:10px 0 10px 0;">
                       <h3>
                         <p>
-                          Apreciable <strong>'.$d_nombre.'</strong> agradecemos tu participación a los <strong>Foros de Vinculación 2024</strong>, región <strong>'.$_region_name.'</strong>, el anfitrion es <strong>'.$d_cede.'</strong>, el cual se llevará a cabo de manera presencial en la ubicacion: <br>  <iframe src="" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">'.$ubicacion.'</iframe>
+                          Apreciable <strong>'.$d_nombre.'</strong> <br> Agradecemos tu participación a los <strong>Foros de Vinculación 2024</strong> <br>Región <strong>'.$_region_name.'</strong> <br> El anfitrion para esta región es:  <strong>'.$d_cede.'</strong>, el cual se llevará a cabo de manera presencial en <br> ubicación: <br>  <iframe src="" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">'.$ubicacion.'</iframe>
                           
                         </p>
       
