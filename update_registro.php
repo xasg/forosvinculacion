@@ -81,61 +81,111 @@
        $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
        $mail->Port       = 587;                                      //TCP port to connect to; use 587 if you have 
        //Recipients
-       $mail->setFrom('forosdevinculacion@fese.mx', 'FOROS DE VINCULACIÓN 2023.');
+       $mail->setFrom('forosdevinculacion@fese.mx', 'FOROS DE VINCULACIÓN 2024.');
        $mail->addAddress($d_email, $d_nombre);     //Add a recipient
        //$mail->addAttachment('img/programa.png', 'new.jpg');    //Optional name
        //Content
        $mail->isHTML(true);                                 //Set email format to HTML
        // Activo condificacción utf-8
        $mail->CharSet = 'UTF-8';
-       $mail->Subject = 'FOROS DE VINCULACIÓN 2023..';
+       $mail->Subject = 'CONFIRMACIÓN DE REGISTRO A LOS FOROS DE VINCULACIÓN 2024..';
       //if ($region == 02)
       //{
         //////////////////////////////////////////////////////////////
         $mail->Body    = '  
-       <style>
-         h3 {color:black; font-size:14px;}
-       </style>
-                     
-                                     
-                  <table style="width:950px;border-collapse:collapse;border:1px solid #cccccc;border-spacing:0;text-align:left;">               
-                     <tr>
-                        <td align="center" style="padding:20px 0 30px 0;">
-                          <img src="http://forosdevinculacion.anuies.mx/img/logo_central.png" alt="" width="300" style="height:auto;display:block;" />
-                        </td>
-                     </tr>
-                     <tr>
-                       <td align="center" style="padding:10px 0 10px 0;">
-                       <p>
-                         Apreciable <strong>'.$d_nombre.'</strong> agradecemos tu participación a los <strong>Foros de Vinculación 2024</strong>, región <strong>'.$_region_name.'</strong>, el anfitrion es <strong>'.$d_cede.'</strong>, el cual se llevará a cabo de manera presencial en la ubicacion: <br> '.$ubicacion.'
-                         
-                       </p>
-
-
-                       <h1>Tu folio es:  '.$id_user.'</h1> <p>(el cual se te solicitara el dia del evento)<p>
-
-
-
-
+        <style>
+        h3 {color:black; font-size:14px;}
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      
+        font-size: 30px;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        color: #888;
+        background-color: rgba(230, 225, 225, 0.5);
+        line-height: 30px;
+        text-align: center;
+      }
+      .contenedor {
+        width:90%;
+        min-height: auto;
+        text-align: center;
+        margin: 0 auto !important;
+        background: #ececec;
+        border-top: 8px solid #10312B;
+      }
+      .btnlink {
+        padding: 15px 30px;
+        text-align: center;
+        background-color: #cecece;
+        color: crimson !important;
+        font-weight: 600;
+        text-decoration: blue;
+      }
+      .btnlink:hover {
+        color: #fff !important;
+      }
+      .imgBanner {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        padding: 0px;
+      }
+      .misection {
+        color: #34495e;
+        margin: 4% 10% 2%;
+        text-align: centlefter;
+        font-family: sans-serif;
+      }
+      .mt-5 {
+        margin-top: 50px;
+      }
+      .mb-5 {
+        margin-bottom: 50px;
+      }
+      </style>
+                    
+                <div class="contenedor">                    
+                 <table class="misection">               
+                    <tr>
+                       <td align="center" style="padding:20px 0 30px 0; background: linear-gradient(to top ,#10312B,#235b4e);">
+                         <img src="http://forosdevinculacion.anuies.mx/img/logo_2024.png" alt="" width="300" style="height:auto;display:block;" />
                        </td>
-                     </tr>
-                     <tr>
-                        <td align="center" style="padding:0px 0 10px 0;">
-                          <h3>A continuación le pedimos descargar los siguientes documentos y leerlos previamente para tener un panorama completo de los temas tratados.</h3>
-                          <h4>Marco General para la Educación Dual del Tipo Superior</h4><a href="https://bit.ly/44nIaw3">Descargar</a>
-                          <h4>Marco General Emprendimiento Asociativo</h4><a href="https://bit.ly/3rvkcQV">Descargar</a>
-                          <h4>Ficha de Anfitrionia</h4><a href="http://forosdevinculacion.anuies.mx/docs/Anfitrionia'.$region.'.pdf">Descargar</a>
-                        </td>
-                     </tr>
-                     
-                     <tr>
-                      <td align="center" style="padding:20px 0 30px 0;">
-                      <img src="http://forosdevinculacion.anuies.mx/img/Logos_Institucionales.png" alt="" width="600" style="height:auto;display:block;" />
-                      </td>                   
-                     </tr>  
+                    </tr>
+                    <tr>
+                      <td align="center" style="padding:10px 0 10px 0;">
+                      <h3>
+                        <p>
+                          Apreciable <strong>'.$d_nombre.'</strong> <br> Agradecemos tu participación a los <strong>Foros de Vinculación 2024</strong> <br>Región <strong>'.$_region_name.'</strong> <br> El anfitrion para esta región es:  <strong>'.$d_cede.'</strong>, el cual se llevará a cabo de manera presencial en <br> ubicación: <br>  <iframe src="" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">'.$ubicacion.'</iframe>
+                          
+                        </p>
+      
+                        
+                        <h1>Tu folio es:  '.$id_user.'</h1> <p>(el cual se te solicitara el dia del evento)<p>
+      
+                      </h3>
+                      </td>
+                    </tr>
+                    <tr>
+                    <td align="center" style="padding:0px 0 10px 0;">
+                      <h4>Ficha de Anfitrionia</h4><a href="http://forosdevinculacion.anuies.mx/docs/Anfitrionia'.$region.'.pdf">Descargar</a>
+                      </td>
+                    </tr>
+                    <tr>
+                     <td align="center" style="padding:20px 0 30px 0;">
+                     <img src="http://forosdevinculacion.anuies.mx/img/Logos_Institucionales.png" alt="" width="600" style="height:auto;display:block;" />
+                     </td>                   
+                    </tr>  
       </table>
-   
-                     <p>¡Nos vemos pronto!</p> ';
+      
+                    <p>¡Nos vemos pronto!</p> 
+      </div> ';
 
         /////////////////////////////////////////////////////////////
       //}

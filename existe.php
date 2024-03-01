@@ -20,7 +20,8 @@
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    <meta name="description" content="" />
    <meta name="keywords" content="" />
-   <link rel="icon" href="assets/images/favicon.png" sizes="35x35" type="image/png">
+   <!-- <link rel="icon" href="assets/images/favicon.png" sizes="35x35" type="image/png"> -->
+   <link rel="icon" href="img/icon.png" sizes="35x35" type="image/png">
    <title>Registro</title>
    <link rel="stylesheet" href="assets/css/all.min.css">
    <link rel="stylesheet" href="assets/css/flaticon.css">
@@ -36,12 +37,50 @@
    <link rel="stylesheet" href="css/style_navs.css">
    <link rel="stylesheet" href="css/agenda.css">
    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-  
+  <style>
+     body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .verde{
+    background:#245c4f !important;
+    color: #fff !important; 
+    font-size: 20px !important;
+    border-bottom: 2px solid #fff !important;
+}
+
+.cafe-claro{
+    background:#efe6d5 !important; 
+    color: #000 !important; 
+    font-size: 20px;
+}
+.cafe-claro-size{
+    background:#efe6d5 !important; 
+    color: #000 !important; 
+    text-align: left !important;
+}
+.text-left{
+    text-align: left !important;
+    width:70%;
+}
+
+.cafe{
+    background:#bfa27a; 
+    color: #fff;
+}
+.nav.nav-tabs .nav-item a.nav-link {
+    color: #8D203D ;
+}
+.nav.nav-tabs .nav-item a.nav-link:hover {
+    color: #fff ;
+    background:#8D203D !important;
+}
+
+  </style>
 </head>
 
 <body>
    <main>
-      <div class="container-fluid mx-0 px-0" style="background-color: #8D203D;">
+      <div class="container-fluid mx-0 px-0" style="background: linear-gradient(to top ,#10312B,#235b4e);">
          <div class="container">
             <nav class="navbar navbar-dark navbar-expand-lg navigation">
                <img alt="Responsive image" class="img-fluid" src="img/logo_2024.png" width="250">
@@ -79,7 +118,97 @@
             <h4><strong>el día: <?php echo $participante['dt_fecha'] ?></strong></h4>
 
 
-             <table class="table   table-borderless border align-middle">
+            <table class="table   table-borderless border align-middle text-center">
+
+<thead class="table-light">
+
+   <caption></caption>
+
+   <div class="card">
+
+   <div class="card-body cafe text-center" >
+
+      <h4 class="card-title" >DÍA 2</h4>
+
+      <h5 class="card-subtitle">MESA DE EXPERTOS DE ALTO NIVEL(TITULARES DE IES)</h5>
+
+   </div>
+
+   </div>
+
+   <tr class="text-justifyu">
+
+      <th class="verde">HORARIO</th>
+
+      <th class="cafe-claro">ACTIVIDAD</th>
+
+   </tr>
+
+   </thead>
+
+   <tbody class="table-group-divider">
+
+      <tr class="" >
+
+         <td class="verde">10:00 - 10:50</td>
+
+         <td class="text-left">Bienvenida y mensajes de autoridades</td>
+
+         
+
+      </tr>
+
+      <tr class="">
+
+         <td class="verde">10:50 - 11:00</td>
+
+         <td class="text-left cafe-claro-size">Fotografía oficial</td>
+
+      </tr>
+
+      <tr class="">
+
+         <td class="verde">11:00 - 12:20</td>
+
+         <td class="text-left">Emprendimiento asociativo (ESS)</td>
+
+      </tr>
+
+      <tr class="">
+
+         <td class="verde">12:20 - 14:00</td>
+
+         <td class="text-left cafe-claro-size">Educación Dual</td>
+
+      </tr>
+
+      <tr class="">
+
+         <td class="verde">14:00 - 14:30</td>
+
+         <td class="text-left">Servicio Social</td>
+
+      </tr>
+
+      <tr class="">
+
+         <td class="verde">14:30 - 15:30</td>
+
+         <td class="text-left cafe-claro-size">CLAUSURA GENERAL</td>
+
+      </tr>
+
+   </tbody>
+
+   <tfoot>
+
+   
+
+   </tfoot>
+
+</table>
+
+             <!-- <table class="table   table-borderless border align-middle">
 
                   <thead class="table-light">
 
@@ -90,7 +219,6 @@
                      <div class="card-body cafe" >
 
                         <h4 class="card-title">DÍA 1</h4>
-                        <!--<h5 class="card-subtitle ">REUNIÓN DE RESPONSABLES DE VINCULACIÓN Y ACTIVIDAD CULTURAL</h5>-->
                      </div>
 
                      </div>
@@ -113,10 +241,10 @@
                      </tbody>
                      <tfoot>   
                      </tfoot>
-               </table>
+            </table> -->
 
 
-               <table class="table   table-borderless border align-middle">
+               <!-- <table class="table   table-borderless border align-middle">
 
                   <thead class="table-light">
 
@@ -127,7 +255,6 @@
                      <div class="card-body cafe" >
 
                         <h4 class="card-title">DÍA 2</h4>
-                        <!--<h5 class="card-subtitle ">REUNIÓN DE RESPONSABLES DE VINCULACIÓN Y ACTIVIDAD CULTURAL</h5>-->
                      </div>
 
                      </div>
@@ -182,17 +309,17 @@
                      </tfoot>
 
                </table>
-            
+             -->
 
 
             <br><br><br>
-           <h4>
+           <!-- <h4>
               Marco General para la Educación Dual del Tipo Superior <a href="https://bit.ly/3rvkcQV" target="_blank" style="background: #C6C6C6; border-radius: 10px; padding: 1px;"> Descargar </a>
             </h4>
             <br><br>
            <h4>
            Marco General Emprendimiento Asociativo <a href="https://bit.ly/3rvkcQV" target="_blank" style="background: #C6C6C6; border-radius: 10px; padding: 1px;"> Descargar </a>
-            </h4>
+            </h4> -->
         </div>
         <div class="col-sm-12 col-md-12"><br><br>                            
          <!-- Se agrego el frame de la conmsulta a la base de datos de la sede - (Alexis) -->
@@ -200,7 +327,7 @@
         </div>
         <br><br>
         
-      <footer style="background-color: #8D203D;" id="contacto">
+      <footer style="background: linear-gradient(to top ,#10312B,#235b4e);" id="contacto">
          <div class="w-100 pt-121  opc1 position-relative">
             <div class="container position-relative">
                <div class="footer-wrap w-100 text-center">

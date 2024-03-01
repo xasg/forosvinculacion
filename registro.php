@@ -11,7 +11,8 @@ $region = view_region();
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    <meta name="description" content="" />
    <meta name="keywords" content="" />
-   <link rel="icon" href="assets/images/favicon.png" sizes="35x35" type="image/png">
+   <!-- <link rel="icon" href="assets/images/favicon.png" sizes="35x35" type="image/png"> -->
+   <link rel="icon" href="img/icon.png" sizes="35x35" type="image/png">
    <title>Registro</title>
    <link rel="stylesheet" href="assets/css/all.min.css">
    <link rel="stylesheet" href="assets/css/flaticon.css">
@@ -144,6 +145,7 @@ $region = view_region();
             <div class="row">
                <div class="col-md-12"><br><br>
                <h2>Registro de participación</h2>
+               <p>Estimado participante.  Le pedimos colocar su correo electrónico y teléfono móvil con WhatsApp, ya que las notificaciones se le estarán haciendo llegar por estos medios. Así mismo, le pedimos revisar su carpeta de correos no deseados si la confirmación de su registro no se visualiza en su bandeja principal.</p>
                <hr>
                </div>
             </div>
@@ -312,7 +314,7 @@ $region = view_region();
                <hr>        
                <div class="row">
                   <div class="col-md-12"><br>
-                  <strong><p>Día 1.</p></strong>
+                  <strong><p>Día 1. Mesas de trabajo simultáneas </p></strong>
                   </div>
 
                   
@@ -324,7 +326,7 @@ $region = view_region();
                                              <tbody>
                                                 <tr>
                                                    <th scope="row">
-                                                      <p>10:00 – 12:00</p>
+                                                      <p>15:30 - 18:30</p>
                                                    </th>                                                   
                                                    <td>
                                                       <div class="form-check form-check-inline">
@@ -363,7 +365,7 @@ $region = view_region();
                                              <tbody>
                                                 <tr>
                                                    <th scope="row">
-                                                      <p>10:00 – 12:00</p>
+                                                      <p>15:30 - 18:30</p>
                                                    </th>                                                   
                                                    <td>
                                                       <div class="form-check form-check-inline">
@@ -403,7 +405,7 @@ $region = view_region();
                                              <tbody>
                                                 <tr>
                                                    <th scope="row">
-                                                      <p>10:00 – 12:00</p>
+                                                      <p>15:30 - 18:30</p>
                                                    </th>                                                   
                                                    <td>
                                                       <div class="form-check form-check-inline">
@@ -444,7 +446,7 @@ $region = view_region();
                                              <tbody>
                                                 <tr>
                                                    <th scope="row">
-                                                      <p>10:00 – 12:00</p>
+                                                      <p>15:30 - 18:30</p>
                                                    </th>                                                   
                                                    <td>
                                                       <div class="form-check form-check-inline">
@@ -483,7 +485,7 @@ $region = view_region();
                                              <tbody>
                                                 <tr>
                                                    <th scope="row">
-                                                      <p>10:00 – 12:00</p>
+                                                      <p>15:30 - 18:30</p>
                                                    </th>                                                   
                                                    <td>
                                                       <div class="form-check form-check-inline">
@@ -522,7 +524,7 @@ $region = view_region();
                                              <tbody>
                                                 <tr>
                                                    <th scope="row">
-                                                      <p>10:00 – 12:00</p>
+                                                      <p>15:30 - 18:30</p>
                                                    </th>                                                   
                                                    <td>
                                                       <div class="form-check form-check-inline">
@@ -559,7 +561,7 @@ $region = view_region();
 
             <div class="row">
                   <div class="col-xl-12"><br>
-                  <label for="nombre">¿Confirmas asistencia a catering al finalizar trabajos del dia 1?</label>
+                  <label for="nombre">¿Confirmas asistencia a la Sesión de redes de colaboración del día 1?</label>
                   <br><br>
                   </div>
                   <div class="col-xl-1">  
@@ -730,7 +732,7 @@ $region = view_region();
                      <input type="hidden" name="id_usuario" value="valor1" />
                   </div>
                   <div class="alert alert-secondary" role="alert">
-                     <p>Agradecemos su registro, se enviará a su correo tu <strong>folio</strong> de registro el cual se te solicitara el dia del evento.</p>
+                     <p>Agradecemos su ínteres, la confirmación del presente registro se enviará a su correo, donde se incluirá su <strong>folio</strong> de registro, el cual se le solicitara el día del evento.</p>
                   </div>
                </div>
          </form>
