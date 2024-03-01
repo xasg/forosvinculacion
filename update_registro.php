@@ -55,7 +55,16 @@
          '04' => '22 y 23 de abril',
          '05' => '25 y 26 de abril',
          '06' => '3 de mayo',
-       ];     
+       ];
+       
+       switch ($region)
+       {
+        case 01:
+          $ubicacion = "https://maps.app.goo.gl/Hr5ktMNuSyuCso5v8"
+          break;
+
+       }
+
      $_region_name = $regiones[$region] ?? 'Valor no válido'; 
      $_region_fecha = $regiones_fehchas[$region] ?? 'Valor no válido'; 
        $body = file_get_contents('https://fese.mx');
