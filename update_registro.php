@@ -150,7 +150,7 @@
 
 $ch = curl_init();
 
-curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/v19.0/248737348321458/messages');
+curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/v18.0/248737348321458/messages');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode([
@@ -189,7 +189,6 @@ curl_close($ch);
 
 echo $response;
 
-die();
 
    ?>
        <script>
