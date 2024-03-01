@@ -653,19 +653,19 @@ $region = view_region();
       
                               <tr class="">
       
-                                 <td class="verde">10:00 - 11:00</td>
+                                 <td class="verde">10:00 - 11:10</td>
       
                                  <td class="text-left cafe-claro-size">Inauguración oficial del Foro de Vinculación (Transmisión en vivo por canales oficiales)</td>
       
                               </tr>
       
-                              <tr class="">
+                              <!-- <tr class="">
       
                                  <td class="verde">11:00 - 11:10</td>
       
                                  <td class="text-left">Presentación de las Memorias de Buenas Prácticas de Vinculación</td>
       
-                              </tr>
+                              </tr> -->
       
                               <tr class="">
       
