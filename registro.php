@@ -671,7 +671,7 @@ $region = view_region();
       
                                  <td class="verde">11:10 – 11:20</td>
       
-                                 <td class="text-left cafe-claro-size">Fotografía oficial</td>
+                                 <td class="text-left ">Fotografía oficial</td>
       
                               </tr>
       
@@ -679,7 +679,7 @@ $region = view_region();
       
                                  <td class="verde">11:20 – 11:25</td>
       
-                                 <td class="text-left">Resultados de los trabajos del día 1</td>
+                                 <td class="text-left cafe-claro-size">Resultados de los trabajos del día 1</td>
       
                               </tr>
       
@@ -687,14 +687,14 @@ $region = view_region();
       
                                  <td class="verde">11:25 – 12:00</td>
       
-                                 <td class="text-left cafe-claro-size">Avances y retos por parte de las autoridades educativas estatales de la región</td>
+                                 <td class="text-left ">Avances y retos por parte de las autoridades educativas estatales de la región</td>
       
                               </tr>
                               <tr class="">
       
                                  <td class="verde">12:00 – 15:00</td>
       
-                                 <td class="text-left">Diálogo de alto nivel:
+                                 <td class="text-left cafe-claro-size">Diálogo de alto nivel:
                                     Intercambio entre sectores privado, público y social, en torno a los temas prioritarios de vinculación a nivel regional y estatal.</td>
       
                               </tr>
@@ -702,7 +702,7 @@ $region = view_region();
       
                                  <td class="verde">15:00 – 15:30</td>
       
-                                 <td class="text-left cafe-claro-size">Conclusiones y cierre</td>
+                                 <td class="text-left ">Conclusiones y cierre</td>
       
                               </tr>
       
