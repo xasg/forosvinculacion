@@ -55,7 +55,20 @@
          '04' => '22 y 23 de abril',
          '05' => '25 y 26 de abril',
          '06' => '3 de mayo',
-       ];     
+       ];
+       
+       switch ($region)
+       {
+        
+        
+        case 01:
+          $ubicacion = "https://maps.app.goo.gl/Hr5ktMNuSyuCso5v8";
+         break;
+
+         default: break; 
+
+       }
+
      $_region_name = $regiones[$region] ?? 'Valor no válido'; 
      $_region_fecha = $regiones_fehchas[$region] ?? 'Valor no válido'; 
        $body = file_get_contents('https://fese.mx');
@@ -153,7 +166,7 @@
                       <td align="center" style="padding:10px 0 10px 0;">
                       <h3>
                         <p>
-                          Apreciable <strong>'.$d_nombre.'</strong> <br> Agradecemos tu participación a los <strong>Foros de Vinculación 2024</strong> <br>Región <strong>'.$_region_name.'</strong> <br> El anfitrion para esta región es:  <strong>'.$d_cede.'</strong>, el cual se llevará a cabo de manera presencial en <br> ubicación: <br>  <iframe src="" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">'.$ubicacion.'</iframe>
+                          Apreciable <strong>'.$d_nombre.'</strong> <br> Agradecemos tu participación a los <strong>Foros de Vinculación 2024</strong> <br>Región <strong>'.$_region_name.'</strong> <br> El anfitrion para esta región es:  <strong>'.$d_cede.'</strong>, el cual se llevará a cabo de manera presencial en <br>  <a href = " '.$ubicacion.'">   Da clic para conocer la  ubicacion del evento    </a>
                           
                         </p>
       
