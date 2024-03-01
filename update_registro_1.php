@@ -129,6 +129,58 @@
         $mail->Body    = '  
        <style>
          h3 {color:black; font-size:14px;}
+         * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+     }
+     body {
+         font-family: "Roboto", sans-serif;
+         font-size: 16px;
+         font-weight: 300;
+         color: #888;
+         background-color: rgba(230, 225, 225, 0.5);
+         line-height: 30px;
+         text-align: center;
+     }
+     .contenedor {
+         width:100%;
+         min-height: auto;
+         text-align: center;
+         margin: 0 auto;
+         background: #ececec;
+         border-top: 8px solid #0D4D5B;
+     }
+     .btnlink {
+         padding: 15px 30px;
+         text-align: center;
+         background-color: #cecece;
+         color: crimson !important;
+         font-weight: 600;
+         text-decoration: blue;
+     }
+     .btnlink:hover {
+         color: #fff !important;
+     }
+     .imgBanner {
+         max-width: 100%;
+         margin-left: auto;
+         margin-right: auto;
+         display: block;
+         padding: 0px;
+     }
+     .misection {
+         color: #34495e;
+         margin: 4% 10% 2%;
+         text-align: center;
+         font-family: sans-serif;
+     }
+     .mt-5 {
+         margin-top: 50px;
+     }
+     .mb-5 {
+         margin-bottom: 50px;
+     }
        </style>
                      
                                      
@@ -147,12 +199,6 @@
                        </td>
                      </tr>
                      <tr>
-                        <td align="center" style="padding:0px 0 10px 0;">
-                          <h3>A continuación le pedimos descargar los siguientes documentos y leerlos previamente para tener un panorama completo de los temas tratados.</h3>
-                          <h4>Marco General para la Educación Dual del Tipo Superior</h4><a href="https://bit.ly/44nIaw3">Descargar</a>
-                          <h4>Marco General Emprendimiento Asociativo</h4><a href="https://bit.ly/3rvkcQV">Descargar</a>
-                          <h4>Ficha de Anfitrionia</h4><a href="http://forosdevinculacion.anuies.mx/docs/Anfitrionia'.$region.'.pdf">Descargar</a>
-                        </td>
                      </tr>
                      
                      <tr>
