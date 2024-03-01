@@ -60,6 +60,47 @@ $region = view_region();
          border-color:  #10312B;
          transition: all linear .6s;
       }
+
+      body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .verde{
+    background:#245c4f !important;
+    color: #fff !important; 
+    font-size: 20px !important;
+    border-bottom: 2px solid #fff !important;
+}
+
+.cafe-claro{
+    background:#efe6d5 !important; 
+    color: #000 !important; 
+    font-size: 20px;
+}
+.cafe-claro-size{
+    background:#efe6d5 !important; 
+    color: #000 !important; 
+    text-align: left !important;
+}
+.text-left{
+    text-align: left !important;
+    width:70%;
+}
+
+.cafe{
+    background:#bfa27a; 
+    color: #fff;
+}
+.nav.nav-tabs .nav-item a.nav-link {
+    color: #8D203D ;
+}
+.nav.nav-tabs .nav-item a.nav-link:hover {
+    color: #fff ;
+    background:#8D203D !important;
+}
+/* .active{
+    background: #8D203D !important;
+    color:#fff !important;
+} */
    </style>
 </head>
 
@@ -68,7 +109,9 @@ $region = view_region();
       <div class="container-fluid mx-0 px-0" style="background: linear-gradient(to top ,#10312B,#235b4e);">
          <div class="container">
             <nav class="navbar navbar-dark navbar-expand-lg navigation">
-               <img alt="Responsive image" class="img-fluid" src="img/logo_2024.png" width="250">
+               <a href="index.html">
+                  <img alt="Responsive image" class="img-fluid" src="img/logo_2024.png" width="150">
+               </a>
                <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
                   <span class="navbar-toggler-icon"> </span>
                </button>
@@ -568,6 +611,111 @@ $region = view_region();
                                  <label class="form-check-label">
                                     <strong>AGENDA </strong>
                                  </label><br>
+
+                     <table class="table   table-borderless border align-middle text-center">
+
+                        <thead class="table-light">
+      
+                           <caption></caption>
+      
+                           <div class="card">
+      
+                           <div class="card-body cafe text-center" >
+      
+                              <h4 class="card-title" >DÍA 2</h4>
+      
+                              <h5 class="card-subtitle"> <b>TRABAJO COLEGIADO EN PLENARIA</b></h5>
+      
+                           </div>
+      
+                           </div>
+      
+                           <tr class="text-justifyu">
+      
+                              <th class="verde">HORARIO</th>
+      
+                              <th class="cafe-claro">ACTIVIDAD</th>
+      
+                           </tr>
+      
+                           </thead>
+      
+                           <tbody class="table-group-divider">
+      
+                              <tr class="" >
+      
+                                 <td class="verde">09:00 – 10:00</td>
+      
+                                 <td class="text-left">Registro de asistencia de los invitados</td>
+      
+                                 
+      
+                              </tr>
+      
+                              <tr class="">
+      
+                                 <td class="verde">10:00 - 11:00</td>
+      
+                                 <td class="text-left cafe-claro-size">Inauguración oficial del Foro de Vinculación (Transmisión en vivo por canales oficiales)</td>
+      
+                              </tr>
+      
+                              <tr class="">
+      
+                                 <td class="verde">11:00 - 11:10</td>
+      
+                                 <td class="text-left">Presentación de las Memorias de Buenas Prácticas de Vinculación y entrega de los Marcos Generales de Educación Dual y Emprendimiento Asociativo</td>
+      
+                              </tr>
+      
+                              <tr class="">
+      
+                                 <td class="verde">11:10 – 11:20</td>
+      
+                                 <td class="text-left cafe-claro-size">Fotografía oficial</td>
+      
+                              </tr>
+      
+                              <tr class="">
+      
+                                 <td class="verde">11:20 – 11:25</td>
+      
+                                 <td class="text-left">Resultados de los trabajos del día 1</td>
+      
+                              </tr>
+      
+                              <tr class="">
+      
+                                 <td class="verde">11:25 – 12:00</td>
+      
+                                 <td class="text-left cafe-claro-size">Avances y retos por parte de las autoridades educativas estatales de la región</td>
+      
+                              </tr>
+                              <tr class="">
+      
+                                 <td class="verde">12:00 – 15:00</td>
+      
+                                 <td class="text-left">Diálogo de alto nivel:
+                                    Intercambio entre sectores privado, público y social, en torno a los temas prioritarios de vinculación a nivel regional y estatal.</td>
+      
+                              </tr>
+                              <tr class="">
+      
+                                 <td class="verde">15:00 – 15:30</td>
+      
+                                 <td class="text-left cafe-claro-size">Conclusiones y cierre</td>
+      
+                              </tr>
+      
+                           </tbody>
+      
+                           <tfoot>
+      
+                           
+      
+                           </tfoot>
+      
+                     </table>
                               </div>
                            </td>
                         </tr>                        
