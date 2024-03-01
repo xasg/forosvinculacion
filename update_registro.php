@@ -131,7 +131,7 @@
       .misection {
         color: #34495e;
         margin: 4% 10% 2%;
-        text-align: center;
+        text-align: centlefter;
         font-family: sans-serif;
       }
       .mt-5 {
