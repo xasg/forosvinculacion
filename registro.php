@@ -145,8 +145,9 @@ $region = view_region();
             <div class="row">
                <div class="col-md-12"><br><br>
                <h2>Registro de participación</h2>
-               <p>Estimado participante.  Le pedimos colocar su correo electrónico y teléfono móvil con WhatsApp, ya que las notificaciones se le estarán haciendo llegar por estos medios. Así mismo, le pedimos revisar su carpeta de correos no deseados si la confirmación de su registro no se visualiza en su bandeja principal.</p>
-               <hr>
+               <div class="alert alert-warning" role="alert">
+                  Estimado participante.  Le pedimos colocar su correo electrónico y teléfono móvil con WhatsApp, ya que las notificaciones se le estarán haciendo llegar por estos medios. Así mismo, le pedimos revisar su carpeta de correos no deseados si la confirmación de su registro no se visualiza en su bandeja principal.
+               </div>
                </div>
             </div>
                <div class="row">
@@ -602,13 +603,13 @@ $region = view_region();
                      <tbody>
                         <!-- ------------------------------------------------------------------------------------ -->
                      <tr>
-                           <th scope="row" class="col-md-2 text-center align-middle">
-                              <p>09:00 – 16:00</p>    <!-- Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
-                           </th>
+                           <!-- <th scope="row" class="col-md-2 text-center align-middle"> -->
+                              <!-- <p>09:00 – 16:00</p>    Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
+                           <!-- </th> -->
                            <td >
                               <div class="form-check form-check-inline">
                                  <label class="form-check-label">
-                                    <strong>AGENDA </strong>
+                                    <!-- <strong>AGENDA </strong> -->
                                  </label><br>
 
                      <table class="table   table-borderless border align-middle text-center">
@@ -621,7 +622,7 @@ $region = view_region();
       
                            <div class="card-body cafe text-center" >
       
-                              <h4 class="card-title" >DÍA 2</h4>
+                              <!-- <h4 class="card-title" >DÍA 2</h4> -->
       
                               <h5 class="card-subtitle"> <b>TRABAJO COLEGIADO EN PLENARIA</b></h5>
       

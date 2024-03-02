@@ -31,7 +31,7 @@
    
 // ------------------------------------
     if($reg_usuario==0 ){ //se agrega validación de bandera
-      insert_registro($apaterno, $amaterno, $nombre, $email, $tel_ins, $ext, $tel_movil, $region, $entidad, $organizacion, $nom_org, $nom_org2, $cargo, $cargo2, $otro_cargo, $otro_cargo2,$educacion_dual_dt,$servicio_social_comunitario_dt, $economia_social_solidaria_dt , $mesa1, $mesa2, $mesa3, $mesa4, $mesa5, $comentario);   
+      insert_registro($apaterno, $amaterno, $nombre, $email, $tel_ins, $ext, $tel_movil, $region, $entidad, $organizacion, $nom_org, $nom_org2, $cargo, $cargo2, $otro_cargo, $otro_cargo2, $mesa1);   
        $id_usuario =acces_registro($email);
        $id_user=$id_usuario['id_usuario'];
        $d_nombre=$id_usuario['dt_nombre']." ".$id_usuario['dt_apaterno']." ".$id_usuario['dt_amaterno'];
@@ -64,11 +64,26 @@
         case 01:
           $ubicacion = "https://maps.app.goo.gl/Hr5ktMNuSyuCso5v8";
          break;
+        case 02:
+          $ubicacion = "https://maps.app.goo.gl/hCWtfTvkzZvRRP9WA";
+         break;
+        case 03:
+          $ubicacion = "https://maps.app.goo.gl/87Ur4XKfHeiG1AyX8";
+         break;
+        case 04:
+          $ubicacion = "https://maps.app.goo.gl/Hr5ktMNuSyuCso5v8";
+         break;
+        case 05:
+          $ubicacion = "https://maps.app.goo.gl/Hr5ktMNuSyuCso5v8";
+         break;
+        case 06:
+          $ubicacion = "https://maps.app.goo.gl/Hr5ktMNuSyuCso5v8";
+         break;
 
          default: break; 
 
        }
-
+       die();
      $_region_name = $regiones[$region] ?? 'Valor no válido'; 
      $_region_fecha = $regiones_fehchas[$region] ?? 'Valor no válido'; 
        $body = file_get_contents('https://fese.mx');
@@ -176,11 +191,7 @@
                       </h3>
                       </td>
                     </tr>
-                    <tr>
-                    <td align="center" style="padding:0px 0 10px 0;">
-                      <h4>Ficha de Anfitrionia</h4><a href="http://forosdevinculacion.anuies.mx/docs/Anfitrionia'.$region.'.pdf">Descargar</a>
-                      </td>
-                    </tr>
+
                     <tr>
                      <td align="center" style="padding:20px 0 30px 0;">
                      <img src="http://forosdevinculacion.anuies.mx/img/Logos_Institucionales.png" alt="" width="600" style="height:auto;display:block;" />
