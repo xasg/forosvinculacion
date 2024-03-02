@@ -96,7 +96,7 @@
                      </li>
                      <!-- Se agregaron estilos -->
                      <li class="nav-item active activo">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="registro.php">
                            REGISTRO
                         </a>
                      </li>
