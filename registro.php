@@ -567,7 +567,7 @@ $region = view_region();
                   </div>
                   <div class="col-xl-1">  
                   <div class="form-check">
-                  <input class="form-check-input" type="radio" name="catering" required>
+                  <input class="form-check-input" type="radio" name="catering" value="si" required>
                   <label class="form-check-label">
                      si
                   </label>
@@ -576,7 +576,7 @@ $region = view_region();
 
                   <div class="col-xl-1">  
                   <div class="form-check">
-                  <input class="form-check-input" type="radio" name="catering" required>
+                  <input class="form-check-input" type="radio" name="catering" value="no" required>
                   <label class="form-check-label">
                      no
                   </label>
