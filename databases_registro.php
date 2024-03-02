@@ -30,12 +30,12 @@ $mysqli->query($sql);
 }
 
 
-function acces_registro($email)
+function acces_registro($email,$region)
 {
   global $mysqli;
   $sql = "SELECT * FROM usuario
   LEFT JOIN cat_region ON(cat_region.id_cat_region=usuario.dt_region)
-  WHERE dt_email = '{$email}'";
+  WHERE dt_email = '{$email}' AND usuario.dt_region ='{$region}'";
   $result = $mysqli->query($sql);
   return $result->fetch_assoc();
 }

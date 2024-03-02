@@ -26,14 +26,16 @@
    $otro_cargo2 = isset( $_POST['otro_cargo2']) ? $_POST['otro_cargo2'] : '';
    $mesa1 = isset( $_POST['mesa']) ? $_POST['mesa'] : '';
    $catering = isset( $_POST['catering']) ? $_POST['catering'] : '';
-   $reg_usuario =acces_registro($email);  
+   $reg_usuario =acces_registro($email,$region);  
    
 
    
 // ------------------------------------
     if($reg_usuario==0 ){ //se agrega validación de bandera
+      // if (condition) {
+        
       insert_registro($apaterno, $amaterno, $nombre, $email, $tel_ins, $ext, $tel_movil, $region, $entidad, $organizacion, $nom_org, $nom_org2, $cargo, $cargo2, $otro_cargo, $otro_cargo2, $mesa1, $catering);   
-       $id_usuario =acces_registro($email);
+       $id_usuario =acces_registro($email,$region);
        $id_user=$id_usuario['id_usuario'];
        $d_nombre=$id_usuario['dt_nombre']." ".$id_usuario['dt_apaterno']." ".$id_usuario['dt_amaterno'];
        $d_email=$id_usuario['dt_email'];
@@ -72,13 +74,13 @@
           $ubicacion = "https://maps.app.goo.gl/87Ur4XKfHeiG1AyX8";
          break;
         case 04:
-          $ubicacion = "https://maps.app.goo.gl/Hr5ktMNuSyuCso5v8";
+          $ubicacion = "https://maps.app.goo.gl/skD52tqFEuQkE1yv6";
          break;
         case 05:
-          $ubicacion = "https://maps.app.goo.gl/Hr5ktMNuSyuCso5v8";
+          $ubicacion = "https://maps.app.goo.gl/pFSv6tNxSz6cWNWQA";
          break;
         case 06:
-          $ubicacion = "https://maps.app.goo.gl/Hr5ktMNuSyuCso5v8";
+          $ubicacion = "https://maps.app.goo.gl/QCZ7VUgEJhhX1Byz6";
          break;
 
          default: break; 

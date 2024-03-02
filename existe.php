@@ -83,7 +83,7 @@
       <div class="container-fluid mx-0 px-0" style="background: linear-gradient(to top ,#10312B,#235b4e);">
          <div class="container">
             <nav class="navbar navbar-dark navbar-expand-lg navigation">
-               <img alt="Responsive image" class="img-fluid" src="img/logo_2024.png" width="250">
+               <img alt="Responsive image" class="img-fluid" src="img/logo_2024.png" width="150">
                <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
                   <span class="navbar-toggler-icon"> </span>
                </button>
@@ -111,7 +111,7 @@
 
         <div class="col-sm-8 col-md-8 offset-md-2 text-center"><br><br>
 
-            <h4 class="mb-0">HOLA <?php echo $participante['dt_nombre']." ".$participante['dt_apaterno']." ".$participante['dt_amaterno']; ?> YA CUENTAS CON UN REGISTRO</h4><br>   
+            <h4 class="mb-0">HOLA <?php echo $participante['dt_nombre']." ".$participante['dt_apaterno']." ".$participante['dt_amaterno']; ?> YA CUENTAS CON UN REGISTRO PARA ESTA REGIÓN</h4><br>   
             <h4 class="mb-0">Tu folio de registro es: <strong><?php echo  $folio;  ?></strong></h4><br>  
             <!-- Se eliminmo el folio y se agrego la sede del evento - (Alexis) -->
             <h4><strong>El anfitrión será: <?php echo $participante['dt_cede'] ?></strong></h4>
