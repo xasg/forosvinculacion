@@ -133,102 +133,45 @@
            <!-- <img class="img-fluid" src="img/agenda.png"> -->
             <!-- Se agrega validacion en caso de requerirse por si es para el día 1 o 2 -->
             
-
             <table class="table   table-borderless border align-middle text-center">
 
 <thead class="table-light">
 
-   <caption></caption>
+  <caption></caption>
 
-   <div class="card">
+  <div class="card">
 
-   <div class="card-body cafe text-center" >
+  <div class="card-body cafe text-center" >
 
-      <h4 class="card-title" >DÍA 2</h4>
+     <h4 class="card-title" >DÍA 1</h4>
 
-      <h5 class="card-subtitle"> <b>TRABAJO COLEGIADO EN PLENARIA</b></h5>
+     <!-- <h5 class="card-subtitle"> <b>TRABAJO COLEGIADO EN PLENARIA</b></h5> -->
 
-   </div>
+  </div>
 
-   </div>
+  </div>
 
-   <tr class="text-justifyu">
+  <tr class="text-justifyu">
 
-      <th class="verde">HORARIO</th>
+     <th class="verde">HORARIO</th>
 
-      <th class="cafe-claro">ACTIVIDAD</th>
+     <th class="cafe-claro">ACTIVIDAD</th>
 
-   </tr>
+  </tr>
 
-   </thead>
+  </thead>
 
    <tbody class="table-group-divider">
 
       <tr class="" >
 
-         <td class="verde">09:00 – 10:00</td>
+         <td class="verde">10:00 – 12:00</td>
 
-         <td class="text-left">Registro de asistencia de los invitados</td>
-
-         
+         <td class="text-left"> <p class="text-center"><?= $mesa; ?> </p> </td>
 
       </tr>
 
-      <tr class="">
-
-         <td class="verde">10:00 - 11:10</td>
-
-         <td class="text-left cafe-claro-size">Inauguración oficial del Foro de Vinculación (Transmisión en vivo por canales oficiales)</td>
-
-      </tr>
-
-      <!-- <tr class="">
-
-         <td class="verde">11:00 - 11:10</td>
-
-         <td class="text-left">Presentación de las Memorias de Buenas Prácticas de Vinculación</td>
-
-      </tr> -->
-
-      <tr class="">
-
-         <td class="verde">11:10 – 11:20</td>
-
-         <td class="text-left ">Fotografía oficial</td>
-
-      </tr>
-
-      <tr class="">
-
-         <td class="verde">11:20 – 11:25</td>
-
-         <td class="text-left cafe-claro-size">Resultados de los trabajos del día 1</td>
-
-      </tr>
-
-      <tr class="">
-
-         <td class="verde">11:25 – 12:00</td>
-
-         <td class="text-left ">Avances y retos por parte de las autoridades educativas estatales de la región</td>
-
-      </tr>
-      <tr class="">
-
-         <td class="verde">12:00 – 15:00</td>
-
-         <td class="text-left cafe-claro-size">Diálogo de alto nivel:
-            Intercambio entre sectores privado, público y social, en torno a los temas prioritarios de vinculación a nivel regional y estatal.</td>
-
-      </tr>
-      <tr class="">
-
-         <td class="verde">15:00 – 15:30</td>
-
-         <td class="text-left ">Conclusiones y cierre</td>
-
-      </tr>
-
+    
    </tbody>
 
    <tfoot>
@@ -237,7 +180,113 @@
 
    </tfoot>
 
-</table>
+   </table>
+
+
+            <table class="table   table-borderless border align-middle text-center">
+
+             <thead class="table-light">
+
+               <caption></caption>
+
+               <div class="card">
+
+               <div class="card-body cafe text-center" >
+
+                  <h4 class="card-title" >DÍA 2</h4>
+
+                  <h5 class="card-subtitle"> <b>TRABAJO COLEGIADO EN PLENARIA</b></h5>
+
+               </div>
+
+               </div>
+
+               <tr class="text-justifyu">
+
+                  <th class="verde">HORARIO</th>
+
+                  <th class="cafe-claro">ACTIVIDAD</th>
+
+               </tr>
+
+               </thead>
+
+               <tbody class="table-group-divider">
+
+                  <tr class="" >
+
+                     <td class="verde">09:00 – 10:00</td>
+
+                     <td class="text-left">Registro de asistencia de los invitados</td>
+
+                     
+
+                  </tr>
+
+                  <tr class="">
+
+                     <td class="verde">10:00 - 11:10</td>
+
+                     <td class="text-left cafe-claro-size">Inauguración oficial del Foro de Vinculación (Transmisión en vivo por canales oficiales)</td>
+
+                  </tr>
+
+                  <!-- <tr class="">
+
+                     <td class="verde">11:00 - 11:10</td>
+
+                     <td class="text-left">Presentación de las Memorias de Buenas Prácticas de Vinculación</td>
+
+                  </tr> -->
+
+                  <tr class="">
+
+                     <td class="verde">11:10 – 11:20</td>
+
+                     <td class="text-left ">Fotografía oficial</td>
+
+                  </tr>
+
+                  <tr class="">
+
+                     <td class="verde">11:20 – 11:25</td>
+
+                     <td class="text-left cafe-claro-size">Resultados de los trabajos del día 1</td>
+
+                  </tr>
+
+                  <tr class="">
+
+                     <td class="verde">11:25 – 12:00</td>
+
+                     <td class="text-left ">Avances y retos por parte de las autoridades educativas estatales de la región</td>
+
+                  </tr>
+                  <tr class="">
+
+                     <td class="verde">12:00 – 15:00</td>
+
+                     <td class="text-left cafe-claro-size">Diálogo de alto nivel:
+                        Intercambio entre sectores privado, público y social, en torno a los temas prioritarios de vinculación a nivel regional y estatal.</td>
+
+                  </tr>
+                  <tr class="">
+
+                     <td class="verde">15:00 – 15:30</td>
+
+                     <td class="text-left ">Conclusiones y cierre</td>
+
+                  </tr>
+
+               </tbody>
+
+               <tfoot>
+
+               
+
+               </tfoot>
+
+            </table>
                <!-- <table class="table   table-borderless border align-middle">
 
                   <thead class="table-light">

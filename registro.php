@@ -331,7 +331,7 @@ $region = view_region();
                                                    </th>                                                   
                                                    <td>
                                                       <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa"  value="01" required>
+                                                         <input class="form-check-input" type="radio" name="mesa"  value="Mesa 1: SUR SURESTE" required>
                                                          <label class="form-check-label">
                                                             <strong>Mesa 1: SUR SURESTE</strong>
                                                          </label><br>
@@ -339,7 +339,7 @@ $region = view_region();
                                                    </td>
                                                    <td>
                                                       <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa" value="02" required >
+                                                         <input class="form-check-input" type="radio" name="mesa" value="Mesa 2: SUR SURESTE" required >
                                                          <label class="form-check-label">
                                                            <strong>Mesa 2: SUR SURESTE</strong> 
                                                          </label>
@@ -347,7 +347,7 @@ $region = view_region();
                                                    </td>
                                                    <td table-primary>
                                                       <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa" value="03" required >
+                                                         <input class="form-check-input" type="radio" name="mesa" value="Mesa  3: SUR SURESTE" required >
                                                          <label class="form-check-label">
                                                              <strong>Mesa  3: SUR SURESTE</strong>
                                                              </label>
@@ -370,7 +370,7 @@ $region = view_region();
                                                    </th>                                                   
                                                    <td>
                                                       <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa"  value="01">
+                                                         <input class="form-check-input" type="radio" name="mesa"  value="Mesa 1: CENTRO SUR">
                                                          <label class="form-check-label">
                                                             <strong>Mesa 1: CENTRO SUR</strong>
                                                          </label><br>
@@ -378,7 +378,7 @@ $region = view_region();
                                                    </td>
                                                    <td>
                                                       <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa" value="02" >
+                                                         <input class="form-check-input" type="radio" name="mesa" value="Mesa 2: CENTRO SUR" >
                                                          <label class="form-check-label">
                                                            <strong>Mesa 2: CENTRO SUR</strong> 
                                                          </label>
@@ -386,7 +386,7 @@ $region = view_region();
                                                    </td>
                                                    <td table-primary>
                                                       <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa" value="03" >
+                                                         <input class="form-check-input" type="radio" name="mesa" value="Mesa  3: CENTRO SUR" >
                                                          <label class="form-check-label">
                                                              <strong>Mesa  3: CENTRO SUR</strong>
                                                              </label>
@@ -410,7 +410,7 @@ $region = view_region();
                                                    </th>                                                   
                                                    <td>
                                                       <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa"  value="01">
+                                                         <input class="form-check-input" type="radio" name="mesa"  value="Mesa 1: CENTRO OCCIDENTE">
                                                          <label class="form-check-label">
                                                             <strong>Mesa 1: CENTRO OCCIDENTE</strong>
                                                          </label><br>
@@ -418,7 +418,7 @@ $region = view_region();
                                                    </td>
                                                    <td>
                                                       <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa" value="02" >
+                                                         <input class="form-check-input" type="radio" name="mesa" value="Mesa 2: CENTRO OCCIDENTE" >
                                                          <label class="form-check-label">
                                                            <strong>Mesa 2: CENTRO OCCIDENTE</strong> 
                                                          </label>
@@ -426,7 +426,7 @@ $region = view_region();
                                                    </td>
                                                    <td table-primary>
                                                       <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa" value="03" >
+                                                         <input class="form-check-input" type="radio" name="mesa" value="Mesa 3: CENTRO OCCIDENTE" >
                                                          <label class="form-check-label">
                                                              <strong>Mesa 3: CENTRO OCCIDENTE</strong>
                                                              </label>
@@ -451,7 +451,7 @@ $region = view_region();
                                                    </th>                                                   
                                                    <td>
                                                       <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa"  value="01">
+                                                         <input class="form-check-input" type="radio" name="mesa"  value="Mesa 1: NORESTE">
                                                          <label class="form-check-label">
                                                             <strong>Mesa 1: NORESTE</strong>
                                                          </label><br>
@@ -459,7 +459,7 @@ $region = view_region();
                                                    </td>
                                                    <td>
                                                       <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa" value="02" >
+                                                         <input class="form-check-input" type="radio" name="mesa" value="Mesa 2: NORESTE" >
                                                          <label class="form-check-label">
                                                            <strong>Mesa 2: NORESTE</strong> 
                                                          </label>
@@ -467,7 +467,7 @@ $region = view_region();
                                                    </td>
                                                    <td table-primary>
                                                       <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa" value="03" >
+                                                         <input class="form-check-input" type="radio" name="mesa" value="Mesa 3: NORESTE" >
                                                          <label class="form-check-label">
                                                              <strong>Mesa 3: NORESTE</strong>
                                                              </label>
@@ -490,7 +490,7 @@ $region = view_region();
                                                    </th>                                                   
                                                    <td>
                                                       <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa"  value="01">
+                                                         <input class="form-check-input" type="radio" name="mesa"  value="Mesa 1: NOROESTE">
                                                          <label class="form-check-label">
                                                             <strong>Mesa 1: NOROESTE</strong>
                                                          </label><br>
@@ -498,7 +498,7 @@ $region = view_region();
                                                    </td>
                                                    <td>
                                                       <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa" value="02" >
+                                                         <input class="form-check-input" type="radio" name="mesa" value="Mesa 2: NOROESTE" >
                                                          <label class="form-check-label">
                                                            <strong>Mesa 2: NOROESTE</strong> 
                                                          </label>
@@ -506,7 +506,7 @@ $region = view_region();
                                                    </td>
                                                    <td table-primary>
                                                       <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa" value="03" >
+                                                         <input class="form-check-input" type="radio" name="mesa" value="Mesa 3: NOROESTE" >
                                                          <label class="form-check-label">
                                                              <strong>Mesa 3: NOROESTE</strong>
                                                              </label>
@@ -529,7 +529,7 @@ $region = view_region();
                                                    </th>                                                   
                                                    <td>
                                                       <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa"  value="01">
+                                                         <input class="form-check-input" type="radio" name="mesa"  value="Mesa 1: METROPOLITANA">
                                                          <label class="form-check-label">
                                                             <strong>Mesa 1: METROPOLITANA</strong>
                                                          </label><br>
@@ -537,7 +537,7 @@ $region = view_region();
                                                    </td>
                                                    <td>
                                                       <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa" value="02" >
+                                                         <input class="form-check-input" type="radio" name="mesa" value="Mesa 2: METROPOLITANA" >
                                                          <label class="form-check-label">
                                                            <strong>Mesa 2: METROPOLITANA</strong> 
                                                          </label>
@@ -545,7 +545,7 @@ $region = view_region();
                                                    </td>
                                                    <td table-primary>
                                                       <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa" value="03" >
+                                                         <input class="form-check-input" type="radio" name="mesa" value="Mesa 3: METROPOLITANA" >
                                                          <label class="form-check-label">
                                                              <strong>Mesa 3: METROPOLITANA</strong>
                                                             </label>
