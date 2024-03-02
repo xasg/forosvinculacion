@@ -13,7 +13,8 @@ if(isset($_GET['region'])){
     <meta charset="UTF-8">
     <meta name="language" content="es-MX">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="assets/images/favicon.png" sizes="35x35" type="image/png">
+    <!-- <link rel="icon" href="assets/images/favicon.png" sizes="35x35" type="image/png"> -->
+    <link rel="icon" href="img/icon.png" sizes="35x35" type="image/png">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style-stands.css">
@@ -78,7 +79,9 @@ if(isset($_GET['region'])){
     <div class="container-fluid mx-0 px-0" style="background: linear-gradient(to top ,#10312B,#235b4e);">
          <div class="container">
             <nav class="navbar navbar-dark navbar-expand-lg navigation">
-               <img alt="Responsive image" class="img-fluid" src="img/logo_2024.png" width="250">
+               <a href="index.html">
+                  <img alt="Responsive image" class="img-fluid" src="img/logo_2024.png" width="150">
+               </a>
                <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
                   <span class="navbar-toggler-icon"> </span>
                </button>
@@ -106,7 +109,7 @@ if(isset($_GET['region'])){
     </div> -->
 
     <div class="container-fluid px-0">
-       <div class="container">
+       <div class="container" style="height:100vh !important; margin: 100px auto;">
          <div class="row"> 
             <!-- ************************** TABS que indican la region seleccionada para mostrar la agenda respectiva -->
             <!-- <div class="col-md-12">
@@ -132,7 +135,7 @@ if(isset($_GET['region'])){
               </ul>
             </div> -->
          </div>
-         <div class="container-fluid" style="padding-top: 3%">
+         <div class="container-fluid" style="padding-top: 3%; ">
             <div class="row justify-content-center ">
                 <div class="col-md-10 ">
                     <!-- <img class="img-fluid" src="img/agenda.png" width="100%"  style="margin-top: 4%;"> -->
@@ -505,10 +508,10 @@ if(isset($_GET['region'])){
         <!-- Parte inferior de página -->
     </div>
     
-    <!-- Imagen greco de cabecera -->
-    <footer style="background: linear-gradient(to top ,#10312B,#235b4e);" id="contacto">
-         <div class="w-100 pt-121  opc1 position-relative">
-            <div class="container position-relative">
+   </main>
+   <footer style="background: linear-gradient(to top ,#10312B,#235b4e);" id="contacto">
+         <div class="w-100 pt-121  opc1 position-relative footer ">
+            <div class="container position-relative ">
                <div class="footer-wrap w-100 text-center">
                   <div class="footer-inner d-inline-block">
                      <div class="logo d-inline-block">
@@ -518,8 +521,7 @@ if(isset($_GET['region'])){
                            </a>
                         </h1>
                      </div>
-                     <p class="mb-0" style="color: #fff">Contacto:</p>
-                     <p class="mb-0" style="color: #fff">forosdevinculacion@fese.mx</p><br><br><br>
+                     <p class="mb-0" style="color: #fff">Contacto: forosdevinculacion@fese.mx</p><br>
                   </div>
                   <!-- <div class="footer-bottom d-flex flex-wrap justify-content-between w-100">                              
                             </div> -->
@@ -527,7 +529,6 @@ if(isset($_GET['region'])){
             </div>
          </div>
       </footer><!-- Footer -->
-   </main>
    <!-- Main Wrapper -->
    <script src="assets/js/jquery.min.js"></script>
    <script src="assets/js/popper.min.js"></script>
