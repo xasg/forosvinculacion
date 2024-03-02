@@ -548,7 +548,7 @@ $region = view_region();
                                                          <input class="form-check-input" type="radio" name="mesa" value="03" >
                                                          <label class="form-check-label">
                                                              <strong>Mesa 3: METROPOLITANA</strong>
-                                                             </label>
+                                                            </label>
                                                       </div>
                                                    </td>                                                   
                                                 </tr>                                                  
