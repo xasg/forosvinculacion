@@ -83,10 +83,10 @@
          default: break; 
 
        }
-       die();
+      //  die();
      $_region_name = $regiones[$region] ?? 'Valor no válido'; 
      $_region_fecha = $regiones_fehchas[$region] ?? 'Valor no válido'; 
-       $body = file_get_contents('https://fese.mx');
+      //  $body = file_get_contents('https://fese.mx');
       //Create an instance; passing `true` enables exceptions
    $mail = new PHPMailer(true);
    try {
@@ -262,6 +262,7 @@ if (curl_errno($ch)) {
 curl_close($ch);
 
 echo $response;
+ die();
 
 
    ?>
