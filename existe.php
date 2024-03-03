@@ -139,7 +139,7 @@
 
       <th class="verde">HORARIO</th>
 
-      <th class="cafe-claro">ACTIVIDAD</th>
+      <th class="cafe-claro">ACTIVIDAD </th>
 
    </tr>
 
