@@ -31,15 +31,11 @@
 
    
 // ------------------------------------
-    if($reg_usuario!=0 ){ 
-      $_SESSION['id'] = 0;
-      ?>
-      <!-- <script>
-         window.location="existe.php"
-      </script> -->
-      <?php
-           die();
-   }else{
+  if($reg_usuario != 0) {
+    $_SESSION['id'] = 0;
+    header("Location: existe.php");
+    exit; // Termina la ejecución del script después de redirigir
+  }else{
    
 
 
