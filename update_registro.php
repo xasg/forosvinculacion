@@ -34,9 +34,9 @@
     if($reg_usuario!=0 ){ 
       $_SESSION['id'] = 0;
       ?>
-      <script>
+      <!-- <script>
          window.location="existe.php"
-      </script>
+      </script> -->
       <?php
            die();
    }else{
