@@ -31,8 +31,18 @@
 
    
 // ------------------------------------
-    if($reg_usuario==0 ){ 
-      insert_registro($apaterno, $amaterno, $nombre, $email, $tel_ins, $ext, $tel_movil, $region, $entidad, $organizacion, $nom_org, $nom_org2, $cargo, $cargo2, $otro_cargo, $otro_cargo2, $mesa1, $catering);   
+    if($reg_usuario!=0 ){ 
+      ?>
+      <script>
+         window.location="existe.php"
+      </script>
+      <?php
+           die();
+   }else{
+   
+
+
+    insert_registro($apaterno, $amaterno, $nombre, $email, $tel_ins, $ext, $tel_movil, $region, $entidad, $organizacion, $nom_org, $nom_org2, $cargo, $cargo2, $otro_cargo, $otro_cargo2, $mesa1, $catering);   
        $id_usuario =acces_registro($email,$region);
        $id_user=$id_usuario['id_usuario'];
        $d_nombre=$id_usuario['dt_nombre']." ".$id_usuario['dt_apaterno']." ".$id_usuario['dt_amaterno'];
@@ -267,8 +277,7 @@
           </script>
       
       <?php
-   }else{
-   
+
       // $id_usuario =acces_registro($email);
       // $id_user=$id_usuario['id_usuario'];
       // $_SESSION["id"]=$id_usuario['id_usuario'];  
@@ -279,12 +288,7 @@
       //   header("Location: limite.php");
       // }
    //caso contario (else) es porque ese user ya esta registrado 
-    ?>
-   <script>
-      window.location="existe.php"
-   </script>
-   <?php
-        die();
+
       }
       }
   
