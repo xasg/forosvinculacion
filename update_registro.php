@@ -32,8 +32,9 @@
    
 // ------------------------------------
   if($reg_usuario != 0) {
-    $_SESSION['id'] = acces_registro($email,$region);
+    $id_usuario =acces_registro($email,$region);
     $id_user=$id_usuario['id_usuario'];
+    $_SESSION['id'] = $id_user;
     header("Location: existe.php");
     exit; // Termina la ejecución del script después de redirigir
   }else{
