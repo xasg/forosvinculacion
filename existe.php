@@ -2,9 +2,9 @@
 // Se agrega validacion de registro para poder acceder a ventana de existe
    session_start();  
    include_once('databases_registro.php'); 
-   // if($_SESSION['id']== false){
-   //  header("Location:index.html");
-   // }
+   if($_SESSION['id']== false){
+    header("Location:index.html");
+   }
 // -----------------------------------
    mysqli_set_charset( $mysqli, 'utf8');  
    $id=$_SESSION["id"];
