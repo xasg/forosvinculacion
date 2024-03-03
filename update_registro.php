@@ -32,6 +32,7 @@
    
 // ------------------------------------
     if($reg_usuario!=0 ){ 
+      $_SESSION['id'] = 0;
       ?>
       <script>
          window.location="existe.php"
