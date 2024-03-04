@@ -10,7 +10,7 @@ $id_user = $_SESSION["id_user"];
 $var_reg = $_SESSION["region"];
 $nom_region = $_SESSION["nom_region"];
 // Funcion para obtener el listado de participantes por region
-$registros = run_registros_tall_acept($var_reg); // esta funcion solo muestra a los usuarios de tp_status  1  
+ // esta funcion solo muestra a los usuarios de tp_status  1  
 ?>
 
 <!DOCTYPE html>
@@ -99,7 +99,34 @@ $registros = run_registros_tall_acept($var_reg); // esta funcion solo muestra a 
 
 <body>
 <p>
-el valor de la region es <?php  echo $var_reg ?>
+el valor de la region es 
+
+<?php
+// Supongo que $var_reg contiene los datos necesarios
+echo $var_reg;
+
+$registros =run_registros_region(6)
+?>
+
+<table border = '1' >
+    <thead>
+        <tr>
+            <th>Usuario</th>
+            <th>Nombre</th>
+            <th>Nombre de la Organización</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php while ($registro = $registros->fetch_assoc()): ?>
+            <tr>
+                <td><?php echo $registro['id_usuario']; ?></td>
+                <td><?php echo $registro['dt_nombre']; ?></td>
+                <td><?php echo $registro['dt_nom_org']; ?></td>
+            </tr>
+        <?php endwhile; ?>
+    </tbody>
+</table>
+
 
 </p>
 
@@ -188,24 +215,7 @@ el valor de la region es <?php  echo $var_reg ?>
                     <div id="texto1" style="display: none;">
                     <br> 
 
-                    <table border="1">
-                      <thead>
-                        <tr>
-                          <th>Usuario</th>
-                          <th>Nombre</th>
-                          <th>Nombre de la Organización</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <?php foreach ($registros as $registro): ?>
-                        <tr>
-                          <td><?php echo $registro['dt_usuario']; ?></td>
-                          <td><?php echo $registro['dt_nombre']; ?></td>
-                          <td><?php echo $registro['dt_nom_org']; ?></td>
-                        </tr>
-                        <?php endforeach; ?>
-                      </tbody>
-                    </table>
+                    
 
                         
                     
