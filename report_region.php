@@ -98,7 +98,10 @@ $registros = run_registros_tall_acept($var_reg); // esta funcion solo muestra a 
 </head>
 
 <body>
+<p>
+el valor de la region es <?php  echo $var_reg ?>
 
+</p>
 
    <!-- Menu de navegación -->
     <div class="container-fluid mx-0 px-0" style="background-color: #8D203D;">
@@ -139,7 +142,7 @@ $registros = run_registros_tall_acept($var_reg); // esta funcion solo muestra a 
   <div class="container">
   <div class="row">
      <div class="col-md-12 text-center"><br><br>
-      <h3>REPORTE DE LA REGIÓN 01 <?php echo $nom_region; ?></h3>
+      <h3>REPORTE DE LA REGIÓN  <?php echo $nom_region; ?></h3>
      </div>
 
 
@@ -152,7 +155,7 @@ $registros = run_registros_tall_acept($var_reg); // esta funcion solo muestra a 
                         <a data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
                             aria-controls="collapseOne">
                             <div class="view overlay">
-                                <button type="button" class="btn btn-outline-danger btn-lg" onclick="mostrarTexto('texto1')">
+                                <button type="button" class="btn btn-outline-danger btn-lg" style="width: 200px; height: 50px;" onclick="mostrarTexto('texto1')">
                                     <p>VER REGISTRO</p>
                                 </button>
                             </div>
@@ -162,19 +165,64 @@ $registros = run_registros_tall_acept($var_reg); // esta funcion solo muestra a 
                         <a data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
                             aria-controls="collapseTwo">
                             <div class="view overlay">
-                                <button type="button" class="btn btn-outline-danger btn-lg" onclick="mostrarTexto('texto2')">
+                                <!--<button type="button" class="btn btn-outline-danger "style="width: 200px; height: 50px;" onclick="mostrarTexto('texto2')">
+                                    <p>REGISTRAR</p>
+                                </button>-->
+                            </div>
+                        </a>
+                    </div>
+                    <div class="pad  col-lg-2 col-md-2 text-center">
+                        <a data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                            aria-controls="collapseTwo">
+                            <div class="view overlay">
+                                <button type="button" class="btn btn-outline-danger "style="width: 200px; height: 50px;" onclick="mostrarTexto('texto2')">
                                     <p>REGISTRAR</p>
                                 </button>
                             </div>
                         </a>
                     </div>
+                   
                     
+                    <!---------------------------------------------------------------->
+
                     <div id="texto1" style="display: none;">
-                        <br>
-                        <p>Este es una breve descripcion del documento 1</p>
-                        <br>
+                    <br> 
+
+                    <table border="1">
+                      <thead>
+                        <tr>
+                          <th>Usuario</th>
+                          <th>Nombre</th>
+                          <th>Nombre de la Organización</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php foreach ($registros as $registro): ?>
+                        <tr>
+                          <td><?php echo $registro['dt_usuario']; ?></td>
+                          <td><?php echo $registro['dt_nombre']; ?></td>
+                          <td><?php echo $registro['dt_nom_org']; ?></td>
+                        </tr>
+                        <?php endforeach; ?>
+                      </tbody>
+                    </table>
+
                         
+                    
+                    
+
+
+
+
+
+
+                        
+                    
                     </div>
+                    <!------------------------------------------------------------------->
+
+
+
                     <div id="texto2" style="display: none;">
                         <br>
                         <p>Este es una breve descripcion del documento 2</p>
