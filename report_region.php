@@ -38,6 +38,60 @@ $registros = run_registros_tall_acept($var_reg); // esta funcion solo muestra a 
    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <style>
+      .btn-outline-danger{
+         color:#10312B;
+         border-color:#235b4e;
+         transition: all linear .6s;
+      }
+      .btn-outline-danger:hover{
+         background: linear-gradient(to top ,#10312B,#235b4e);
+         border-color:  #10312B;
+         transition: all linear .6s;
+      }
+
+      body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .verde{
+    background:#245c4f !important;
+    color: #fff !important; 
+    font-size: 20px !important;
+    border-bottom: 2px solid #fff !important;
+}
+
+.cafe-claro{
+    background:#efe6d5 !important; 
+    color: #000 !important; 
+    font-size: 20px;
+}
+.cafe-claro-size{
+    background:#efe6d5 !important; 
+    color: #000 !important; 
+    text-align: left !important;
+}
+.text-left{
+    text-align: left !important;
+    width:70%;
+}
+
+.cafe{
+    background:#bfa27a; 
+    color: #fff;
+}
+.nav.nav-tabs .nav-item a.nav-link {
+    color: #8D203D ;
+}
+.nav.nav-tabs .nav-item a.nav-link:hover {
+    color: #fff ;
+    background:#8D203D !important;
+}
+/* .active{
+    background: #8D203D !important;
+    color:#fff !important;
+} */
+   </style>
 </head>
 
 <body>
@@ -46,21 +100,33 @@ $registros = run_registros_tall_acept($var_reg); // esta funcion solo muestra a 
    <!-- Menu de navegación -->
     <div class="container-fluid mx-0 px-0" style="background-color: #8D203D;">
         <div class="container">
-            <nav class="navbar navbar-dark navbar-expand-lg navigation">
-                <img alt="Responsive image" class="img-fluid" src="img/logo.png" width="150">
-                <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-                    class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
-                    <span class="navbar-toggler-icon"> </span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mx-auto navigation" style="width:0px;">                        
-                        <li class="nav-item activo">
-                            <a class="nav-link" href="./logout.php"> <!--Se agrega redireccion a logout-->
-                                SALIR
+        <nav class="navbar navbar-dark navbar-expand-lg navigation">
+               <a href="index.html">
+                  <img alt="Responsive image" class="img-fluid" src="img/logo_2024.png" width="150">
+               </a>
+               <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+                  <span class="navbar-toggler-icon"> </span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mx-auto" style="width:0px;">
+                     <li class="nav-item active">
+                        <a class="nav-link" href="index.html">
+                           INICIO
+                        </a>
+                     </li>
+                    <!-- <li class="nav-item active activo">
+                        <a class="nav-link" href="#">
+                           PARTICIPACIÓN
+                        </a>
+                     </li>-->
+                     <!-- <li class="nav-item active">
+                            <a class="nav-link" href="./agenda.php">
+                                AGENDA
                             </a>
-                        </li>
-                    </ul>
-                </div>
+                        </li> -->
+
+                  </ul>
+               </div>
             </nav>
         </div>
     </div>
@@ -70,7 +136,7 @@ $registros = run_registros_tall_acept($var_reg); // esta funcion solo muestra a 
   <div class="container">
   <div class="row">
      <div class="col-md-12 text-center"><br><br>
-      <h3>REPORTE DE LA REGIÓN <?php echo $nom_region; ?></h3>
+      <h3>REPORTE DE LA REGIÓN 01 <?php echo $nom_region; ?></h3>
      </div>
 
      <form action="genera_report.php" method="POST">
