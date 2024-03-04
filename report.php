@@ -1,9 +1,9 @@
 <?php
 session_start();
-if ($_SESSION['id_user'] == false) {
-  # code...
-  header("Location:login.php");
-}
+// if ($_SESSION['id_user'] == false) {
+//   # code...
+//   header("Location:login.php");
+// }
 include_once('databases_registro.php');
 mysqli_set_charset($mysqli, 'utf8');
 $var_reg=1;

@@ -83,7 +83,7 @@
       <div class="container-fluid mx-0 px-0" style="background: linear-gradient(to top ,#10312B,#235b4e);">
          <div class="container">
             <nav class="navbar navbar-dark navbar-expand-lg navigation">
-               <img alt="Responsive image" class="img-fluid" src="img/logo_2024.png" width="250">
+               <img alt="Responsive image" class="img-fluid" src="img/logo_2024.png" width="150">
                <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
                   <span class="navbar-toggler-icon"> </span>
                </button>
@@ -96,7 +96,7 @@
                      </li>
                      <!-- Se agregaron estilos -->
                      <li class="nav-item active activo">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="registro.php">
                            REGISTRO
                         </a>
                      </li>
@@ -111,12 +111,11 @@
 
         <div class="col-sm-8 col-md-8 offset-md-2 text-center"><br><br>
 
-            <h4 class="mb-0">HOLA <?php echo $participante['dt_nombre']." ".$participante['dt_apaterno']." ".$participante['dt_amaterno']; ?> YA CUENTAS CON UN REGISTRO</h4><br>   
+            <h4 class="mb-0">HOLA <?php echo $participante['dt_nombre']." ".$participante['dt_apaterno']." ".$participante['dt_amaterno']; ?> YA CUENTAS CON UN REGISTRO PARA ESTA REGIÓN</h4><br>   
             <h4 class="mb-0">Tu folio de registro es: <strong><?php echo  $folio;  ?></strong></h4><br>  
             <!-- Se eliminmo el folio y se agrego la sede del evento - (Alexis) -->
             <h4><strong>El anfitrión será: <?php echo $participante['dt_cede'] ?></strong></h4>
             <h4><strong>el día: <?php echo $participante['dt_fecha'] ?></strong></h4>
-
 
             <table class="table   table-borderless border align-middle text-center">
 
@@ -130,7 +129,7 @@
 
       <h4 class="card-title" >DÍA 2</h4>
 
-      <h5 class="card-subtitle">MESA DE EXPERTOS DE ALTO NIVEL(TITULARES DE IES)</h5>
+      <h5 class="card-subtitle"> <b>TRABAJO COLEGIADO EN PLENARIA</b></h5>
 
    </div>
 
@@ -140,7 +139,7 @@
 
       <th class="verde">HORARIO</th>
 
-      <th class="cafe-claro">ACTIVIDAD</th>
+      <th class="cafe-claro">ACTIVIDAD </th>
 
    </tr>
 
@@ -150,9 +149,9 @@
 
       <tr class="" >
 
-         <td class="verde">10:00 - 10:50</td>
+         <td class="verde">09:00 – 10:00</td>
 
-         <td class="text-left">Bienvenida y mensajes de autoridades</td>
+         <td class="text-left">Registro de asistencia de los invitados</td>
 
          
 
@@ -160,41 +159,56 @@
 
       <tr class="">
 
-         <td class="verde">10:50 - 11:00</td>
+         <td class="verde">10:00 - 11:10</td>
 
-         <td class="text-left cafe-claro-size">Fotografía oficial</td>
+         <td class="text-left cafe-claro-size">Inauguración oficial del Foro de Vinculación (Transmisión en vivo por canales oficiales)</td>
+
+      </tr>
+
+      <!-- <tr class="">
+
+         <td class="verde">11:00 - 11:10</td>
+
+         <td class="text-left">Presentación de las Memorias de Buenas Prácticas de Vinculación</td>
+
+      </tr> -->
+
+      <tr class="">
+
+         <td class="verde">11:10 – 11:20</td>
+
+         <td class="text-left ">Fotografía oficial</td>
 
       </tr>
 
       <tr class="">
 
-         <td class="verde">11:00 - 12:20</td>
+         <td class="verde">11:20 – 11:25</td>
 
-         <td class="text-left">Emprendimiento asociativo (ESS)</td>
-
-      </tr>
-
-      <tr class="">
-
-         <td class="verde">12:20 - 14:00</td>
-
-         <td class="text-left cafe-claro-size">Educación Dual</td>
+         <td class="text-left cafe-claro-size">Resultados de los trabajos del día 1</td>
 
       </tr>
 
       <tr class="">
 
-         <td class="verde">14:00 - 14:30</td>
+         <td class="verde">11:25 – 12:00</td>
 
-         <td class="text-left">Servicio Social</td>
+         <td class="text-left ">Avances y retos por parte de las autoridades educativas estatales de la región</td>
 
       </tr>
-
       <tr class="">
 
-         <td class="verde">14:30 - 15:30</td>
+         <td class="verde">12:00 – 15:00</td>
 
-         <td class="text-left cafe-claro-size">CLAUSURA GENERAL</td>
+         <td class="text-left cafe-claro-size">Diálogo de alto nivel:
+            Intercambio entre sectores privado, público y social, en torno a los temas prioritarios de vinculación a nivel regional y estatal.</td>
+
+      </tr>
+      <tr class="">
+
+         <td class="verde">15:00 – 15:30</td>
+
+         <td class="text-left ">Conclusiones y cierre</td>
 
       </tr>
 

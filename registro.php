@@ -145,8 +145,9 @@ $region = view_region();
             <div class="row">
                <div class="col-md-12"><br><br>
                <h2>Registro de participación</h2>
-               <p>Estimado participante.  Le pedimos colocar su correo electrónico y teléfono móvil con WhatsApp, ya que las notificaciones se le estarán haciendo llegar por estos medios. Así mismo, le pedimos revisar su carpeta de correos no deseados si la confirmación de su registro no se visualiza en su bandeja principal.</p>
-               <hr>
+               <div class="alert alert-warning" role="alert">
+                  Estimado participante.  Le pedimos colocar su correo electrónico y teléfono móvil con WhatsApp, ya que las notificaciones se le estarán haciendo llegar por estos medios. Así mismo, le pedimos revisar su carpeta de correos no deseados si la confirmación de su registro no se visualiza en su bandeja principal.
+               </div>
                </div>
             </div>
                <div class="row">
@@ -318,241 +319,254 @@ $region = view_region();
                   </div>
 
                   
-<!--Mesas Sur Sureste -->
-<div id="sec_sur_sureste" style="display:none;">
-                  <table class="table table-striped table-bordered">
-                                             <thead>
-                                             </thead>
-                                             <tbody>
-                                                <tr>
-                                                   <th scope="row">
-                                                      <p>15:30 - 18:30</p>
-                                                   </th>                                                   
-                                                   <td>
-                                                      <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa"  value="01" required>
-                                                         <label class="form-check-label">
-                                                            <strong>Mesa 1: SUR SURESTE</strong>
-                                                         </label><br>
-                                                      </div>
-                                                   </td>
-                                                   <td>
-                                                      <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa" value="02" required >
-                                                         <label class="form-check-label">
-                                                           <strong>Mesa 2: SUR SURESTE</strong> 
-                                                         </label>
-                                                      </div>
-                                                   </td>
-                                                   <td table-primary>
-                                                      <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa" value="03" required >
-                                                         <label class="form-check-label">
-                                                             <strong>Mesa  3: SUR SURESTE</strong>
-                                                             </label>
-                                                      </div>
-                                                   </td>                                                   
-                                                </tr>                                                  
-                                             </tbody>
-                  </table> 
-</div>
-
-<!--Mesas centro sur -->
-<div id="sec_centro_sur" style="display:none;">
-                  <table class="table table-striped table-bordered">
-                                             <thead>
-                                             </thead>
-                                             <tbody>
-                                                <tr>
-                                                   <th scope="row">
-                                                      <p>15:30 - 18:30</p>
-                                                   </th>                                                   
-                                                   <td>
-                                                      <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa"  value="01">
-                                                         <label class="form-check-label">
-                                                            <strong>Mesa 1: CENTRO SUR</strong>
-                                                         </label><br>
-                                                      </div>
-                                                   </td>
-                                                   <td>
-                                                      <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa" value="02" >
-                                                         <label class="form-check-label">
-                                                           <strong>Mesa 2: CENTRO SUR</strong> 
-                                                         </label>
-                                                      </div>
-                                                   </td>
-                                                   <td table-primary>
-                                                      <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa" value="03" >
-                                                         <label class="form-check-label">
-                                                             <strong>Mesa  3: CENTRO SUR</strong>
-                                                             </label>
-                                                      </div>
-                                                   </td>                                                   
-                                                </tr>                                                  
-                                             </tbody>
-                  </table> 
-</div>
+               <!--Mesas Sur Sureste -->
+               <div id="sec_sur_sureste" style="display:none;">
+                  <div class="table-responsive">
+                     <table class="table table-striped table-bordered">
+                           <thead>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <th scope="row">
+                                       <p>15:30 - 18:30</p>
+                                 </th>
+                                 <td>
+                                       <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="radio" name="mesa"  value="Mesa 1: SUR SURESTE" required>
+                                          <label class="form-check-label">
+                                             <strong>Mesa 1: SUR SURESTE</strong>
+                                          </label><br>
+                                       </div>
+                                 </td>
+                                 <td>
+                                       <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="radio" name="mesa" value="Mesa 2: SUR SURESTE" required>
+                                          <label class="form-check-label">
+                                             <strong>Mesa 2: SUR SURESTE</strong> 
+                                          </label>
+                                       </div>
+                                 </td>
+                                 <td>
+                                       <div class="form-check form-check-inline">
+                                          <input class="form-check-input" type="radio" name="mesa" value="Mesa  3: SUR SURESTE" required>
+                                          <label class="form-check-label">
+                                             <strong>Mesa  3: SUR SURESTE</strong>
+                                          </label>
+                                       </div>
+                                 </td>
+                              </tr>
+                           </tbody>
+                     </table> 
+                  </div>
+               </div>
 
 
-<!--Mesas centro occidente -->
-<div id="sec_centro_occidente" style="display:none;">
-                  <table class="table table-striped table-bordered">
-                                             <thead>
-                                             </thead>
-                                             <tbody>
-                                                <tr>
-                                                   <th scope="row">
-                                                      <p>15:30 - 18:30</p>
-                                                   </th>                                                   
-                                                   <td>
-                                                      <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa"  value="01">
-                                                         <label class="form-check-label">
-                                                            <strong>Mesa 1: CENTRO OCCIDENTE</strong>
-                                                         </label><br>
-                                                      </div>
-                                                   </td>
-                                                   <td>
-                                                      <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa" value="02" >
-                                                         <label class="form-check-label">
-                                                           <strong>Mesa 2: CENTRO OCCIDENTE</strong> 
-                                                         </label>
-                                                      </div>
-                                                   </td>
-                                                   <td table-primary>
-                                                      <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa" value="03" >
-                                                         <label class="form-check-label">
-                                                             <strong>Mesa 3: CENTRO OCCIDENTE</strong>
-                                                             </label>
-                                                      </div>
-                                                   </td>                                                   
-                                                </tr>                                                  
-                                             </tbody>
-                  </table> 
-</div>
+               <!--Mesas centro sur -->
+               <div id="sec_centro_sur" style="display:none;">
+                     <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                                                   <thead>
+                                                   </thead>
+                                                   <tbody>
+                                                      <tr>
+                                                         <th scope="row">
+                                                            <p>15:30 - 18:30</p>
+                                                         </th>                                                   
+                                                         <td>
+                                                            <div class="form-check form-check-inline">
+                                                               <input class="form-check-input" type="radio" name="mesa"  value="Mesa 1: CENTRO SUR">
+                                                               <label class="form-check-label">
+                                                                  <strong>Mesa 1: CENTRO SUR</strong>
+                                                               </label><br>
+                                                            </div>
+                                                         </td>
+                                                         <td>
+                                                            <div class="form-check form-check-inline">
+                                                               <input class="form-check-input" type="radio" name="mesa" value="Mesa 2: CENTRO SUR" >
+                                                               <label class="form-check-label">
+                                                               <strong>Mesa 2: CENTRO SUR</strong> 
+                                                               </label>
+                                                            </div>
+                                                         </td>
+                                                         <td table-primary>
+                                                            <div class="form-check form-check-inline">
+                                                               <input class="form-check-input" type="radio" name="mesa" value="Mesa  3: CENTRO SUR" >
+                                                               <label class="form-check-label">
+                                                                  <strong>Mesa  3: CENTRO SUR</strong>
+                                                                  </label>
+                                                            </div>
+                                                         </td>                                                   
+                                                      </tr>                                                  
+                                                   </tbody>
+                        </table> 
+                     </div>
+               </div>
+
+
+               <!--Mesas centro occidente -->
+               <div id="sec_centro_occidente" style="display:none;">
+                     <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                                                   <thead>
+                                                   </thead>
+                                                   <tbody>
+                                                      <tr>
+                                                         <th scope="row">
+                                                            <p>15:30 - 18:30</p>
+                                                         </th>                                                   
+                                                         <td>
+                                                            <div class="form-check form-check-inline">
+                                                               <input class="form-check-input" type="radio" name="mesa"  value="Mesa 1: CENTRO OCCIDENTE">
+                                                               <label class="form-check-label">
+                                                                  <strong>Mesa 1: CENTRO OCCIDENTE</strong>
+                                                               </label><br>
+                                                            </div>
+                                                         </td>
+                                                         <td>
+                                                            <div class="form-check form-check-inline">
+                                                               <input class="form-check-input" type="radio" name="mesa" value="Mesa 2: CENTRO OCCIDENTE" >
+                                                               <label class="form-check-label">
+                                                               <strong>Mesa 2: CENTRO OCCIDENTE</strong> 
+                                                               </label>
+                                                            </div>
+                                                         </td>
+                                                         <td table-primary>
+                                                            <div class="form-check form-check-inline">
+                                                               <input class="form-check-input" type="radio" name="mesa" value="Mesa 3: CENTRO OCCIDENTE" >
+                                                               <label class="form-check-label">
+                                                                  <strong>Mesa 3: CENTRO OCCIDENTE</strong>
+                                                                  </label>
+                                                            </div>
+                                                         </td>                                                   
+                                                      </tr>                                                  
+                                                   </tbody>
+                        </table> 
+                     </div>
+               </div>
 
 
 
-<!--Mesas noreste -->
-<div id="sec_noreste" style="display:none;">
-                  <table class="table table-striped table-bordered">
-                                             <thead>
-                                             </thead>
-                                             <tbody>
-                                                <tr>
-                                                   <th scope="row">
-                                                      <p>15:30 - 18:30</p>
-                                                   </th>                                                   
-                                                   <td>
-                                                      <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa"  value="01">
-                                                         <label class="form-check-label">
-                                                            <strong>Mesa 1: NORESTE</strong>
-                                                         </label><br>
-                                                      </div>
-                                                   </td>
-                                                   <td>
-                                                      <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa" value="02" >
-                                                         <label class="form-check-label">
-                                                           <strong>Mesa 2: NORESTE</strong> 
-                                                         </label>
-                                                      </div>
-                                                   </td>
-                                                   <td table-primary>
-                                                      <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa" value="03" >
-                                                         <label class="form-check-label">
-                                                             <strong>Mesa 3: NORESTE</strong>
-                                                             </label>
-                                                      </div>
-                                                   </td>                                                   
-                                                </tr>                                                  
-                                             </tbody>
-                  </table> 
-</div>
+               <!--Mesas noreste -->
+               <div id="sec_noreste" style="display:none;">
+                     <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                                                   <thead>
+                                                   </thead>
+                                                   <tbody>
+                                                      <tr>
+                                                         <th scope="row">
+                                                            <p>15:30 - 18:30</p>
+                                                         </th>                                                   
+                                                         <td>
+                                                            <div class="form-check form-check-inline">
+                                                               <input class="form-check-input" type="radio" name="mesa"  value="Mesa 1: NORESTE">
+                                                               <label class="form-check-label">
+                                                                  <strong>Mesa 1: NORESTE</strong>
+                                                               </label><br>
+                                                            </div>
+                                                         </td>
+                                                         <td>
+                                                            <div class="form-check form-check-inline">
+                                                               <input class="form-check-input" type="radio" name="mesa" value="Mesa 2: NORESTE" >
+                                                               <label class="form-check-label">
+                                                               <strong>Mesa 2: NORESTE</strong> 
+                                                               </label>
+                                                            </div>
+                                                         </td>
+                                                         <td table-primary>
+                                                            <div class="form-check form-check-inline">
+                                                               <input class="form-check-input" type="radio" name="mesa" value="Mesa 3: NORESTE" >
+                                                               <label class="form-check-label">
+                                                                  <strong>Mesa 3: NORESTE</strong>
+                                                                  </label>
+                                                            </div>
+                                                         </td>                                                   
+                                                      </tr>                                                  
+                                                   </tbody>
+                        </table> 
+                     </div>
+               </div>
 
-<!--Mesas noroeste -->
-<div id="sec_noroeste" style="display:none;">
-                  <table class="table table-striped table-bordered">
-                                             <thead>
-                                             </thead>
-                                             <tbody>
-                                                <tr>
-                                                   <th scope="row">
-                                                      <p>15:30 - 18:30</p>
-                                                   </th>                                                   
-                                                   <td>
-                                                      <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa"  value="01">
-                                                         <label class="form-check-label">
-                                                            <strong>Mesa 1: NOROESTE</strong>
-                                                         </label><br>
-                                                      </div>
-                                                   </td>
-                                                   <td>
-                                                      <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa" value="02" >
-                                                         <label class="form-check-label">
-                                                           <strong>Mesa 2: NOROESTE</strong> 
-                                                         </label>
-                                                      </div>
-                                                   </td>
-                                                   <td table-primary>
-                                                      <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa" value="03" >
-                                                         <label class="form-check-label">
-                                                             <strong>Mesa 3: NOROESTE</strong>
-                                                             </label>
-                                                      </div>
-                                                   </td>                                                   
-                                                </tr>                                                  
-                                             </tbody>
-                  </table> 
-</div>
+               <!--Mesas noroeste -->
+               <div id="sec_noroeste" style="display:none;">
+                     <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                                                   <thead>
+                                                   </thead>
+                                                   <tbody>
+                                                      <tr>
+                                                         <th scope="row">
+                                                            <p>15:30 - 18:30</p>
+                                                         </th>                                                   
+                                                         <td>
+                                                            <div class="form-check form-check-inline">
+                                                               <input class="form-check-input" type="radio" name="mesa"  value="Mesa 1: NOROESTE">
+                                                               <label class="form-check-label">
+                                                                  <strong>Mesa 1: NOROESTE</strong>
+                                                               </label><br>
+                                                            </div>
+                                                         </td>
+                                                         <td>
+                                                            <div class="form-check form-check-inline">
+                                                               <input class="form-check-input" type="radio" name="mesa" value="Mesa 2: NOROESTE" >
+                                                               <label class="form-check-label">
+                                                               <strong>Mesa 2: NOROESTE</strong> 
+                                                               </label>
+                                                            </div>
+                                                         </td>
+                                                         <td table-primary>
+                                                            <div class="form-check form-check-inline">
+                                                               <input class="form-check-input" type="radio" name="mesa" value="Mesa 3: NOROESTE" >
+                                                               <label class="form-check-label">
+                                                                  <strong>Mesa 3: NOROESTE</strong>
+                                                                  </label>
+                                                            </div>
+                                                         </td>                                                   
+                                                      </tr>                                                  
+                                                   </tbody>
+                        </table> 
+                     </div>
+               </div>
 
-<!--Mesas noreste -->
-<div id="sec_metropolitana" style="display:none;">
-                  <table class="table table-striped table-bordered">
-                                             <thead>
-                                             </thead>
-                                             <tbody>
-                                                <tr>
-                                                   <th scope="row">
-                                                      <p>15:30 - 18:30</p>
-                                                   </th>                                                   
-                                                   <td>
-                                                      <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa"  value="01">
-                                                         <label class="form-check-label">
-                                                            <strong>Mesa 1: METROPOLITANA</strong>
-                                                         </label><br>
-                                                      </div>
-                                                   </td>
-                                                   <td>
-                                                      <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa" value="02" >
-                                                         <label class="form-check-label">
-                                                           <strong>Mesa 2: METROPOLITANA</strong> 
-                                                         </label>
-                                                      </div>
-                                                   </td>
-                                                   <td table-primary>
-                                                      <div class="form-check form-check-inline">
-                                                         <input class="form-check-input" type="radio" name="mesa" value="03" >
-                                                         <label class="form-check-label">
-                                                             <strong>Mesa 3: METROPOLITANA</strong>
-                                                             </label>
-                                                      </div>
-                                                   </td>                                                   
-                                                </tr>                                                  
-                                             </tbody>
-                  </table> 
+               <!--Mesas noreste -->
+               <div id="sec_metropolitana" style="display:none;">
+                     <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                                                   <thead>
+                                                   </thead>
+                                                   <tbody>
+                                                      <tr>
+                                                         <th scope="row">
+                                                            <p>15:30 - 18:30</p>
+                                                         </th>                                                   
+                                                         <td>
+                                                            <div class="form-check form-check-inline">
+                                                               <input class="form-check-input" type="radio" name="mesa"  value="Mesa 1: METROPOLITANA">
+                                                               <label class="form-check-label">
+                                                                  <strong>Mesa 1: METROPOLITANA</strong>
+                                                               </label><br>
+                                                            </div>
+                                                         </td>
+                                                         <td>
+                                                            <div class="form-check form-check-inline">
+                                                               <input class="form-check-input" type="radio" name="mesa" value="Mesa 2: METROPOLITANA" >
+                                                               <label class="form-check-label">
+                                                               <strong>Mesa 2: METROPOLITANA</strong> 
+                                                               </label>
+                                                            </div>
+                                                         </td>
+                                                         <td table-primary>
+                                                            <div class="form-check form-check-inline">
+                                                               <input class="form-check-input" type="radio" name="mesa" value="Mesa 3: METROPOLITANA" >
+                                                               <label class="form-check-label">
+                                                                  <strong>Mesa 3: METROPOLITANA</strong>
+                                                                  </label>
+                                                            </div>
+                                                         </td>                                                   
+                                                      </tr>                                                  
+                                                   </tbody>
+                        </table> 
+                     </div>
                </div>
 
 
@@ -566,7 +580,7 @@ $region = view_region();
                   </div>
                   <div class="col-xl-1">  
                   <div class="form-check">
-                  <input class="form-check-input" type="radio" name="catering" required>
+                  <input class="form-check-input" type="radio" name="catering" value="si" required>
                   <label class="form-check-label">
                      si
                   </label>
@@ -575,7 +589,7 @@ $region = view_region();
 
                   <div class="col-xl-1">  
                   <div class="form-check">
-                  <input class="form-check-input" type="radio" name="catering" required>
+                  <input class="form-check-input" type="radio" name="catering" value="no" required>
                   <label class="form-check-label">
                      no
                   </label>
@@ -602,13 +616,13 @@ $region = view_region();
                      <tbody>
                         <!-- ------------------------------------------------------------------------------------ -->
                      <tr>
-                           <th scope="row" class="col-md-2 text-center align-middle">
-                              <p>09:00 – 16:00</p>    <!-- Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
-                           </th>
+                           <!-- <th scope="row" class="col-md-2 text-center align-middle"> -->
+                              <!-- <p>09:00 – 16:00</p>    Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
+                           <!-- </th> -->
                            <td >
                               <div class="form-check form-check-inline">
                                  <label class="form-check-label">
-                                    <strong>AGENDA </strong>
+                                    <!-- <strong>AGENDA </strong> -->
                                  </label><br>
 
                      <table class="table   table-borderless border align-middle text-center">
@@ -621,7 +635,7 @@ $region = view_region();
       
                            <div class="card-body cafe text-center" >
       
-                              <h4 class="card-title" >DÍA 2</h4>
+                              <!-- <h4 class="card-title" >DÍA 2</h4> -->
       
                               <h5 class="card-subtitle"> <b>TRABAJO COLEGIADO EN PLENARIA</b></h5>
       
@@ -653,25 +667,25 @@ $region = view_region();
       
                               <tr class="">
       
-                                 <td class="verde">10:00 - 11:00</td>
+                                 <td class="verde">10:00 - 11:10</td>
       
                                  <td class="text-left cafe-claro-size">Inauguración oficial del Foro de Vinculación (Transmisión en vivo por canales oficiales)</td>
       
                               </tr>
       
-                              <tr class="">
+                              <!-- <tr class="">
       
                                  <td class="verde">11:00 - 11:10</td>
       
-                                 <td class="text-left">Presentación de las Memorias de Buenas Prácticas de Vinculación y entrega de los Marcos Generales de Educación Dual y Emprendimiento Asociativo</td>
+                                 <td class="text-left">Presentación de las Memorias de Buenas Prácticas de Vinculación</td>
       
-                              </tr>
+                              </tr> -->
       
                               <tr class="">
       
                                  <td class="verde">11:10 – 11:20</td>
       
-                                 <td class="text-left cafe-claro-size">Fotografía oficial</td>
+                                 <td class="text-left ">Fotografía oficial</td>
       
                               </tr>
       
@@ -679,7 +693,7 @@ $region = view_region();
       
                                  <td class="verde">11:20 – 11:25</td>
       
-                                 <td class="text-left">Resultados de los trabajos del día 1</td>
+                                 <td class="text-left cafe-claro-size">Resultados de los trabajos del día 1</td>
       
                               </tr>
       
@@ -687,14 +701,14 @@ $region = view_region();
       
                                  <td class="verde">11:25 – 12:00</td>
       
-                                 <td class="text-left cafe-claro-size">Avances y retos por parte de las autoridades educativas estatales de la región</td>
+                                 <td class="text-left ">Avances y retos por parte de las autoridades educativas estatales de la región</td>
       
                               </tr>
                               <tr class="">
       
                                  <td class="verde">12:00 – 15:00</td>
       
-                                 <td class="text-left">Diálogo de alto nivel:
+                                 <td class="text-left cafe-claro-size">Diálogo de alto nivel:
                                     Intercambio entre sectores privado, público y social, en torno a los temas prioritarios de vinculación a nivel regional y estatal.</td>
       
                               </tr>
@@ -702,7 +716,7 @@ $region = view_region();
       
                                  <td class="verde">15:00 – 15:30</td>
       
-                                 <td class="text-left cafe-claro-size">Conclusiones y cierre</td>
+                                 <td class="text-left ">Conclusiones y cierre</td>
       
                               </tr>
       
