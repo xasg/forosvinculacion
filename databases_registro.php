@@ -10,6 +10,13 @@ function view_region()
   return $result->fetch_assoc();
 }
 
+function get_region($idreg)
+{
+  global $mysqli;
+  $query = "SELECT dt_nombre_region as nombre FROM cat_region WHERE id_cat_region = '{$idreg}' ";
+  $res =$mysqli->query($query);
+  return $res->fetch_assoc();
+}
 
 function view_entidad()
 {
@@ -49,7 +56,72 @@ function run_participante($id)
   $result = $mysqli->query($sql);
    return $result->fetch_assoc();
 }
+// fUNCION PARA OBTENER PARTICIPANTES POR REGION - LISTA DE ASISTENCIA
+function run_participante_region($id, $region,$dia)
+{
+    global $mysqli;
+    if ($dia == 1) {
+    $sql = "SELECT *,usuario.id_usuario as idusuario,usuario.dt_region as region FROM usuario
+            LEFT JOIN cat_region ON(cat_region.id_cat_region=usuario.dt_region)
+            LEFT JOIN asistencias ON(usuario.id_usuario = asistencias.id_usuario)
+            WHERE usuario.dt_region = '{$region}' AND usuario.id_usuario <> '{$id}' AND  asistencias.dt_fecha IS NULL ";
+    $result = $mysqli->query($sql);
+    return $result;
 
+    }elseif ($dia == 2) {
+      global $mysqli;
+      $fech = '2024-03-06';
+      $sql = "SELECT *, usuario.id_usuario as idusuario, usuario.dt_region as region FROM usuario
+      LEFT JOIN cat_region ON (cat_region.id_cat_region=usuario.dt_region)
+      LEFT JOIN asistencias ON (usuario.id_usuario = asistencias.id_usuario)
+      WHERE usuario.dt_region = '{$region}' AND usuario.id_usuario <> '{$id}' AND (asistencias.dt_fecha IS NULL OR (SELECT COUNT(asistencias.id_usuario) FROM asistencias WHERE asistencias.id_usuario = usuario.id_usuario ) <= 1 )";
+$result = $mysqli->query($sql);
+      // $sql = "SELECT *, usuario.id_usuario as idusuario, usuario.dt_region as region FROM usuario
+      //         LEFT JOIN cat_region ON (cat_region.id_cat_region=usuario.dt_region)
+      //         LEFT JOIN asistencias ON (usuario.id_usuario = asistencias.id_usuario)
+      //         WHERE  (usuario.dt_region = '{$region}'  AND usuario.id_usuario <> '{$id}'   AND (asistencias.dt_fecha < '{$fech}' AND (SELECT COUNT(asistencias.id_usuario) FROM asistencias WHERE asistencias.id_usuario = usuario.id_usuario) <= 1 ) )";
+      // $result = $mysqli->query($sql);
+      // $sql = "SELECT *, usuario.id_usuario as idusuario, usuario.dt_region as region FROM usuario
+      //          LEFT JOIN cat_region ON (cat_region.id_cat_region=usuario.dt_region)
+      //          LEFT JOIN asistencias ON (usuario.id_usuario = asistencias.id_usuario)
+      //          WHERE  asistencias.dia = 1 ";
+      //   $result = $mysqli->query($sql);
+      // if ($result->fetch_assoc() >= 0 || $result->fetch_assoc() == 0) {
+        // $sql = "SELECT *,usuario.id_usuario as idusuario,usuario.dt_region as region FROM usuario
+        // LEFT JOIN cat_region ON(cat_region.id_cat_region=usuario.dt_region)
+        // LEFT JOIN asistencias ON(usuario.id_usuario = asistencias.id_usuario)
+        // WHERE usuario.dt_region = '{$region}' AND usuario.id_usuario <> '{$id}' AND  (asistencias.dia IS NULL OR asistencias.dia = 1)  ";
+        // $result = $mysqli->query($sql);
+        // return $result;
+      // }else{
+        return $result;
+      // }
+      
+    }
+
+}
+
+function run_participante_region_d2($id, $region)
+{
+    global $mysqli;
+    // $fech = date("d")  ;
+    $sql = "SELECT *,asistencias.id_usuario as idusuario, asistencias.dt_region as region, count(asistencias.id_usuario) as num_asistencias  FROM asistencias
+            LEFT JOIN usuario ON(usuario.id_usuario = asistencias.id_usuario)
+            WHERE asistencias.dt_region = '{$region}' AND asistencias.id_usuario <> '{$id}' group by asistencias.id_usuario,asistencias.dt_region";
+    $result = $mysqli->query($sql);
+    return $result;
+}
+
+// fUNCION PARA OBTENER EL ID DE REGION DEPENDIENDO DEL CORREO
+function acces_user($id)
+{
+  global $mysqli;
+  $sql = "SELECT * FROM usuario
+          LEFT JOIN cat_region ON(cat_region.id_cat_region=usuario.dt_region)
+          WHERE id_usuario = '{$id}' AND tp_usuario != 1 ";
+  $result = $mysqli->query($sql);
+   return $result->fetch_assoc();
+}
 // Funcion para obtener el resumen de participantes por region
 function get_region_users()
 {

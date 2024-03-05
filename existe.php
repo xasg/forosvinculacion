@@ -1,16 +1,17 @@
 <?php 
 // Se agrega validacion de registro para poder acceder a ventana de existe
-   session_start();  
-   include_once('databases_registro.php'); 
-   if($_SESSION['id']== false){
-    header("Location:index.html");
-   }
+session_start();  
+include_once('databases_registro.php'); 
+//    if($_SESSION['id']== false){
+//     header("Location:index.html");
+//    }
 // -----------------------------------
-   mysqli_set_charset( $mysqli, 'utf8');  
-   $id=$_SESSION["id"];
-   $participante = run_participante($id);   
-   $mesa = $participante['dt_mesa1'];
-   $folio = $participante['id_usuario'];
+mysqli_set_charset( $mysqli, 'utf8');  
+$id=$_SESSION["id"];
+$participante = run_participante($id);   
+$mesa = $participante['dt_mesa1'];
+$folio = $participante['id_usuario'];
+
    ?>
 <!DOCTYPE html>
 <html lang="es">

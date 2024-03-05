@@ -6,4 +6,5 @@ include_once('config.php');
 		echo 'Conexion Fallida : ', mysqli_connect_error();
 		exit();
 	}
+	date_default_timezone_set('America/Mexico_City');
 ?>
