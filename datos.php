@@ -405,6 +405,39 @@
       </div>
 
       <div class="col-sm-12 col-md-12"><br><br>
+         <?php     
+            
+            switch ($region) 
+            {
+               case 01:
+                  $cede = "TecNM - Campus Mérida";
+                  $direccion  = "Av. Tecnológico S/N 97118 Mérida, Yucatán" ;
+               break;
+                 
+               case 02: 
+                  $cede = "Hotel Emporio Acapulco";
+                  $direccion  = "Av. Costera Miguel Alemas # 121, Acapulco, Guerrero" ;
+               break;
+               case 03: 
+                  $cede = "Universidad Tecnológica de Nayarit";
+                  $direccion  = " Carretera México 200, Km 9 63786, Col, 24 de Febrero, Xalisco, Nay." ;
+               break;
+               case 04: 
+                  $cede = "Universidad Politécnica de Zacatecas";
+                  $direccion  = "Plan de Pardillo Sn, Parque Industrial, 99059 Fresnillo, Zac." ;
+               break;
+               case 05: 
+                  $cede = "ICC La Paz";
+                  $direccion  = "México 11 516, 23060 La Paz, B.C.S." ;
+               break;
+               
+                  default:
+                  break;
+            }
+
+         ?>
+         <h3 class="card-subtitle text-center"><strong> La sede será en <?php  echo $cede  ?> en la siguiente dirección: <?php echo $direccion  ?>   <strong></h3>
+         <br>
          <iframe src = <?php echo $participante['dt_ubicacion'] ?> width='100%' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>
       </div>
       <br><br>

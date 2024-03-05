@@ -154,6 +154,28 @@ function run_registros_tall($reg)
   // ---------------------------------------------------------------------------------Query Modificada, para Ocultarla de la vista a los Admin y correos indicados
   return $mysqli->query($sql);   
 }
+
+
+function run_registros_region($reg)
+{
+  global $mysqli;
+  $reg = 1;
+  $sql =" SELECT `id_usuario`, `dt_nombre`,`dt_email`,`dt_nom_org`
+  FROM `usuario` 
+  WHERE dt_region = 01 "; 
+
+
+if ($mysqli->query($sql) === TRUE) 
+    {
+        echo "Consulta ejecutada con éxito";
+    } else 
+    {
+        echo "Error al ejecutar la consulta: " . $mysqli->error;
+    }
+// ---------------------------------------------------------------------------------Query Modificada, para Ocultarla de la vista a los Admin y correos indicados
+  return $mysqli->query($sql);   
+
+}
 // Funcion solo para aceptados por region
 function run_registros_tall_acept($reg){
   global $mysqli;

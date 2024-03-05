@@ -199,6 +199,10 @@
                        </td>
                      </tr>
                      <tr>
+                        <td align="center" style="padding:0px 0 10px 0;">
+                          <h3>A continuación le pedimos descargar el siguiente documento y leerlo.</h3>                          
+                          <h4>Ficha de Anfitrionia</h4><a href="http://forosdevinculacion.anuies.mx/docs/Anfitrionia'.$region.'.pdf">Descargar</a>
+                        </td>
                      </tr>
                      
                      <tr>
