@@ -75,7 +75,7 @@
           $ubicacion = "https://maps.app.goo.gl/Hr5ktMNuSyuCso5v8";
          break;
         case 02:
-          $ubicacion = "https://maps.app.goo.gl/hCWtfTvkzZvRRP9WA";
+          $ubicacion = "https://maps.app.goo.gl/ztK59NhB679ZtNNi9";
          break;
         case 03:
           $ubicacion = "https://maps.app.goo.gl/87Ur4XKfHeiG1AyX8";
@@ -84,7 +84,7 @@
           $ubicacion = "https://maps.app.goo.gl/skD52tqFEuQkE1yv6";
          break;
         case 05:
-          $ubicacion = "https://maps.app.goo.gl/pFSv6tNxSz6cWNWQA";
+          $ubicacion = "https://maps.app.goo.gl/ee1BLBJevoNVkcf4A";
          break;
         case 06:
           $ubicacion = "https://maps.app.goo.gl/QCZ7VUgEJhhX1Byz6";
