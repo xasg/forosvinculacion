@@ -370,7 +370,7 @@
             }
 
             ?>
-            <h3 class="card-subtitle text-center"><strong> La sede sera en <?php  echo $cede  ?> en la siguiente dirección: <?php echo $direccion  ?>   <strong></h3>
+            <h3 class="card-subtitle text-center"><strong> La sede será en <?php  echo $cede  ?> en la siguiente dirección: <?php echo $direccion  ?>   <strong></h3>
             <br>
 
             <iframe src='<?php echo $participante['dt_ubicacion']; ?>' width='100%' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>

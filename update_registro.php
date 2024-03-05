@@ -190,21 +190,23 @@
                           <td align="center" style="padding:10px 0 10px 0;">
                           <h3>
                             <p>
-                              Apreciable <strong>'.$d_nombre.'</strong> <br> Agradecemos tu participación a los <strong>Foros de Vinculación 2024</strong> <br>Región <strong>'.$_region_name.'</strong> <br> El anfitrion para esta región es:  <strong>'.$d_cede.'</strong>, el cual se llevará a cabo de manera presencial en <br>  <a href = " '.$ubicacion.'">   Da clic para conocer la  ubicacion del evento    </a>
-                              
+                              Apreciable <strong>'.$d_nombre.'</strong> <br> Agradecemos tu participación a los <strong>Foros de Vinculación 2024</strong> <br>Región <strong>'.$_region_name.'</strong> <br> El anfitrion para esta región es:  <strong>'.$d_cede.'</strong>, el cual se llevará a cabo de manera presencial en <br>  <a href = " '.$ubicacion.'">   Da clic para conocer la  ubicacion del evento    </a>                              
                             </p>
-          
-                            
                             <h1>Tu folio es:  '.$id_user.'</h1> <p>(el cual se te solicitara el dia del evento)<p>
-          
                           </h3>
                           </td>
                         </tr>
-
+                        
                         <tr>
-                        <td align="center" style="padding:20px 0 30px 0;">
-                        <img src="http://forosdevinculacion.anuies.mx/img/Logos_Institucionales.png" alt="" width="600" style="height:auto;display:block;" />
-                        </td>                   
+                          <td align="center" style="padding:0px 0 10px 0;">
+                            <h3>Para mayor información, le recomendamos descargar el siguiente documento.</h3>                          
+                            <h4>Ficha de Anfitrionia</h4><a href="http://forosdevinculacion.anuies.mx/docs/Anfitrionia'.$region.'.pdf">Descargar</a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td align="center" style="padding:20px 0 30px 0;">
+                            <img src="http://forosdevinculacion.anuies.mx/img/Logos_Institucionales.png" alt="" width="600" style="height:auto;display:block;" />
+                          </td>                   
                         </tr>  
           </table>
           
