@@ -1,22 +1,31 @@
 <?php 
-   $_SESSION['id'] = 2332;
-//    session_start();  
+//    $_SESSION['id'] = 2;
+//    $_SESSION['dt_region'] = 01;
+//    $_SESSION['dt_dia'] = 2;
+   session_start();  
    include_once('databases_registro.php');
    include_once('includes/get_Dias.php');  
-   if($_SESSION['id']== false){
+   if($_SESSION['id_user']== false){
     header("Location:index.html");
    }
 // -----------------------------------
    mysqli_set_charset( $mysqli, 'utf8');  
-   $id=$_SESSION["id"];
-   $region_id = acces_user($id);
-   $fecha = '03-22'; 
+//    $id=$_SESSION["id"];
+//    $region_id = acces_user($id);
+$id=$_SESSION["id_user"];
+$region_id = acces_user_asistencia($id);
+//    $fecha = '03-22'; 
 // $fecha = '05-16';
-   $region = $region_id['dt_region'];
-   $obtener_region = get_region($region);
-   $dia_reg = obtenerDia($region, $fecha);
-   $nombre_region = $obtener_region['nombre'];
-   $participantes = run_participante_region_d2($id,$region);   
+ 
+//    $region = $region_id['dt_region'];
+$region = $_SESSION['region'];
+   $dia_reg = $_SESSION['dt_dia'] ;
+//    $obtener_region = get_region($region);
+//    $dia_reg = obtenerDia($region, $fecha);
+//    $nombre_region = $obtener_region['nombre'];
+    // $nombre_region = $obtener_region['nombre'];
+    $nombre_region = $_SESSION["nom_region"];
+   $participantes = run_participante_region_d2($id,$region,$dia_reg);   
 //    $participantes = run_participante_region($id,$region,$dia_reg);      
    
    ?>
@@ -105,7 +114,7 @@
                         <th> Nombre Completo <input type="text" class="form-control form-control-sm input-search" data-column="1"></th>
                         <th> Institución <input type="text" class="form-control form-control-sm input-search" data-column="2"></th>
                         <th> Correo <input type="text" class="form-control form-control-sm input-search" data-column="3"></th>
-                        <th> Asistencia </th>
+                        <!-- <th> Asistencia </th> -->
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -120,17 +129,10 @@
                         <td><?= $value['dt_nombre'].' '.$value['dt_apaterno'].' '.$value['dt_amaterno']; ?></td>
                         <td><?= $value['dt_nom_org'] ? $value['dt_nom_org'] : $value['dt_nom_org2']; ?></td>
                         <td><?= $value['dt_email']; ?></td>
-                        <td>
+                        <!-- <td>
                         <?= $value['num_asistencias']; ?>
-                            <!-- <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="asistencia<?= $value['id_usuario']; ?>" id="asistio<?= $value['id_usuario']; ?>" value="si">
-                                <label class="form-check-label" for="asistio<?= $value['id_usuario']; ?>">Si</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="asistencia<?= $value['id_usuario']; ?>" id="noAsistio<?= $value['id_usuario']; ?>" value="no">
-                                <label class="form-check-label" for="noAsistio<?= $value['id_usuario']; ?>">No</label>
-                            </div> -->
-                        </td>
+
+                        </td> -->
                         <td>
                             <form action="includes/valida_asistencia.php" method="POST">
                                 <input type="text" id="idusuario" name="idusuario" value="<?= $value['idusuario']; ?>" hidden>

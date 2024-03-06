@@ -1,22 +1,30 @@
 <?php 
-   $_SESSION['id'] = 2332;
-//    session_start();  
+//    $_SESSION['id'] = 2;
+//    $_SESSION['region'] = 01;
+//    $_SESSION['dt_dia'] = 2;
+//    $_SESSION["nom_region"];
+   session_start();  
    include_once('databases_registro.php'); 
    include_once('includes/get_Dias.php'); 
-   if($_SESSION['id']== false){
+   if($_SESSION['id_user'] == false){
     header("Location:index.html");
    }
 // -----------------------------------
    mysqli_set_charset( $mysqli, 'utf8');  
-   $id=$_SESSION["id"];
-   $region_id = acces_user($id); 
-   $fecha = '03-22';
+   $id=$_SESSION["id_user"];
+   $region_id = acces_user_asistencia($id); 
+//    $fecha = date("m-d");
+//    $fecha = '03-22';
 //    $fecha = '05-16';
-   $region = $region_id['dt_region'];
-   $dia_reg = obtenerDia($region, $fecha);
+//    $region = $region_id['dt_region'];
+   $region = $_SESSION['region'];
+//    $region = $_SESSION['dt_region'];
+//    $dia_reg = obtenerDia($region, $fecha);
+   $dia_reg = $_SESSION['dt_dia'] ;
 //    print($dia_reg);
-   $obtener_region = get_region($region);
-   $nombre_region = $obtener_region['nombre'];
+//    $obtener_region = get_region($region);
+//    $nombre_region = $obtener_region['nombre'];
+   $nombre_region = $_SESSION["nom_region"];
 //    $participante = run_participante_region_d2($id);   
    $participantes = run_participante_region($id,$region,$dia_reg);   
    
@@ -36,6 +44,7 @@
         background: linear-gradient(to top ,#10312B 90%,#235b4e) !important;
         border: 2px solid #235b4e !important;
     }
+
 </style>
 
 </head>
@@ -58,7 +67,7 @@
                         </a>
                      </li>
                      <li class="nav-item active">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="logout.php">
                            SALIR
                         </a>
                      </li>
@@ -98,6 +107,25 @@
             
         </div>
     </div>
+    <style>
+            #tabla {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#tabla th, #tabla td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#tabla tr:nth-child(even) {
+  background-color: #f2f2f2 !important;
+}
+
+#tabla tr:nth-child(odd) {
+  background-color: #ffffff !important;
+}
+    </style>
     <div class="row table-responsive">
         <div class="col">
             <table class="table" id="tabla">
@@ -107,7 +135,7 @@
                         <th> Nombre Completo <input type="text" class="form-control form-control-sm input-search" data-column="1"></th>
                         <th> Institución <input type="text" class="form-control form-control-sm input-search" data-column="2"></th>
                         <th> Correo <input type="text" class="form-control form-control-sm input-search" data-column="3"></th>
-                        <th> Asistencia </th>
+                        <!-- <th> Asistencia </th> -->
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -121,7 +149,7 @@
                         <td><?= $value['dt_nombre'].' '.$value['dt_apaterno'].' '.$value['dt_amaterno']; ?></td>
                         <td><?= $value['dt_nom_org'] ? $value['dt_nom_org'] : $value['dt_nom_org2']; ?></td>
                         <td><?= $value['dt_email']; ?></td>
-                        <td>
+                        <!-- <td>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="asistencia<?= $value['id_usuario']; ?>" id="asistio<?= $value['id_usuario']; ?>" value="si">
                                 <label class="form-check-label" for="asistio<?= $value['id_usuario']; ?>">Si</label>
@@ -130,17 +158,17 @@
                                 <input class="form-check-input" type="radio" name="asistencia<?= $value['id_usuario']; ?>" id="noAsistio<?= $value['id_usuario']; ?>" value="no">
                                 <label class="form-check-label" for="noAsistio<?= $value['id_usuario']; ?>">No</label>
                             </div>
-                        </td>
+                        </td> -->
                         <td>
                             <form action="includes/valida_asistencia.php" method="POST">
                                 <input type="text" id="idusuario" name="idusuario" value="<?= $value['idusuario']; ?>" hidden>
                                 <input type="text" id="idregion" name="idregion" value="<?= $value['region']; ?>" hidden>
                                 <button type="submit" class="btn btn-success btn-sm">Validar Asistencia</button>
-                                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal<?= $value['id_usuario']; ?>">Ver detalles</button>
+                                <!-- <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal<?= $value['id_usuario']; ?>">Ver detalles</button> -->
                             </form>
                         </td>
                     </tr>
-
+                        
                 </tbody>
                 <?php }  
                     } ?>

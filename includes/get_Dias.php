@@ -17,7 +17,7 @@ function obtenerDia($id_reg, $fecha) {
             }
             break;
         case '03':
-            if ($fecha == '05-16' || $fecha == '03-22') {
+            if ($fecha == '03-05' || $fecha == '03-22') {
                 $dia = ($fecha == '05-16') ? 1 : 2;
             } else {
                 $dia = 'Fuera de la fecha';
