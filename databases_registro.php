@@ -150,19 +150,21 @@ function run_registros_tall($reg)
 function run_registros_region($reg)
 {
   global $mysqli;
-  $reg = 1;
+  
   $sql =" SELECT `id_usuario`, `dt_nombre`,`dt_email`,`dt_nom_org`
   FROM `usuario` 
-  WHERE dt_region = 01 "; 
+  WHERE dt_region = '{$reg}' "; 
 
 
-if ($mysqli->query($sql) === TRUE) 
+/*if ($mysqli->query($sql) === TRUE) 
     {
         echo "Consulta ejecutada con éxito";
     } else 
     {
-        echo "Error al ejecutar la consulta: " . $mysqli->error;
-    }
+        
+       // echo "Error al ejecutar la consulta: " . $mysqli->error;
+       echo "la region es  " . $reg;
+    }*/
 // ---------------------------------------------------------------------------------Query Modificada, para Ocultarla de la vista a los Admin y correos indicados
   return $mysqli->query($sql);   
 
