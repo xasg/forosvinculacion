@@ -10,10 +10,10 @@ function view_region()
   return $result->fetch_assoc();
 }
 
-function get_region($idreg)
+function get_region($region)
 {
   global $mysqli;
-  $query = "SELECT dt_nombre_region as nombre FROM cat_region WHERE id_cat_region = '{$idreg}' ";
+  $query = "SELECT dt_nombre_region as nombre FROM cat_region WHERE id_cat_region = '{$region}' ";
   $res =$mysqli->query($query);
   return $res->fetch_assoc();
 }
@@ -56,7 +56,7 @@ function run_participante($id)
   $result = $mysqli->query($sql);
    return $result->fetch_assoc();
 }
-// fUNCION PARA OBTENER PARTICIPANTES POR REGION - LISTA DE ASISTENCIA
+// FUNCION PARA OBTENER PARTICIPANTES POR REGION - LISTA DE ASISTENCIA
 function run_participante_region($id, $region,$dia)
 {
     global $mysqli;
@@ -88,8 +88,8 @@ function run_participante_region_d2($id, $region,$dia)
     // $fech = date("d")  ;
     $sql = "SELECT *,asistencias.id_usuario as idusuario, asistencias.dt_region as region, count(asistencias.id_usuario) as num_asistencias  FROM asistencias
             LEFT JOIN usuario ON(usuario.id_usuario = asistencias.id_usuario)
-            WHERE  asistencias.dt_region = '{$region}' AND asistencias.id_usuario <> '{$id}' group by asistencias.id_usuario,asistencias.dt_region";
-            // -- WHERE asistencias.dia = '{$dia}' AND asistencias.dt_region = '{$region}' AND asistencias.id_usuario <> '{$id}' group by asistencias.id_usuario,asistencias.dt_region";
+             WHERE asistencias.dia = '{$dia}' AND asistencias.dt_region = '{$region}' AND asistencias.id_usuario <> '{$id}' group by asistencias.id_usuario,asistencias.dt_region";
+            // -- WHERE  asistencias.dt_region = '{$region}' AND asistencias.id_usuario <> '{$id}' group by asistencias.id_usuario,asistencias.dt_region";
     $result = $mysqli->query($sql);
     return $result;
 }
@@ -101,6 +101,15 @@ function acces_user($id)
   $sql = "SELECT * FROM usuario
           LEFT JOIN cat_region ON(cat_region.id_cat_region=usuario.dt_region)
           WHERE id_usuario = '{$id}' AND tp_usuario != 1 ";
+  $result = $mysqli->query($sql);
+   return $result->fetch_assoc();
+}
+function acces_user_asistencia($id)
+{
+  global $mysqli;
+  $sql = "SELECT * FROM usuario_asistencia
+          LEFT JOIN cat_region ON(cat_region.id_cat_region=usuario_asistencia.dt_region)
+          WHERE id_usuario = '{$id}' ";
   $result = $mysqli->query($sql);
    return $result->fetch_assoc();
 }
@@ -190,6 +199,16 @@ function get_user_acces($correo)
   $sql = "SELECT * FROM usuario 
   LEFT JOIN cat_region ON(usuario.dt_region=cat_region.id_cat_region)
   WHERE dt_email = '{$correo}'";
+  $result = $mysqli->query($sql);
+  return $result->fetch_assoc();
+}
+// Funcion inicio de sesion asistencias
+function get_user_acces_asistencias($correo)
+{
+  global $mysqli;
+  $sql = "SELECT * FROM usuario_asistencia 
+  LEFT JOIN cat_region ON(usuario_asistencia.dt_region=cat_region.id_cat_region)
+  WHERE dt_correo = '{$correo}'";
   $result = $mysqli->query($sql);
   return $result->fetch_assoc();
 }
