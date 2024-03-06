@@ -195,14 +195,6 @@
                             <h1>Tu folio es:  '.$id_user.'</h1> <p>(el cual se te solicitara el dia del evento)<p>
                           </h3>
                           </td>
-<<<<<<< HEAD
-                          </tr>
-                          <tr>
-                            <td align="center" style="padding:0px 0 10px 0;">
-                            <h4>Ficha de Anfitrionia</h4><a href="http://forosdevinculacion.anuies.mx/docs/Anfitrionia'.$region.'.pdf">Descargar</a>
-                            </td>
-                          </tr>
-=======
                         </tr>
                         
                         <tr>
@@ -211,7 +203,6 @@
                             <h4>Ficha de Anfitrionia</h4><a href="http://forosdevinculacion.anuies.mx/docs/Anfitrionia'.$region.'.pdf">Descargar</a>
                           </td>
                         </tr>
->>>>>>> bc60921635747bad1c7e5e06e1f25e08f92ca4fc
                         <tr>
                           <td align="center" style="padding:20px 0 30px 0;">
                             <img src="http://forosdevinculacion.anuies.mx/img/Logos_Institucionales.png" alt="" width="600" style="height:auto;display:block;" />

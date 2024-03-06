@@ -82,6 +82,7 @@ function run_participante_region($id, $region,$dia)
 
 }
 
+
 function run_participante_region_d2($id, $region,$dia)
 {
     global $mysqli;
@@ -213,5 +214,15 @@ function get_user_acces_asistencias($correo)
   return $result->fetch_assoc();
 }
 
+
+function valida_regiones_activas(){
+  global $mysqli;
+  $query = "SELECT *, usuario_asistencia.id_usuario as idusuario,  usuario_asistencia.dt_region as region FROM usuario_asistencia
+  LEFT JOIN cat_region ON(usuario_asistencia.dt_region=cat_region.id_cat_region)
+  WHERE dt_status = 1 AND tp_usuario = 5
+  GROUP BY dt_correo order by dt_status DESC ";
+  $result = $mysqli->query($query);
+  return $result;
+}
 
 ?>
