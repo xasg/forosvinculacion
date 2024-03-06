@@ -208,7 +208,7 @@ function get_user_acces_asistencias($correo)
   global $mysqli;
   $sql = "SELECT * FROM usuario_asistencia 
   LEFT JOIN cat_region ON(usuario_asistencia.dt_region=cat_region.id_cat_region)
-  WHERE dt_correo = '{$correo}'";
+  WHERE dt_correo = '{$correo}' order by dt_status DESC limit 1 ";
   $result = $mysqli->query($sql);
   return $result->fetch_assoc();
 }

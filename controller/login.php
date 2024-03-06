@@ -36,11 +36,11 @@ if ($_POST)
                 break;
             case 5:
                 echo "El usuario es del tipo 5";
-                // if ($user['dt_status'] == 1) {
+                if ($user['dt_status'] == 1) {
                     header('Location: ../asistencia.php');
-                // } else {
-                //     header('Location: ../login.php?error=invalid-user-asistencia');
-                // }
+                } else {
+                    header('Location: ../login.php?error=invalid-user-asistencia');
+                }
                 
                 
                 // Código para el tipo 4
