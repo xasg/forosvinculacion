@@ -1,5 +1,5 @@
 <?php 
-   $_SESSION['id'] = 2332;
+   $_SESSION['id'] = 2336;
 //    session_start();  
    include_once('databases_registro.php'); 
    include_once('includes/get_Dias.php'); 
@@ -36,6 +36,7 @@
         background: linear-gradient(to top ,#10312B 90%,#235b4e) !important;
         border: 2px solid #235b4e !important;
     }
+
 </style>
 
 </head>
@@ -98,6 +99,25 @@
             
         </div>
     </div>
+    <style>
+            #tabla {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#tabla th, #tabla td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#tabla tr:nth-child(even) {
+  background-color: #f2f2f2 !important;
+}
+
+#tabla tr:nth-child(odd) {
+  background-color: #ffffff !important;
+}
+    </style>
     <div class="row table-responsive">
         <div class="col">
             <table class="table" id="tabla">
@@ -140,7 +160,7 @@
                             </form>
                         </td>
                     </tr>
-
+                        
                 </tbody>
                 <?php }  
                     } ?>

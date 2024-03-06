@@ -1,5 +1,5 @@
 <?php 
-   $_SESSION['id'] = 2332;
+   $_SESSION['id'] = 2336;
 //    session_start();  
    include_once('databases_registro.php');
    include_once('includes/get_Dias.php');  
@@ -16,7 +16,7 @@
    $obtener_region = get_region($region);
    $dia_reg = obtenerDia($region, $fecha);
    $nombre_region = $obtener_region['nombre'];
-   $participantes = run_participante_region_d2($id,$region);   
+   $participantes = run_participante_region_d2($id,$region,$dia_reg);   
 //    $participantes = run_participante_region($id,$region,$dia_reg);      
    
    ?>
