@@ -244,4 +244,27 @@ function valida_regiones_inactivas(){
   return $result;
 }
 
+// Obtener conteo de registros por region general
+
+  function conteos_region(){
+    global $mysqli;
+
+    $sql = "SELECT usuario.dt_region as region, cat_region.dt_nombre_region as nombre, COUNT(id_usuario) as usuarios FROM `usuario` 
+    LEFT JOIN cat_region ON (usuario.dt_region = cat_region.id_cat_region)
+    WHERE usuario.dt_email IS NOT NULL
+    GROUP BY usuario.dt_region ORDER BY usuario.dt_region ASC";
+    $res = $mysqli->query($sql);
+    return $res;
+  }
+  function conteos_total_region(){
+    global $mysqli;
+
+    $sql = "SELECT COUNT(id_usuario) as usuarios_total FROM `usuario` 
+    LEFT JOIN cat_region ON (usuario.dt_region = cat_region.id_cat_region)
+    WHERE usuario.dt_email IS NOT NULL;";
+    $res = $mysqli->query($sql);
+    $total = $res->fetch_assoc();
+    $registros_totales = $total['usuarios_total'];
+    return $registros_totales;
+  }
 ?>

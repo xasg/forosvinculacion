@@ -82,11 +82,11 @@ border-bottom-right-radius: .3rem;
                </button>
                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav mx-auto" style="width:0px;">
-                     <li class="nav-item active">
+                     <!-- <li class="nav-item active">
                         <a class="nav-link" href="index.html">
                            INICIO
                         </a>
-                     </li>
+                     </li> -->
                     <!-- <li class="nav-item active activo">
                         <a class="nav-link" href="#">
                            PARTICIPACIÓN
@@ -153,10 +153,10 @@ border-bottom-right-radius: .3rem;
   <section class="h-100 gradient-form" style="background-color: #eee; min-height: 100vh;">
       <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
-          <div class="col-xl-10">
+          <div class="col-sm-8 col-md-8 col-xl-5">
             <div class="card rounded-3 text-black">
               <div class="row g-0">
-                <div class="col-lg-6 gradient-custom-2-border">
+                <div class="col-lg-12 gradient-custom-2-border">
                   <div class="card-body p-md-5 mx-md-4 ">
     
                     <div class="text-center gradient-custom-2 p-4 mb-5">
@@ -203,29 +203,32 @@ border-bottom-right-radius: .3rem;
                     </form>
     
                   </div>
+                  <div class="col-md-12">
+                     <img src="img/Tira_de_Logos_IES.png" width="100%" height="100%" alt="">
+                  </div>
                 </div>
-                <div class="row col-lg-6 d-flex align-items-center ">
+                <!-- <div class="row col-lg-6 d-flex align-items-center ">
 
                   <div class="text-white ">
                      <div class="col-md-12 text-center mt-5">
-                     <!-- <img src="img/icon.png" width="40%"alt=""> -->
+                     <img src="img/icon.png" width="40%"alt="">
                      
                      </div>
-                     <!-- <h4 class="mb-4">Panel de administración Foros de Vinculación 2024</h4> -->
+                     <h4 class="mb-4">Panel de administración Foros de Vinculación 2024</h4>
                      <img src="img/colab.png" width="100%" height="100%" alt="">
-                        <!-- <p class="small mb-0">
+                        <p class="small mb-0">
                            Los Foros de Vinculacion 2024 para la Educación Dual, el Emprendimiento Asociativo, el Servicio Social Comunitario y la Industria de Alta Tecnología buscan dar seguimiento al trabajo colectivo
                         </p>
                         <p class="small mb-0">
                            Y en particular fortalecer las acciones de vinculación con los sectores productivos estratégicos, que permita potencializar las líneas de acción impulsadas, con un enfoque primordialmente regional y estatal.
-                        </p> -->
-                        <!-- <img src="img/ANUIES_FESE.png" width="100%"alt=""> -->
+                        </p>
+                        <img src="img/ANUIES_FESE.png" width="100%"alt="">
                   </div>
                   <div class="col-md-12">
                      <img src="img/Tira_de_Logos_IES.png" width="100%" height="100%" alt="">
                   </div>
                 
-               </div>
+               </div> -->
               </div>
             </div>
           </div>
