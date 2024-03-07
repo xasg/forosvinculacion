@@ -19,7 +19,7 @@
    $participantes = valida_regiones_activas();  
    $participantes_inactivos = valida_regiones_inactivas();  
    $participantes_registrados = conteos_region();  
-//    $participantes_registrados = conteos_total_region();  
+   $asistencias = conteos_asistencias_region();  
    
    ?>
 <!DOCTYPE html>
@@ -349,23 +349,25 @@
                     </thead>
                     <?php
                         // if ($dia_reg == 1  || $dia_reg == 2 ) { 
-                        foreach ($participantes_registrados as $key => $value) { 
+                        foreach ($asistencias as $key => $value) { 
                         ?>
                     <tbody>
                         <tr>
                             <td><?= $value['region']; ?></td>
                             <td><?= $value['nombre']; ?></td>
-                            <td><?= $value['usuarios']; ?></td>                       
+                            <td><?= $value['dia'] == 1 ? $value['Asistencias'] : '0'; ?></td>                       
+                            <td><?= $value['dia'] == 2 ? $value['Asistencias'] : '0'; ?></td>                       
                         </tr>
                             
                     </tbody>
                     <?php }  ?>
                     <tfoot >
-                        <tr >
+                        <!-- <tr >
                             <td style="background: linear-gradient(to top ,#10312B,#235b4e) !important; color:#fff;">Total</td>
                             <td style="background: linear-gradient(to top ,#10312B,#235b4e) !important; color:#fff;"></td>
                             <td style="background: linear-gradient(to top ,#10312B,#235b4e) !important; color:#fff;"><?php echo conteos_total_region(); ?></td>
-                        </tr>
+                            <td style="background: linear-gradient(to top ,#10312B,#235b4e) !important; color:#fff;"><?php echo conteos_total_region(); ?></td>
+                        </tr> -->
                     </tfoot>
                 </table>
             </div>

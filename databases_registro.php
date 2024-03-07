@@ -267,4 +267,16 @@ function valida_regiones_inactivas(){
     $registros_totales = $total['usuarios_total'];
     return $registros_totales;
   }
+
+  function conteos_asistencias_region()
+{
+    global $mysqli;
+    // $fech = date("d")  ;
+    $sql = "SELECT dt_region region,dt_nombre_region nombre,dia , count(dia=1) as Asistencias  FROM asistencias
+    LEFT JOIN cat_region on (cat_region.id_cat_region = asistencias.dt_region)
+    group by dia, dt_region ORDER BY dt_region,dia;";
+    $result = $mysqli->query($sql);
+    return $result;
+}
+
 ?>
