@@ -84,7 +84,7 @@ $region = $_SESSION['region'];
 <div class="container mt-5">
     <div class="row">
         <div class="col">
-        <h1 style="border-bottom: 6px solid #10312B;">Lista de asistencia Región : <?= $nombre_region; ?> , Dìa : <?= $dia_reg ?></h1>
+        <h1 style="border-bottom: 6px solid #10312B;">  Día: <?= $dia_reg ?> <?= $nombre_region; ?></h1>
             <a
                 type="button"
                 class="btn btn-primary"

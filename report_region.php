@@ -133,7 +133,7 @@ $nom_region = $_SESSION["nom_region"];
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center"><br><br>
-                <h3>REPORTE DE LA REGIÓN <?php echo $nom_region; ?></h3>
+                <h3>REGIÓN <?php echo $nom_region; ?></h3>
             </div>
         </div>
         <section>
@@ -198,32 +198,67 @@ $nom_region = $_SESSION["nom_region"];
               <form action="update_registro.php" method="POST">
                 <div class="row">
                   <div class="form-group">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" class="form-control" name="nombre" onChange="conMayusculas(this)" required=""      id="nombre"  required>
+                    <label for="nombre">Nombre(s):</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" onChange="conMayusculas(this)"   required>
                   </div>
                   <div>
+                    <br>
                     <label for="apellido1">Primer Apellido:</label>
-                    <input type="text" id="apellido1" name="apellido1" required>
+                    <input type="text" class="form-control" id="apellido1" name="apellido1" onChange="conMayusculas(this)" required>
                   </div>
                   <div>
+                    <br>
                     <label for="apellido2">Segundo Apellido:</label>
-                    <input type="text" id="apellido2" name="apellido2" required>
+                    <input type="text" class="form-control" id="apellido2" name="apellido2" onChange="conMayusculas(this)" required>
                   </div>
                 </div>
-
-                  <div>
+                <div class="col-xl-6">
+                     
+                <br>
+                <label>Organización de procedencia</label><br>
+                     <div class="form-group">
+                        <div class="form-check form-check-inline">
+                           <input class="form-check-input" type="radio" name="organizacion" id="org_ies" value="ies" required="">
+                           <label class="form-check-label">Educativo</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                           <input class="form-check-input" type="radio" name="organizacion" id="org_otro" value="social" required="">
+                           <label class="form-check-label">Social</label>
+                        </div>
+                       
+                        <div class="form-check form-check-inline">
+                           <input class="form-check-input" type="radio" name="organizacion" id="org_otro" value="publico" required="">
+                           <label class="form-check-label">Público</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                           <input class="form-check-input" type="radio" name="organizacion" id="org_otro" value="privado" required="">
+                           <label class="form-check-label">Privado</label>
+                        </div>        
+                     </div>
+                  </div>
+                  <!--<div>
+                    <br>
                     <label for="institucion">Institución:</label>
-                    <input type="text" id="institucion" name="institucion" required>
+                    <input type="text" class="form-control" id="institucion" name="institucion" onChange="conMayusculas(this)"required>
+                  </div>-->
+                  <div>
+                    <br>
+                    <label for="cargo">Nombre de la organizacion:</label>
+                    <input type="text" class="form-control" id="cargo" name="cargo" onChange="conMayusculas(this)"required>
                   </div>
                   <div>
-                    <label for="cargo">Cargo en la Institución:</label>
-                    <input type="text" id="cargo" name="cargo" required>
+                    <br>
+                    <label for="cargo">Cargo en la organizacion:</label>
+                    <input type="text" class="form-control" id="cargo" name="cargo" onChange="conMayusculas(this)"required>
                   </div>
                   <div>
+                    <br>
                     <label for="correo">Correo Electrónico:</label>
-                    <input type="email" id="correo" name="correo" required>
+                    <input type="email" class="form-control" id="correo" name="correo" onChange="conMayusculas(this)"required>
                   </div>
-              <button type="submit">Registrar</button>
+                  <br>
+                  <button  class = "btn btn-outline-danger" type="submit">Registrar</button>
+                  <br>
               </form>
                             
                 <!------------------------------------------------------------------------------------------------->                    

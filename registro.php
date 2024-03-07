@@ -98,6 +98,7 @@ $region = view_region();
     color: #fff ;
     background:#8D203D !important;
 }
+
 /* .active{
     background: #8D203D !important;
     color:#fff !important;
@@ -312,15 +313,102 @@ $region = view_region();
                      </div>
                   </div>
                </div>
-               <hr>        
-               <div class="row">
+               <hr>  
+               <div class="row m-auto text-center">
                   <div class="col-md-12"><br>
-                  <strong><p>Día 1. Mesas de trabajo simultáneas </p></strong>
+                     <p class="text-left"><strong>Día 1. </strong></p> <!-- Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
                   </div>
 
+                  <table class="table table-striped table-bordered">
+                     <thead>
+                     </thead>
+                     <tbody>
+                        <!-- ------------------------------------------------------------------------------------ -->
+                     <tr>
+                           <!-- <th scope="row" class="col-md-2 text-center align-middle"> -->
+                              <!-- <p>09:00 – 16:00</p>    Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
+                           <!-- </th> -->
+                           <td >
+                              <div class="form-check form-check-inline">
+                                 <label class="form-check-label">
+                                    <!-- <strong>AGENDA </strong> -->
+                                 </label><br>
+
+                                 <table class="table   table-borderless border align-middle text-center">
+                        <thead class="table-light">      
+                           <div class="card">
+      
+                                 <div class="card-body cafe text-center" >
+            
+                                    <h5 class="card-subtitle "> <b> MESAS DE TRABAJO SIMULTÁNEAS </b></h5>
+            
+                                 </div>
+      
+                           </div>
+      
+                           <tr class="text-justifyu" >
+      
+                              <th class="verde">HORARIO</th>
+      
+                              <th class="cafe-claro">ACTIVIDAD</th>
+      
+                           </tr>
+      
+                        </thead>
+      
+                           <tbody class="table-group-divider">
+      
+                              <tr class="" >
+      
+                                 <td class="verde">15:30 - 16:00</td>
+      
+                                 <td class="text-left ">Registro de asistencia de los invitados</td>
+      
+                                 
+      
+                              </tr>
+                              
+                              <tr class="">
+                                 
+                                 <td class="verde">16:00 – 16:30</td>
+                           
+                                 <td class="text-left cafe-claro-size ">Bienvenida y apertura de los trabajos</td>
+      
+                              </tr>
+
+                              <tr class="">
+                                 
+                                 <td class="verde">16:30 – 18:30</td>
+                           
+                                 <td class="text-left ">Mesas de trabajo simultáneas con la participación de industria,  gobierno y academia por sectores económicos específicos de la región</td>
+      
+                              </tr>
+
+                              <tr class="">
+                                 
+                                 <td class="verde">18:30</td>
+                           
+                                 <td class="text-left cafe-claro-size ">Actividad de integración de redes colaborativas (catering)</td>
+      
+                              </tr>
+      
+                           </tbody>
+                     </table>
+                              </div>
+                           </td>
+                        </tr>                        
+                     </tbody>
+                  </table>
+               </div>
+
+
+               <div class="row">
                   
                <!--Mesas Sur Sureste -->
                <div id="sec_sur_sureste" style="display:none;">
+                  <div class="col-md-12 "><br>
+                     <strong><p>Selecciona la mesa de trabajo simultanea en la que deseas participar. </p></strong>
+                  </div>   
                   <div class="table-responsive">
                      <table class="table table-striped table-bordered">
                            <thead>
@@ -354,22 +442,6 @@ $region = view_region();
                                           </label>
                                        </div>
                                  </td>
-                                 <td>
-                                       <div class="form-check form-check-inline">
-                                          <input class="form-check-input" type="radio" name="mesa" value="Logística" required>
-                                          <label class="form-check-label">
-                                             <strong>Mesa:<br> Logística</strong>
-                                          </label>
-                                       </div>
-                                 </td>
-                                 <td>
-                                       <div class="form-check form-check-inline">
-                                          <input class="form-check-input" type="radio" name="mesa" value="Eléctric" required>
-                                          <label class="form-check-label">
-                                             <strong>Mesa:<br> Eléctrico</strong>
-                                          </label>
-                                       </div>
-                                 </td>
                               </tr>
                            </tbody>
                      </table> 
@@ -379,6 +451,9 @@ $region = view_region();
 
                <!--Mesas centro sur -->
                <div id="sec_centro_sur" style="display:none;">
+                  <div class="col-md-12 "><br>
+                     <strong><p>Selecciona la mesa de trabajo simultanea en la que deseas participar. </p></strong>
+                  </div>  
                      <div class="table-responsive">
                         <table class="table table-striped table-bordered">
                                                    <thead>
@@ -421,6 +496,9 @@ $region = view_region();
 
                <!--Mesas centro occidente -->
                <div id="sec_centro_occidente" style="display:none;">
+                  <div class="col-md-12 "><br>
+                     <strong><p>Selecciona la mesa de trabajo simultanea en la que deseas participar. </p></strong>
+                  </div>  
                      <div class="table-responsive">
                         <table class="table table-striped table-bordered">
                                                    <thead>
@@ -464,6 +542,9 @@ $region = view_region();
 
                <!--Mesas noreste -->
                <div id="sec_noreste" style="display:none;">
+                  <div class="col-md-12 "><br>
+                     <strong><p>Selecciona la mesa de trabajo simultanea en la que deseas participar. </p></strong>
+                  </div>  
                      <div class="table-responsive">
                         <table class="table table-striped table-bordered">
                                                    <thead>
@@ -505,6 +586,9 @@ $region = view_region();
 
                <!--Mesas noroeste -->
                <div id="sec_noroeste" style="display:none;">
+                  <div class="col-md-12 "><br>
+                     <strong><p>Selecciona la mesa de trabajo simultanea en la que deseas participar. </p></strong>
+                  </div>  
                      <div class="table-responsive">
                         <table class="table table-striped table-bordered">
                                                    <thead>
@@ -546,6 +630,9 @@ $region = view_region();
 
                <!--Mesas noreste -->
                <div id="sec_metropolitana" style="display:none;">
+                  <div class="col-md-12 "><br>
+                     <strong><p>Selecciona la mesa de trabajo simultanea en la que deseas participar. </p></strong>
+                  </div>  
                      <div class="table-responsive">
                         <table class="table table-striped table-bordered">
                                                    <thead>
@@ -591,7 +678,7 @@ $region = view_region();
 
             <div class="row">
                   <div class="col-xl-12"><br>
-                  <label for="nombre">¿Confirmas asistencia a la Sesión de redes de colaboración del día 1?</label>
+                  <label for="nombre">¿Confirmas asistencia a la sesión de redes de colaboración del día 1?</label>
                   <br><br>
                   </div>
                   <div class="col-xl-1">  
@@ -621,12 +708,12 @@ $region = view_region();
                   <!----------------------------------------------------------->
                </div>
                <hr>
-               <div class="row">
-                  <div class="col-md-12"><br>
-                     <p><strong>Día 2. </strong></p> <!-- Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
+               <div class="row m-auto">
+                  <div class="col-md-12 text-center"><br>
+                     <p class="text-left"><strong>Día 2. </strong></p> <!-- Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
                   </div>
 
-                  <table class="table table-striped table-bordered">
+                  <table class="table table-striped table-bordered m-auto">
                      <thead>
                      </thead>
                      <tbody>

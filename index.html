@@ -18,6 +18,7 @@
     <script src="js/jquery.js"></script>
     <script src="js/scrollbooster.min.js"></script>
     <script src="https://www.youtube.com/iframe_api"></script>
+    <link rel="stylesheet" href="css/style_navs.css">
 
     <script language="JavaScript">
         function conMayusculas(field) {
@@ -47,6 +48,13 @@
             padding: 0;
             overflow: hidden; /* Evita las barras de desplazamiento */
         }
+        .navbar{
+            display:flex;
+            flex-direction: column;
+            text-align: right;
+            align-items: end;
+        }
+
     </style>
 </head>
 <body>
@@ -70,34 +78,36 @@
     </video>
     <div id="contenedor-texto">
         <p class="texto">
-            Los Foros de Vinculacion 2024 para la Educación Dual, el Emprendimiento Asociativo, el Servicio Social Comunitario y la Industria de Alta Tecnología buscan dar seguimiento al trabajo colectivo 
+            <b>
+                Los Foros de Vinculacion 2024 para la Educación Dual, el Emprendimiento Asociativo, el Servicio Social Comunitario y la Industria de Alta Tecnología buscan dar seguimiento al trabajo colectivo 
+            </b>
         </p>
         <br>
         <p class="texto">
-            Y en particular fortalecer las acciones de vinculación con los sectores productivos estratégicos, que permita potencializar las líneas de acción impulsadas, con un enfoque primordialmente regional y estatal.
+            <strong>
+                Y en particular fortalecer las acciones de vinculación con los sectores productivos estratégicos, que permita potencializar las líneas de acción impulsadas, con un enfoque primordialmente regional y estatal.
+            </strong>
         </p>
-        
-       
         <div  id = "contenedor-logos-ies">
             <img   id = "logos-imagen-ies" src="img/Tira_de_Logos_IES.png" alt="Logo">
         </div>
-        
     </div>
-    
-    
-        
-
 </div>
 
 <div id="contenedor-menu">
     <div id="contenedor-logo-foros">
         <img id="logo-imagen-foros" src="img/logo_2024.png" alt="Logo foros 2024">
     </div>
-    <div id="contenedor-botones" >
+    <div id="contenedor-botones" class="navbar navigation nav-item">
         <a class="texto text-decoration-none" href="registro.php" title="Ve a nuestra página de Registro"><h4 class="  texto_subrayado texto_derecha">Regístrate</h4></a><br>
-        <a class="texto text-decoration-none" href="docs/Agenda_foros.pdf" title="Consulta la fecha y sedes" download><h4 class="texto_subrayado texto_derecha">Fechas y sedes</h4></a><br>
-        
-        <a class="text-decoration-none" href="descargables.html" title="Consulta los documentos" > <h4 class=" texto_subrayado texto_derecha">Material descargable</h4></a><br>       
+        <!-- <a class="texto text-decoration-none" href="docs/Agenda_foros.pdf" title="Consulta la fecha y sedes" download><h4 class="texto_subrayado texto_derecha">Fechas y sedes</h4></a><br> -->
+        <a type="button" class="texto text-decoration-none cursor-pointer"  title="Consulta la fecha y sedes" onclick="abrirModal()" ><h4 class="  texto_subrayado texto_derecha">Fechas y sedes</h4></a><br>
+        <a type="button" class = "texto_subrayado texto_derecha " data-bs-toggle="modal" data-bs-target="#ModalAgenda">
+            <h4 class="texto_subrayado texto_derecha">Agenda</h4>
+            
+        </a>
+        <br>
+        <!-- <a class="text-decoration-none" href="descargables.html" title="Consulta los documentos" > <h4 class=" texto_subrayado texto_derecha">Material descargable</h4></a><br>        -->
         <a class="text-decoration-none" href="contanciasForos2023/FDV_2023.html" title="Mira los foros del año pasado"><h4 class="texto_subrayado texto_derecha texto_derecha">FDV 2023</h4></a><br>
         
         <!--<lu class="texto texto_derecha" >
@@ -127,14 +137,256 @@
         <b> </b><a href="registro.php" class="btn btn-outline-light">Registrate</a>
     </div>-->
 
-    
+    <!-- Button trigger modal -->
 
+  
+  <!-- Modal  de agenda-->
+  <div class="modal fade" id="ModalAgenda" tabindex="-1" aria-labelledby="ModalAgendaTarget" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header text-center" style="background: linear-gradient(to top ,#10312B,#235b4e);" >
+          <h5 class="modal-title text-center text-light" id="ModalAgendaTarget">Agenda</h5>
+
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        
+        </div>
+        <div class="modal-body">
+       
+            <table class="table table-striped table-bordered">
+                <thead>
+                </thead>
+                <tbody>
+                   <!-- ------------------------------------------------------------------------------------ -->
+                <tr>
+                      <!-- <th scope="row" class="col-md-2 text-center align-middle"> -->
+                         <!-- <p>09:00 – 16:00</p>    Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
+                      <!-- </th> -->
+                      <td >
+                         <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                               <!-- <strong>AGENDA </strong> -->
+                            </label><br>
+
+                            <table class="table   table-borderless border align-middle text-center">
+                   <thead class="table-light">      
+                      <div class="card">
+ 
+                            <div class="card-body cafe text-center" >
+                                <h4 class="card-title" >DÍA 1</h4>
+                               <h5 class="card-subtitle "> <b> MESAS DE TRABAJO SIMULTÁNEAS </b></h5>
+       
+                            </div>
+ 
+                      </div>
+ 
+                      <tr class="text-justifyu" >
+ 
+                         <th class="verde">HORARIO</th>
+ 
+                         <th class="cafe-claro">ACTIVIDAD</th>
+ 
+                      </tr>
+ 
+                   </thead>
+ 
+                      <tbody class="table-group-divider">
+ 
+                         <tr class="" >
+ 
+                            <td class="verde">15:30 - 16:00</td>
+ 
+                            <td class="text-left ">Registro de asistencia de los invitados</td>
+ 
+                            
+ 
+                         </tr>
+                         
+                         <tr class="">
+                            
+                            <td class="verde">16:00 – 16:30</td>
+                      
+                            <td class="text-left cafe-claro-size ">Bienvenida y apertura de los trabajos</td>
+ 
+                         </tr>
+
+                         <tr class="">
+                            
+                            <td class="verde">16:30 – 18:30</td>
+                      
+                            <td class="text-left ">Mesas de trabajo simultáneas con la participación de industria,  gobierno y academia por sectores económicos específicos de la región</td>
+ 
+                         </tr>
+
+                         <tr class="">
+                            
+                            <td class="verde">18:30</td>
+                      
+                            <td class="text-left cafe-claro-size ">Actividad de integración de redes colaborativas (catering)</td>
+ 
+                         </tr>
+ 
+                      </tbody>
+                </table>
+                         </div>
+                      </td>
+                   </tr>                        
+                </tbody>
+             </table>
+             <table class="table table-striped table-bordered m-auto">
+                <thead>
+                </thead>
+                <tbody>
+                   <!-- ------------------------------------------------------------------------------------ -->
+                <tr>
+                      <!-- <th scope="row" class="col-md-2 text-center align-middle"> -->
+                         <!-- <p>09:00 – 16:00</p>    Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
+                      <!-- </th> -->
+                      <td >
+                         <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                               <!-- <strong>AGENDA </strong> -->
+                            </label><br>
+
+                <table class="table   table-borderless border align-middle text-center">
+
+                   <thead class="table-light">
+ 
+                      <caption></caption>
+ 
+                      <div class="card">
+ 
+                      <div class="card-body cafe text-center" >
+ 
+                         <h4 class="card-title" >DÍA 2</h4>
+ 
+                         <h5 class="card-subtitle"> <b>TRABAJO COLEGIADO EN PLENARIA</b></h5>
+ 
+                      </div>
+ 
+                      </div>
+ 
+                      <tr class="text-justifyu">
+ 
+                         <th class="verde">HORARIO</th>
+ 
+                         <th class="cafe-claro">ACTIVIDAD</th>
+ 
+                      </tr>
+ 
+                      </thead>
+ 
+                      <tbody class="table-group-divider">
+ 
+                         <tr class="" >
+ 
+                            <td class="verde">09:00 – 10:00</td>
+ 
+                            <td class="text-left">Registro de asistencia de los invitados</td>
+ 
+                            
+ 
+                         </tr>
+ 
+                         <tr class="">
+ 
+                            <td class="verde">10:00 - 11:10</td>
+ 
+                            <td class="text-left cafe-claro-size">Inauguración oficial del Foro de Vinculación (Transmisión en vivo por canales oficiales)</td>
+ 
+                         </tr>
+ 
+                         <!-- <tr class="">
+ 
+                            <td class="verde">11:00 - 11:10</td>
+ 
+                            <td class="text-left">Presentación de las Memorias de Buenas Prácticas de Vinculación</td>
+ 
+                         </tr> -->
+ 
+                         <tr class="">
+ 
+                            <td class="verde">11:10 – 11:20</td>
+ 
+                            <td class="text-left ">Fotografía oficial</td>
+ 
+                         </tr>
+ 
+                         <tr class="">
+ 
+                            <td class="verde">11:20 – 11:25</td>
+ 
+                            <td class="text-left cafe-claro-size">Resultados de los trabajos del día 1</td>
+ 
+                         </tr>
+ 
+                         <tr class="">
+ 
+                            <td class="verde">11:25 – 12:00</td>
+ 
+                            <td class="text-left ">Avances y retos por parte de las autoridades educativas estatales de la región</td>
+ 
+                         </tr>
+                         <tr class="">
+ 
+                            <td class="verde">12:00 – 15:00</td>
+ 
+                            <td class="text-left cafe-claro-size">Diálogo de alto nivel:
+                               Intercambio entre sectores privado, público y social, en torno a los temas prioritarios de vinculación a nivel regional y estatal.</td>
+ 
+                         </tr>
+                         <tr class="">
+ 
+                            <td class="verde">15:00 – 15:30</td>
+ 
+                            <td class="text-left ">Conclusiones y cierre</td>
+ 
+                         </tr>
+ 
+                      </tbody>
+ 
+                      <tfoot>
+ 
+                      
+ 
+                      </tfoot>
+ 
+                </table>
+                         </div>
+                      </td>
+                   </tr>                        
+                </tbody>
+             </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" style="background: linear-gradient(to top ,#10312B,#235b4e);" data-bs-dismiss="modal">Cerrar</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal de descargables  -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-xl">
+        <div class="modal-content">
+            <div class="modal-header "  style="background: linear-gradient(to top ,#10312B,#235b4e);">  
+                <h5 class="modal-title text-light" id="exampleModalLabel">Fechas y Cedes</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img class="img-fluid" src="img/Agenda_foros.jpg"  alt="">
+                <!-- <iframe src="img/Agenda_foros.jpg" style="width: 100%" frameborder="0"></iframe> -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary text-light" style="background: linear-gradient(to top ,#10312B,#235b4e);" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
     
 
 
 </div>
   
-
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -146,7 +398,13 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js" integrity="sha384-vtA7x/4AMByUUsf1gEKuAOp6Ujsr88%2B6W5r5FQJXdAVlXrgv3C2eLw1g5V/pk33x" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy6mLZ5lHrN5t9dKmU/IJq7gT9xJEMf" crossorigin="anonymous"></script>
-    
+    <script>
+        function abrirModal() {
+            var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+            myModal.show();
+            return false; // Para prevenir la acción predeterminada del enlace
+        }
+    </script>
    
        
 </body>

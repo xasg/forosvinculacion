@@ -36,6 +36,14 @@ dt_cargo2, dt_otro_cargo, dt_otro_cargo2, dt_mesa1, dt_catering) VALUES (null, '
 $mysqli->query($sql);
 }
 
+function insert_registro_express($apaterno, $amaterno, $nombre, $email, $region,  $organizacion, $nom_org,  $cargo)
+{
+global $mysqli;
+$sql="INSERT INTO usuario(id_usuario, dt_apaterno, dt_amaterno, dt_nombre, dt_email, dt_region, dt_organizacion, dt_nom_org, dt_cargo) 
+VALUES (null, '{$apaterno}', '{$amaterno}', '{$nombre}', '{$email}', '{$region}', '{$organizacion}', '{$nom_org}', '{$cargo}')";
+$mysqli->query($sql);
+}
+
 
 function acces_registro($email,$region)
 {
@@ -81,6 +89,7 @@ function run_participante_region($id, $region,$dia)
     }
 
 }
+
 
 function run_participante_region_d2($id, $region,$dia)
 {
@@ -215,5 +224,34 @@ function get_user_acces_asistencias($correo)
   return $result->fetch_assoc();
 }
 
+
+function valida_regiones_activas(){
+  global $mysqli;
+  $query = "SELECT *, usuario_asistencia.id_usuario as idusuario,  usuario_asistencia.dt_region as region FROM usuario_asistencia
+  LEFT JOIN cat_region ON(usuario_asistencia.dt_region=cat_region.id_cat_region)
+  WHERE (dt_status = 1 AND tp_usuario = 5)  
+  GROUP BY dt_correo order by dt_status DESC ";
+  $result = $mysqli->query($query);
+  return $result;
+}
+function valida_regiones_inactivas(){
+  global $mysqli;
+  $query = "SELECT *, usuario_asistencia.id_usuario as idusuario,  usuario_asistencia.dt_region as region 
+  FROM usuario_asistencia
+  LEFT JOIN cat_region ON(usuario_asistencia.dt_region=cat_region.id_cat_region)
+  WHERE tp_usuario = 5
+    AND dt_status = 0
+    AND dt_correo IN (
+      SELECT dt_correo
+      FROM usuario_asistencia
+      GROUP BY dt_correo
+      HAVING SUM(dt_status) = 0
+      AND COUNT(DISTINCT dt_dia) = 2
+    )
+  GROUP BY dt_correo
+  ORDER BY dt_status ASC ";
+  $result = $mysqli->query($query);
+  return $result;
+}
 
 ?>
