@@ -20,6 +20,7 @@ if ($_POST)
     }
 
     $_SESSION["id_user"] = $user['id_usuario'];
+    $_SESSION["tp_usuario"] = $user['tp_usuario'];
     $_SESSION["dt_dia"] = $user['dt_dia'];
     $_SESSION["region"] = $user['dt_region'];
     $_SESSION["nom_region"] = $user['dt_nombre_region'];
@@ -43,6 +44,10 @@ if ($_POST)
                 header('Location: ../login.php?error=invalid-user-asistencia');
                 exit();
             }
+        case 6:
+            header('Location: ../habilita_region.php');
+            exit();
+
         default:
             header('Location: ../login.php?error=invalid-user');
             exit();

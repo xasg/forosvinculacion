@@ -3,8 +3,8 @@
    session_start();  
    include_once('databases_registro.php'); 
    include_once('includes/get_Dias.php'); 
-   if($_SESSION['id_user'] == false){
-    header("Location:index.html");
+   if( ($_SESSION["tp_usuario"] != 6 )){
+    header("Location:logout.php");
    }
 // -----------------------------------
    mysqli_set_charset( $mysqli, 'utf8');  
@@ -17,6 +17,7 @@
 
    $nombre_region = $_SESSION["nom_region"];
    $participantes = valida_regiones_activas();  
+   $participantes_inactivos = valida_regiones_inactivas();  
    
    ?>
 <!DOCTYPE html>
@@ -76,7 +77,7 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col">
-            <h1 style="border-bottom: 6px solid #10312B;">Lista de asistencia Región : <?= $nombre_region; ?> , Dìa : <?= $dia_reg ?></h1>
+            <!-- <h1 style="border-bottom: 6px solid #10312B;">Lista de asistencia Región : <?= $nombre_region; ?> , Dìa : <?= $dia_reg ?></h1> -->
             <h1 style="border-bottom: 6px solid #10312B;">Regiones Activas por Día</h1>
             <!-- <a
                 type="button"
@@ -127,6 +128,7 @@
       
                         <th>dia 1</th>
                         <th>dia 2</th>
+                        <th>Estatus</th>
                         <!-- <th>Acciones</th> -->
                     </tr>
                 </thead>
@@ -141,10 +143,14 @@
                         <td>
                         <?php if( $value['dt_dia'] == 2 && ($value['dt_status'] == 1  )) { 
                              ?>
-                                                         <form action="includes/valida_asistencia.php" method="POST">
+                                <form action="includes/activa_dia.php" method="POST">
                                 <input type="text" id="idusuario" name="idusuario" value="<?= $value['idusuario']; ?>" hidden>
-                                <input type="text" id="idregion" name="idregion" value="<?= $value['region']; ?>" hidden>
-                                <button type="submit" class="btn btn-success btn-sm">Activaar Día</button>
+                                    <input type="text" i="dtcorreo" name="dtcorreo" value="<?= $value['dt_correo']; ?>" hidden>
+                                    <input type="text" id="dtstatus" name="dtstatus" value="<?= $value['dt_status']; ?>" hidden>
+                                        <!-- Se define el dia que se quiere activar -->
+                                        <?php $dia1 = $value['dt_dia']-1 ?>
+                                        <input type="text" id="dia" name="dia" value="<?= $dia1; ?>" hidden>
+                                        <button type="submit" class="btn btn-success btn-sm">Activar Día <?php echo $dia1; ?></button>
                                 <!-- <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal<?= $value['id_usuario']; ?>">Ver detalles</button> -->
                             </form>
                                 
@@ -158,10 +164,14 @@
                         <td>
                         <?php if( $value['dt_dia'] == 1 && ($value['dt_status'] == 1  )) { 
                              ?>
-                                                         <form action="includes/valida_asistencia.php" method="POST">
-                                <input type="text" id="idusuario" name="idusuario" value="<?= $value['idusuario']; ?>" hidden>
-                                <input type="text" id="idregion" name="idregion" value="<?= $value['region']; ?>" hidden>
-                                <button type="submit" class="btn btn-success btn-sm">Activar Día</button>
+                                <form action="includes/activa_dia.php" method="POST">
+                                    <input type="text" id="idusuario" name="idusuario" value="<?= $value['idusuario']; ?>" hidden>
+                                    <input type="text" i="dtcorreo" name="dtcorreo" value="<?= $value['dt_correo']; ?>" hidden>
+                                    <input type="text" id="dtstatus" name="dtstatus" value="<?= $value['dt_status']; ?>" hidden>
+                                    <!-- Se define el dia que se quiere activar -->
+                                    <?php $dia2 = $value['dt_dia']+1 ?>
+                                    <input type="text" id="dia" name="dia" value="<?= $dia2; ?>" hidden>
+                                    <button type="submit" class="btn btn-success btn-sm">Activar Día <?php echo $dia2; ?></button>
                                 <!-- <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal<?= $value['id_usuario']; ?>">Ver detalles</button> -->
                             </form>
                                 
@@ -171,6 +181,18 @@
                         <?php
                         }
                         ?>
+                        </td>
+
+                        <td>
+                            <form action="includes/activa_dia.php" method="POST">
+                                    <input type="text" id="idusuario" name="idusuario" value="<?= $value['idusuario']; ?>" hidden>
+                                    <input type="text" i="dtcorreo" name="dtcorreo" value="<?= $value['dt_correo']; ?>" hidden>
+                                    <input type="text" id="dtstatus" name="dtstatus" value="<?= $value['dt_status']; ?>" hidden>
+                                    <input type="text" id="desactivar" name="desactivar" value="desactivar" hidden>
+                                    <input type="text" id="dia" name="dia" value="<?= $dia2; ?>" hidden>
+                                    <button type="submit" class="btn btn-success btn-sm">Desactivar Días </button>
+                                <!-- <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal<?= $value['id_usuario']; ?>">Ver detalles</button> -->
+                            </form>
                         </td>
 
                         <!-- <td>
@@ -191,6 +213,93 @@
                                 <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal<?= $value['id_usuario']; ?>">Ver detalles</button>
                             </form>
                         </td> -->
+                    </tr>
+                        
+                </tbody>
+                <?php }  
+                    // } ?>
+            </table>
+        </div>
+    </div>
+
+    <h1 style="border-bottom: 6px solid #10312B;">Regiones In Activas</h1>
+    <div class="row table-responsive">
+        <div class="col">
+            <table class="table" id="tabla">
+                <thead>
+                    <tr>
+                        <th> # ID <input type="text" class="form-control form-control-sm input-search" data-column="0"></th>
+                        <th> Correo Region <input type="text" class="form-control form-control-sm input-search" data-column="1"></th>
+      
+                        <th>dia 1</th>
+                        <th>dia 2</th>
+                        <th>Estatus</th>
+                        <!-- <th>Acciones</th> -->
+                    </tr>
+                </thead>
+                <?php
+                    // if ($dia_reg == 1  || $dia_reg == 2 ) { 
+                    foreach ($participantes_inactivos as $key => $value) { 
+                    ?>
+                <tbody>
+                <tr>
+                        <td><?= $value['idusuario']; ?></td>
+                        <td><?= $value['dt_correo']; ?></td>
+                        <td>
+                        <?php if( $value['dt_dia'] == 2 && ($value['dt_status'] == 1  )) { 
+                             ?>
+                                <form action="includes/activa_dia.php" method="POST">
+                                <input type="text" id="idusuario" name="idusuario" value="<?= $value['idusuario']; ?>" hidden>
+                                    <input type="text" i="dtcorreo" name="dtcorreo" value="<?= $value['dt_correo']; ?>" hidden>
+                                    <input type="text" id="dtstatus" name="dtstatus" value="<?= $value['dt_status']; ?>" hidden>
+                                        <!-- Se define el dia que se quiere activar -->
+                                        <?php $dia1 = $value['dt_dia']-1 ?>
+                                        <input type="text" id="dia" name="dia" value="<?= $dia1; ?>" hidden>
+                                        <button type="submit" class="btn btn-success btn-sm">Activar Día <?php echo $dia1; ?></button>
+                                <!-- <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal<?= $value['id_usuario']; ?>">Ver detalles</button> -->
+                            </form>
+                                
+                             <?php
+                        } else{  ?>
+                            INACTIVO
+                        <?php
+                        }
+                        ?>
+                        </td>
+                        <td>
+                        <?php if( $value['dt_dia'] == 1 && ($value['dt_status'] == 1  )) { 
+                             ?>
+                                <form action="includes/activa_dia.php" method="POST">
+                                    <input type="text" id="idusuario" name="idusuario" value="<?= $value['idusuario']; ?>" hidden>
+                                    <input type="text" i="dtcorreo" name="dtcorreo" value="<?= $value['dt_correo']; ?>" hidden>
+                                    <input type="text" id="dtstatus" name="dtstatus" value="<?= $value['dt_status']; ?>" hidden>
+                                    <!-- Se define el dia que se quiere activar -->
+                                    <?php $dia2 = $value['dt_dia']+1 ?>
+                                    <input type="text" id="dia" name="dia" value="<?= $dia2; ?>" hidden>
+                                    <button type="submit" class="btn btn-success btn-sm">Activar Día <?php echo $dia2; ?></button>
+                                <!-- <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal<?= $value['id_usuario']; ?>">Ver detalles</button> -->
+                            </form>
+                                
+                             <?php
+                        } else{  ?>
+                            INACTIVO
+                        <?php
+                        }
+                        ?>
+                        </td>
+
+                        <td>
+                            <form action="includes/activa_dia.php" method="POST">
+                                    <input type="text" id="idusuario" name="idusuario" value="<?= $value['idusuario']; ?>" hidden>
+                                    <input type="text" i="dtcorreo" name="dtcorreo" value="<?= $value['dt_correo']; ?>" hidden>
+                                    <input type="text" id="dtstatus" name="dtstatus" value="<?= $value['dt_status']; ?>" hidden>
+                                    <?php $dia2 = $value['dt_dia']+1 ?>
+                                    <input type="text" id="dia" name="dia" value="<?= $dia2; ?>" hidden>
+                                    <button type="submit" class="btn btn-success btn-sm">Activar Sección </button>
+                                <!-- <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal<?= $value['id_usuario']; ?>">Ver detalles</button> -->
+                            </form>
+                        </td>
+
                     </tr>
                         
                 </tbody>

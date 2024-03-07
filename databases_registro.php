@@ -219,8 +219,27 @@ function valida_regiones_activas(){
   global $mysqli;
   $query = "SELECT *, usuario_asistencia.id_usuario as idusuario,  usuario_asistencia.dt_region as region FROM usuario_asistencia
   LEFT JOIN cat_region ON(usuario_asistencia.dt_region=cat_region.id_cat_region)
-  WHERE dt_status = 1 AND tp_usuario = 5
+  WHERE (dt_status = 1 AND tp_usuario = 5)  
   GROUP BY dt_correo order by dt_status DESC ";
+  $result = $mysqli->query($query);
+  return $result;
+}
+function valida_regiones_inactivas(){
+  global $mysqli;
+  $query = "SELECT *, usuario_asistencia.id_usuario as idusuario,  usuario_asistencia.dt_region as region 
+  FROM usuario_asistencia
+  LEFT JOIN cat_region ON(usuario_asistencia.dt_region=cat_region.id_cat_region)
+  WHERE tp_usuario = 5
+    AND dt_status = 0
+    AND dt_correo IN (
+      SELECT dt_correo
+      FROM usuario_asistencia
+      GROUP BY dt_correo
+      HAVING SUM(dt_status) = 0
+      AND COUNT(DISTINCT dt_dia) = 2
+    )
+  GROUP BY dt_correo
+  ORDER BY dt_status ASC ";
   $result = $mysqli->query($query);
   return $result;
 }
