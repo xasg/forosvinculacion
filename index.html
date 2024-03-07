@@ -69,13 +69,13 @@
         Tu navegador no admite la etiqueta de video.
     </video>
     <div id="contenedor-texto">
-        <p class="texto">
+        <p class="texto"><strong>
             Los Foros de Vinculacion 2024 para la Educación Dual, el Emprendimiento Asociativo, el Servicio Social Comunitario y la Industria de Alta Tecnología buscan dar seguimiento al trabajo colectivo 
-        </p>
+        </p></strong>
         <br>
-        <p class="texto">
+        <p class="texto"><strong>
             Y en particular fortalecer las acciones de vinculación con los sectores productivos estratégicos, que permita potencializar las líneas de acción impulsadas, con un enfoque primordialmente regional y estatal.
-        </p>
+        </p></strong>
         
        
         <div  id = "contenedor-logos-ies">
@@ -89,14 +89,67 @@
 
 </div>
 
+
+<!---------------------------------------------------------------------------------------------->
+
+<!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <!--<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  >
+    <div  class="modal-dialog" >
+      <div class="modal-content"  >
+        <div class="modal-header" >
+          <h5 class="modal-title" id="exampleModalLabel">Fechas y Cedes</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <iframe src="docs/Agenda_foros.pdf" width="600px" height=700px frameborder="0"></iframe>
+        </div>
+        <div class="modal-footer " >
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>-->
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header "  style="background: linear-gradient(to top ,#10312B,#235b4e);">  
+                <h5 class="modal-title" id="exampleModalLabel">Fechas y Cedes</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <iframe src="docs/Agenda_foros.pdf" style="width: 40vw; height: 80vh;" frameborder="0"></iframe>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!------------------------------------------------------------------------------------------------->
+
 <div id="contenedor-menu">
     <div id="contenedor-logo-foros">
         <img id="logo-imagen-foros" src="img/logo_2024.png" alt="Logo foros 2024">
     </div>
     <div id="contenedor-botones" >
         <a class="texto text-decoration-none" href="registro.php" title="Ve a nuestra página de Registro"><h4 class="  texto_subrayado texto_derecha">Regístrate</h4></a><br>
-        <a class="texto text-decoration-none" href="docs/Agenda_foros.pdf" title="Consulta la fecha y sedes" download><h4 class="texto_subrayado texto_derecha">Fechas y sedes</h4></a><br>
-        
+        <a class="texto text-decoration-none cursor-pointer"  title="Consulta la fecha y sedes" onclick="abrirModal()" ><h4 class="  texto_subrayado texto_derecha">Fechas y sedes</h4></a><br>
+        <!--<h4 title="Consulta la fecha y sedes"  class = " btn " data-bs-toggle="modal" data-bs-target="#exampleModal"  style="color: white; font-size: 18px;">
+            Fechas y sedes
+        </h4>-->
+        <!--<a class="texto text-decoration-none cursor-pointer" href="" title="Consulta la fecha y sedes" ><h4 class="texto_subrayado texto_derecha">Fechas y sedes</h4></a><br>-->
+        <!--<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Launch demo modal
+          </button>-->
         <a class="text-decoration-none" href="descargables.html" title="Consulta los documentos" > <h4 class=" texto_subrayado texto_derecha">Material descargable</h4></a><br>       
         <a class="text-decoration-none" href="contanciasForos2023/FDV_2023.html" title="Mira los foros del año pasado"><h4 class="texto_subrayado texto_derecha texto_derecha">FDV 2023</h4></a><br>
         
@@ -146,7 +199,13 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js" integrity="sha384-vtA7x/4AMByUUsf1gEKuAOp6Ujsr88%2B6W5r5FQJXdAVlXrgv3C2eLw1g5V/pk33x" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy6mLZ5lHrN5t9dKmU/IJq7gT9xJEMf" crossorigin="anonymous"></script>
-    
+    <script>
+        function abrirModal() {
+            var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+            myModal.show();
+            return false; // Para prevenir la acción predeterminada del enlace
+        }
+    </script>
    
        
 </body>

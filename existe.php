@@ -6,21 +6,12 @@ include_once('databases_registro.php');
 //     header("Location:index.html");
 //    }
 // -----------------------------------
-<<<<<<< HEAD
 mysqli_set_charset( $mysqli, 'utf8');  
 $id=$_SESSION["id"];
 $participante = run_participante($id);   
 $mesa = $participante['dt_mesa1'];
 $folio = $participante['id_usuario'];
 
-=======
-   mysqli_set_charset( $mysqli, 'utf8');  
-   $id=$_SESSION["id"];
-   $participante = run_participante($id);   
-   $mesa = $participante['dt_mesa1'];
-   $folio = $participante['id_usuario'];
-   $region = $participante['dt_region'];
->>>>>>> bc60921635747bad1c7e5e06e1f25e08f92ca4fc
    ?>
 <!DOCTYPE html>
 <html lang="es">
