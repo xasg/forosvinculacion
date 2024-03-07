@@ -1,3 +1,8 @@
+.cursor-pointer {
+    cursor: pointer;
+}
+
+
 .btn-videos 
 {
     color: #f9f9f9;
@@ -138,7 +143,11 @@ background:#8D203D !important;
 
         .texto
          {
+<<<<<<< HEAD
             font-size: 16.5px;
+=======
+            font-size: 18px;
+>>>>>>> 9fec31844d066a236960c6b81f1d1afdc291c546
             color: white;
         }
         .texto_derecha
