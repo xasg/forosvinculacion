@@ -78,11 +78,15 @@
     </video>
     <div id="contenedor-texto">
         <p class="texto">
-            Los Foros de Vinculacion 2024 para la Educación Dual, el Emprendimiento Asociativo, el Servicio Social Comunitario y la Industria de Alta Tecnología buscan dar seguimiento al trabajo colectivo 
+            <b>
+                Los Foros de Vinculacion 2024 para la Educación Dual, el Emprendimiento Asociativo, el Servicio Social Comunitario y la Industria de Alta Tecnología buscan dar seguimiento al trabajo colectivo 
+            </b>
         </p>
         <br>
         <p class="texto">
-            Y en particular fortalecer las acciones de vinculación con los sectores productivos estratégicos, que permita potencializar las líneas de acción impulsadas, con un enfoque primordialmente regional y estatal.
+            <strong>
+                Y en particular fortalecer las acciones de vinculación con los sectores productivos estratégicos, que permita potencializar las líneas de acción impulsadas, con un enfoque primordialmente regional y estatal.
+            </strong>
         </p>
         
        
@@ -103,13 +107,14 @@
     </div>
     <div id="contenedor-botones" class="navbar navigation nav-item">
         <a class="texto text-decoration-none" href="registro.php" title="Ve a nuestra página de Registro"><h4 class="  texto_subrayado texto_derecha">Regístrate</h4></a><br>
-        <a class="texto text-decoration-none" href="docs/Agenda_foros.pdf" title="Consulta la fecha y sedes" download><h4 class="texto_subrayado texto_derecha">Fechas y sedes</h4></a><br>
+        <!-- <a class="texto text-decoration-none" href="docs/Agenda_foros.pdf" title="Consulta la fecha y sedes" download><h4 class="texto_subrayado texto_derecha">Fechas y sedes</h4></a><br> -->
+        <a type="button" class="texto text-decoration-none cursor-pointer"  title="Consulta la fecha y sedes" onclick="abrirModal()" ><h4 class="  texto_subrayado texto_derecha">Fechas y sedes</h4></a><br>
         <a type="button" class = "texto_subrayado texto_derecha " data-bs-toggle="modal" data-bs-target="#ModalAgenda">
             <h4 class="texto_subrayado texto_derecha">Agenda</h4>
             
         </a>
         <br>
-        <a class="text-decoration-none" href="descargables.html" title="Consulta los documentos" > <h4 class=" texto_subrayado texto_derecha">Material descargable</h4></a><br>       
+        <!-- <a class="text-decoration-none" href="descargables.html" title="Consulta los documentos" > <h4 class=" texto_subrayado texto_derecha">Material descargable</h4></a><br>        -->
         <a class="text-decoration-none" href="contanciasForos2023/FDV_2023.html" title="Mira los foros del año pasado"><h4 class="texto_subrayado texto_derecha texto_derecha">FDV 2023</h4></a><br>
         
         <!--<lu class="texto texto_derecha" >
@@ -142,7 +147,7 @@
     <!-- Button trigger modal -->
 
   
-  <!-- Modal -->
+  <!-- Modal  de agenda-->
   <div class="modal fade" id="ModalAgenda" tabindex="-1" aria-labelledby="ModalAgendaTarget" aria-hidden="true">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
@@ -366,7 +371,24 @@
       </div>
     </div>
   </div>
-
+  <!-- Modal de descargables  -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-xl">
+        <div class="modal-content">
+            <div class="modal-header "  style="background: linear-gradient(to top ,#10312B,#235b4e);">  
+                <h5 class="modal-title text-light" id="exampleModalLabel">Fechas y Cedes</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img class="img-fluid" src="img/Agenda_foros.jpg"  alt="">
+                <!-- <iframe src="img/Agenda_foros.jpg" style="width: 100%" frameborder="0"></iframe> -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary text-light" style="background: linear-gradient(to top ,#10312B,#235b4e);" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
     
 
 
@@ -383,7 +405,13 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js" integrity="sha384-vtA7x/4AMByUUsf1gEKuAOp6Ujsr88%2B6W5r5FQJXdAVlXrgv3C2eLw1g5V/pk33x" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy6mLZ5lHrN5t9dKmU/IJq7gT9xJEMf" crossorigin="anonymous"></script>
-    
+    <script>
+        function abrirModal() {
+            var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+            myModal.show();
+            return false; // Para prevenir la acción predeterminada del enlace
+        }
+    </script>
    
        
 </body>

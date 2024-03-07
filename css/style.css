@@ -138,9 +138,8 @@ background:#8D203D !important;
 
         .texto
          {
-            font-size: 12px;
+            font-size: 16.5px;
             color: white;
-            
         }
         .texto_derecha
         {
@@ -272,7 +271,11 @@ background:#8D203D !important;
 
         @media (max-width: 599px) 
         {
-           
+            .texto
+            {
+               font-size: 12px;
+               color: white;
+           }
             
             #contenedor-menu 
             {
@@ -331,8 +334,10 @@ background:#8D203D !important;
            
         }
 
-
-    
+    /* --------------------ESTILO DESCARGABLES */
+    /*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
 
 
 		

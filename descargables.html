@@ -57,6 +57,48 @@
          border-color:  #10312B;
          transition: all linear .6s;
       }
+      .services .icon-box {
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 0 40px 0;
+    background: #fff;
+    box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+    transition: all 0.3s ease-in-out;
+    border-radius: 15px;
+    text-align: center;
+    border-bottom: 3px solid #fff;
+  }
+  
+  .services .icon-box:hover {
+    transform: translateY(-5px);
+    border-color: #235b4e;
+  }
+  
+  .services .icon i {
+    font-size: 48px;
+    line-height: 1;
+    margin-bottom: 15px;
+    color: #235b4e;
+  }
+  
+  .services .title {
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+  
+  .services .title a {
+    color: #111;
+  }
+  
+  .services .description {
+    font-size: 15px;
+    line-height: 28px;
+    margin-bottom: 0;
+  }
+    
+
    </style>
 </head>
 
@@ -95,77 +137,46 @@
          </div>
       </div>
 
-      <div class="container" style="min-height: 95vh;">
-   
-         <!-- Alerta de succes -->
-         <section>
-            <div id="accordion">
-                <div class="row justify-content-center mt-5">
-                    <div class="pad  col-md-2 text-center ">
-                        <a data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                            aria-controls="collapseOne">
-                            <div class="view overlay">
-                                <button type="button" class="btn btn-outline-danger" onclick="mostrarTexto('texto1')">
-                                    <p>DOCUMENTO 1</p>
-                                </button>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="pad  col-lg-2 col-md-2 text-center">
-                        <a data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
-                            aria-controls="collapseTwo">
-                            <div class="view overlay">
-                                <button type="button" class="btn btn-outline-danger" onclick="mostrarTexto('texto2')">
-                                    <p>DOCUMENTO 2</p>
-                                </button>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="pad  col-lg-2 col-md-2 text-center">
-                        <a data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                            aria-controls="collapseOne">
-                            <div class="view overlay">
-                                <button type="button" class="btn btn-outline-danger" onclick="mostrarTexto('texto3')">
-                                    <p>DOCUMENTO 3</p>
-                                </button>
-                            </div>
-                        </a>
-                    </div>
-                    <div id="texto1" style="display: none;">
-                        <br>
-                        <p>Este es una breve descripcion del documento 1</p>
-                        <br>
-                        <a href="docs/Anfitrionia02.pdf" class="btn btn-primary" download>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
-                                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
-                                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
-                            </svg>
-                        </a>
-                    </div>
-                    <div id="texto2" style="display: none;">
-                        <br>
-                        <p>Este es una breve descripcion del documento 2</p>
-                        <br>
-                        <a href="docs/Anfitrionia02.pdf" class="btn btn-primary" download>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
-                                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
-                                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
-                            </svg>
-                        </a>
-                    </div>
-                    <div id="texto3" style="display: none;">
-                        <br>
-                        <p>Este es una breve descripcion del documento 3</p>
-                        <br>
-                        <a href="docs/Anfitrionia02.pdf" class="btn btn-primary" download>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
-                                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
-                                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
-                            </svg>
-                        </a>
-                    </div>
-                    
-        </section>   
+      <div class="container" style="min-height: 95vh;">  
+
+    <section class="services section-bg">
+      <div class="container aos-init aos-animate" data-aos="fade-up">
+
+        <div class="section-title text-center"><br><br>
+          <h2>Material descargable</h2>
+          <p>Check out the great services we offer</p>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-lg-4 d-flex align-items-stretch aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bxl-dribbble"></i></div>
+              <img src="img/chica.jpeg" class="img-fluid" alt=""> <br><br>             
+              <a href="docs/Anfitrionia02.pdf" download><button type="button" class="btn btn-outline-danger" onclick="mostrarTexto('texto1')">DESCARGAR</button></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 d-flex align-items-stretch aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <img src="img/chica.jpeg" class="img-fluid" alt=""> <br><br>             
+                <a href="docs/Anfitrionia02.pdf" download><button type="button" class="btn btn-outline-danger" onclick="mostrarTexto('texto1')">DESCARGAR</button></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 d-flex align-items-stretch aos-init aos-animate" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <img src="img/chica.jpeg" class="img-fluid" alt=""> <br><br>             
+                <a href="docs/Anfitrionia02.pdf" download><button type="button" class="btn btn-outline-danger" onclick="mostrarTexto('texto1')">DESCARGAR</button></a>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+    </section>
 
 
       </div>
