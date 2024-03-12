@@ -109,7 +109,7 @@ if(isset($_GET['region'])){
     </div> -->
 
     <div class="container-fluid px-0">
-       <div class="container" style="height:100vh !important; margin: 100px auto;">
+       <div class="container" style="min-height:100vh !important; margin: 100px auto;">
          <div class="row"> 
             <!-- ************************** TABS que indican la region seleccionada para mostrar la agenda respectiva -->
             <!-- <div class="col-md-12">
@@ -231,104 +231,310 @@ if(isset($_GET['region'])){
                             </tbody>
                         </table> -->
 
-                        <table class="table   table-borderless border align-middle text-center">
+                        <!-- <table class="table   table-borderless border align-middle text-center">
 
-                        <thead class="table-light">
+                              <thead class="table-light">
 
-                        <caption></caption>
+                              <caption></caption>
 
-                        <div class="card">
+                              <div class="card">
 
-                        <div class="card-body cafe text-center" >
+                              <div class="card-body cafe text-center" >
 
-                            <h4 class="card-title" >DÍA 2</h4>
+                                 <h4 class="card-title" >DÍA 2</h4>
 
-                            <h5 class="card-subtitle"> <b>TRABAJO COLEGIADO EN PLENARIA</b></h5>
+                                 <h5 class="card-subtitle"> <b>TRABAJO COLEGIADO EN PLENARIA</b></h5>
 
-                        </div>
+                              </div>
 
-                        </div>
+                              </div>
 
-                        <tr class="text-justifyu">
+                              <tr class="text-justifyu">
 
-                            <th class="verde">HORARIO</th>
+                                 <th class="verde">HORARIO</th>
 
-                            <th class="cafe-claro">ACTIVIDAD</th>
+                                 <th class="cafe-claro">ACTIVIDAD</th>
 
-                        </tr>
+                              </tr>
 
-                        </thead>
+                              </thead>
 
-                        <tbody class="table-group-divider">
+                              <tbody class="table-group-divider">
 
-                            <tr class="" >
+                                 <tr class="" >
 
-                                <td class="verde">09:00 – 10:00</td>
+                                    <td class="verde">09:00 – 10:00</td>
 
-                                <td class="text-left">Registro de asistencia de los invitados</td>
+                                    <td class="text-left">Registro de asistencia de los invitados</td>
 
-                                
+                                    
 
-                            </tr>
+                                 </tr>
 
-                            <tr class="">
+                                 <tr class="">
 
-                                <td class="verde">10:00 - 11:10</td>
+                                    <td class="verde">10:00 - 11:10</td>
 
-                                <td class="text-left cafe-claro-size">Inauguración oficial del Foro de Vinculación (Transmisión en vivo por canales oficiales)</td>
+                                    <td class="text-left cafe-claro-size">Inauguración oficial del Foro de Vinculación (Transmisión en vivo por canales oficiales)</td>
 
-                            </tr>
+                                 </tr>
 
 
 
-                            <tr class="">
+                                 <tr class="">
 
-                                <td class="verde">11:10 – 11:20</td>
+                                    <td class="verde">11:10 – 11:20</td>
 
-                                <td class="text-left ">Fotografía oficial</td>
+                                    <td class="text-left ">Fotografía oficial</td>
 
-                            </tr>
+                                 </tr>
 
-                            <tr class="">
+                                 <tr class="">
 
-                                <td class="verde">11:20 – 11:25</td>
+                                    <td class="verde">11:20 – 11:25</td>
 
-                                <td class="text-left cafe-claro-size">Resultados de los trabajos del día 1</td>
+                                    <td class="text-left cafe-claro-size">Resultados de los trabajos del día 1</td>
 
-                            </tr>
+                                 </tr>
 
-                            <tr class="">
+                                 <tr class="">
 
-                                <td class="verde">11:25 – 12:00</td>
+                                    <td class="verde">11:25 – 12:00</td>
 
-                                <td class="text-left ">Avances y retos por parte de las autoridades educativas estatales de la región</td>
+                                    <td class="text-left ">Avances y retos por parte de las autoridades educativas estatales de la región</td>
 
-                            </tr>
-                            <tr class="">
+                                 </tr>
+                                 <tr class="">
 
-                                <td class="verde">12:00 – 15:00</td>
+                                    <td class="verde">12:00 – 15:00</td>
 
-                                <td class="text-left cafe-claro-size">Diálogo de alto nivel:
-                                    Intercambio entre sectores privado, público y social, en torno a los temas prioritarios de vinculación a nivel regional y estatal.</td>
+                                    <td class="text-left cafe-claro-size">Diálogo de alto nivel:
+                                          Intercambio entre sectores privado, público y social, en torno a los temas prioritarios de vinculación a nivel regional y estatal.</td>
 
-                            </tr>
-                            <tr class="">
+                                 </tr>
+                                 <tr class="">
 
-                                <td class="verde">15:00 – 15:30</td>
+                                    <td class="verde">15:00 – 15:30</td>
 
-                                <td class="text-left ">Conclusiones y cierre</td>
+                                    <td class="text-left ">Conclusiones y cierre</td>
 
-                            </tr>
+                                 </tr>
 
-                        </tbody>
+                              </tbody>
 
-                        <tfoot>
+                              <tfoot>
 
-                        
+                              
 
-                        </tfoot>
+                              </tfoot>
 
-                    </table>
+                       </table> -->
+
+                       <!-- AGENA GENERAL ------------------------------------------ -->
+                       <table class="table table-striped table-bordered">
+                <thead>
+                </thead>
+                <tbody>
+                   <!-- ------------------------------------------------------------------------------------ -->
+                <tr>
+                      <!-- <th scope="row" class="col-md-2 text-center align-middle"> -->
+                         <!-- <p>09:00 – 16:00</p>    Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
+                      <!-- </th> -->
+                      <td >
+                         <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                               <!-- <strong>AGENDA </strong> -->
+                            </label><br>
+
+                            <table class="table   table-borderless border align-middle text-center">
+                   <thead class="table-light">      
+                      <div class="card">
+ 
+                            <div class="card-body cafe text-center" >
+                                <h4 class="card-title" >DÍA 1</h4>
+                               <h5 class="card-subtitle "> <b> MESAS DE TRABAJO SIMULTÁNEAS </b></h5>
+       
+                            </div>
+ 
+                      </div>
+ 
+                      <tr class="text-justifyu" >
+ 
+                         <th class="verde">HORARIO</th>
+ 
+                         <th class="cafe-claro">ACTIVIDAD</th>
+ 
+                      </tr>
+ 
+                   </thead>
+ 
+                      <tbody class="table-group-divider">
+ 
+                         <tr class="" >
+ 
+                            <td class="verde">15:30 - 16:00</td>
+ 
+                            <td class="text-left ">Registro de asistencia de los invitados</td>
+ 
+                            
+ 
+                         </tr>
+                         
+                         <tr class="">
+                            
+                            <td class="verde">16:00 – 16:30</td>
+                      
+                            <td class="text-left cafe-claro-size ">Bienvenida y apertura de los trabajos</td>
+ 
+                         </tr>
+
+                         <tr class="">
+                            
+                            <td class="verde">16:30 – 18:30</td>
+                      
+                            <td class="text-left ">Mesas de trabajo simultáneas con la participación de industria,  gobierno y academia por sectores económicos específicos de la región</td>
+ 
+                         </tr>
+
+                         <tr class="">
+                            
+                            <td class="verde">18:30</td>
+                      
+                            <td class="text-left cafe-claro-size ">Actividad de integración de redes colaborativas (catering)</td>
+ 
+                         </tr>
+ 
+                      </tbody>
+                </table>
+                         </div>
+                      </td>
+                   </tr>                        
+                </tbody>
+             </table>
+             <table class="table table-striped table-bordered m-auto">
+                <thead>
+                </thead>
+                <tbody>
+                   <!-- ------------------------------------------------------------------------------------ -->
+                <tr>
+                      <!-- <th scope="row" class="col-md-2 text-center align-middle"> -->
+                         <!-- <p>09:00 – 16:00</p>    Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
+                      <!-- </th> -->
+                      <td >
+                         <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                               <!-- <strong>AGENDA </strong> -->
+                            </label><br>
+
+                <table class="table   table-borderless border align-middle text-center">
+
+                   <thead class="table-light">
+ 
+                      <caption></caption>
+ 
+                      <div class="card">
+ 
+                      <div class="card-body cafe text-center" >
+ 
+                         <h4 class="card-title" >DÍA 2</h4>
+ 
+                         <h5 class="card-subtitle"> <b>TRABAJO COLEGIADO EN PLENARIA</b></h5>
+ 
+                      </div>
+ 
+                      </div>
+ 
+                      <tr class="text-justifyu">
+ 
+                         <th class="verde">HORARIO</th>
+ 
+                         <th class="cafe-claro">ACTIVIDAD</th>
+ 
+                      </tr>
+ 
+                      </thead>
+ 
+                      <tbody class="table-group-divider">
+ 
+                         <tr class="" >
+ 
+                            <td class="verde">09:00 – 10:00</td>
+ 
+                            <td class="text-left">Registro de asistencia de los invitados</td>
+ 
+                            
+ 
+                         </tr>
+ 
+                         <tr class="">
+ 
+                            <td class="verde">10:00 - 11:10</td>
+ 
+                            <td class="text-left cafe-claro-size">Inauguración oficial del Foro de Vinculación (Transmisión en vivo por canales oficiales)</td>
+ 
+                         </tr>
+ 
+                         <!-- <tr class="">
+ 
+                            <td class="verde">11:00 - 11:10</td>
+ 
+                            <td class="text-left">Presentación de las Memorias de Buenas Prácticas de Vinculación</td>
+ 
+                         </tr> -->
+ 
+                         <tr class="">
+ 
+                            <td class="verde">11:10 – 11:20</td>
+ 
+                            <td class="text-left ">Fotografía oficial</td>
+ 
+                         </tr>
+ 
+                         <tr class="">
+ 
+                            <td class="verde">11:20 – 11:25</td>
+ 
+                            <td class="text-left cafe-claro-size">Resultados de los trabajos del día 1</td>
+ 
+                         </tr>
+ 
+                         <tr class="">
+ 
+                            <td class="verde">11:25 – 12:00</td>
+ 
+                            <td class="text-left ">Avances y retos por parte de las autoridades educativas estatales de la región</td>
+ 
+                         </tr>
+                         <tr class="">
+ 
+                            <td class="verde">12:00 – 15:00</td>
+ 
+                            <td class="text-left cafe-claro-size">Diálogo de alto nivel:
+                               Intercambio entre sectores privado, público y social, en torno a los temas prioritarios de vinculación a nivel regional y estatal.</td>
+ 
+                         </tr>
+                         <tr class="">
+ 
+                            <td class="verde">15:00 – 15:30</td>
+ 
+                            <td class="text-left ">Conclusiones y cierre</td>
+ 
+                         </tr>
+ 
+                      </tbody>
+ 
+                      <tfoot>
+ 
+                      
+ 
+                      </tfoot>
+ 
+                </table>
+                         </div>
+                      </td>
+                   </tr>                        
+                </tbody>
+             </table>
                      
                      <?php }elseif ($var_reg == /*6*/ 7) {?> <!--*************************************************VALIDACIÓN PARA LA AGENDA DE REGION METROPOLITANA QUE CAMBIA EN ESTA REGIÓN-->
                         <h2 class="table-light verde text-center" style="font-size: 32px !important; padding: 15px !important;">Agenda - Región METROPOLITANA</h2>
