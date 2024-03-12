@@ -171,7 +171,17 @@ function run_registros_region($reg)
     return $result;
 }
 
-
+function insert_registro_express($region,$nombre,$apaterno, $amaterno, $nom_org,$otro_cargo, $email, $tel_movil,$registro_manual)
+{
+  global $mysqli;
+  
+  $sql = "INSERT INTO usuario(id_usuario, dt_apaterno, dt_amaterno, dt_nombre, dt_email, dt_region, dt_nom_org, dt_cargo, dt_registro_manual) 
+  VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?)";
+  $stmt = $mysqli->prepare($sql);
+  $stmt->bind_param("ssssssss", $apaterno, $amaterno, $nombre, $email, $region, $nom_org, $otro_cargo, $registro_manual);
+  $stmt->execute();
+  $stmt->close();
+}
 
 
 // Funcion solo para aceptados por region
