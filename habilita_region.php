@@ -236,7 +236,11 @@
                     <tbody>
                     <tr>
                             <td><?= $value['idusuario']; ?></td>
-                            <td><?= $value['dt_correo']; ?></td>
+                            <td>
+                                <?= $value['dt_correo']; ?> 
+                                <br>
+                                <b>pass:</b> <?= $value['dt_password']; ?> 
+                             </td>
                             <td>
                             <?php if( $value['dt_dia'] == 2 && ($value['dt_status'] == 1  )) { 
                                 ?>

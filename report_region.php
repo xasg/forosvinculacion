@@ -1,6 +1,6 @@
 <?php
 session_start();
-if( ($_SESSION["tp_usuario"] != 6 )){
+if( ($_SESSION["tp_usuario"] != 2 )){
   header("Location:logout.php");
  }
 include_once('databases_registro.php');
@@ -93,12 +93,22 @@ $nom_region = $_SESSION["nom_region"];
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-    
+  <style>
+    .btn-outline-danger{
+      border-color: #10312B !important;
+      color: #10312B !important;
+    }
+    .btn-outline-danger:hover{
+      color:#fff !important;
+      background: linear-gradient(to top ,#10312B,#235b4e) !important;
+    }
+  </style>  
 </head>
 <body>
     <?php
-    // Supongo que $var_reg contiene los datos necesarios
-    $registros = run_registros_region($var_reg);
+    // // Supongo que $var_reg contiene los datos necesarios
+    // $registros = run_registros_region($var_reg);
+    $registros = run_registros_tall($var_reg);
     ?>
 
     <!-- Menu de navegación -->
@@ -119,8 +129,8 @@ $nom_region = $_SESSION["nom_region"];
                             </a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" onclick="mostrarTexto('texto1')">
-                                REGÍSTRO
+                            <a class="nav-link" href="logout.php">
+                                SALIR
                             </a>
                         </li>
                     </ul>
@@ -136,7 +146,7 @@ $nom_region = $_SESSION["nom_region"];
             </div>
         </div>
         <section>
-            <div id="accordion">
+            <div id="accordion" >
                 <div class="row justify-content-center mt-5">
                     <div class="pad col-md-2 text-center">
                         <a data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -147,19 +157,12 @@ $nom_region = $_SESSION["nom_region"];
                             </div>
                         </a>
                     </div>
+
+
                     <div class="pad col-lg-2 col-md-2 text-center">
                         <a data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                             <div class="view overlay">
-                                <!--<button type="button" class="btn btn-outline-danger "style="width: 200px; height: 50px;" onclick="mostrarTexto('texto2')">
-                                    <p>REGISTRAR</p>
-                                </button>-->
-                            </div>
-                        </a>
-                    </div>
-                    <div class="pad col-lg-2 col-md-2 text-center">
-                        <a data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            <div class="view overlay">
-                                <button type="button" class="btn btn-outline-danger " style="width: 200px; height: 50px;" onclick="mostrarTexto('texto2')">
+                                <button type="button" class="btn btn-outline-danger btn-lg" style="width: 200px; height: 50px;" onclick="mostrarTexto('texto2')">
                                     <p>REGISTRAR</p>
                                 </button>
                             </div>
@@ -169,38 +172,214 @@ $nom_region = $_SESSION["nom_region"];
 
                 <!---------------------------------------------------------------->
 
-                <div id="texto1" style="display: none;">
+                <div id="texto1" style="display: none; margin-bottom:120px;">
                     <br>
-                    <table class="table table-responsive table-striped table-bordered">
+
+                    <div class="table-responsive">
+                      <table id="example" class="table table-responsive table-striped table-bordered" style="width: 100%;">
                         <thead>
-                            <tr>
-                                <th>Folio</th>
-                                <th>Nombre</th>
-                                <th>Primer apellido</th>
-                                <th>Segundo apellido</th>
-                                <th>Nombre de la Organización</th>
-                                <th>Cargo</th>
-                            </tr>
+                          <tr>
+                            <th class="col-md-2" >#Folio <input type="text" class="form-control form-control-sm input-search" data-column="0"></th>
+                            <th class="col-md-4">Nombre <input type="text" class="form-control form-control-sm input-search" data-column="1"></th>
+                            <th class="col-md-4 ">Correo <input type="text" class="form-control form-control-sm input-search" data-column="2"></th>
+                            <th class="col-md-5">Cargo <input type="text" class="form-control form-control-sm input-search" data-column="3"></th>
+                            <!-- <th class="col-md-5">Experiencia</th> -->
+                            <!-- <th class="col-md-5">Semblanza</th> -->
+                            <!-- <th class="col-md-1">Estatus</th> -->
+                          </tr>
                         </thead>
                         <tbody>
-                            <?php while ($registro = $registros->fetch_assoc()): ?>
-                                <tr>
-                                    <td><?php echo $registro['id_usuario']; ?></td>
-                                    <td><?php echo $registro['dt_nombre']; ?></td>
-                                    <td><?php echo $registro['dt_apaterno']; ?></td>
-                                    <td><?php echo $registro['dt_amaterno']; ?></td>
-                                    <td><?php echo $registro['dt_nom_org']; ?></td>
-                                    <td><?php echo $registro['dt_cargo']; ?></td>
+                          <?php
+                  
+                          while ($reg = $registros->fetch_assoc()) {
+                          ?>
+                            <tr style="border-bottom:0px">
+                                <td class="text-center">
+                                  <b>
+                                    <?php echo $reg['id_usuario'];?> 
+                                  </b>
+                                </td>
+                                
+                                <td>
+                                  
+                                    <?php echo $reg['dt_nombre'].' '.$reg['dt_apaterno'].' '.$reg['dt_amaterno'];?> 
+                                  
+                                </td>
+                  
+                                <td>
+                                  
+                                    <?php echo $reg['dt_email'];?> 
+                                  
+                                </td>
+                  
+                                <td>
+                                    <?php if ($reg['dt_cargo'] == NULL) {
+                                      echo $reg['dt_cargo2'];
+                                    }else{
+                                      echo $reg['dt_cargo'];
+                                    };
+                                    ?> <?php if ($reg['dt_otro_cargo'] == NULL) {
+                                      echo $reg['dt_otro_cargo2'];
+                                    }else{
+                                      echo $reg['dt_otro_cargo'];
+                                    };?>
+                                  
+                                </td>
+                  
+                  
+                  
+                                <!-- <td>
+                                    INSTITUCIÓN: <?php if ($reg['dt_nom_org'] == NULL) {
+                                      echo $reg['dt_nom_org2'];
+                                    } else {
+                                      echo $reg['dt_nom_org'];
+                                    } ?><br>
+                                    Nombre:<?php echo $reg['dt_nombre'] . " " . $reg['dt_apaterno'] . " " . $reg['dt_amaterno']; ?><br>
+                                    Correo: <?php echo $reg['dt_email']; ?><br>
+                                    Cargo: <?php if ($reg['dt_cargo'] == NULL) {
+                                      echo $reg['dt_cargo2'];
+                                    }else{
+                                      echo $reg['dt_cargo'];
+                                    };
+                                    ?>-  <?php if ($reg['dt_otro_cargo'] == NULL) {
+                                      echo $reg['dt_otro_cargo2'];
+                                    }else{
+                                      echo $reg['dt_otro_cargo'];
+                                    };?><br>
+                                    Experiencia: 
+                                    <?php if ($reg['dt_educacion_dual'] != 0) {
+                                    ?>
+                                      Educación Dual, 
+                                    <?php
+                  
+                                    }  ?>
+                  
+                                    <?php if ($reg['dt_economia_social_solidaria'] != 0) {
+                                    ?>
+                                      Emprendimiento asociativo(ESS), 
+                                    <?php
+                  
+                                    }  ?>
+                  
+                                    <?php if ($reg['dt_servicio_social_comunitario'] != 0) {
+                                    ?>
+                                      Servicio social comunitario
+                                    <?php
+                  
+                                    }  ?>  <br>
+                                    ACTIVIDADES SELECCIONADAS:
+                                    <?php if($reg['dt_mesa1']!=NULL) 
+                                    { 
+                                      ?>
+                                      <p>Mesa: Reunión de de responsables de vinculación de las IES</p>
+                                      <?php
+                                      
+                                    }  ?> 
                                     
-
-                                </tr>
-                            <?php endwhile; ?>
+                                    <?php if($reg['dt_mesa2']!=NULL) 
+                                    { 
+                                      ?>
+                                      <p>Mesa 1: Emprendimiento asociativo(ESS)</p>
+                                      <?php
+                                      
+                                    }  ?> 
+                                    
+                                    <?php if($reg['dt_mesa3']!=NULL) 
+                                    { 
+                                      ?>
+                                      <p>Mesa 2: Educación Dual</p>
+                                      <?php
+                                      
+                                    }  ?>
+                                    
+                                    <?php if($reg['dt_mesa4']!=NULL) 
+                                    { 
+                                      ?>
+                                      <p>Mesa 3: Servicio Social</p>
+                                      <?php
+                                      
+                                    }  ?>
+                                    
+                                </td> -->
+                            <!-- <td>
+                              <a class="btn btn-success btn-sm btn-block" data-toggle="collapse" href="#collapse<?php echo $reg['id_usuario'];?>" role="button" aria-expanded="false" aria-controls="collapse<?php echo $reg['id_usuario'];?>">
+                                Consultar semblanza
+                              </a>
+                              <div class="collapse" id="collapse<?php echo $reg['id_usuario'];?>">
+                              <div class="card card-body">
+                              <?php echo $reg['dt_comentario']; ?>
+                              </div>
+                              </div>  
+                            </td> -->
+                              <!-- <td>
+                                <?php if ($reg['tp_estatus'] == "INSCRITO") { ?>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#example<?php echo $reg['id_usuario']; ?>">
+                                  Validar
+                                </button>
+                  
+                                
+                                <div class="modal fade" id="example<?php echo $reg['id_usuario']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">                      
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body">
+                                        <h5>Estás seguro de validar a <?php echo $reg['dt_nombre'] . " " . $reg['dt_apaterno'] . " " . $reg['dt_amaterno']; ?> como asistente</h5>
+                                      
+                                  <form action="update_new.php" method="POST">
+                                    <div class="row">
+                                      <div class="col-md-12">                 
+                                      <input type="hidden" name="id" value="<?php echo $reg['id_usuario']; ?>"><br>
+                                      <input type="hidden" name="region" value="<?php echo $var_reg; ?>">
+                                      <div class="col-md-6">
+                                      <div class="form-check">
+                                          <label class="form-check-label">
+                                            <input type="radio" class="form-check-input" name="validacion" value="ACEPTADO"><h5>Aceptado</h5>
+                                          </label>
+                                      </div>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <div class="form-check">
+                                          <label class="form-check-label">
+                                            <input type="radio" class="form-check-input" name="validacion" value="RECHAZADO"><h5>Rechazado</h5>
+                                          </label>
+                                        </div>
+                                      </div><br>
+                  
+                                      <button type="submit" class="btn btn-primary">Validar </button>
+                                  
+                                    </div>
+                                  </div>
+                                  </form>
+                                  </div>
+                  
+                                    <div class="modal-footer">
+                                    </div>
+                                  </div>
+                                </div>
+                                <?php } elseif ($reg['tp_estatus']=="ACEPTADO") { ?>
+                                  <button type="submit" class="btn btn-success">Aceptado</button>
+                                <?php } else { ?>
+                                  <button type="submit" class="btn btn-danger">Rechazado</button>
+                                <?php } ?>
+                              </div>
+                            </td> -->
+                  
+                  
+                            </tr>
+                  
+                        <?php } ?>
+                  
                         </tbody>
-                    </table>
+                      </table>
+                    </div>
                 </div>
                 <!------------------------------------------------------------------->
 
-                <div id="texto2" style="display: none;">
+                <div id="texto2" style="display: none; margin-bottom:120px;">
                 <!------------------------------------------------------------------------------------------------->
               <form action="update_registro_de_prueba.php" method="POST">
                 <input type="hidden" name="registro_manual" value="<?php echo '1'; ?>">

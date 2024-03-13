@@ -4,6 +4,9 @@ session_start();
 //   # code...
 //   header("Location:login.php");
 // }
+if( ($_SESSION["tp_usuario"] != 4 )){
+  header("Location:logout.php");
+ }
 include_once('databases_registro.php');
 mysqli_set_charset($mysqli, 'utf8');
 $var_reg=1;
