@@ -48,6 +48,7 @@ if ($_POST)
             header('Location: ../habilita_region.php');
             exit();
         case 7:
+            // Redireccion constancias
             header('Location: ../contanciasForos2023/index.php');
             exit();
 
