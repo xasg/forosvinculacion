@@ -1,3 +1,8 @@
+.cursor-pointer {
+    cursor: pointer;
+}
+
+
 .btn-videos 
 {
     color: #f9f9f9;
@@ -138,7 +143,7 @@ background: linear-gradient(to top ,#10312B,#235b4e) !important;
 
         .texto
          {
-            font-size: 16.5px;
+            font-size: 18px;
             color: white;
         }
         .texto_derecha
