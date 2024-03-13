@@ -152,7 +152,7 @@ $nom_region = $_SESSION["nom_region"];
                         <a data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             <div class="view overlay">
                                 <button type="button" class="btn btn-outline-danger btn-lg" style="width: 200px; height: 50px;" onclick="mostrarTexto('texto1')">
-                                    <p>VER REGISTRO</p>
+                                    <p>VER REGISTROS</p>
                                 </button>
                             </div>
                         </a>
