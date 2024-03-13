@@ -29,6 +29,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tabla con búsqueda y asistencia</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style-stands.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style_navs.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/scrollbooster.min.js"></script>
 <style>
     .btn-primary{
         border: transparent !important;
@@ -414,5 +422,19 @@
 });
 
 </script>
+<script src="assets/js/jquery.min.js"></script>
+   <script src="assets/js/popper.min.js"></script>
+   <script src="assets/js/bootstrap.min.js"></script>
+   <script src="assets/js/wow.min.js"></script>
+   <script src="assets/js/counterup.min.js"></script>
+   <script src="assets/js/jquery.downCount.js"></script>
+   <script src="assets/js/jquery.fancybox.min.js"></script>
+   <script src="assets/js/jquery.bootstrap-touchspin.min.js"></script>
+   <script src="assets/js/perfect-scrollbar.min.js"></script>
+   <script src="assets/js/slick.min.js"></script>
+   <script src="assets/js/isotope.min.js"></script>
+   <script src="assets/js/custom-scripts.js"></script>
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+   <script src="assets/js/bootstrap-multiselect.js"></script>
 </body>
 </html>
