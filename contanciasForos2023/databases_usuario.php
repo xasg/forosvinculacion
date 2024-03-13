@@ -1,5 +1,5 @@
 <?php
-require_once('controller/config.php');
+require_once('controller/databases_log.php');
 $mysqli = new mysqli($servername, $username, $password, $dbname);
 $result ='';
 if( $mysqli->connect_errno)
@@ -14,6 +14,14 @@ function run_participante($id, $region)
   $sql = "SELECT * FROM usuario_constancia
           LEFT JOIN cat_region ON(cat_region.id_cat_region=usuario_constancia.dt_region)
           WHERE id_usuario = '{$id}' AND dt_region = '{$region}'";
+  $result = $mysqli->query($sql);
+   return $result->fetch_assoc();
+}
+function run_participante_2023($id)
+{
+  global $mysqli;
+  $sql = "SELECT * FROM usuario_constancia
+          WHERE id_usuario = '{$id}' ";
   $result = $mysqli->query($sql);
    return $result->fetch_assoc();
 }
@@ -53,4 +61,17 @@ function update_status_constancia($email)  //  esta funcion se usa para poder ca
   $sql = "UPDATE forosvinculacion2023.usuario_constancia SET status_constancia = '1' WHERE dt_email = '" . $email . "'  ";
   $mysqli->query($sql);
 }
+
+// --------
+
+function run_registros_tall()
+{
+  global $mysqli;
+  // ---------------------------------------------------------------------------------Query Modificada, para Ocultarla de la vista a los Admin y correos indicados 
+  $sql ="SELECT * FROM usuario_constancia
+          LEFT JOIN cat_region ON(cat_region.id_cat_region=usuario_constancia.dt_region)";
+  return $mysqli->query($sql);   
+}
+
+
 ?>

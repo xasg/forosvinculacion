@@ -47,6 +47,9 @@ if ($_POST)
         case 6:
             header('Location: ../habilita_region.php');
             exit();
+        case 7:
+            header('Location: ../contanciasForos2023/');
+            exit();
 
         default:
             header('Location: ../login.php?error=invalid-user');

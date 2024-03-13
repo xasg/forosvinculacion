@@ -16,7 +16,7 @@ if(isset($_GET['region'])){
 // Funcion para obtener el listado de participantes por region
 $registros = run_registros_tall($var_reg);
 // Funcion para obtener el resumen de participantes por region
-$participantes = get_region_users();;
+$participantes = get_region_users();
 
 // Inicializacion de Funcion para obtener participantes por region aceptados --------------------
     $sur_sureste_aceptados = '01';  //----------------------------------------> Region SUR SURESTE

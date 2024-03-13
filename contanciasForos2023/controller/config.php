@@ -1,6 +1,6 @@
 <?php
 $servername = "localhost";
-$dbname = "foros2023";
+$dbname = "forosvinculacion2023";
 $username = "root";
 $password = "";
 ?>
