@@ -78,7 +78,7 @@ while ($region = $participantes->fetch_assoc()) {
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="" />
   <meta name="keywords" content="" />
-  <link rel="icon" href="assets/images/favicon.png" sizes="35x35" type="image/png">
+  <link rel="icon" href="img/icon.png">
   <title>Registro</title>
   <link rel="stylesheet" href="assets/css/all.min.css">
   <link rel="stylesheet" href="assets/css/flaticon.css">
@@ -102,7 +102,7 @@ while ($region = $participantes->fetch_assoc()) {
       color: #10312B  ;
       }
       .nav.nav-tabs .nav-item a.active {
-      color: #10312B  ;
+      color: #fff !important ;
       }
         .nav.nav-tabs .nav-item a.nav-link:hover {
         color: #fff !important ;

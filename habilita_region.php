@@ -47,7 +47,7 @@
     }
 
 </style>
-
+<link rel="icon" href="img/icon.png">
 </head>
 <body>
 
