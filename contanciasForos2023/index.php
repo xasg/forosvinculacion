@@ -82,7 +82,7 @@ $sur_sureste = $centro_sur = $centro_occidente = $noreste = $noroeste = $metropo
     <div class="container-fluid mx-0 px-0" style="background: linear-gradient(to top ,#10312B,#235b4e);">
         <div class="container">
             <nav class="navbar navbar-dark navbar-expand-lg navigation">
-            <a href="index.html">
+            <a href="../index.html">
                   <img alt="Responsive image" class="img-fluid" src="../img/logo_2024.png" width="150">
                </a>
                 <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
