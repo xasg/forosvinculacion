@@ -37,6 +37,7 @@ $mysqli->query($sql);
 }
 
 
+
 function acces_registro($email,$region)
 {
   global $mysqli;
@@ -57,6 +58,7 @@ function run_participante($id)
    return $result->fetch_assoc();
 }
 // FUNCION PARA OBTENER PARTICIPANTES POR REGION - LISTA DE ASISTENCIA
+
 function run_participante_region($id, $region,$dia)
 {
     global $mysqli;
@@ -150,24 +152,39 @@ function run_registros_tall($reg)
 
 function run_registros_region($reg)
 {
-  global $mysqli;
-  $reg = 1;
-  $sql =" SELECT `id_usuario`, `dt_nombre`,`dt_email`,`dt_nom_org`
-  FROM `usuario` 
-  WHERE dt_region = 01 "; 
+    global $mysqli;
+    
+    // Sanitizar y escapar el valor de $reg para evitar inyección SQL
+    $reg = $mysqli->real_escape_string($reg);
 
+    $sql = "SELECT `id_usuario`,`dt_nombre`,`dt_apaterno`,`dt_amaterno`, `dt_nom_org`, `dt_cargo`
+            FROM `usuario` 
+            WHERE `dt_region` = '$reg'";
 
-if ($mysqli->query($sql) === TRUE) 
-    {
-        echo "Consulta ejecutada con éxito";
-    } else 
-    {
-        echo "Error al ejecutar la consulta: " . $mysqli->error;
+    $result = $mysqli->query($sql);
+
+    if ($result) {
+        //echo "Consulta ejecutada con éxito";
+    } else {
+        //echo "Error al ejecutar la consulta: " . $mysqli->error;
     }
-// ---------------------------------------------------------------------------------Query Modificada, para Ocultarla de la vista a los Admin y correos indicados
-  return $mysqli->query($sql);   
 
+    return $result;
 }
+
+function insert_registro_express($region,$nombre,$apaterno, $amaterno, $nom_org,$otro_cargo, $email, $tel_movil,$registro_manual)
+{
+  global $mysqli;
+  
+  $sql = "INSERT INTO usuario(id_usuario, dt_apaterno, dt_amaterno, dt_nombre, dt_email, dt_region, dt_nom_org, dt_cargo, dt_registro_manual) 
+  VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?)";
+  $stmt = $mysqli->prepare($sql);
+  $stmt->bind_param("ssssssss", $apaterno, $amaterno, $nombre, $email, $region, $nom_org, $otro_cargo, $registro_manual);
+  $stmt->execute();
+  $stmt->close();
+}
+
+
 // Funcion solo para aceptados por region
 function run_registros_tall_acept($reg){
   global $mysqli;
