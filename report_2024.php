@@ -98,13 +98,16 @@ while ($region = $participantes->fetch_assoc()) {
   <style>
 
 
-.nav.nav-tabs .nav-item a.nav-link {
-color: #10312B  ;
-}
-  .nav.nav-tabs .nav-item a.nav-link:hover {
-  color: #fff !important ;
-  background: linear-gradient(to top ,#10312B,#235b4e) !important;
-  }
+      .nav.nav-tabs .nav-item a.nav-link {
+      color: #10312B  ;
+      }
+      .nav.nav-tabs .nav-item a.active {
+      color: #10312B  ;
+      }
+        .nav.nav-tabs .nav-item a.nav-link:hover {
+        color: #fff !important ;
+        background: linear-gradient(to top ,#10312B,#235b4e) !important;
+        }
 
      .active,.btn-primary{
       background: linear-gradient(to top ,#10312B,#235b4e) !important;
