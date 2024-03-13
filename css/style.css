@@ -47,11 +47,11 @@ background:#bfa27a;
 color: #fff;
 }
 .nav.nav-tabs .nav-item a.nav-link {
-color: #8D203D ;
+color: #10312B  !important;
 }
 .nav.nav-tabs .nav-item a.nav-link:hover {
 color: #fff ;
-background:#8D203D !important;
+background: linear-gradient(to top ,#10312B,#235b4e) !important;
 }
 
 .tabla {

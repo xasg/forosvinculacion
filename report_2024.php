@@ -89,13 +89,30 @@ while ($region = $participantes->fetch_assoc()) {
   <link rel="stylesheet" href="assets/css/responsive.css">
   <link rel="stylesheet" href="assets/css/color.css">
   <link rel="stylesheet" href="assets/css/bootstrap-multiselect.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/style_navs.css">
-   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</head>
+  <link rel="stylesheet" href="css/style.css">              
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <style>
+
+
+.nav.nav-tabs .nav-item a.nav-link {
+color: #10312B  ;
+}
+  .nav.nav-tabs .nav-item a.nav-link:hover {
+  color: #fff !important ;
+  background: linear-gradient(to top ,#10312B,#235b4e) !important;
+  }
+
+     .active,.btn-primary{
+      background: linear-gradient(to top ,#10312B,#235b4e) !important;
+      color: #fff !important;
+    }
+
+  </style>
+  </head>
 
 <body>
 
@@ -176,169 +193,247 @@ while ($region = $participantes->fetch_assoc()) {
            <?php } ?>
             
     </form>
-    <table id="example" class="table table-responsive table-striped table-bordered" style="width: 100%;">
-      <thead>
-        <tr>
-          <th class="col-md-5">Datos</th>
-          <th class="col-md-5">Semblanza</th>
-          <th class="col-md-1">Estatus</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php
 
-        while ($reg = $registros->fetch_assoc()) {
-        ?>
-          <tr style="border-bottom:0px">
-            <td>
-              INSTITUCIÓN: <?php if ($reg['dt_nom_org'] == NULL) {
-                echo $reg['dt_nom_org2'];
-              } else {
-                echo $reg['dt_nom_org'];
-              } ?><br>
-              Nombre:<?php echo $reg['dt_nombre'] . " " . $reg['dt_apaterno'] . " " . $reg['dt_amaterno']; ?><br>
-              Correo: <?php echo $reg['dt_email']; ?><br>
-              Cargo: <?php if ($reg['dt_cargo'] == NULL) {
-                echo $reg['dt_cargo2'];
-              }else{
-                echo $reg['dt_cargo'];
-              };
-              ?>-  <?php if ($reg['dt_otro_cargo'] == NULL) {
-                echo $reg['dt_otro_cargo2'];
-              }else{
-                echo $reg['dt_otro_cargo'];
-              };?><br>
-              Experiencia: 
-              <?php if ($reg['dt_educacion_dual'] != 0) {
-              ?>
-                Educación Dual, 
-              <?php
-
-              }  ?>
-
-              <?php if ($reg['dt_economia_social_solidaria'] != 0) {
-              ?>
-                Emprendimiento asociativo(ESS), 
-              <?php
-
-              }  ?>
-
-              <?php if ($reg['dt_servicio_social_comunitario'] != 0) {
-              ?>
-                Servicio social comunitario
-              <?php
-
-              }  ?>  <br>
-              ACTIVIDADES SELECCIONADAS:
-              <?php if($reg['dt_mesa1']!=NULL) 
-              { 
-                ?>
-                <p>Mesa: Reunión de de responsables de vinculación de las IES</p>
-                <?php
-                
-              }  ?> 
-              
-              <?php if($reg['dt_mesa2']!=NULL) 
-              { 
-                ?>
-                <p>Mesa 1: Emprendimiento asociativo(ESS)</p>
-                <?php
-                
-              }  ?> 
-              
-              <?php if($reg['dt_mesa3']!=NULL) 
-              { 
-                ?>
-                <p>Mesa 2: Educación Dual</p>
-                <?php
-                
-              }  ?>
-              
-              <?php if($reg['dt_mesa4']!=NULL) 
-              { 
-                ?>
-                <p>Mesa 3: Servicio Social</p>
-                <?php
-                
-              }  ?>
-              
-              </td>
-          <td>
-            <a class="btn btn-success btn-sm btn-block" data-toggle="collapse" href="#collapse<?php echo $reg['id_usuario'];?>" role="button" aria-expanded="false" aria-controls="collapse<?php echo $reg['id_usuario'];?>">
-              Consultar semblanza
-            </a>
-            <div class="collapse" id="collapse<?php echo $reg['id_usuario'];?>">
-            <div class="card card-body">
-             <?php echo $reg['dt_comentario']; ?>
-            </div>
-            </div>  
-          </td>
-            <td>
-              <?php if ($reg['tp_estatus'] == "INSCRITO") { ?>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#example<?php echo $reg['id_usuario']; ?>">
-                Validar
-              </button>
-
-              <!-- Modal -->
-              <div class="modal fade" id="example<?php echo $reg['id_usuario']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">                      
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      <h5>Estás seguro de validar a <?php echo $reg['dt_nombre'] . " " . $reg['dt_apaterno'] . " " . $reg['dt_amaterno']; ?> como asistente</h5>
-                    
-                <form action="update_new.php" method="POST">
-                  <div class="row">
-                    <div class="col-md-12">                 
-                    <input type="hidden" name="id" value="<?php echo $reg['id_usuario']; ?>"><br>
-                    <input type="hidden" name="region" value="<?php echo $var_reg; ?>">
-                    <div class="col-md-6">
-                    <div class="form-check">
-                        <label class="form-check-label">
-                          <input type="radio" class="form-check-input" name="validacion" value="ACEPTADO"><h5>Aceptado</h5>
-                        </label>
-                    </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-check">
-                        <label class="form-check-label">
-                          <input type="radio" class="form-check-input" name="validacion" value="RECHAZADO"><h5>Rechazado</h5>
-                        </label>
-                      </div>
-                    </div><br>
-
-                    <button type="submit" class="btn btn-primary">Validar </button>
-                 
-                  </div>
-                </div>
-                </form>
-                </div>
-
-                  <div class="modal-footer">
-                  </div>
-                </div>
-              </div>
-              <?php } elseif ($reg['tp_estatus']=="ACEPTADO") { ?>
-                <button type="submit" class="btn btn-success">Aceptado</button>
-              <?php } else { ?>
-                <button type="submit" class="btn btn-danger">Rechazado</button>
-              <?php } ?>
-            </div>
-          </td>
-
-
+    <div class="table-responsive">
+      <table id="example" class="table table-responsive table-striped table-bordered" style="width: 100%;">
+        <thead>
+          <tr>
+            <th class="col-md-2" >#Folio <input type="text" class="form-control form-control-sm input-search" data-column="0"></th>
+            <th class="col-md-4">Nombre <input type="text" class="form-control form-control-sm input-search" data-column="1"></th>
+            <th class="col-md-4 ">Correo <input type="text" class="form-control form-control-sm input-search" data-column="2"></th>
+            <th class="col-md-5">Cargo <input type="text" class="form-control form-control-sm input-search" data-column="3"></th>
+            <!-- <th class="col-md-5">Experiencia</th> -->
+            <!-- <th class="col-md-5">Semblanza</th> -->
+            <!-- <th class="col-md-1">Estatus</th> -->
           </tr>
-
-       <?php } ?>
-
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          <?php
+  
+          while ($reg = $registros->fetch_assoc()) {
+          ?>
+            <tr style="border-bottom:0px">
+                <td class="text-center">
+                  <b>
+                    <?php echo $reg['id_usuario'];?> 
+                  </b>
+                </td>
+                
+                <td>
+                  
+                    <?php echo $reg['dt_nombre'].' '.$reg['dt_apaterno'].' '.$reg['dt_amaterno'];?> 
+                  
+                </td>
+  
+                <td>
+                  
+                    <?php echo $reg['dt_email'];?> 
+                  
+                </td>
+  
+                <td>
+                     Cargo: <?php if ($reg['dt_cargo'] == NULL) {
+                      echo $reg['dt_cargo2'];
+                    }else{
+                      echo $reg['dt_cargo'];
+                    };
+                    ?>-  <?php if ($reg['dt_otro_cargo'] == NULL) {
+                      echo $reg['dt_otro_cargo2'];
+                    }else{
+                      echo $reg['dt_otro_cargo'];
+                    };?>
+                  
+                </td>
+  
+  
+  
+                <!-- <td>
+                    INSTITUCIÓN: <?php if ($reg['dt_nom_org'] == NULL) {
+                      echo $reg['dt_nom_org2'];
+                    } else {
+                      echo $reg['dt_nom_org'];
+                    } ?><br>
+                    Nombre:<?php echo $reg['dt_nombre'] . " " . $reg['dt_apaterno'] . " " . $reg['dt_amaterno']; ?><br>
+                    Correo: <?php echo $reg['dt_email']; ?><br>
+                    Cargo: <?php if ($reg['dt_cargo'] == NULL) {
+                      echo $reg['dt_cargo2'];
+                    }else{
+                      echo $reg['dt_cargo'];
+                    };
+                    ?>-  <?php if ($reg['dt_otro_cargo'] == NULL) {
+                      echo $reg['dt_otro_cargo2'];
+                    }else{
+                      echo $reg['dt_otro_cargo'];
+                    };?><br>
+                    Experiencia: 
+                    <?php if ($reg['dt_educacion_dual'] != 0) {
+                    ?>
+                      Educación Dual, 
+                    <?php
+  
+                    }  ?>
+  
+                    <?php if ($reg['dt_economia_social_solidaria'] != 0) {
+                    ?>
+                      Emprendimiento asociativo(ESS), 
+                    <?php
+  
+                    }  ?>
+  
+                    <?php if ($reg['dt_servicio_social_comunitario'] != 0) {
+                    ?>
+                      Servicio social comunitario
+                    <?php
+  
+                    }  ?>  <br>
+                    ACTIVIDADES SELECCIONADAS:
+                    <?php if($reg['dt_mesa1']!=NULL) 
+                    { 
+                      ?>
+                      <p>Mesa: Reunión de de responsables de vinculación de las IES</p>
+                      <?php
+                      
+                    }  ?> 
+                    
+                    <?php if($reg['dt_mesa2']!=NULL) 
+                    { 
+                      ?>
+                      <p>Mesa 1: Emprendimiento asociativo(ESS)</p>
+                      <?php
+                      
+                    }  ?> 
+                    
+                    <?php if($reg['dt_mesa3']!=NULL) 
+                    { 
+                      ?>
+                      <p>Mesa 2: Educación Dual</p>
+                      <?php
+                      
+                    }  ?>
+                    
+                    <?php if($reg['dt_mesa4']!=NULL) 
+                    { 
+                      ?>
+                      <p>Mesa 3: Servicio Social</p>
+                      <?php
+                      
+                    }  ?>
+                    
+                </td> -->
+            <!-- <td>
+              <a class="btn btn-success btn-sm btn-block" data-toggle="collapse" href="#collapse<?php echo $reg['id_usuario'];?>" role="button" aria-expanded="false" aria-controls="collapse<?php echo $reg['id_usuario'];?>">
+                Consultar semblanza
+              </a>
+              <div class="collapse" id="collapse<?php echo $reg['id_usuario'];?>">
+              <div class="card card-body">
+               <?php echo $reg['dt_comentario']; ?>
+              </div>
+              </div>  
+            </td> -->
+              <!-- <td>
+                <?php if ($reg['tp_estatus'] == "INSCRITO") { ?>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#example<?php echo $reg['id_usuario']; ?>">
+                  Validar
+                </button>
+  
+                
+                <div class="modal fade" id="example<?php echo $reg['id_usuario']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">                      
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <h5>Estás seguro de validar a <?php echo $reg['dt_nombre'] . " " . $reg['dt_apaterno'] . " " . $reg['dt_amaterno']; ?> como asistente</h5>
+                      
+                  <form action="update_new.php" method="POST">
+                    <div class="row">
+                      <div class="col-md-12">                 
+                      <input type="hidden" name="id" value="<?php echo $reg['id_usuario']; ?>"><br>
+                      <input type="hidden" name="region" value="<?php echo $var_reg; ?>">
+                      <div class="col-md-6">
+                      <div class="form-check">
+                          <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="validacion" value="ACEPTADO"><h5>Aceptado</h5>
+                          </label>
+                      </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-check">
+                          <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="validacion" value="RECHAZADO"><h5>Rechazado</h5>
+                          </label>
+                        </div>
+                      </div><br>
+  
+                      <button type="submit" class="btn btn-primary">Validar </button>
+                   
+                    </div>
+                  </div>
+                  </form>
+                  </div>
+  
+                    <div class="modal-footer">
+                    </div>
+                  </div>
+                </div>
+                <?php } elseif ($reg['tp_estatus']=="ACEPTADO") { ?>
+                  <button type="submit" class="btn btn-success">Aceptado</button>
+                <?php } else { ?>
+                  <button type="submit" class="btn btn-danger">Rechazado</button>
+                <?php } ?>
+              </div>
+            </td> -->
+  
+  
+            </tr>
+  
+         <?php } ?>
+  
+        </tbody>
+      </table>
+    </div>
   </div>
   </div>
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const searchBar = document.querySelectorAll(".input-search");
+    const tables = document.querySelectorAll(".table");
+
+    searchBar.forEach(input => {
+        input.addEventListener("input", function() {
+            tables.forEach(table => {
+                const rows = table.getElementsByTagName("tr");
+                const filter = input.value.toUpperCase();
+                const column = input.getAttribute("data-column");
+
+                for (let i = 1; i < rows.length; i++) {
+                    const row = rows[i].getElementsByTagName("td")[column];
+                    if (row) {
+                        const textValue = row.textContent || row.innerText;
+                        if (textValue.toUpperCase().indexOf(filter) > -1) {
+                            rows[i].style.display = "";
+                        } else {
+                            rows[i].style.display = "none";
+                        }
+                    }
+                }
+            });
+        });
+    });
+
+    const radioButtons = document.querySelectorAll(".form-check-input");
+    radioButtons.forEach(button => {
+        button.addEventListener("change", function() {
+            const hiddenInput = document.getElementById("asistencia" + button.id.slice(-1));
+            hiddenInput.value = button.value;
+        });
+    });
+});
+
+</script>
 </body>
 
 </html>

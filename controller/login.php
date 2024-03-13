@@ -34,7 +34,7 @@ if ($_POST)
             header('Location: ../report.php');
             exit();
         case 4:
-            // Código para el tipo 4
+            header("Location: ../report_2024.php");
             break;
         case 5:
             if ($user['dt_status'] == 1) {
