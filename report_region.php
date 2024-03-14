@@ -70,6 +70,34 @@ $nom_region = $_SESSION["nom_region"];
     background: #8D203D !important;
     color:#fff !important;
 } */
+
+.btn-outline-danger{
+      border-color: #10312B !important;
+      color: #10312B !important;
+    }
+    .btn-outline-danger:hover{
+      color:#fff !important;
+      background: linear-gradient(to top ,#10312B,#235b4e) !important;      
+    }
+
+    .margen_boton_derecho 
+    {
+      margin-right: 10%;
+      
+    }
+
+    .margen_boton_izquierdo 
+    {
+      margin-left: 10%;
+    }
+
+
+
+   /* @media  (max-width: 700px) 
+    {
+
+    
+    }*/
    </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -92,17 +120,7 @@ $nom_region = $_SESSION["nom_region"];
    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-  <style>
-    .btn-outline-danger{
-      border-color: #10312B !important;
-      color: #10312B !important;
-    }
-    .btn-outline-danger:hover{
-      color:#fff !important;
-      background: linear-gradient(to top ,#10312B,#235b4e) !important;
-    }
-  </style>  
+  
 </head>
 <body>
     <?php
@@ -147,8 +165,8 @@ $nom_region = $_SESSION["nom_region"];
         </div>
         <section>
             <div id="accordion" >
-                <div class="row justify-content-center mt-5">
-                    <div class="pad col-md-2 text-center">
+                <div class="row justify-content-center mt-5"   >
+                    <div class="pad col-lg-2 col-md-6 text-center  margen_boton_derechos" >
                         <a data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             <div class="view overlay">
                                 <button type="button" class="btn btn-outline-danger btn-lg" style="width: 200px; height: 50px;" onclick="mostrarTexto('texto1')">
@@ -159,7 +177,7 @@ $nom_region = $_SESSION["nom_region"];
                     </div>
 
 
-                    <div class="pad col-lg-2 col-md-2 text-center">
+                    <div class="pad col-lg-2 col-md-6 text-center   margen_boton_izquierdo " >
                         <a data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                             <div class="view overlay">
                                 <button type="button" class="btn btn-outline-danger btn-lg" style="width: 200px; height: 50px;" onclick="mostrarTexto('texto2')">
@@ -172,7 +190,7 @@ $nom_region = $_SESSION["nom_region"];
 
                 <!---------------------------------------------------------------->
 
-                <div id="texto1" style="display: none; margin-bottom:120px;">
+                <div id="texto1" style="display: block; margin-bottom:120px;">
                     <br>
 
                     <div class="table-responsive">
