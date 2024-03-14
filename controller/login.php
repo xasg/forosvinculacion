@@ -28,28 +28,28 @@ if ($_POST)
     switch ($user['tp_usuario'] ) 
     {
         case 2:
-            header('Location: ../report_region.php');
+            header('Location: ../report_region.php');  // ve reporte por region y esta el registro express
             exit();
         case 3:
             header('Location: ../report.php');
             exit();
         case 4:
-            header("Location: ../report_2024.php");
+            header("Location: ../report_2024.php");  // es la sesion para sep 
             break;
         case 5:
             if ($user['dt_status'] == 1) {
-                header('Location: ../asistencia.php');
+                header('Location: ../asistencia.php');  // aqui se valida las asistencias 
                 exit();
             } else {
                 header('Location: ../login.php?error=invalid-user-asistencia');
                 exit();
             }
         case 6:
-            header('Location: ../habilita_region.php');
+            header('Location: ../habilita_region.php'); // sesion, es para cambiar los dias 
             exit();
         case 7:
             // Redireccion constancias
-            header('Location: ../contanciasForos2023/index.php');
+    header('Location: ../contanciasForos2023/index.php'); // con este generamos constancias manuales, con la informacion en la base datos
             exit();
 
         default:
