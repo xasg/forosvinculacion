@@ -152,22 +152,22 @@ while ($region = $participantes->fetch_assoc()) {
     <div class="col-md-12">
       <ul class="nav nav-tabs">
         <li class="nav-item">
-          <a class="nav-link <?php if($var_reg==1){echo 'active';}?>" href="report_2024.php?region=1">SUR SURESTE (<?=$sur_sureste?><sub>/<?php echo $aceptados_region_sur_sureste?></sub>)</a>
+          <a class="nav-link <?php if($var_reg==1){echo 'active';}?>" href="report_2024.php?region=1">SUR SURESTE (<?=$sur_sureste?><sub><?php echo $aceptados_region_sur_sureste?></sub>)</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?php if($var_reg==2){echo 'active';}?>" href="report_2024.php?region=2">CENTRO SUR (<?=$centro_sur?><sub>/<?php echo $aceptados_region_centro_sur?></sub>)</a>
+          <a class="nav-link <?php if($var_reg==2){echo 'active';}?>" href="report_2024.php?region=2">CENTRO SUR (<?=$centro_sur?><sub><?php echo $aceptados_region_centro_sur?></sub>)</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?php if($var_reg==3){echo 'active';}?>" href="report_2024.php?region=3">CENTRO OCCIDENTE (<?=$centro_occidente?><sub>/<?php echo $aceptados_region_centro_occidente?></sub>)</a>
+          <a class="nav-link <?php if($var_reg==3){echo 'active';}?>" href="report_2024.php?region=3">CENTRO OCCIDENTE (<?=$centro_occidente?><sub><?php echo $aceptados_region_centro_occidente?></sub>)</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?php if($var_reg==4){echo 'active';}?>" href="report_2024.php?region=4">NORESTE (<?=$noreste?><sub>/<?php echo $aceptados_region_noreste?></sub>)</a>
+          <a class="nav-link <?php if($var_reg==4){echo 'active';}?>" href="report_2024.php?region=4">NORESTE (<?=$noreste?><sub><?php echo $aceptados_region_noreste?></sub>)</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?php if($var_reg==5){echo 'active';}?>" href="report_2024.php?region=5">NOROESTE (<?=$noroeste?><sub>/<?php echo $aceptados_region_noroeste?></sub>)</a>
+          <a class="nav-link <?php if($var_reg==5){echo 'active';}?>" href="report_2024.php?region=5">NOROESTE (<?=$noroeste?><sub><?php echo $aceptados_region_noroeste?></sub>)</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?php if($var_reg==6){echo 'active';}?>" href="report_2024.php?region=6">METROPOLITANA (<?=$metropolitana?><sub>/<?php echo $aceptados_region_metropolitana?></sub>)</a>
+          <a class="nav-link <?php if($var_reg==6){echo 'active';}?>" href="report_2024.php?region=6">METROPOLITANA (<?=$metropolitana?><sub><?php echo $aceptados_region_metropolitana?></sub>)</a>
         </li>
       </ul>
     </div>

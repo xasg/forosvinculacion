@@ -406,17 +406,17 @@ $nom_region = $_SESSION["nom_region"];
                 <div class="row">
                   <div class="form-group">
                     <label for="nombre">Nombre(s):</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" onChange="conMayusculas(this)"   required>
+                    <input type="text" class="form-control" id="nombre" name="nombre" onChange="conMayusculas(this)"   >
                   </div>
                   <div>
                     <br>
                     <label for="apellido1">Primer Apellido:</label>
-                    <input type="text" class="form-control" id="apaterno" name="apaterno" onChange="conMayusculas(this)" required>
+                    <input type="text" class="form-control" id="apaterno" name="apaterno" onChange="conMayusculas(this)" >
                   </div>
                   <div>
                     <br>
                     <label for="apellido2">Segundo Apellido:</label>
-                    <input type="text" class="form-control" id="amaterno" name="amaterno" onChange="conMayusculas(this)" required>
+                    <input type="text" class="form-control" id="amaterno" name="amaterno" onChange="conMayusculas(this)" >
                   </div>
                 </div>
                 <div class="col-xl-6">
@@ -451,23 +451,23 @@ $nom_region = $_SESSION["nom_region"];
                   <div>
                     <br>
                     <label for="cargo">Nombre de la organizacion:</label>
-                    <input type="text" class="form-control" id="nom_org" name="nom_org" onChange="conMayusculas(this)"required>
+                    <input type="text" class="form-control" id="nom_org" name="nom_org" onChange="conMayusculas(this)">
                   </div>
                   <div>
                     <br>
                     <label for="cargo">Cargo en la organizacion:</label>
-                    <input type="text" class="form-control" id="otro_cargo" name="otro_cargo" onChange="conMayusculas(this)"required>
+                    <input type="text" class="form-control" id="otro_cargo" name="otro_cargo" onChange="conMayusculas(this)">
                   </div>
                   <div>
                     <br>
                     <label for="correo">Correo Electrónico:</label>
-                    <input type="email" class="form-control" id="email" name="correo" onChange="conMayusculas(this)"required>
+                    <input type="email" class="form-control" id="email" name="correo" onChange="conMayusculas(this)">
                   </div>
                   <br>
                   <div class="col-xl-4">
                      <div class="form-group">
                         <label for="nombre"><br>Móvil (10 dígitos sin espacios)</label>
-                        <input type="text" class="form-control" name="tel_movil" maxlength="10" min=0  required="" pattern="[0-9]{10}">
+                        <input type="text" class="form-control" name="tel_movil" maxlength="10" min=0  pattern="[0-9]{10}">
                      </div>
                   </div>
                    <br>
