@@ -35,6 +35,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tabla con búsqueda y asistencia</title>
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <style>
     .btn-primary{
@@ -104,6 +105,26 @@
                 style="background: linear-gradient(to top ,#10312B,#235b4e);">
                 Asistencias Validadas    
             </a>
+                 <!-- Botón para abrir el modal -->
+        <button type="button" class="btn btn-prmary" data-bs-toggle="modal" data-bs-target="#qrModal" style="background: linear-gradient(to top ,#10312B,#235b4e); color:#fff;">
+            Recuperar Folio - QR
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="qrModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header" style="background: linear-gradient(to top ,#10312B,#235b4e); color:#fff;">
+                        <h5 class="modal-title"  id="exampleModalLabel">Código QR</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <!-- Contenedor para mostrar el QR -->
+                        <img src="" id="qrImage" class="img-fluid" style="width:230px;">
+                    </div>
+                </div>
+            </div>
+        </div>
             
         </div>
     </div>
@@ -244,5 +265,21 @@
         });
     });
 </script>
+    <!-- Bootstrap JS y jQuery (requerido para Bootstrap) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        // Cuando se muestra el modal, hacer la petición AJAX para obtener el nombre del archivo del QR
+        $('#qrModal').on('show.bs.modal', function () {
+            $.ajax({
+                url: 'qrcode.php',
+                success: function (data) {
+                    // Actualiza la fuente de la imagen con el nombre del archivo del QR
+                    $('#qrImage').attr('src', data);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
