@@ -125,7 +125,7 @@ $sur_sureste = $centro_sur = $centro_occidente = $noreste = $noroeste = $metropo
             <th class="col-md-2" >#Folio <input type="text" class="form-control form-control-sm input-search" data-column="0"></th>
             <th class="col-md-4">Nombre <input type="text" class="form-control form-control-sm input-search" data-column="1"></th>
             <th class="col-md-4 ">Correo <input type="text" class="form-control form-control-sm input-search" data-column="2"></th>
-            <th class="col-md-5">gnerar <input type="text" class="form-control form-control-sm input-search" data-column="3"></th>
+            <th class="col-md-5">Constancia</th>
             <!-- <th class="col-md-5">Experiencia</th> -->
             <!-- <th class="col-md-5">Semblanza</th> -->
             <!-- <th class="col-md-1">Estatus</th> -->
@@ -160,7 +160,7 @@ $sur_sureste = $centro_sur = $centro_occidente = $noreste = $noroeste = $metropo
                 <form action="pdf/constancia2023.php" method="POST">
                     <input type="text" id="id_usuario" name="id_usuario" value="<?php echo $reg['id_usuario'];?> " hidden>
                     <button type="sumbit" class="btn btn-primary" method>
-                        generar
+                        Descargar
                     </button>
                 </form>
                     
