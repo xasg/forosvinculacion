@@ -87,9 +87,11 @@
         $user_address = "Paseo Mar Bermejo 4 Playa los Algodones, 85506 San Carlos, Nuevo Guaymas, Sonora";
         break;
       case 06:
-        $user_sede_name = "IPN Zacatenco, Patio Piramidal de la Dirección de Formación e Innovación Educativa (DFIE)";
-        $user_address = "Av. Wilfrido Massieu 326, Nueva Industrial Vallejo, Gustavo A. Madero, 07738 Ciudad de México, CDMX";
+        $user_sede_name = "Palacio de Minería";
+        $user_address = "C. de Tacuba 5, Centro Histórico de la Cdad. de México, Centro, Cuauhtémoc, 06000 Ciudad de México, CDMX" ;
         break;
+
+        
       
       default:
       $user_sede_name = 'Valor no válido';

@@ -430,6 +430,10 @@
                   $cede = "ICC La Paz";
                   $direccion  = "México 11 516, 23060 La Paz, B.C.S." ;
                break;
+               case 06: 
+                  $cede = "Palacio de Minería";
+                  $direccion  = "C. de Tacuba 5, Centro Histórico de la Cdad. de México, Centro, Cuauhtémoc, 06000 Ciudad de México, CDMX" ;
+               break;
                
                   default:
                   break;
