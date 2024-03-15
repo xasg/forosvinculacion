@@ -39,10 +39,10 @@
 
 <body>
    <main >
-      <div class="container-fluid mx-0 px-0" style="background-color: #8D203D;">
+      <div class="container-fluid mx-0 px-0" style="background: linear-gradient(to top ,#10312B,#235b4e);">
          <div class="container">
             <nav class="navbar navbar-dark navbar-expand-lg navigation">
-               <img alt="Responsive image" class="img-fluid" src="img/logo.png" width="150">
+               <img alt="Responsive image" class="img-fluid" src="img/logo_2024.png" width="150">
                <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
                   <span class="navbar-toggler-icon"> </span>
                </button>
@@ -55,7 +55,7 @@
                      </li>
                      <!-- Se agregaron estilos -->
                      <li class="nav-item active activo">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="registro.php">
                            REGISTRO
                         </a>
                      </li>
@@ -66,7 +66,7 @@
          </div>
       </div>
       <div class="w-100 pt-121  opc1 position-relative">
-         <img class="img-fluid" src="img/cintillo_header.png" width="100%" style="margin-top: 2%;">
+         <!-- <img class="img-fluid" src="img/cintillo_header.png" width="100%" style="margin-top: 2%;"> -->
       </div>
 
 
@@ -86,9 +86,9 @@
         
       <!-- Imagen greco de cabecera -->
       <div class="w-100 pt-121  opc1 position-relative">
-         <img class="img-fluid" src="img/cintillo_footer.png" width="100%">
+         <!-- <img class="img-fluid" src="img/cintillo_footer.png" width="100%"> -->
       </div>
-      <footer style="background-color: #8D203D;" id="contacto">
+      <footer style="background: linear-gradient(to top ,#10312B,#235b4e);" id="contacto">
          <div class="w-100 pt-121  opc1 position-relative">
             <div class="container position-relative">
                <div class="footer-wrap w-100 text-center">
@@ -96,7 +96,7 @@
                      <div class="logo d-inline-block">
                         <h1 class="mb-0">
                            <a href="index.html" title=""><br>
-                              <img class="img-fluid" src="img/logo.png" alt="Logo" width="30%">
+                              <img class="img-fluid" src="img/logo_2024.png" alt="Logo" width="30%">
                            </a>
                         </h1>
                      </div>

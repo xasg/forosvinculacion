@@ -27,11 +27,35 @@
    $mesa1 = isset( $_POST['mesa']) ? $_POST['mesa'] : '';
    $catering = isset( $_POST['catering']) ? $_POST['catering'] : '';
    $reg_usuario =acces_registro($email,$region);  
-   
+   $limite_de_registros =  get_limit_region_acept_users($region); 
+   $conteo_registros = get_region_acept_users_registro($region);
+   $bandera = true;
+  //  Se valida que no este llena con 30 participantes primero
+  // foreach ($maximo_participantes as  $tope) {
+  //   # code...
+    if ($conteo_registros >= $limite_de_registros ) {
+      # code...
+      // 
+      // insert_registro($apaterno, $amaterno, $nombre, $email, $tel_ins, $ext, $tel_movil, $region, $entidad, $organizacion, $nom_org, $nom_org2, $cargo, $cargo2, $otro_cargo, $otro_cargo2,$educacion_dual_dt,$servicio_social_comunitario_dt, $economia_social_solidaria_dt , $mesa1, $mesa2, $mesa3, $mesa4, $mesa5, $comentario);   
+      if($reg_usuario != 0 ) {
+        // En caso de que exista el usuario registrado fuera del registro o ya pasado el limite lo envia nuevamente al limite
+        header("Location: limite.php");
+        exit; // Termina la ejecución del script después de redirigir
+      }else{
+        // En caso de que no exista pero el limite ya haya pasado solo se realiza el registro pero lo redirecciona a limite.php
+        insert_registro($apaterno, $amaterno, $nombre, $email, $tel_ins, $ext, $tel_movil, $region, $entidad, $organizacion, $nom_org, $nom_org2, $cargo, $cargo2, $otro_cargo, $otro_cargo2, $mesa1, $catering);   
+        $bandera = false;
+        header("Location: limite.php");
+      }
+      die();
+      exit();
+    }
 
+    // die();
+    // }
    
 // ------------------------------------
-  if($reg_usuario != 0) {
+  if($reg_usuario != 0 ) {
     $id_usuario =acces_registro($email,$region);
     $id_user=$id_usuario['id_usuario'];
     $_SESSION['id'] = $id_user;
