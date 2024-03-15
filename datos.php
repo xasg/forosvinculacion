@@ -423,8 +423,8 @@
                   $direccion  = " Carretera México 200, Km 9 63786, Col, 24 de Febrero, Xalisco, Nay." ;
                break;
                case 04: 
-                  $cede = "Universidad Politécnica de Zacatecas";
-                  $direccion  = "Plan de Pardillo Sn, Parque Industrial, 99059 Fresnillo, Zac." ;
+                  $cede = "Palacio De Convenciones De Zacatecas";
+                  $direccion  = "Blvd. Héroes de Chapultepec S/N Ciudad Gobierno, 98160 Zacatecas, Zac." ;
                break;
                case 05: 
                   $cede = "ICC La Paz";
