@@ -216,9 +216,9 @@ while ($region = $participantes->fetch_assoc()) {
         <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md" role="document" >
           <div class="modal-content">
             <form action="includes/actualiza_limite.php" method="POST">
-              <div class="modal-header">
-                <h5 class="modal-title" id="modalTitleId_2">
-                  Modal title
+              <div class="modal-header" style="color:#fff; background: linear-gradient(to top ,#10312B,#235b4e);">
+                <h5 class="modal-title " id="modalTitleId_2">
+                  Limite de registros
                 </h5>
                 <buttontype="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
