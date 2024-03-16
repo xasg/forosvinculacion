@@ -273,6 +273,7 @@
         // Cuando se muestra el modal, hacer la petición AJAX para obtener el nombre del archivo del QR
         $('#qrModal').on('show.bs.modal', function () {
             $.ajax({
+                // url: 'qrcode.php?region="'.$region.'"',
                 url: 'qrcode.php',
                 success: function (data) {
                     // Actualiza la fuente de la imagen con el nombre del archivo del QR
