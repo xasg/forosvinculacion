@@ -12,6 +12,11 @@ if ($_POST)
     $res = $mysqli->query($sql);
     $datos = $res->fetch_assoc();
     $folio = $datos['id_usuario'];
+    if ($folio != null ) {
+        header('Location: ../recuperar_folio.php?numfolio='.$folio.'&idregion='.$region.''); 
+    }else {
+        header('Location: ../recuperar_folio.php?numfolioinv=invalido&idregion='.$region.''); 
+        
+    }
 
-    header('Location: ../recuperar_folio.php?numfolio='.$folio.'&idregion='.$region.''); 
 }

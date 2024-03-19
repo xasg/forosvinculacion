@@ -102,6 +102,6 @@ echo $filename;
 // $url = 'http://forosdevinculacion.anuies.mx/recuperar_folio.php?idregion="'.$region.'"';
 // $filename = generarQR($url);
 
-// header('location: recuperar_folio.php?idregion='.$region.'');
+header('location: recuperar_folio.php?idregion='.$region.'');
 
 ?>

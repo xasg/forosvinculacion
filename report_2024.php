@@ -263,10 +263,10 @@ while ($region = $participantes->fetch_assoc()) {
         <thead>
           <tr>
             <th class="col-md-2" >#id de registro <input type="text" class="form-control form-control-sm input-search" data-column="0"></th>
-            <th class="col-md-2" >#Folio <input type="text" class="form-control form-control-sm input-search" data-column="0"></th>
-            <th class="col-md-2">Nombre <input type="text" class="form-control form-control-sm input-search" data-column="1"></th>
-            <th class="col-md-2 ">Correo <input type="text" class="form-control form-control-sm input-search" data-column="2"></th>
-            <th class="col-md-4">Cargo <input type="text" class="form-control form-control-sm input-search" data-column="3"></th>
+            <th class="col-md-2" >#Folio <input type="text" class="form-control form-control-sm input-search" data-column="1"></th>
+            <th class="col-md-2">Nombre <input type="text" class="form-control form-control-sm input-search" data-column="2"></th>
+            <th class="col-md-2 ">Correo <input type="text" class="form-control form-control-sm input-search" data-column="3"></th>
+            <th class="col-md-4">Cargo <input type="text" class="form-control form-control-sm input-search" data-column="4"></th>
             <!-- <th class="col-md-5">Experiencia</th> -->
             <!-- <th class="col-md-5">Semblanza</th> -->
             <!-- <th class="col-md-1">Estatus</th> -->
