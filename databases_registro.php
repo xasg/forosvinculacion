@@ -299,6 +299,19 @@ function valida_regiones_inactivas(){
     $res = $mysqli->query($sql);
     return $res;
   }
+  
+  function accesos_region($id_region){
+    global $mysqli;
+
+    $sql = "SELECT * FROM usuario_asistencia
+    WHERE dt_region = '{$id_region}' AND tp_usuario = 2
+    GROUP BY dt_region ORDER BY dt_region ASC";
+    $res = $mysqli->query($sql);
+    $rrow = $res->fetch_assoc();
+    // return $res;
+    return $rrow;
+  }
+
   function conteos_total_region(){
     global $mysqli;
 

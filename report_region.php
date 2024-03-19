@@ -495,5 +495,39 @@ $nom_region = $_SESSION["nom_region"];
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const searchBar = document.querySelectorAll(".input-search");
+
+        searchBar.forEach(input => {
+            input.addEventListener("input", function() {
+                const table = document.getElementById("tabla");
+                const rows = table.getElementsByTagName("tr");
+                const filter = input.value.toUpperCase();
+                const column = input.getAttribute("data-column");
+
+                for (let i = 1; i < rows.length; i++) {
+                    const row = rows[i].getElementsByTagName("td")[column];
+                    if (row) {
+                        const textValue = row.textContent || row.innerText;
+                        if (textValue.toUpperCase().indexOf(filter) > -1) {
+                            rows[i].style.display = "";
+                        } else {
+                            rows[i].style.display = "none";
+                        }
+                    }
+                }
+            });
+        });
+
+        const radioButtons = document.querySelectorAll(".form-check-input");
+        radioButtons.forEach(button => {
+            button.addEventListener("change", function() {
+                const hiddenInput = document.getElementById("asistencia" + button.id.slice(-1));
+                hiddenInput.value = button.value;
+            });
+        });
+    });
+</script>
 </body>
 </html>

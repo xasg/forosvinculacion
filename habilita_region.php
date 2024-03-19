@@ -320,7 +320,7 @@
                     <thead>
                         <tr>
                             <th> # ID <input type="text" class="form-control form-control-sm input-search" data-column="0"></th>
-                            <th> Nombre Región <input type="text" class="form-control form-control-sm input-search" data-column="1"></th>
+                            <th> Nombre Región <input type="text" class="form-control form-control-sm  input-search" data-column="1"></th>
         
                             <th>Registrados</th>
                             
@@ -329,11 +329,17 @@
                     <?php
                         // if ($dia_reg == 1  || $dia_reg == 2 ) { 
                         foreach ($participantes_registrados as $key => $value) { 
+                            $accesos = accesos_region($value['region']);
                         ?>
                     <tbody>
                         <tr>
                             <td><?= $value['region']; ?></td>
-                            <td><?= $value['nombre']; ?></td>
+                            <td>
+                                <?= $value['nombre']; ?> <br>
+                                <b>correo:</b> <?= $accesos['dt_correo']; ?> <br>
+                                <b>pass:</b> <?= $accesos['dt_password']; ?>
+
+                            </td>
                             <td><?= $value['usuarios']; ?></td>                       
                         </tr>
                             
