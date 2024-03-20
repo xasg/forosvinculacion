@@ -421,7 +421,7 @@ $region = view_region();
 });
 </script>
 
-               <div class="row">
+               <div class="row divOcultar">
                   
                <!--Mesas Sur Sureste -->
                <div id="sec_sur_sureste" style="display:none;">
