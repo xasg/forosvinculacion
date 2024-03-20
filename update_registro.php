@@ -27,11 +27,35 @@
    $mesa1 = isset( $_POST['mesa']) ? $_POST['mesa'] : '';
    $catering = isset( $_POST['catering']) ? $_POST['catering'] : '';
    $reg_usuario =acces_registro($email,$region);  
-   
+   $limite_de_registros =  get_limit_region_acept_users($region); 
+   $conteo_registros = get_region_acept_users_registro($region);
+   $bandera = true;
+  //  Se valida que no este llena con 30 participantes primero
+  // foreach ($maximo_participantes as  $tope) {
+  //   # code...
+    if ($conteo_registros >= $limite_de_registros ) {
+      # code...
+      // 
+      // insert_registro($apaterno, $amaterno, $nombre, $email, $tel_ins, $ext, $tel_movil, $region, $entidad, $organizacion, $nom_org, $nom_org2, $cargo, $cargo2, $otro_cargo, $otro_cargo2,$educacion_dual_dt,$servicio_social_comunitario_dt, $economia_social_solidaria_dt , $mesa1, $mesa2, $mesa3, $mesa4, $mesa5, $comentario);   
+      if($reg_usuario != 0 ) {
+        // En caso de que exista el usuario registrado fuera del registro o ya pasado el limite lo envia nuevamente al limite
+        header("Location: limite.php");
+        exit; // Termina la ejecución del script después de redirigir
+      }else{
+        // En caso de que no exista pero el limite ya haya pasado solo se realiza el registro pero lo redirecciona a limite.php
+        insert_registro($apaterno, $amaterno, $nombre, $email, $tel_ins, $ext, $tel_movil, $region, $entidad, $organizacion, $nom_org, $nom_org2, $cargo, $cargo2, $otro_cargo, $otro_cargo2, $mesa1, $catering);   
+        $bandera = false;
+        header("Location: limite.php");
+      }
+      die();
+      exit();
+    }
 
+    // die();
+    // }
    
 // ------------------------------------
-  if($reg_usuario != 0) {
+  if($reg_usuario != 0 ) {
     $id_usuario =acces_registro($email,$region);
     $id_user=$id_usuario['id_usuario'];
     $_SESSION['id'] = $id_user;
@@ -72,19 +96,19 @@
         
         
         case 01:
-          $ubicacion = "https://maps.app.goo.gl/Hr5ktMNuSyuCso5v8";
+          $ubicacion = "https://maps.app.goo.gl/v7TpiHbvKVAS6AtG9";
          break;
         case 02:
-          $ubicacion = "https://maps.app.goo.gl/ztK59NhB679ZtNNi9";
+          $ubicacion = "https://maps.app.goo.gl/koj5vSw5Gz6CEwSi6";
          break;
         case 03:
-          $ubicacion = "https://maps.app.goo.gl/87Ur4XKfHeiG1AyX8";
+          $ubicacion = "https://maps.app.goo.gl/ubRxNV2qn4pq4mAv5";
          break;
         case 04:
-          $ubicacion = "https://maps.app.goo.gl/skD52tqFEuQkE1yv6";
+          $ubicacion = "https://maps.app.goo.gl/FHgmupFmC9JsXJg39";
          break;
         case 05:
-          $ubicacion = "https://maps.app.goo.gl/ee1BLBJevoNVkcf4A";
+          $ubicacion = "https://maps.app.goo.gl/pXQf1dkx8cwyVRcN7";
          break;
         case 06:
           $ubicacion = "https://maps.app.goo.gl/QCZ7VUgEJhhX1Byz6";
@@ -102,14 +126,28 @@
           //Server settings
           $mail->SMTPDebug = 0;                      //Enable verbose debug output
           $mail->isSMTP();                                            //Send using SMTP
-          $mail->Host       = 'smtp.office365.com';                     //Set the SMTP server to send through
+          // $mail->Host       = 'smtp.office365.com';                     //Set the SMTP server to send through
+          // $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+          // $mail->Username   = 'forosdevinculacion@fese.mx';                     //SMTP username
+          // $mail->Username   = 'alexisn@fese.mx';                     //SMTP username
+          // $mail->Password   = 'Fe$e2023.AmT';                               //SMTP password
+          // $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
+          // $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
+          // $mail->Port       = 587;                                     //TCP port to connect to; use 587 if you have 
+          $mail->Host       = 'smtp.hostinger.com';                     //Set the SMTP server to send through
           $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-          $mail->Username   = 'forosdevinculacion@fese.mx';                     //SMTP username
-          $mail->Password   = 'HeVr1043D';                               //SMTP password
-          $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
-          $mail->Port       = 587;                                      //TCP port to connect to; use 587 if you have 
+          $mail->Username   = 'forosdevinculacion@vinculacion.website';                     //SMTP username
+          $mail->Password   = 'HeVr1043D#';                               //SMTP password
+          $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
+          $mail->Port       = 465;   
+    //Recipients
+    // $mail->setFrom('forosdevinculacion@fese.mx', 'FOROS DE VINCULACIÓN 2024.');
+    $mail->setFrom('forosdevinculacion@vinculacion.website', 'FOROS DE VINCULACIÓN 2024.');          
+    $mail->setFrom('forosdevinculacion@fese.mx', 'FOROS DE VINCULACIÓN 2024.');          
+    // $mail->setFrom('forosdevinculacion@fese.mx', 'FOROS DE VINCULACIÓN 2024.');
+    // $mail->setFrom('alexisn@fese.mx', 'FOROS DE VINCULACIÓN 2024.');
           //Recipients
-          $mail->setFrom('forosdevinculacion@fese.mx', 'FOROS DE VINCULACIÓN 2024.');
+          // $mail->setFrom('forosdevinculacion@fese.mx', 'FOROS DE VINCULACIÓN 2024.');
           $mail->addAddress($d_email, $d_nombre);     //Add a recipient
           //$mail->addAttachment('img/programa.png', 'new.jpg');    //Optional name
           //Content
@@ -234,6 +272,14 @@
         $correo =  $d_email; // Reemplaza esto con el correo correspondiente
 
       $ch = curl_init();
+      
+      $url = 'http://forosdevinculacion.anuies.mx/docs/Anfitrionia'.$region.'.pdf';
+    
+
+      // $message = 'Gracias por registrarse en los foros de vinculación de la región *' . $region_wp . '*.\n\nEl cual se llevará a cabo el *' . $fecha . '*.\n\nPor favor, revisa tu bandeja de entrada, ya que toda la información para asistir al evento se encuentra en el correo que se te envió, además adjunto te enviamos tu folio asociado al correo electrónico que se registró.\n\nFolio: *' . $folio . '*\nCorreo: ' . $correo. '\n\n*Enlace para descargar la anfitrionia*: ' . $url.'\n\n*Ubicación*: ' . $ubicacion.'\n\n';
+      $message = 'Gracias por registrarse en los foros de vinculación de la región *' . $region_wp . '*.\n\nEl cual se llevará a cabo el *' . $fecha . '*.\n\nAdjunto te enviamos tu folio asociado al correo electrónico que se registró, así como la ubicación y la anfitrionia.\n\nFolio: *' . $folio . '*\nCorreo: ' . $correo. '\n\n*Enlace para descargar la anfitrionia*: ' . $url.'\n\n*Ubicación*: ' . $ubicacion.'\n\n';
+
+
 
       curl_setopt($ch, CURLOPT_URL, 'https://graph.facebook.com/v18.0/248737348321458/messages');
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -254,8 +300,9 @@
                     'parameters' => [
                         [
                             'type' => 'text',
-                            'text' => 'Gracias por registrarse en los foros de vinculación de la región *' . $region_wp . '*.\n\nEl cual se llevará a cabo el *' . $fecha . '*.\n\nPor favor, revisa tu bandeja de entrada, ya que toda la información para asistir al evento se encuentra en el correo que se te envió, además adjunto te enviamos tu folio asociado al correo electrónico que se registró.\n\nFolio: *' . $folio . '*\nCorreo: ' . $correo. '\n'
-                        ]
+                            // 'text' => 'Gracias por registrarse en los foros de vinculación de la región *' . $region_wp . '*.\n\nEl cual se llevará a cabo el *' . $fecha . '*.\n\nPor favor, revisa tu bandeja de entrada, ya que toda la información para asistir al evento se encuentra en el correo que se te envió, además adjunto te enviamos tu folio asociado al correo electrónico que se registró.\n\nFolio: *' . $folio . '*\nCorreo: ' . $correo. '\n'
+                            'text' => $message
+                        ],
                     ]
                 ]
             ]

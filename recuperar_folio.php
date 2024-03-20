@@ -1,3 +1,10 @@
+<?php
+  // $region = '';
+  if ($_GET['idregion']) {
+    $region = $_GET['idregion'];
+  }
+  // print $region;
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -150,7 +157,7 @@ border-bottom-right-radius: .3rem;
    </form>
     
   -->
-  <section class="h-100 gradient-form" style="background-color: #eee; min-height: 100vh;">
+  <section class="h-100 gradient-form" style="background-color: #eee; min-height: 150vh;">
       <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col-sm-8 col-md-8 col-xl-5">
@@ -166,11 +173,24 @@ border-bottom-right-radius: .3rem;
                       <br>
                     </div>
     
-                    <form action="controller/login.php" method="POST">
+                    <form action="controller/recuperar_folio.php" method="POST">
                       <p>
                         <b>Ingresa con tu correo con el que te registraste para recuperar tu folio</b>
                       </p>
-    
+                      <div class="mb-3">
+                        <!-- <label for="" class="form-label">region</label> -->
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="id_region"
+                          id="id_region"
+                          aria-describedby="helpId"
+                          value="<?php echo $region; ?>"
+                          hidden
+                        />
+                        <small id="helpId" class="form-text text-muted">En caso de no contar con tu folio, ingresa tu correo electronico</small>
+                      </div>
+                      
                       <div class="form-outline mb-4 ">
                         <input type="email" id="correo" name="correo" class="form-control"
                           placeholder="Ingresa tu correo" required/>
@@ -194,7 +214,29 @@ border-bottom-right-radius: .3rem;
                         </div>                   
 
                    <?php } ?>
-    
+                      <?php
+                     // Esto evaluará a TRUE así que el texto se imprimirá.
+                     
+                    if (!empty(isset($_GET['numfolio']))) {
+                        ?>
+                        
+                        <div class="alert alert-success" role="alert">
+                        numero de folio : <h3 class="text-center"> <b><?=  $_GET['numfolio']; ?></b></h3>
+                        </div>
+                        
+                   <?php }
+                   
+                    if(!empty(isset($_GET['numfolioinv']))){
+                    ?>
+                        <div class="alert alert-danger" role="alert">
+                          número de folio : <h3 class="text-center"> <b><?=  $_GET['numfolioinv']; ?></b></h3>
+                          <a class="btn btn-danger btn-sm" href="registro.php">Registrate</a>
+                        </div>            
+
+                    <?php
+                    } 
+                    ?>
+                      
                       <!-- <div class="d-flex align-items-center justify-content-center pb-4">
                         <p class="mb-0 me-2">Don't have an account?</p>
                         <button type="button" class="btn btn-outline-danger">Create new</button>

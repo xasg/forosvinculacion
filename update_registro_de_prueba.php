@@ -39,7 +39,7 @@
     {
       insert_registro_express($region, $nombre, $apaterno, $amaterno, $nom_org, $otro_cargo, $correo, $tel_movil,$registro_manual);
       
-      echo "entro la funcion ";
+     // echo "entro la funcion ";
       header("Location: report_region.php?registrado");
       exit;
     

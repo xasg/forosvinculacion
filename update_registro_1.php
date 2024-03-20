@@ -36,7 +36,8 @@
    $mesa5 = isset( $_POST['mesa5']) ? $_POST['mesa5'] : '';
    $comentario = isset( $_POST['comentario']) ? $_POST['comentario'] : '';
    $reg_usuario =acces_registro($email);
-   $maximo_participantes = get_region_acept_users($region);
+   $maximo_participantes = get_limit_region_acept_users($region);
+   $maximo_participantes = get_limit_region_acept_users($region);
    $bandera = true;
   //  Se valida que no este llena con 30 participantes primero
   foreach ($maximo_participantes as  $tope) {
@@ -46,8 +47,10 @@
       insert_registro($apaterno, $amaterno, $nombre, $email, $tel_ins, $ext, $tel_movil, $region, $entidad, $organizacion, $nom_org, $nom_org2, $cargo, $cargo2, $otro_cargo, $otro_cargo2,$educacion_dual_dt,$servicio_social_comunitario_dt, $economia_social_solidaria_dt , $mesa1, $mesa2, $mesa3, $mesa4, $mesa5, $comentario);   
       $bandera = false;
       header("Location: limite.php");
+      die();
     }
     }
+
 // ------------------------------------
     if($reg_usuario==0 && $bandera ){ //se agrega validación de bandera
       insert_registro($apaterno, $amaterno, $nombre, $email, $tel_ins, $ext, $tel_movil, $region, $entidad, $organizacion, $nom_org, $nom_org2, $cargo, $cargo2, $otro_cargo, $otro_cargo2,$educacion_dual_dt,$servicio_social_comunitario_dt, $economia_social_solidaria_dt , $mesa1, $mesa2, $mesa3, $mesa4, $mesa5, $comentario);   
@@ -87,9 +90,11 @@
         $user_address = "Paseo Mar Bermejo 4 Playa los Algodones, 85506 San Carlos, Nuevo Guaymas, Sonora";
         break;
       case 06:
-        $user_sede_name = "IPN Zacatenco, Patio Piramidal de la Dirección de Formación e Innovación Educativa (DFIE)";
-        $user_address = "Av. Wilfrido Massieu 326, Nueva Industrial Vallejo, Gustavo A. Madero, 07738 Ciudad de México, CDMX";
+        $user_sede_name = "Palacio de Minería";
+        $user_address = "C. de Tacuba 5, Centro Histórico de la Cdad. de México, Centro, Cuauhtémoc, 06000 Ciudad de México, CDMX" ;
         break;
+
+        
       
       default:
       $user_sede_name = 'Valor no válido';

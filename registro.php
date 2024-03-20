@@ -316,10 +316,10 @@ $region = view_region();
                <hr>  
                <div class="row m-auto text-center">
                   <div class="col-md-12"><br>
-                     <p class="text-left"><strong>Día 1. </strong></p> <!-- Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
+                     <p class="text-left divOcultar"><strong>Día 1. </strong></p> <!-- Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
                   </div>
 
-                  <table class="table table-striped table-bordered">
+                  <table  class="table table-striped table-bordered divOcultar">
                      <thead>
                      </thead>
                      <tbody>
@@ -401,6 +401,25 @@ $region = view_region();
                   </table>
                </div>
 
+               
+<script>
+    function mostrar(valor) {
+        var divOcultar = document.getElementById("divOcultar");
+        if (valor == "06") {
+            divOcultar.style.display = "none";
+        } else {
+            divOcultar.style.display = "block";
+        }
+    }
+
+    $('#region').change(function() {
+    if ($(this).val() == '06') {
+        $('.divOcultar').hide();
+    } else {
+        $('.divOcultar').show();
+    }
+});
+</script>
 
                <div class="row">
                   
@@ -710,7 +729,7 @@ $region = view_region();
                <hr>
                <div class="row m-auto">
                   <div class="col-md-12 text-center"><br>
-                     <p class="text-left"><strong>Día 2. </strong></p> <!-- Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
+                     <p class="text-left divOcultar"><strong>Día 2. </strong></p> <!-- Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
                   </div>
 
                   <table class="table table-striped table-bordered m-auto">

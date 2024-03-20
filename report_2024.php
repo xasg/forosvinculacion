@@ -21,7 +21,7 @@ $participantes = get_region_users();;
 // Inicializacion de Funcion para obtener participantes por region aceptados --------------------
     $sur_sureste_aceptados = '01';  //----------------------------------------> Region SUR SURESTE
     $array_reg = get_region_acept_users($sur_sureste_aceptados); 
-    foreach ($array_reg as $value) {
+    foreach ($array_reg as $value) {  
       $aceptados_region_sur_sureste = $value['aceptados'];
     }
     $centro_sur_aceptados = '02';//----------------------------------------> Region CENTRO SUR
@@ -83,7 +83,7 @@ while ($region = $participantes->fetch_assoc()) {
   <meta name="keywords" content="" />
   <link rel="icon" href="img/icon.png">
   <title>Registro</title>
-  <link rel="stylesheet" href="assets/css/all.min.css">
+  <!-- <link rel="stylesheet" href="assets/css/all.min.css">
   <link rel="stylesheet" href="assets/css/flaticon.css">
   <link rel="stylesheet" href="assets/css/animate.min.css">
   <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
@@ -97,7 +97,9 @@ while ($region = $participantes->fetch_assoc()) {
   <link rel="stylesheet" href="css/bootstrap.css">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
 
 
@@ -152,22 +154,22 @@ while ($region = $participantes->fetch_assoc()) {
     <div class="col-md-12">
       <ul class="nav nav-tabs">
         <li class="nav-item">
-          <a class="nav-link <?php if($var_reg==1){echo 'active';}?>" href="report_2024.php?region=1">SUR SURESTE (<?=$sur_sureste?><sub>/<?php echo $aceptados_region_sur_sureste?></sub>)</a>
+          <a class="nav-link <?php if($var_reg==1){echo 'active';}?>" href="report_2024.php?region=1">SUR SURESTE (<?=$sur_sureste?><sub><?php echo $aceptados_region_sur_sureste?></sub>)</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?php if($var_reg==2){echo 'active';}?>" href="report_2024.php?region=2">CENTRO SUR (<?=$centro_sur?><sub>/<?php echo $aceptados_region_centro_sur?></sub>)</a>
+          <a class="nav-link <?php if($var_reg==2){echo 'active';}?>" href="report_2024.php?region=2">CENTRO SUR (<?=$centro_sur?><sub><?php echo $aceptados_region_centro_sur?></sub>)</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?php if($var_reg==3){echo 'active';}?>" href="report_2024.php?region=3">CENTRO OCCIDENTE (<?=$centro_occidente?><sub>/<?php echo $aceptados_region_centro_occidente?></sub>)</a>
+          <a class="nav-link <?php if($var_reg==3){echo 'active';}?>" href="report_2024.php?region=3">CENTRO OCCIDENTE (<?=$centro_occidente?><sub><?php echo $aceptados_region_centro_occidente?></sub>)</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?php if($var_reg==4){echo 'active';}?>" href="report_2024.php?region=4">NORESTE (<?=$noreste?><sub>/<?php echo $aceptados_region_noreste?></sub>)</a>
+          <a class="nav-link <?php if($var_reg==4){echo 'active';}?>" href="report_2024.php?region=4">NORESTE (<?=$noreste?><sub><?php echo $aceptados_region_noreste?></sub>)</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?php if($var_reg==5){echo 'active';}?>" href="report_2024.php?region=5">NOROESTE (<?=$noroeste?><sub>/<?php echo $aceptados_region_noroeste?></sub>)</a>
+          <a class="nav-link <?php if($var_reg==5){echo 'active';}?>" href="report_2024.php?region=5">NOROESTE (<?=$noroeste?><sub><?php echo $aceptados_region_noroeste?></sub>)</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?php if($var_reg==6){echo 'active';}?>" href="report_2024.php?region=6">METROPOLITANA (<?=$metropolitana?><sub>/<?php echo $aceptados_region_metropolitana?></sub>)</a>
+          <a class="nav-link <?php if($var_reg==6){echo 'active';}?>" href="report_2024.php?region=6">METROPOLITANA (<?=$metropolitana?><sub><?php echo $aceptados_region_metropolitana?></sub>)</a>
         </li>
       </ul>
     </div>
@@ -199,15 +201,72 @@ while ($region = $participantes->fetch_assoc()) {
            <?php } ?>
             
     </form>
+    
+    <div class="container">
+      <label for="">Limite de registros</label>
+      <input style="margin-bottom:15px; border :none; font-weight:bold; width:50px ;" type="text" value="<?php echo get_limit_region_acept_users('0'.$var_reg);  ?>">
+      
+      <!-- Modal trigger button -->
+      <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalId_2">
+        Editar limite
+      </button>
+      <!-- Modal Body -->
+      <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+      <div class="modal fade" id="modalId_2" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId_2" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md" role="document" >
+          <div class="modal-content">
+            <form action="includes/actualiza_limite.php" method="POST">
+              <div class="modal-header" style="color:#fff; background: linear-gradient(to top ,#10312B,#235b4e);">
+                <h5 class="modal-title " id="modalTitleId_2">
+                  Limite de registros
+                </h5>
+                <buttontype="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                
+                <div class="mb-3">
+                  <label for="" class="form-label">Limite actual</label>
+                  <input type="text" class="form-control" id="id_region_actual" name="id_region_actual"  value="<?php echo '0'.$var_reg;?>" hidden />
+                  <input type="text" class="form-control" aria-describedby="helpId" value="<?php echo get_limit_region_acept_users('0'.$var_reg);  ?>" disabled/>
+                  <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+                </div>
+                <div class="mb-3">
+                  <label for="" class="form-label">Define un nuevo limite</label>
+                  <input type="text" class="form-control" id="limite_nuevo" name="limite_nuevo" aria-describedby="helpId" />
+                  <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+                </div>
+                
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                  cerrar
+                </button>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Optional: Place to the bottom of scripts -->
+      <script>
+        const myModal = new bootstrap.Modal(
+          document.getElementById("modalId_2"),
+          options,
+        );
+      </script>
+      
 
     <div class="table-responsive">
       <table id="example" class="table table-responsive table-striped table-bordered" style="width: 100%;">
         <thead>
           <tr>
-            <th class="col-md-2" >#Folio <input type="text" class="form-control form-control-sm input-search" data-column="0"></th>
-            <th class="col-md-4">Nombre <input type="text" class="form-control form-control-sm input-search" data-column="1"></th>
-            <th class="col-md-4 ">Correo <input type="text" class="form-control form-control-sm input-search" data-column="2"></th>
-            <th class="col-md-5">Cargo <input type="text" class="form-control form-control-sm input-search" data-column="3"></th>
+            <th class="col-md-2" >#id de registro <input type="text" class="form-control form-control-sm input-search" data-column="0"></th>
+            <th class="col-md-2" >#Folio <input type="text" class="form-control form-control-sm input-search" data-column="1"></th>
+            <th class="col-md-2">Nombre <input type="text" class="form-control form-control-sm input-search" data-column="2"></th>
+            <th class="col-md-2 ">Correo <input type="text" class="form-control form-control-sm input-search" data-column="3"></th>
+            <th class="col-md-4">Cargo <input type="text" class="form-control form-control-sm input-search" data-column="4"></th>
             <!-- <th class="col-md-5">Experiencia</th> -->
             <!-- <th class="col-md-5">Semblanza</th> -->
             <!-- <th class="col-md-1">Estatus</th> -->
@@ -215,11 +274,14 @@ while ($region = $participantes->fetch_assoc()) {
         </thead>
         <tbody>
           <?php
-  
+          $i = 1;
           while ($reg = $registros->fetch_assoc()) {
           ?>
             <tr style="border-bottom:0px">
-                <td class="text-center">
+              <td>
+                <?php echo $i;?>
+              </td>  
+              <td class="text-center">
                   <b>
                     <?php echo $reg['id_usuario'];?> 
                   </b>
@@ -395,7 +457,7 @@ while ($region = $participantes->fetch_assoc()) {
   
   
             </tr>
-  
+                <?php $i++;?>
          <?php } ?>
   
         </tbody>
@@ -440,6 +502,12 @@ while ($region = $participantes->fetch_assoc()) {
 });
 
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+<!-- <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
 </body>
 
 </html>
