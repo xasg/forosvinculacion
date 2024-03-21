@@ -415,8 +415,13 @@ $region = view_region();
     $('#region').change(function() {
     if ($(this).val() == '06') {
         $('.divOcultar').hide();
+        $('.divOcultar2').hide();
+        $('.divOcultar').removeAttr('required');
     } else {
         $('.divOcultar').show();
+        $('.divOcultar2').show();
+        $('.divOcultar').attr('required', 'required');
+        
     }
 });
 </script>
@@ -439,7 +444,7 @@ $region = view_region();
                                  </th>
                                  <td>
                                        <div class="form-check form-check-inline">
-                                          <input class="form-check-input" type="radio" name="mesa"  value="Electrónica" required>
+                                          <input class="form-check-input divOcultar" type="radio" name="mesa"  value="Electrónica" >
                                           <label class="form-check-label">
                                              <strong>Mesa:<br> Electrónica</strong>
                                           </label><br>
@@ -447,7 +452,7 @@ $region = view_region();
                                  </td>
                                  <td>
                                        <div class="form-check form-check-inline">
-                                          <input class="form-check-input" type="radio" name="mesa" value="Automotriz / Electromovilidad" required>
+                                          <input class="form-check-input divOcultar" type="radio" name="mesa" value="Automotriz / Electromovilidad" >
                                           <label class="form-check-label">
                                              <strong>Mesa: <br>Automotriz / Electromovilidad</strong> 
                                           </label>
@@ -455,7 +460,7 @@ $region = view_region();
                                  </td>
                                  <td>
                                        <div class="form-check form-check-inline">
-                                          <input class="form-check-input" type="radio" name="mesa" value="Industria alimentaria" required>
+                                          <input class="form-check-input divOcultar" type="radio" name="mesa" value="Industria alimentaria" >
                                           <label class="form-check-label">
                                              <strong>Mesa: <br>Industria alimentaria</strong>
                                           </label>
@@ -484,7 +489,7 @@ $region = view_region();
                                                          </th>                                                   
                                                          <td>
                                                             <div class="form-check form-check-inline">
-                                                               <input class="form-check-input" type="radio" name="mesa"  value="Automotriz / Electromovilidad">
+                                                               <input class="form-check-input divOcultar" type="radio" name="mesa"  value="Automotriz / Electromovilidad">
                                                                <label class="form-check-label">
                                                                   <strong>Mesa:<br>Automotriz / Electromovilidad</strong>
                                                                </label><br>
@@ -492,7 +497,7 @@ $region = view_region();
                                                          </td>
                                                          <td>
                                                             <div class="form-check form-check-inline">
-                                                               <input class="form-check-input" type="radio" name="mesa" value="Dispositivos médicos" >
+                                                               <input class="form-check-input divOcultar" type="radio" name="mesa" value="Dispositivos médicos" >
                                                                <label class="form-check-label">
                                                                <strong>Mesa:<br> Dispositivos médicos</strong> 
                                                                </label>
@@ -500,7 +505,7 @@ $region = view_region();
                                                          </td>
                                                          <td table-primary>
                                                             <div class="form-check form-check-inline">
-                                                               <input class="form-check-input" type="radio" name="mesa" value="Industria alimentaria" >
+                                                               <input class="form-check-input divOcultar" type="radio" name="mesa" value="Industria alimentaria" >
                                                                <label class="form-check-label">
                                                                   <strong>Mesa:<br> Industria alimentaria</strong>
                                                                   </label>
@@ -529,7 +534,7 @@ $region = view_region();
                                                          </th>                                                   
                                                          <td>
                                                             <div class="form-check form-check-inline">
-                                                               <input class="form-check-input" type="radio" name="mesa"  value="Automotriz / Electromovilidad">
+                                                               <input class="form-check-input divOcultar" type="radio" name="mesa"  value="Automotriz / Electromovilidad">
                                                                <label class="form-check-label">
                                                                   <strong>Mesa:<br> Automotriz / Electromovilidad</strong>
                                                                </label><br>
@@ -537,7 +542,7 @@ $region = view_region();
                                                          </td>
                                                          <td>
                                                             <div class="form-check form-check-inline">
-                                                               <input class="form-check-input" type="radio" name="mesa" value="Electrónica" >
+                                                               <input class="form-check-input divOcultar" type="radio" name="mesa" value="Electrónica" >
                                                                <label class="form-check-label">
                                                                <strong>Mesa:<br>Electrónica</strong> 
                                                                </label>
@@ -545,7 +550,7 @@ $region = view_region();
                                                          </td>
                                                          <td table-primary>
                                                             <div class="form-check form-check-inline">
-                                                               <input class="form-check-input" type="radio" name="mesa" value="Industria alimentaria" >
+                                                               <input class="form-check-input divOcultar" type="radio" name="mesa" value="Industria alimentaria" >
                                                                <label class="form-check-label">
                                                                   <strong>Mesa:<br> Industria alimentaria</strong>
                                                                   </label>
@@ -575,7 +580,7 @@ $region = view_region();
                                                          </th>                                                   
                                                          <td>
                                                             <div class="form-check form-check-inline">
-                                                               <input class="form-check-input" type="radio" name="mesa"  value="Automotriz / Electromovilidad">
+                                                               <input class="form-check-input divOcultar" type="radio" name="mesa"  value="Automotriz / Electromovilidad">
                                                                <label class="form-check-label">
                                                                   <strong>Mesa:<br> Automotriz / Electromovilidad</strong>
                                                                </label><br>
@@ -583,7 +588,7 @@ $region = view_region();
                                                          </td>
                                                          <td>
                                                             <div class="form-check form-check-inline">
-                                                               <input class="form-check-input" type="radio" name="mesa" value="Eléctrico" >
+                                                               <input class="form-check-input divOcultar" type="radio" name="mesa" value="Eléctrico" >
                                                                <label class="form-check-label">
                                                                <strong>Mesa:<br> Eléctrico</strong> 
                                                                </label>
@@ -591,7 +596,7 @@ $region = view_region();
                                                          </td>
                                                          <td table-primary>
                                                             <div class="form-check form-check-inline">
-                                                               <input class="form-check-input" type="radio" name="mesa" value="Industria alimentaria" >
+                                                               <input class="form-check-input divOcultar" type="radio" name="mesa" value="Industria alimentaria" >
                                                                <label class="form-check-label">
                                                                   <strong>Mesa:<br>Industria alimentaria</strong>
                                                                   </label>
@@ -619,7 +624,7 @@ $region = view_region();
                                                          </th>                                                   
                                                          <td>
                                                             <div class="form-check form-check-inline">
-                                                               <input class="form-check-input" type="radio" name="mesa"  value="Electrónica">
+                                                               <input class="form-check-input divOcultar" type="radio" name="mesa"  value="Electrónica">
                                                                <label class="form-check-label">
                                                                   <strong>Mesa:<br>Electrónica</strong>
                                                                </label><br>
@@ -627,7 +632,7 @@ $region = view_region();
                                                          </td>
                                                          <td>
                                                             <div class="form-check form-check-inline">
-                                                               <input class="form-check-input" type="radio" name="mesa" value="Automotriz / Electromovilidad" >
+                                                               <input class="form-check-input divOcultar" type="radio" name="mesa" value="Automotriz / Electromovilidad" >
                                                                <label class="form-check-label">
                                                                <strong>Mesa:<br>Automotriz / Electromovilidad</strong> 
                                                                </label>
@@ -635,7 +640,7 @@ $region = view_region();
                                                          </td>
                                                          <td table-primary>
                                                             <div class="form-check form-check-inline">
-                                                               <input class="form-check-input" type="radio" name="mesa" value="Dispositivos médicos" >
+                                                               <input class="form-check-input divOcultar" type="radio" name="mesa" value="Dispositivos médicos" >
                                                                <label class="form-check-label">
                                                                   <strong>Mesa:<br>Dispositivos médicos</strong>
                                                                   </label>
@@ -663,7 +668,7 @@ $region = view_region();
                                                          </th>                                                   
                                                          <td>
                                                             <div class="form-check form-check-inline">
-                                                               <input class="form-check-input" type="radio" name="mesa"  value="Mesa 1: METROPOLITANA">
+                                                               <input class="form-check-input divOcultar" type="radio" name="mesa"  value="Mesa 1: METROPOLITANA">
                                                                <label class="form-check-label">
                                                                   <strong>Mesa 1: METROPOLITANA</strong>
                                                                </label><br>
@@ -671,7 +676,7 @@ $region = view_region();
                                                          </td>
                                                          <td>
                                                             <div class="form-check form-check-inline">
-                                                               <input class="form-check-input" type="radio" name="mesa" value="Mesa 2: METROPOLITANA" >
+                                                               <input class="form-check-input divOcultar" type="radio" name="mesa" value="Mesa 2: METROPOLITANA" >
                                                                <label class="form-check-label">
                                                                <strong>Mesa 2: METROPOLITANA</strong> 
                                                                </label>
@@ -679,7 +684,7 @@ $region = view_region();
                                                          </td>
                                                          <td table-primary>
                                                             <div class="form-check form-check-inline">
-                                                               <input class="form-check-input" type="radio" name="mesa" value="Mesa 3: METROPOLITANA" >
+                                                               <input class="form-check-input divOcultar" type="radio" name="mesa" value="Mesa 3: METROPOLITANA" >
                                                                <label class="form-check-label">
                                                                   <strong>Mesa 3: METROPOLITANA</strong>
                                                                   </label>
@@ -702,7 +707,7 @@ $region = view_region();
                   </div>
                   <div class="col-xl-1">  
                   <div class="form-check">
-                  <input class="form-check-input" type="radio" name="catering" value="si" required>
+                  <input class="form-check-input divOcultar" type="radio" name="catering" value="si" >
                   <label class="form-check-label">
                      si
                   </label>
@@ -711,7 +716,7 @@ $region = view_region();
 
                   <div class="col-xl-1">  
                   <div class="form-check">
-                  <input class="form-check-input" type="radio" name="catering" value="no" required>
+                  <input class="form-check-input divOcultar" type="radio" name="catering" value="no" >
                   <label class="form-check-label">
                      no
                   </label>
@@ -730,6 +735,7 @@ $region = view_region();
                <div class="row m-auto">
                   <div class="col-md-12 text-center"><br>
                      <p class="text-left divOcultar"><strong>Día 2. </strong></p> <!-- Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
+                     <p class="text-left divOcultar2"><strong>Agenda Día 1. </strong></p> <!-- Cambio realizado a peticion del grupo de whatsApp de foros de vinculacion -->
                   </div>
 
                   <table class="table table-striped table-bordered m-auto">
