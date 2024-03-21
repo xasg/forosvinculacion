@@ -415,11 +415,11 @@ $region = view_region();
     $('#region').change(function() {
     if ($(this).val() == '06') {
         $('.divOcultar').hide();
-        $('.divOcultar2').hide();
+        $('.divOcultar2').show();
         $('.divOcultar').removeAttr('required');
     } else {
         $('.divOcultar').show();
-        $('.divOcultar2').show();
+        $('.divOcultar2').hide();
         $('.divOcultar').attr('required', 'required');
         
     }
