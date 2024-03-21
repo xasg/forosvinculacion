@@ -115,7 +115,7 @@ $region = $_SESSION['region'];
                         <th> Institución <input type="text" class="form-control form-control-sm input-search" data-column="2"></th>
                         <th> Correo <input type="text" class="form-control form-control-sm input-search" data-column="3"></th>
                         <!-- <th> Asistencia </th> -->
-                        <th>Acciones</th>
+                        <!-- <th>Acciones</th> -->
                     </tr>
                 </thead>
                 <?php 
@@ -133,14 +133,13 @@ $region = $_SESSION['region'];
                         <?= $value['num_asistencias']; ?>
 
                         </td> -->
-                        <td>
+                        <!-- <td>
                             <form action="includes/valida_asistencia.php" method="POST">
                                 <input type="text" id="idusuario" name="idusuario" value="<?= $value['idusuario']; ?>" hidden>
                                 <input type="text" id="idregion" name="idregion" value="<?= $value['region']; ?>" hidden>
-                                <!-- <button type="submit" class="btn btn-success btn-sm">Validar Asistencia</button> -->
                                 <button type="button" class="btn btn-warning  btn-sm" data-bs-toggle="modal" data-bs-target="#modal<?= $value['id_usuario']; ?>">Editar</button>
                             </form>
-                        </td>
+                        </td> -->
                     </tr>
 
                 </tbody>
