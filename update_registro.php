@@ -303,6 +303,7 @@
                             // 'text' => 'Gracias por registrarse en los foros de vinculación de la región *' . $region_wp . '*.\n\nEl cual se llevará a cabo el *' . $fecha . '*.\n\nPor favor, revisa tu bandeja de entrada, ya que toda la información para asistir al evento se encuentra en el correo que se te envió, además adjunto te enviamos tu folio asociado al correo electrónico que se registró.\n\nFolio: *' . $folio . '*\nCorreo: ' . $correo. '\n'
                             'text' => $message
                         ],
+                        
                     ]
                 ]
             ]

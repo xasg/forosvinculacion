@@ -20,7 +20,7 @@ if ($_POST) {
         case '06':
             if ($dia == 1 || $dia == 2) {
                 insert_fecha($id_usuario, $id_reg,$dia);
-                header('Location: ../asistencia.php?asistencia');
+                header('Location: ../asistencia.php?asistencias=validada');
             } else {
                 echo 'Fuera de la fecha';
             }

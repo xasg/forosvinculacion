@@ -117,7 +117,8 @@
                     <thead>
                         <tr>
                             <th> # ID <input type="text" class="form-control form-control-sm input-search" data-column="0"></th>
-                            <th> Correo Region <input type="text" class="form-control form-control-sm input-search" data-column="1"></th>
+                            <th> Region <input type="text" class="form-control form-control-sm input-search" data-column="1"></th>
+                            <th> Correo Region <input type="text" class="form-control form-control-sm input-search" data-column="2"></th>
         
                             <th>dia 1</th>
                             <th>dia 2</th>
@@ -132,6 +133,9 @@
                     <tbody>
                     <tr>
                             <td><?= $value['idusuario']; ?></td>
+                            <td>
+                            <?= $value['dt_nombre_region']; ?>
+                            </td>
                             <td>
                                 <?= $value['dt_correo']; ?> 
                                 <br>
@@ -225,7 +229,8 @@
                     <thead>
                         <tr>
                             <th> # ID <input type="text" class="form-control form-control-sm input-search" data-column="0"></th>
-                            <th> Correo Region <input type="text" class="form-control form-control-sm input-search" data-column="1"></th>
+                            <th> Region <input type="text" class="form-control form-control-sm input-search" data-column="1"></th>
+                            <th> Correo Region <input type="text" class="form-control form-control-sm input-search" data-column="2"></th>
         
                             <th>dia 1</th>
                             <th>dia 2</th>
@@ -240,6 +245,9 @@
                     <tbody>
                     <tr>
                             <td><?= $value['idusuario']; ?></td>
+                            <td>
+                            <?= $value['dt_nombre_region']; ?>
+                            </td>
                             <td>
                                 <?= $value['dt_correo']; ?> 
                                 <br>
@@ -329,7 +337,7 @@
                     <?php
                         // if ($dia_reg == 1  || $dia_reg == 2 ) { 
                         foreach ($participantes_registrados as $key => $value) { 
-                            $accesos = accesos_region($value['region']);
+                            $accesos =  accesos_region($value['region']);
                         ?>
                     <tbody>
                         <tr>

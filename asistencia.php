@@ -47,7 +47,8 @@
     }
 
 </style>
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -146,8 +147,33 @@
 #tabla tr:nth-child(odd) {
   background-color: #ffffff !important;
 }
+
+.btn-verde-degradado {
+    background: linear-gradient(to right, #00FF00, #33FF33) !important;
+    /* Otros estilos opcionales */
+    color: white;
+    border: none;
+}
+
     </style>
-    <div class="row table-responsive">
+<?php
+    if ($_GET['asistencias']) {
+        ?>
+        <script>
+            Swal.fire({
+                title: "Asistencia Validada!",
+                text: "se valido correctamente!",
+                icon: "success",
+                customClass: {
+                    confirmButton: 'btn-verde-degradado'
+                }
+            });
+            // alert("alerta");
+        </script>
+        <?php
+        }
+        ?>
+<div class="row table-responsive">
         <div class="col">
             <table class="table" id="tabla">
                 <thead>
@@ -281,6 +307,6 @@
                 }
             });
         });
-    </script>
+    </script>   
 </body>
 </html>
