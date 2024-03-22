@@ -457,7 +457,7 @@ $region = view_region();
                            <tbody>
                               <tr>
                                  <th scope="row">
-                                       <p>14:30 - 18:30</p>
+                                       <p>16:30 - 18:30</p>
                                  </th>
                                  <td>
                                        <div class="form-check form-check-inline">
@@ -502,7 +502,7 @@ $region = view_region();
                                                    <tbody>
                                                       <tr>
                                                          <th scope="row">
-                                                            <p>14:30 - 18:30</p>
+                                                            <p>16:30 - 18:30</p>
                                                          </th>                                                   
                                                          <td>
                                                             <div class="form-check form-check-inline">
@@ -547,7 +547,7 @@ $region = view_region();
                                                    <tbody>
                                                       <tr>
                                                          <th scope="row">
-                                                            <p>14:30 - 18:30</p>
+                                                            <p>16:30 - 18:30</p>
                                                          </th>                                                   
                                                          <td>
                                                             <div class="form-check form-check-inline">
@@ -593,7 +593,7 @@ $region = view_region();
                                                    <tbody>
                                                       <tr>
                                                          <th scope="row">
-                                                            <p>14:30 - 18:30</p>
+                                                            <p>16:30 - 18:30</p>
                                                          </th>                                                   
                                                          <td>
                                                             <div class="form-check form-check-inline">
@@ -637,7 +637,7 @@ $region = view_region();
                                                    <tbody>
                                                       <tr>
                                                          <th scope="row">
-                                                            <p>14:30 - 18:30</p>
+                                                            <p>16:30 - 18:30</p>
                                                          </th>                                                   
                                                          <td>
                                                             <div class="form-check form-check-inline">
@@ -681,7 +681,7 @@ $region = view_region();
                                                    <tbody>
                                                       <tr>
                                                          <th scope="row">
-                                                            <p>14:30 - 18:30</p>
+                                                            <p>16:30 - 18:30</p>
                                                          </th>                                                   
                                                          <td>
                                                             <div class="form-check form-check-inline">
