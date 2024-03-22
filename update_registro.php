@@ -112,7 +112,7 @@
           $ubicacion = "https://maps.app.goo.gl/pXQf1dkx8cwyVRcN7";
          break;
         case 06:
-          $ubicacion = "https://maps.app.goo.gl/QCZ7VUgEJhhX1Byz6";
+          $ubicacion = "https://maps.app.goo.gl/NNN4HVqk8vbcgb4a6";
          break;
 
          default: break; 
