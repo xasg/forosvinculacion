@@ -148,7 +148,7 @@ if(isset($_GET['region'])){
                 <div class="col-md-10 ">
                     <!-- <img class="img-fluid" src="img/agenda.png" width="100%"  style="margin-top: 4%;"> -->
                     <!-- -----------------------------------------------------------------------------se agrego validacion por region en la agenda paramostrar sus agendas por región -->
-                     <?php if ($var_reg == 1 || $var_reg == 2 || $var_reg == 3 || $var_reg == 4 || $var_reg == 5 || $var_reg == 6) {
+                     <?php if ($var_reg == 1 || $var_reg == 2 || $var_reg == 3 || $var_reg == 4 || $var_reg == 5 ) {
                            switch ($var_reg) {
                               case 1:
                                  $nombre_region = 'SUR SURESTE';
@@ -344,7 +344,7 @@ if(isset($_GET['region'])){
       
                      </table>
                      
-                     <?php }elseif ($var_reg == /*6*/ 7) {?> <!--*************************************************VALIDACIÓN PARA LA AGENDA DE REGION METROPOLITANA QUE CAMBIA EN ESTA REGIÓN-->
+                     <?php }elseif ($var_reg == 6 ) {?> <!--*************************************************VALIDACIÓN PARA LA AGENDA DE REGION METROPOLITANA QUE CAMBIA EN ESTA REGIÓN-->
                         <h2 class="table-light verde text-center" style="font-size: 32px !important; padding: 15px !important;">Agenda - Región METROPOLITANA</h2>
                      <br>
                      <table class="table   table-borderless border align-middle text-center">
