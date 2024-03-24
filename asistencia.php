@@ -47,10 +47,58 @@
     }
 
 </style>
+<style>
+            #tabla {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#tabla th, #tabla td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#tabla tr:nth-child(even) {
+  background-color: #f2f2f2 !important;
+}
+
+#tabla tr:nth-child(odd) {
+  background-color: #ffffff !important;
+}
+
+    .btn-verde-degradado {
+        background: linear-gradient(to top ,#10312B,#235b4e) !important;
+        /* Otros estilos opcionales */
+        color: white;
+        border: 2px solid #10312B !important;
+        transition:all linear .5s  !important;
+    }
+    .btn-verde-degradado:hover{
+        background: linear-gradient(to bottom ,#10312B,#235b4e) !important;
+        transition: all  .5s  !important;
+    }
+    </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
+    <?php
+        if (isset($_GET['asistencias'])) {
+            ?>
+            <script>
+                Swal.fire({
+                    title: "Asistencia Validada!",
+                    text: "se valido correctamente!",
+                    icon: "success",
+                    customClass: {
+                        confirmButton: 'btn-verde-degradado'
+                    }
+                });
+                // alert("alerta");
+            </script>
+            <?php
+            }
+    ?>
 
 <div class="container-fluid mx-0 px-0" style="background: linear-gradient(to top ,#10312B,#235b4e);">
          <div class="container ">
@@ -129,50 +177,7 @@
             
         </div>
     </div>
-    <style>
-            #tabla {
-  border-collapse: collapse;
-  width: 100%;
-}
 
-#tabla th, #tabla td {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-#tabla tr:nth-child(even) {
-  background-color: #f2f2f2 !important;
-}
-
-#tabla tr:nth-child(odd) {
-  background-color: #ffffff !important;
-}
-
-.btn-verde-degradado {
-    background: linear-gradient(to right, #00FF00, #33FF33) !important;
-    /* Otros estilos opcionales */
-    color: white;
-    border: none;
-}
-
-    </style>
-<?php
-    if ($_GET['asistencias']) {
-        ?>
-        <script>
-            Swal.fire({
-                title: "Asistencia Validada!",
-                text: "se valido correctamente!",
-                icon: "success",
-                customClass: {
-                    confirmButton: 'btn-verde-degradado'
-                }
-            });
-            // alert("alerta");
-        </script>
-        <?php
-        }
-        ?>
 <div class="row table-responsive">
         <div class="col">
             <table class="table" id="tabla">

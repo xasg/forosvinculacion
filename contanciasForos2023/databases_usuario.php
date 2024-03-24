@@ -25,6 +25,14 @@ function run_participante_2023($id)
   $result = $mysqli->query($sql);
    return $result->fetch_assoc();
 }
+function run_participante_2024($id)
+{
+  global $mysqli;
+  $sql = "SELECT * FROM usuario
+          WHERE id_usuario = '{$id}' ";
+  $result = $mysqli->query($sql);
+   return $result->fetch_assoc();
+}
 
 
 

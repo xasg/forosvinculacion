@@ -115,7 +115,7 @@ $region = $_SESSION['region'];
                         <th> Institución <input type="text" class="form-control form-control-sm input-search" data-column="2"></th>
                         <th> Correo <input type="text" class="form-control form-control-sm input-search" data-column="3"></th>
                         <!-- <th> Asistencia </th> -->
-                        <th>Acciones</th>
+                        <!-- <th>Acciones</th> -->
                     </tr>
                 </thead>
                 <?php 
@@ -129,18 +129,32 @@ $region = $_SESSION['region'];
                         <td><?= $value['dt_nombre'].' '.$value['dt_apaterno'].' '.$value['dt_amaterno']; ?></td>
                         <td><?= $value['dt_nom_org'] ? $value['dt_nom_org'] : $value['dt_nom_org2']; ?></td>
                         <td><?= $value['dt_email']; ?></td>
-                        <!-- <td>
+                        <td>
                         <?= $value['num_asistencias']; ?>
 
-                        </td> -->
+                        </td>
                         <td>
+                        <?php
+                            if ($value['num_asistencias'] == 2) {
+                            //     ?>
+                            //     <form id="constanciaForm" action="constanciasForos2024/constancias.php" method="POST">
+                            //         <input type="hidden" name="idusuario" value="<?= $value['idusuario']; ?>">
+                            //         <input type="submit" value="Enviar constancia">
+                            //     </form>
+                            //     <script>
+                            //         document.getElementById('constanciaForm').submit();
+                            //     </script>
+                            //     <?php
+                            }
+                        ?>
+                        </td>
+                        <!-- <td>
                             <form action="includes/valida_asistencia.php" method="POST">
                                 <input type="text" id="idusuario" name="idusuario" value="<?= $value['idusuario']; ?>" hidden>
                                 <input type="text" id="idregion" name="idregion" value="<?= $value['region']; ?>" hidden>
-                                <!-- <button type="submit" class="btn btn-success btn-sm">Validar Asistencia</button> -->
                                 <button type="button" class="btn btn-warning  btn-sm" data-bs-toggle="modal" data-bs-target="#modal<?= $value['id_usuario']; ?>">Editar</button>
                             </form>
-                        </td>
+                        </td> -->
                     </tr>
 
                 </tbody>

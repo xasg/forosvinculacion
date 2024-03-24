@@ -1,5 +1,8 @@
 <?php 
-session_start();
+
+// session_start();
+
+
 
 require ('../contanciasForos2023/pdf/fpdf.php');
 require ('../PHPMailer/PHPMailer.php');
@@ -7,10 +10,19 @@ require ('../PHPMailer/SMTP.php');
 require ('../PHPMailer/Exception.php');
 
 include_once('../contanciasForos2023/databases_usuario.php');
-// $id = $_POST['id_usuario'];
-$id = 538;
+include_once('random.php');
 
-$participante = run_participante_2023($id);
+if($_POST){
+// $id = $_POST['id_usuario'];
+$numero = rand(100,999);
+$letra = randomLetter();
+$simbolo = randomSymbol();
+$aleatorio = $numero.$letra.$simbolo;
+$hash = str_shuffle($aleatorio);
+// $id = $_POST['id_usuario'];
+$id = $id_usuario;
+$id_hash = $id.$hash;
+$participante = run_participante_2024($id);
 
 $pdf = new FPDF('P','mm','A4');
 $pdf->AddFont('Montserrat','','Montserrat.php');
@@ -18,17 +30,17 @@ $pdf->SetTextColor(0,0,0);
 $pdf->AddPage();
 
 if ($participante['dt_region'] == 01) {
-    $pdf->Image('img/sur_sureste.png',0,0,210,300,'PNG');
+    $pdf->Image('../constanciasForos2024/img/sur_sureste.png',0,0,210,300,'PNG');
 } elseif ($participante['dt_region'] == 02) {
-    $pdf->Image('img/centro_sur.png',0,0,210,300,'PNG');
+    $pdf->Image('../constanciasForos2024/img/centro_sur.png',0,0,210,300,'PNG');
 } elseif ($participante['dt_region'] == 03) {
-    $pdf->Image('img/centro_occidente.png',0,0,210,300,'PNG');
+    $pdf->Image('../constanciasForos2024/img/centro_occidente.png',0,0,210,300,'PNG');
 } elseif ($participante['dt_region'] == 04) {
-    $pdf->Image('img/noreste.png',0,0,210,300,'PNG');
+    $pdf->Image('../constanciasForos2024/img/noreste.png',0,0,210,300,'PNG');
 } elseif ($participante['dt_region'] == 05) {
-    $pdf->Image('img/noroeste.png',0,0,210,300,'PNG');
+    $pdf->Image('../constanciasForos2024/img/noroeste.png',0,0,210,300,'PNG');
 } else {
-    $pdf->Image('img/metropolitana.png',0,0,210,300,'PNG');
+    $pdf->Image('../constanciasForos2024/img/metropolitana.png',0,0,210,300,'PNG');
 }
 
 $pdf->SetFont('Montserrat','',35);
@@ -42,19 +54,19 @@ $Y = $pdf->GetY();
 $pdf_data = $pdf->Output('certificado','S');
 
 // Ruta donde se guardará el certificado
-$certificado_path = '../certificados/';
+$certificado_path = realpath(__DIR__ . '/../certificados') . DIRECTORY_SEPARATOR;
 
 // Crear la carpeta "certificados" si no existe
 if (!file_exists($certificado_path)) {
-    mkdir($certificado_path, 0777, true);
+    mkdir($certificado_path, 777, true);
 }
 
 // Guardar el PDF en la carpeta "certificados"
-$certificado_file = $certificado_path . 'certificado_' . $id . '.pdf';
+$certificado_file = $certificado_path . 'certificado_' . $id_hash . '.pdf';
 file_put_contents($certificado_file, $pdf_data);
 
 // URL del certificado
-$certificado_url = 'http://tu-sitio.com/certificados/certificado_' . $id . '.pdf';
+$certificado_url = 'http://forosdevinculacion.anuies.mx/certificados/certificado_' . $id_hash . '.pdf';
 
 // Configuración de PHPMailer
 $mail = new PHPMailer\PHPMailer\PHPMailer();
@@ -67,10 +79,10 @@ $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
 $mail->Port       = 465;   
 
 // Configuración del correo
-$mail->setFrom('forosdevinculacion@vinculacion.website', 'Tu Nombre');
+$mail->setFrom('forosdevinculacion@vinculacion.website', 'FOROS DE VINCULACION 2024');
 $mail->addAddress('alexis@fese.mx', 'Nombre Destinatario');
-$mail->Subject = 'Asunto del Correo';
-$mail->Body = 'Cuerpo del Correo';
+$mail->Subject = 'CONSTANCIA - FOROS DE VINCULACION 2024';
+$mail->Body = 'Gracias por participar en los foros de vinculación 2024, adjunto le hacemos envio de su constancia.';
 $mail->addStringAttachment($pdf_data, 'certificado.pdf', 'base64', 'application/pdf');
 
 // Enviar el correo
@@ -83,7 +95,7 @@ if ($mail->send()) {
 $ch = curl_init();
 
 // telefono
-// $tel_movil = "5511406535";
+$tel_movil = $_POST['tel_movil'];
     
 // Mensaje de texto
 $message = 'Adjunto te enviamos tu certificado. Puedes descargarlo aquí: ' . $certificado_url;
@@ -134,5 +146,6 @@ if (curl_errno($ch)) {
 
 // Cerrar la conexión CURL
 curl_close($ch);
-
+// header('Location: ../asistencia.php?asistencias=validada');
+}
 ?>

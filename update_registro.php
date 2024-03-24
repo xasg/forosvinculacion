@@ -26,7 +26,8 @@
    $otro_cargo2 = isset( $_POST['otro_cargo2']) ? $_POST['otro_cargo2'] : '';
    $mesa1 = isset( $_POST['mesa']) ? $_POST['mesa'] : '';
    $catering = isset( $_POST['catering']) ? $_POST['catering'] : '';
-   $reg_usuario =acces_registro($email,$region);  
+   $otra__otra_ies = isset( $_POST['input_ies']) ? $_POST['input_ies'] : '';
+   $reg_usuario = acces_registro($email,$region);  
    $limite_de_registros =  get_limit_region_acept_users($region); 
    $conteo_registros = get_region_acept_users_registro($region);
    $bandera = true;
@@ -43,7 +44,7 @@
         exit; // Termina la ejecución del script después de redirigir
       }else{
         // En caso de que no exista pero el limite ya haya pasado solo se realiza el registro pero lo redirecciona a limite.php
-        insert_registro($apaterno, $amaterno, $nombre, $email, $tel_ins, $ext, $tel_movil, $region, $entidad, $organizacion, $nom_org, $nom_org2, $cargo, $cargo2, $otro_cargo, $otro_cargo2, $mesa1, $catering);   
+        insert_registro($apaterno, $amaterno, $nombre, $email, $tel_ins, $ext, $tel_movil, $region, $entidad, $organizacion, $nom_org, $nom_org2, $cargo, $cargo2, $otro_cargo, $otro_cargo2, $mesa1, $catering,$otra__otra_ies);   
         $bandera = false;
         header("Location: limite.php");
       }
@@ -65,7 +66,7 @@
    
 
 
-    insert_registro($apaterno, $amaterno, $nombre, $email, $tel_ins, $ext, $tel_movil, $region, $entidad, $organizacion, $nom_org, $nom_org2, $cargo, $cargo2, $otro_cargo, $otro_cargo2, $mesa1, $catering);   
+    insert_registro($apaterno, $amaterno, $nombre, $email, $tel_ins, $ext, $tel_movil, $region, $entidad, $organizacion, $nom_org, $nom_org2, $cargo, $cargo2, $otro_cargo, $otro_cargo2, $mesa1, $catering,$otra__otra_ies);   
        $id_usuario =acces_registro($email,$region);
        $id_user=$id_usuario['id_usuario'];
        $d_nombre=$id_usuario['dt_nombre']." ".$id_usuario['dt_apaterno']." ".$id_usuario['dt_amaterno'];
@@ -111,7 +112,7 @@
           $ubicacion = "https://maps.app.goo.gl/pXQf1dkx8cwyVRcN7";
          break;
         case 06:
-          $ubicacion = "https://maps.app.goo.gl/QCZ7VUgEJhhX1Byz6";
+          $ubicacion = "https://maps.app.goo.gl/NNN4HVqk8vbcgb4a6";
          break;
 
          default: break; 

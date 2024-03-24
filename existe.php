@@ -110,120 +110,186 @@ include_once('databases_registro.php');
 
 
 
-        <div class="col-sm-8 col-md-8 offset-md-2 text-center"><br><br>
+        <div class="col-sm-12 col-md-8 offset-md-2 text-center"><br><br>
 
             <h4 class="mb-0">HOLA <?php echo $participante['dt_nombre']." ".$participante['dt_apaterno']." ".$participante['dt_amaterno']; ?> YA CUENTAS CON UN REGISTRO PARA ESTA REGIÓN</h4><br>   
             <h4 class="mb-0">Tu folio de registro es: <strong><?php echo  $folio;  ?></strong></h4><br>  
             <!-- Se eliminmo el folio y se agrego la sede del evento - (Alexis) -->
-            <h4><strong>El anfitrión será: <?php echo $participante['dt_cede'] ?></strong></h4>
+            <h4><strong>El anfitrión es: <?php echo $participante['dt_cede'] ?></strong></h4>
             <h4><strong>el día: <?php echo $participante['dt_fecha'] ?></strong></h4>
+
+            <?php if ($region != 06) { ?>
+       <div class="col-sm-8 col-md-8 offset-md-2 text-center">
+           <!-- <img class="img-fluid" src="img/agenda.png"> -->
+            <!-- Se agrega validacion en caso de requerirse por si es para el día 1 o 2 -->
+
+            <table class="table   table-borderless border align-middle text-center">
+                   <thead class="table-light">      
+                      <div class="card">
+ 
+                            <div class="card-body cafe text-center" >
+                                <h4 class="card-title" >DÍA 1</h4>
+                               <h5 class="card-subtitle "> <b> MESAS DE TRABAJO SIMULTÁNEAS </b></h5>
+       
+                            </div>
+ 
+                      </div>
+ 
+                      <tr class="text-justifyu" >
+ 
+                         <th class="verde">HORARIO</th>
+ 
+                         <th class="cafe-claro">ACTIVIDAD</th>
+ 
+                      </tr>
+ 
+                   </thead>
+ 
+                      <tbody class="table-group-divider">
+ 
+                         <tr class="" >
+ 
+                            <td class="verde">15:30 - 16:00</td>
+ 
+                            <td class="text-left ">Registro de asistencia de los invitados</td>
+ 
+                            
+ 
+                         </tr>
+                         
+                         <tr class="">
+                            
+                            <td class="verde">16:00 – 16:30</td>
+                      
+                            <td class="text-left cafe-claro-size ">Bienvenida y apertura de los trabajos</td>
+ 
+                         </tr>
+
+                         <tr class="">
+                            
+                            <td class="verde">16:30 – 18:30</td>
+                      
+                            <td class="text-left ">Mesas de trabajo simultáneas con la participación de industria,  gobierno y academia por sectores económicos específicos de la región</td>
+ 
+                         </tr>
+
+                         <tr class="">
+                            
+                            <td class="verde">18:30</td>
+                      
+                            <td class="text-left cafe-claro-size ">Actividad de integración de redes colaborativas (catering)</td>
+ 
+                         </tr>
+ 
+                      </tbody>
+                </table>
+
 
             <table class="table   table-borderless border align-middle text-center">
 
-<thead class="table-light">
+             <thead class="table-light">
 
-   <caption></caption>
+               <caption></caption>
 
-   <div class="card">
+               <div class="card">
 
-   <div class="card-body cafe text-center" >
+               <div class="card-body cafe text-center" >
 
-      <h4 class="card-title" >DÍA 2</h4>
+                  <h4 class="card-title" >DÍA 2</h4>
 
-      <h5 class="card-subtitle"> <b>TRABAJO COLEGIADO EN PLENARIA</b></h5>
+                  <h5 class="card-subtitle"> <b>TRABAJO COLEGIADO EN PLENARIA</b></h5>
 
-   </div>
+               </div>
 
-   </div>
+               </div>
 
-   <tr class="text-justifyu">
+               <tr class="text-justifyu">
 
-      <th class="verde">HORARIO</th>
+                  <th class="verde">HORARIO</th>
 
-      <th class="cafe-claro">ACTIVIDAD </th>
+                  <th class="cafe-claro">ACTIVIDAD</th>
 
-   </tr>
+               </tr>
 
-   </thead>
+               </thead>
 
-   <tbody class="table-group-divider">
+               <tbody class="table-group-divider">
 
-      <tr class="" >
+                  <tr class="" >
 
-         <td class="verde">09:00 – 10:00</td>
+                     <td class="verde">09:00 – 10:00</td>
 
-         <td class="text-left">Registro de asistencia de los invitados</td>
+                     <td class="text-left">Registro de asistencia de los invitados</td>
 
-         
+                     
 
-      </tr>
+                  </tr>
 
-      <tr class="">
+                  <tr class="">
 
-         <td class="verde">10:00 - 11:10</td>
+                     <td class="verde">10:00 - 11:10</td>
 
-         <td class="text-left cafe-claro-size">Inauguración oficial del Foro de Vinculación (Transmisión en vivo por canales oficiales)</td>
+                     <td class="text-left cafe-claro-size">Inauguración oficial del Foro de Vinculación (Transmisión en vivo por canales oficiales)</td>
 
-      </tr>
+                  </tr>
 
-      <!-- <tr class="">
+                  <!-- <tr class="">
 
-         <td class="verde">11:00 - 11:10</td>
+                     <td class="verde">11:00 - 11:10</td>
 
-         <td class="text-left">Presentación de las Memorias de Buenas Prácticas de Vinculación</td>
+                     <td class="text-left">Presentación de las Memorias de Buenas Prácticas de Vinculación</td>
 
-      </tr> -->
+                  </tr> -->
 
-      <tr class="">
+                  <tr class="">
 
-         <td class="verde">11:10 – 11:20</td>
+                     <td class="verde">11:10 – 11:20</td>
 
-         <td class="text-left ">Fotografía oficial</td>
+                     <td class="text-left ">Fotografía oficial</td>
 
-      </tr>
+                  </tr>
 
-      <tr class="">
+                  <tr class="">
 
-         <td class="verde">11:20 – 11:25</td>
+                     <td class="verde">11:20 – 11:25</td>
 
-         <td class="text-left cafe-claro-size">Resultados de los trabajos del día 1</td>
+                     <td class="text-left cafe-claro-size">Resultados de los trabajos del día 1</td>
 
-      </tr>
+                  </tr>
 
-      <tr class="">
+                  <tr class="">
 
-         <td class="verde">11:25 – 12:00</td>
+                     <td class="verde">11:25 – 12:00</td>
 
-         <td class="text-left ">Avances y retos por parte de las autoridades educativas estatales de la región</td>
+                     <td class="text-left ">Avances y retos por parte de las autoridades educativas estatales de la región</td>
 
-      </tr>
-      <tr class="">
+                  </tr>
+                  <tr class="">
 
-         <td class="verde">12:00 – 15:00</td>
+                     <td class="verde">12:00 – 15:00</td>
 
-         <td class="text-left cafe-claro-size">Diálogo de alto nivel:
-            Intercambio entre sectores privado, público y social, en torno a los temas prioritarios de vinculación a nivel regional y estatal.</td>
+                     <td class="text-left cafe-claro-size">Diálogo de alto nivel:
+                        Intercambio entre sectores privado, público y social, en torno a los temas prioritarios de vinculación a nivel regional y estatal.</td>
 
-      </tr>
-      <tr class="">
+                  </tr>
+                  <tr class="">
 
-         <td class="verde">15:00 – 15:30</td>
+                     <td class="verde">15:00 – 15:30</td>
 
-         <td class="text-left ">Conclusiones y cierre</td>
+                     <td class="text-left ">Conclusiones y cierre</td>
 
-      </tr>
+                  </tr>
 
-   </tbody>
+               </tbody>
 
-   <tfoot>
+               <tfoot>
 
-   
+               
 
-   </tfoot>
+               </tfoot>
 
-</table>
-
-             <!-- <table class="table   table-borderless border align-middle">
+            </table>
+               <!-- <table class="table   table-borderless border align-middle">
 
                   <thead class="table-light">
 
@@ -234,6 +300,7 @@ include_once('databases_registro.php');
                      <div class="card-body cafe" >
 
                         <h4 class="card-title">DÍA 1</h4>
+                        
                      </div>
 
                      </div>
@@ -256,7 +323,7 @@ include_once('databases_registro.php');
                      </tbody>
                      <tfoot>   
                      </tfoot>
-            </table> -->
+               </table> -->
 
 
                <!-- <table class="table   table-borderless border align-middle">
@@ -270,6 +337,7 @@ include_once('databases_registro.php');
                      <div class="card-body cafe" >
 
                         <h4 class="card-title">DÍA 2</h4>
+                        
                      </div>
 
                      </div>
@@ -323,10 +391,131 @@ include_once('databases_registro.php');
 
                      </tfoot>
 
-               </table>
-             -->
+               </table> -->
 
 
+           <br><br><br>
+           <!-- <h4>
+              Marco General para la Educación Dual del Tipo Superior 
+            </h4>
+            <p><a href="https://bit.ly/44nIaw3" target="_blank" style="background: #C6C6C6; border-radius: 10px; padding: 1px;"> Descargar </a></p>
+            <br><br>
+           <h4>
+           Marco General Emprendimiento Asociativo 
+            </h4>
+            <p><a href="https://bit.ly/3rvkcQV" target="_blank" style="background: #C6C6C6; border-radius: 10px; padding: 1px;"> Descargar </a></p> -->
+      </div>
+      <?php         # code...
+      } else{
+         ?>
+         
+                   <table class="table   table-borderless border align-middle text-center">
+                     <thead class="table-light">
+
+                     <caption></caption>
+
+                     <div class="card">
+
+                     <div class="card-body cafe text-center" >
+
+                        <h4 class="card-title" >AGENDA</h4>
+
+                        <h5 class="card-subtitle"> <b>TRABAJO COLEGIADO EN PLENARIA</b></h5>
+
+                     </div>
+
+                     </div>
+
+                     <tr class="text-justifyu">
+
+                        <th class="verde">HORARIO</th>
+
+                        <th class="cafe-claro">ACTIVIDAD</th>
+
+                     </tr>
+
+                     </thead>
+
+                     <tbody class="table-group-divider">
+
+                        <tr class="" >
+
+                           <td class="verde">09:00 – 10:00</td>
+
+                           <td class="text-left">Registro de asistencia de los invitados</td>
+
+                           
+
+                        </tr>
+
+                        <tr class="">
+
+                           <td class="verde">10:00 - 11:10</td>
+
+                           <td class="text-left cafe-claro-size">Inauguración oficial del Foro de Vinculación (Transmisión en vivo por canales oficiales)</td>
+
+                        </tr>
+
+                        <!-- <tr class="">
+
+                           <td class="verde">11:00 - 11:10</td>
+
+                           <td class="text-left">Presentación de las Memorias de Buenas Prácticas de Vinculación</td>
+
+                        </tr> -->
+
+                        <tr class="">
+
+                           <td class="verde">11:10 – 11:20</td>
+
+                           <td class="text-left ">Fotografía oficial</td>
+
+                        </tr>
+
+                        <tr class="">
+
+                           <td class="verde">11:20 – 11:25</td>
+
+                           <td class="text-left cafe-claro-size">Resultados de los trabajos del día 1</td>
+
+                        </tr>
+
+                        <tr class="">
+
+                           <td class="verde">11:25 – 12:00</td>
+
+                           <td class="text-left ">Avances y retos por parte de las autoridades educativas estatales de la región</td>
+
+                        </tr>
+                        <tr class="">
+
+                           <td class="verde">12:00 – 15:00</td>
+
+                           <td class="text-left cafe-claro-size">Diálogo de alto nivel:
+                              Intercambio entre sectores privado, público y social, en torno a los temas prioritarios de vinculación a nivel regional y estatal.</td>
+
+                        </tr>
+                        <tr class="">
+
+                           <td class="verde">15:00 – 15:30</td>
+
+                           <td class="text-left ">Conclusiones y cierre</td>
+
+                        </tr>
+
+                     </tbody>
+
+                     <tfoot>
+
+                     
+
+                     </tfoot>
+
+                     </table>
+      
+      <?php
+      }
+      ?>
             <br><br><br>
            <!-- <h4>
               Marco General para la Educación Dual del Tipo Superior <a href="https://bit.ly/3rvkcQV" target="_blank" style="background: #C6C6C6; border-radius: 10px; padding: 1px;"> Descargar </a>
