@@ -814,7 +814,7 @@ $region = view_region();
       
                                  <td class="verde">10:00 - 11:10</td>
       
-                                 <td class="text-left cafe-claro-size">Inauguración oficial del Foro de Vinculación (Transmisión en vivo por canales oficiales)</td>
+                                 <td class="text-left cafe-claro-size">Inauguración oficial del Foro de Vinculación</td>
       
                               </tr>
       
