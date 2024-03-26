@@ -172,14 +172,32 @@ border-bottom-right-radius: .3rem;
                       </p>
     
                       <div class="form-outline mb-4 ">
+                        <label class="form-label" for="form2Example11">Correo</label>
                         <input type="email" id="correo" name="correo" class="form-control"
                           placeholder="Ingresa tu correo" required/>
-                        <label class="form-label" for="form2Example11">Correo</label>
                       </div>
     
                       <div class="form-outline mb-4">
-                        <input type="password" id="password" name="password" class="form-control" placeholder="Ingresa tu password" required/>
-                        <label class="form-label" for="form2Example22">Password</label>
+                        <label class="form-label" for="form2Example22">Password </label>
+                        <div style="display:flex;">
+                          <input type="password" id="password" name="password" class="form-control" placeholder="Ingresa tu password" required/>
+                          <button type="button"  class="btn btn-primary gradient-custom-2 btn-sm" onclick="verpass()"><img src="img/eye.svg" alt=""></button>
+                        </div>
+                        <!-- <button type="button"  class="btn btn-primary btn-sm" onclick="verpass()"><i class="glyphicon glyphicon-eye-open"></i></button> -->
+                                               <script>
+                                                 function verpass() {
+                                                let passwords = document.getElementById('password');
+                                                if (passwords.type == "password") {
+                                                   passwords.type = "text";
+                                                }else{
+                                                   passwords.type = "password";
+                                                }
+                                                }
+
+                                                 document.getElementById('pass');
+
+
+                                               </script>
                       </div>
                       <div class="text-center pt-1 mb-5 pb-1">
                         <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" style="border-radius: 22px; border: 1px solid #4f2550; box-shadow:-1px 2px 5px #10312B;" type="submit">Iniciar sesión</button>                        <br>
