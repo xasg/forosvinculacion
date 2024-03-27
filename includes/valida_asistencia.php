@@ -31,6 +31,7 @@ if ($_POST) {
                     $result = $mysqli->query($sql);
                     $rows = $result->fetch_assoc();
                     $numero_de_asistencias = $rows['num_asistencias'];
+
                     print($numero_de_asistencias);
                     // die();
                     if ($numero_de_asistencias == 2) {

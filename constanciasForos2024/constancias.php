@@ -23,6 +23,8 @@ $hash = str_shuffle($aleatorio);
 $id = $id_usuario;
 $id_hash = $id.$hash;
 $participante = run_participante_2024($id);
+$telefonomovil = $participante['dt_tel_movil'];
+$correo = $participante['dt_email'];
 
 $pdf = new FPDF('P','mm','A4');
 $pdf->AddFont('Montserrat','','Montserrat.php');
@@ -50,6 +52,7 @@ $pdf->Ln(125);
 $pdf->Cell(0,0,utf8_decode($participante['dt_apaterno'])." ".utf8_decode($participante['dt_amaterno']),0,0,'C');
 $Y = $pdf->GetY();
 
+
 // Guardar el PDF en una variable
 $pdf_data = $pdf->Output('certificado','S');
 
@@ -70,17 +73,28 @@ $certificado_url = 'http://forosdevinculacion.anuies.mx/certificados/certificado
 
 // Configuración de PHPMailer
 $mail = new PHPMailer\PHPMailer\PHPMailer();
-$mail->isSMTP();
+//Server settings
+$mail->SMTPDebug = 0;                      //Enable verbose debug output
+$mail->isSMTP();                                            //Send using SMTP
+// $mail->Host       = 'smtp.office365.com';                     //Set the SMTP server to send through
+// $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+// $mail->Username   = 'forosdevinculacion@fese.mx';                     //SMTP username
+// $mail->Username   = 'alexisn@fese.mx';                     //SMTP username
+// $mail->Password   = 'Fe$e2023.AmT';                               //SMTP password
+// $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
+// $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
+// $mail->Port       = 587;                                     //TCP port to connect to; use 587 if you have 
 $mail->Host       = 'smtp.hostinger.com';                     //Set the SMTP server to send through
 $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
 $mail->Username   = 'forosdevinculacion@vinculacion.website';                     //SMTP username
 $mail->Password   = 'HeVr1043D#';                               //SMTP password
 $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
 $mail->Port       = 465;   
-
-// Configuración del correo
-$mail->setFrom('forosdevinculacion@vinculacion.website', 'FOROS DE VINCULACION 2024');
-$mail->addAddress('alexis@fese.mx', 'Nombre Destinatario');
+//Recipients
+// $mail->setFrom('forosdevinculacion@fese.mx', 'FOROS DE VINCULACIÓN 2024.');
+$mail->setFrom('forosdevinculacion@vinculacion.website', 'FOROS DE VINCULACIÓN 2024.');          
+$mail->setFrom('forosdevinculacion@fese.mx', 'CONSTANCIA - FOROS DE VINCULACIÓN 2024.');          
+$mail->addAddress($correo, $participante['dt_nombre']);
 $mail->Subject = 'CONSTANCIA - FOROS DE VINCULACION 2024';
 $mail->Body = 'Gracias por participar en los foros de vinculación 2024, adjunto le hacemos envio de su constancia.';
 $mail->addStringAttachment($pdf_data, 'certificado.pdf', 'base64', 'application/pdf');
@@ -95,7 +109,7 @@ if ($mail->send()) {
 $ch = curl_init();
 
 // telefono
-$tel_movil = $_POST['tel_movil'];
+$tel_movil = $telefonomovil;
     
 // Mensaje de texto
 $message = 'Adjunto te enviamos tu certificado. Puedes descargarlo aquí: ' . $certificado_url;
@@ -107,8 +121,8 @@ curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode([
     'messaging_product' => 'whatsapp',
     'recipient_type' => 'individual',
-    // 'to' => $tel_movil,
-    'to' => '5511406535',
+    'to' => $tel_movil,
+    // 'to' => '5511406535',
     'type' => 'template',
     'template' => [
         'name' => 'base',
